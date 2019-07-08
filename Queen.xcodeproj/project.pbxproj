@@ -8,21 +8,51 @@
 
 /* Begin PBXBuildFile section */
 		10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F5722CFA2A70034A505 /* AppDelegate.swift */; };
-		10636F5A22CFA2A70034A505 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F5922CFA2A70034A505 /* ViewController.swift */; };
-		10636F5C22CFA2A70034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F5B22CFA2A70034A505 /* Document.swift */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6122CFA2A80034A505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
+		10636F6E22CFA34A0034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6D22CFA34A0034A505 /* Document.swift */; };
+		10636F7022CFA38E0034A505 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6F22CFA38E0034A505 /* MainWindowController.swift */; };
+		10636F7222CFA3AA0034A505 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7122CFA3AA0034A505 /* MainViewController.swift */; };
+		10636F7422CFA3C30034A505 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7322CFA3C30034A505 /* PreferencesViewController.swift */; };
+		10636F7622CFA3D60034A505 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7522CFA3D60034A505 /* PreferencesWindowController.swift */; };
+		10636F7822CFA3EB0034A505 /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7722CFA3EB0034A505 /* WelcomeWindowController.swift */; };
+		10636F7A22CFA4010034A505 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7922CFA4010034A505 /* WelcomeViewController.swift */; };
+		10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7C22CFA5460034A505 /* NSColor+Exts.swift */; };
+		10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */; };
+		10636F8122D087480034A505 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8022D087480034A505 /* LeftMenuViewController.swift */; };
+		10636F8522D089EE0034A505 /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8422D089EE0034A505 /* WelcomeTableViewCell.swift */; };
+		10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8622D0A0860034A505 /* NSView+Exts.swift */; };
+		10636F8C22D212620034A505 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F8B22D212620034A505 /* MainUI.storyboard */; };
+		10636F8E22D21B040034A505 /* MouseEnterOrExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8D22D21B040034A505 /* MouseEnterOrExitView.swift */; };
+		10636F9022D37E4E0034A505 /* RightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8F22D37E4E0034A505 /* RightContentViewController.swift */; };
+		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10636F5722CFA2A70034A505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		10636F5922CFA2A70034A505 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		10636F5B22CFA2A70034A505 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
 		10636F5D22CFA2A80034A505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10636F6022CFA2A80034A505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10636F6222CFA2A80034A505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10636F6322CFA2A80034A505 /* Queen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queen.entitlements; sourceTree = "<group>"; };
+		10636F6D22CFA34A0034A505 /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		10636F6F22CFA38E0034A505 /* MainWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		10636F7122CFA3AA0034A505 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		10636F7322CFA3C30034A505 /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		10636F7522CFA3D60034A505 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		10636F7722CFA3EB0034A505 /* WelcomeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
+		10636F7922CFA4010034A505 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		10636F7C22CFA5460034A505 /* NSColor+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Exts.swift"; sourceTree = "<group>"; };
+		10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Exts.swift"; sourceTree = "<group>"; };
+		10636F8022D087480034A505 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		10636F8422D089EE0034A505 /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
+		10636F8622D0A0860034A505 /* NSView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Exts.swift"; sourceTree = "<group>"; };
+		10636F8B22D212620034A505 /* MainUI.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainUI.storyboard; sourceTree = "<group>"; };
+		10636F8D22D21B040034A505 /* MouseEnterOrExitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MouseEnterOrExitView.swift; sourceTree = "<group>"; };
+		10636F8F22D37E4E0034A505 /* RightContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightContentViewController.swift; sourceTree = "<group>"; };
+		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
+		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
+		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,17 +60,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B0803A6D89ED92AC0A4AB21 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */,
+				24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		10636F4B22CFA2A70034A505 = {
 			isa = PBXGroup;
 			children = (
 				10636F5622CFA2A70034A505 /* Queen */,
 				10636F5522CFA2A70034A505 /* Products */,
+				0B0803A6D89ED92AC0A4AB21 /* Pods */,
+				CE1E0D15174E500A37C029D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,15 +97,100 @@
 		10636F5622CFA2A70034A505 /* Queen */ = {
 			isa = PBXGroup;
 			children = (
+				10636F8822D0F3400034A505 /* Views */,
+				10636F7B22CFA5280034A505 /* Extensions */,
+				10636F6922CFA3380034A505 /* Documents */,
+				10636F6B22CFA3380034A505 /* Main */,
+				10636F6C22CFA3380034A505 /* Preferences */,
+				10636F6A22CFA3380034A505 /* Welcome */,
 				10636F5722CFA2A70034A505 /* AppDelegate.swift */,
-				10636F5922CFA2A70034A505 /* ViewController.swift */,
-				10636F5B22CFA2A70034A505 /* Document.swift */,
 				10636F5D22CFA2A80034A505 /* Assets.xcassets */,
 				10636F5F22CFA2A80034A505 /* Main.storyboard */,
 				10636F6222CFA2A80034A505 /* Info.plist */,
 				10636F6322CFA2A80034A505 /* Queen.entitlements */,
 			);
 			path = Queen;
+			sourceTree = "<group>";
+		};
+		10636F6922CFA3380034A505 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				10636F6D22CFA34A0034A505 /* Document.swift */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		10636F6A22CFA3380034A505 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				10636F8222D089BA0034A505 /* Views */,
+				10636F7722CFA3EB0034A505 /* WelcomeWindowController.swift */,
+				10636F7922CFA4010034A505 /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		10636F6B22CFA3380034A505 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				10636F6F22CFA38E0034A505 /* MainWindowController.swift */,
+				10636F7122CFA3AA0034A505 /* MainViewController.swift */,
+				10636F8022D087480034A505 /* LeftMenuViewController.swift */,
+				10636F8F22D37E4E0034A505 /* RightContentViewController.swift */,
+				10636F8322D089C70034A505 /* Views */,
+				10636F8B22D212620034A505 /* MainUI.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		10636F6C22CFA3380034A505 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				10636F7322CFA3C30034A505 /* PreferencesViewController.swift */,
+				10636F7522CFA3D60034A505 /* PreferencesWindowController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		10636F7B22CFA5280034A505 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				10636F7C22CFA5460034A505 /* NSColor+Exts.swift */,
+				10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */,
+				10636F8622D0A0860034A505 /* NSView+Exts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		10636F8222D089BA0034A505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10636F8422D089EE0034A505 /* WelcomeTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10636F8322D089C70034A505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10636F8822D0F3400034A505 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10636F8D22D21B040034A505 /* MouseEnterOrExitView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD88B27D84193590EF8382C9 /* Pods_Queen.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -73,9 +200,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10636F6622CFA2A80034A505 /* Build configuration list for PBXNativeTarget "Queen" */;
 			buildPhases = (
+				5B0E24E11EC52507914AD00A /* [CP] Check Pods Manifest.lock */,
 				10636F5022CFA2A70034A505 /* Sources */,
 				10636F5122CFA2A70034A505 /* Frameworks */,
 				10636F5222CFA2A70034A505 /* Resources */,
+				FD31B5E12748DBB6E198F106 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -124,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10636F8C22D212620034A505 /* MainUI.storyboard in Resources */,
 				10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */,
 				10636F6122CFA2A80034A505 /* Main.storyboard in Resources */,
 			);
@@ -131,14 +261,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5B0E24E11EC52507914AD00A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Queen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD31B5E12748DBB6E198F106 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Queen/Pods-Queen-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Queen/Pods-Queen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		10636F5022CFA2A70034A505 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10636F5A22CFA2A70034A505 /* ViewController.swift in Sources */,
+				10636F7822CFA3EB0034A505 /* WelcomeWindowController.swift in Sources */,
+				10636F7A22CFA4010034A505 /* WelcomeViewController.swift in Sources */,
+				10636F7622CFA3D60034A505 /* PreferencesWindowController.swift in Sources */,
+				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
+				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
+				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
+				10636F7422CFA3C30034A505 /* PreferencesViewController.swift in Sources */,
+				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
+				10636F8E22D21B040034A505 /* MouseEnterOrExitView.swift in Sources */,
+				10636F8122D087480034A505 /* LeftMenuViewController.swift in Sources */,
+				10636F9022D37E4E0034A505 /* RightContentViewController.swift in Sources */,
+				10636F8522D089EE0034A505 /* WelcomeTableViewCell.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,
-				10636F5C22CFA2A70034A505 /* Document.swift in Sources */,
+				10636F7022CFA38E0034A505 /* MainWindowController.swift in Sources */,
+				10636F7222CFA3AA0034A505 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +462,7 @@
 		};
 		10636F6722CFA2A80034A505 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Queen/Queen.entitlements;
@@ -291,6 +481,7 @@
 		};
 		10636F6822CFA2A80034A505 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Queen/Queen.entitlements;
