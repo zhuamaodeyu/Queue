@@ -10,9 +10,12 @@ import Cocoa
 
 class RightContentViewController: NSViewController {
 
+    override func loadView() {
+        self.view = NSView.init()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.view.backgroundColor = NSColor.randomColor 
     }
     
 }

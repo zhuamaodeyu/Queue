@@ -10,16 +10,14 @@ import Cocoa
 
 class WelcomeWindowController: NSWindowController {
 
-    override func loadWindow() {
-        super.loadWindow()
-        print("")
-    }
-
     override func windowWillLoad() {
         super.windowWillLoad()
-        print("")
     }
 
+    override func loadWindow() {
+        super.loadWindow()
+    }
+    
     override func windowDidLoad() {
         super.windowDidLoad()
 

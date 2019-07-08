@@ -16,10 +16,14 @@ class LeftMenuViewController: NSViewController {
 
     private var tableView: NSTableView!
 
+    override func loadView() {
+        self.view = NSView.init()
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.backgroundColor = NSColor.randomColor 
     }
 }
 

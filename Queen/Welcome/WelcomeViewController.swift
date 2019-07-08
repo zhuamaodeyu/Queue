@@ -255,8 +255,8 @@ extension WelcomeViewController {
     }
     @objc private func tableViewDoubleAction(sender:AnyObject) {
         let mainWindow = NSStoryboard.windowController(name: "MainWindowController", from: "MainUI", bundle: nil)
-        print("")
-        
+        mainWindow?.window?.makeKeyAndOrderFront(nil)
+        view.window?.close()
     }
 }
 

@@ -12,11 +12,35 @@ class MainWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
+
+        // 隐藏titleBar 透明
+        window?.titlebarAppearsTransparent = true
+        // 隐藏 title
+        window?.titleVisibility = .hidden
+        //
+        window?.backgroundColor = NSColor.withHex(hexString: "#313234")
+        // 隐藏
+        window?.standardWindowButton(.miniaturizeButton)?.isHidden = false
+
+        window?.standardWindowButton(.zoomButton)?.isHidden = false
+        // 背景可移动
+        window?.isMovableByWindowBackground = true
+
+        window?.isRestorable = false
+
+        configWindowFrameSize()
+
+        window?.center()
 
     }
 }
 
 extension MainWindowController {
-
+    private func configWindowFrameSize() {
+        var frame = NSScreen.main?.visibleFrame
+        frame?.size.width = 1160
+        frame?.size.height = 860
+        self.window?.setFrame(frame ?? CGRect.zero, display: true)
+    }
 }
+
