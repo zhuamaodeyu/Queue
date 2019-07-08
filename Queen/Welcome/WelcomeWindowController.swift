@@ -17,7 +17,7 @@ class WelcomeWindowController: NSWindowController {
     override func loadWindow() {
         super.loadWindow()
     }
-    
+
     override func windowDidLoad() {
         super.windowDidLoad()
 
@@ -36,9 +36,9 @@ class WelcomeWindowController: NSWindowController {
 
         window?.isRestorable = false
 
-        window?.center()
-        
         configWindowFrameSize()
+
+        window?.center()
     }
 }
 

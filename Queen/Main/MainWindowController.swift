@@ -32,6 +32,7 @@ class MainWindowController: NSWindowController {
 
         window?.center()
 
+        window?.minSize = CGSize.init(width: 1160, height: 760)
     }
 }
 
@@ -39,7 +40,7 @@ extension MainWindowController {
     private func configWindowFrameSize() {
         var frame = NSScreen.main?.visibleFrame
         frame?.size.width = 1160
-        frame?.size.height = 860
+        frame?.size.height = 760
         self.window?.setFrame(frame ?? CGRect.zero, display: true)
     }
 }

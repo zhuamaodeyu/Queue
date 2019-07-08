@@ -20,30 +20,68 @@ class LeftMenuViewController: NSViewController {
         self.view = NSView.init()
     }
 
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = NSColor.randomColor 
+
+        initSubviews()
+        initSubviewConstaints()
     }
 }
 
 extension LeftMenuViewController {
     private func initSubviews() {
+        userIconImageView = NSImageView.init()
+
+
+        userNameLabel = NSTextField.init()
+        userNameLabel.font = NSFont.systemFont(ofSize: 15.0)
+        userNameLabel.isEditable = false
+        userNameLabel.isBezeled = false
+        userNameLabel.stringValue = "Queue"
+        userNameLabel.sizeToFit()
+        userNameLabel.drawsBackground = false
+        userNameLabel.isSelectable = false
+        userNameLabel.alignment = .center
+        userNameLabel.isBordered = false
+
+        tableView = NSTableView.init()
+        tableView.backgroundColor = NSColor.clear
+        tableView.focusRingType = .none
+        tableView.autoresizesSubviews = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.headerView = nil
+        tableView.rowSizeStyle = .large
+        tableView.target = self
+        let column = NSTableColumn.init(identifier: NSUserInterfaceItemIdentifier.init(""))
+        column.width = self.tableView.frame.width
+        tableView.addTableColumn(column)
+
+
         view.addSubview(userIconImageView)
         view.addSubview(userNameLabel)
         view.addSubview(tableView)
+
+
+        userIconImageView.backgroundColor  = NSColor.randomColor
+        userNameLabel.backgroundColor = NSColor.randomColor
+
+
     }
     private func initSubviewConstaints() {
         userIconImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(view)
             make.top.equalTo(view).offset(80)
+            make.left.equalTo(view).offset(30)
+            make.right.equalTo(view).offset(-30)
+            make.height.equalTo(userIconImageView.snp.width)
         }
         userNameLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(view)
             make.top.equalTo(userIconImageView.snp.bottom).offset(20)
         }
         tableView.snp.makeConstraints { (make) in
-            make.bottom.equalTo(view).offset(-50)
+            make.bottom.equalTo(view).offset(-100)
             make.right.left.equalTo(view)
         }
     }
@@ -55,13 +93,18 @@ extension LeftMenuViewController: NSTableViewDelegate, NSTableViewDataSource {
         return 3
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-//        let cell = tableView.make(withIdentifier: "me", owner: self) as! ChatTableCellView
-//        cell.dataModel = friendsData[row]
-//        return cell
-        return NSView.init()
+        var cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell"), owner: self) as? MenuTableViewCell
+        if cell == nil {
+            cell = MenuTableViewCell(frame: NSRect.zero)
+            cell?.identifier = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
+        }
+        return cell
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 0
+        return 40
+    }
+    func tableViewSelectionDidChange(_ notification: Notification) {
+        debugPrint("select")
     }
 
 }
