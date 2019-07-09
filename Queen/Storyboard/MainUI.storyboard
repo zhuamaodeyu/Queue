@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="641" y="149"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Manager View Controller-->
         <scene sceneID="yV1-AN-i1d">
             <objects>
-                <viewController storyboardIdentifier="MainViewController" id="i8Y-Cd-AOC" customClass="MainViewController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="i8Y-Cd-AOC" customClass="ManagerViewController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="n3k-BA-eo1">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>

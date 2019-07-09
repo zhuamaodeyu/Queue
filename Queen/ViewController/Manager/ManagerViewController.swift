@@ -1,5 +1,5 @@
 //
-//  MainViewController.swift
+//  ManagerViewController.swift
 //  Queen
 //
 //  Created by 聂子 on 2019/7/5.
@@ -9,7 +9,7 @@
 import Cocoa
 import SnapKit
 
-class MainViewController: NSViewController {
+class ManagerViewController: NSViewController {
 
     private var leftViewController: LeftMenuViewController = LeftMenuViewController.init()
     private var rightViewController: RightContentViewController = RightContentViewController.init()
@@ -21,7 +21,7 @@ class MainViewController: NSViewController {
     }
 }
 
-extension MainViewController {
+extension ManagerViewController {
     private func initSubviews() {
         self.view.addSubview(leftViewController.view)
         self.view.addSubview(rightViewController.view)
