@@ -30,6 +30,7 @@
 		10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636FB822D4D08C0034A505 /* MainUI.storyboard */; };
 		10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCD22D4D42F0034A505 /* ComponentModel.swift */; };
 		10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCF22D4E1E70034A505 /* TerminalView.swift */; };
+		10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		10636FB822D4D08C0034A505 /* MainUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainUI.storyboard; sourceTree = "<group>"; };
 		10636FCD22D4D42F0034A505 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		10636FCF22D4E1E70034A505 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Exts.swift"; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 				10636F7C22CFA5460034A505 /* NSColor+Exts.swift */,
 				10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */,
 				10636F8622D0A0860034A505 /* NSView+Exts.swift */,
+				10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
 				10636FC522D4D08C0034A505 /* LeftMenuViewController.swift in Sources */,

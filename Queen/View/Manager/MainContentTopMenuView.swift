@@ -12,7 +12,7 @@ class MainContentTopMenuView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        self.backgroundColor = NSColor.randomColor
+//        self.backgroundColor = NSColor.randomColor
 
     }
     

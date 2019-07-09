@@ -43,7 +43,7 @@ class RightContentViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = NSColor.randomColor
+//        self.view.backgroundColor = NSColor.randomColor
         installSubviews()
         initSubviewConstaints()
 
@@ -57,6 +57,7 @@ extension RightContentViewController {
         view.addSubview(topView)
 
         tableView = NSTableView.init()
+        tableView.headerView?.backgroundColor = NSColor.clear
         tableView.backgroundColor = NSColor.clear
         tableView.focusRingType = .none
         tableView.autoresizesSubviews = true
@@ -212,7 +213,7 @@ extension RightContentViewController : NSSplitViewDelegate {
 //        }
 //        return 500
 //    }
-//    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-//            return splitView.frame.height - 100
-//    }
+    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+            return splitView.frame.height - 100
+    }
 }
