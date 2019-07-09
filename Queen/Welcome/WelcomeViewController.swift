@@ -32,6 +32,9 @@ class WelcomeViewController: NSViewController {
         super.viewDidLoad()
         loadData()
         reloadView()
+        self.view.wantsLayer = true
+        self.view.layer?.cornerRadius = 10
+        self.view.layer?.masksToBounds = true
         
     }
 
@@ -158,7 +161,7 @@ extension WelcomeViewController {
         iconImageView.snp.makeConstraints { (make) in
             make.centerX.equalTo(leftContentView)
             make.size.equalTo(CGSize.init(width: 80, height: 80))
-            make.bottom.equalTo(leftContentView.snp.centerY)
+            make.bottom.equalTo(leftContentView.snp.centerY).offset(-30)
         }
         titleLabel.snp.makeConstraints { (make) in
             make.centerX.equalTo(leftContentView)

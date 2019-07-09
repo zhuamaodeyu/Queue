@@ -40,12 +40,13 @@ class WelcomeWindowController: NSWindowController {
 
         window?.center()
     }
+
 }
 
 extension WelcomeWindowController {
     private func configWindowFrameSize() {
         var frame = NSScreen.main?.visibleFrame
-        frame?.size.width = 560
+        frame?.size.width = 650
         frame?.size.height = 480
         self.window?.setFrame(frame ?? CGRect.zero, display: true)
     }
