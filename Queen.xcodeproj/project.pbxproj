@@ -21,12 +21,9 @@
 		10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA622D4D08C0034A505 /* MainContentTopMenuView.swift */; };
 		10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */; };
 		10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */; };
-		10636FC022D4D08C0034A505 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FAC22D4D08C0034A505 /* MainWindowController.swift */; };
 		10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */; };
 		10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB022D4D08C0034A505 /* PreferencesViewController.swift */; };
-		10636FC322D4D08C0034A505 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB222D4D08C0034A505 /* ManagerViewController.swift */; };
-		10636FC422D4D08C0034A505 /* RightContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB322D4D08C0034A505 /* RightContentViewController.swift */; };
-		10636FC522D4D08C0034A505 /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB422D4D08C0034A505 /* LeftMenuViewController.swift */; };
+		10636FC422D4D08C0034A505 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB322D4D08C0034A505 /* ManagerViewController.swift */; };
 		10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636FB822D4D08C0034A505 /* MainUI.storyboard */; };
 		10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCD22D4D42F0034A505 /* ComponentModel.swift */; };
 		10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCF22D4E1E70034A505 /* TerminalView.swift */; };
@@ -34,6 +31,13 @@
 		10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD322D631E90034A505 /* ButtonTableViewCell.swift */; };
 		10636FD822D634BA0034A505 /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD722D634BA0034A505 /* VersionTableViewCell.swift */; };
 		10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD922D634FC0034A505 /* NameTableViewCell.swift */; };
+		10636FDC22D640800034A505 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDB22D640800034A505 /* MainWindowController.swift */; };
+		10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDD22D6413E0034A505 /* MainViewController.swift */; };
+		10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDE22D6413E0034A505 /* MenuViewController.swift */; };
+		10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE122D641E50034A505 /* CIManagerViewController.swift */; };
+		10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE322D641F30034A505 /* ConfigViewController.swift */; };
+		10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE522D6420B0034A505 /* DocumentationViewController.swift */; };
+		10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE722D6421A0034A505 /* BuildingViewController.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,12 +58,9 @@
 		10636FA622D4D08C0034A505 /* MainContentTopMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentTopMenuView.swift; sourceTree = "<group>"; };
 		10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEnterOrExitView.swift; sourceTree = "<group>"; };
-		10636FAC22D4D08C0034A505 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		10636FB022D4D08C0034A505 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		10636FB222D4D08C0034A505 /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
-		10636FB322D4D08C0034A505 /* RightContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightContentViewController.swift; sourceTree = "<group>"; };
-		10636FB422D4D08C0034A505 /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
+		10636FB322D4D08C0034A505 /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		10636FB822D4D08C0034A505 /* MainUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainUI.storyboard; sourceTree = "<group>"; };
 		10636FCD22D4D42F0034A505 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		10636FCF22D4E1E70034A505 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
@@ -67,6 +68,13 @@
 		10636FD322D631E90034A505 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
 		10636FD722D634BA0034A505 /* VersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTableViewCell.swift; sourceTree = "<group>"; };
 		10636FD922D634FC0034A505 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
+		10636FDB22D640800034A505 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		10636FDD22D6413E0034A505 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		10636FDE22D6413E0034A505 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		10636FE122D641E50034A505 /* CIManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewController.swift; sourceTree = "<group>"; };
+		10636FE322D641F30034A505 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		10636FE522D6420B0034A505 /* DocumentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
+		10636FE722D6421A0034A505 /* BuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingViewController.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,6 +169,7 @@
 		10636F9C22D4D08C0034A505 /* WindowController */ = {
 			isa = PBXGroup;
 			children = (
+				10636FDB22D640800034A505 /* MainWindowController.swift */,
 				10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */,
 				10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */,
 			);
@@ -233,8 +242,9 @@
 		10636FAA22D4D08C0034A505 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				10636FDD22D6413E0034A505 /* MainViewController.swift */,
+				10636FDE22D6413E0034A505 /* MenuViewController.swift */,
 				10636FB022D4D08C0034A505 /* PreferencesViewController.swift */,
-				10636FAC22D4D08C0034A505 /* MainWindowController.swift */,
 				10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */,
 				10636FAB22D4D08C0034A505 /* Documentation */,
 				10636FAD22D4D08C0034A505 /* Config */,
@@ -248,6 +258,7 @@
 		10636FAB22D4D08C0034A505 /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				10636FE522D6420B0034A505 /* DocumentationViewController.swift */,
 			);
 			path = Documentation;
 			sourceTree = "<group>";
@@ -255,6 +266,7 @@
 		10636FAD22D4D08C0034A505 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				10636FE322D641F30034A505 /* ConfigViewController.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -262,6 +274,7 @@
 		10636FAE22D4D08C0034A505 /* CI */ = {
 			isa = PBXGroup;
 			children = (
+				10636FE122D641E50034A505 /* CIManagerViewController.swift */,
 			);
 			path = CI;
 			sourceTree = "<group>";
@@ -269,9 +282,7 @@
 		10636FB122D4D08C0034A505 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				10636FB222D4D08C0034A505 /* ManagerViewController.swift */,
-				10636FB322D4D08C0034A505 /* RightContentViewController.swift */,
-				10636FB422D4D08C0034A505 /* LeftMenuViewController.swift */,
+				10636FB322D4D08C0034A505 /* ManagerViewController.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -279,6 +290,7 @@
 		10636FB522D4D08C0034A505 /* Building */ = {
 			isa = PBXGroup;
 			children = (
+				10636FE722D6421A0034A505 /* BuildingViewController.swift */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -483,29 +495,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */,
 				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
+				10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */,
+				10636FDC22D640800034A505 /* MainWindowController.swift in Sources */,
 				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
-				10636FC522D4D08C0034A505 /* LeftMenuViewController.swift in Sources */,
+				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
-				10636FC022D4D08C0034A505 /* MainWindowController.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
 				10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
-				10636FC422D4D08C0034A505 /* RightContentViewController.swift in Sources */,
+				10636FC422D4D08C0034A505 /* ManagerViewController.swift in Sources */,
+				10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */,
 				10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */,
 				10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */,
 				10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */,
-				10636FC322D4D08C0034A505 /* ManagerViewController.swift in Sources */,
 				10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */,
 				10636FD822D634BA0034A505 /* VersionTableViewCell.swift in Sources */,
 				10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */,
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
+				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
 				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,
+				10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -643,7 +659,7 @@
 			baseConfigurationReference = BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Queen/Queen.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Queen/Other/Queen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Queen/Info.plist;
@@ -662,7 +678,7 @@
 			baseConfigurationReference = 24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Queen/Queen.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Queen/Other/Queen.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Queen/Info.plist;

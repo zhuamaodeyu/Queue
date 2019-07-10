@@ -16,7 +16,6 @@ class MenuTableViewCell: NSTableCellView {
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
-        self.backgroundColor = NSColor.randomColor
         installSubviews()
     }
 
@@ -27,6 +26,15 @@ class MenuTableViewCell: NSTableCellView {
         super.draw(dirtyRect)
 
         // Drawing code here.
+    }
+
+    override var objectValue: Any? {
+        didSet {
+            if let model =  objectValue as? MenuModel {
+                    self.iconImageView.image = NSImage.init(named: model.icon)
+                    self.titleLabel.stringValue = model.name
+            }
+        }
     }
     
 }
@@ -59,7 +67,5 @@ extension MenuTableViewCell {
         }
 
         iconImageView.backgroundColor = NSColor.randomColor
-        titleLabel.backgroundColor = NSColor.randomColor
-
     }
 }

@@ -9,12 +9,24 @@
 import Cocoa
 import SnapKit
 
-class LeftMenuViewController: NSViewController {
+protocol MenuViewControllerDelegate:class {
+    func leftMenuViewController(viewController: MenuViewController, tableView:NSTableView, didSelect row:Int)
+}
 
+struct MenuModel {
+    var name: String
+    var icon: String
+}
+
+
+class MenuViewController: NSViewController {
+
+    public weak var delegate:MenuViewControllerDelegate?
     private var userNameLabel: NSTextField!
     private var userIconImageView: NSImageView!
-
     private var tableView: NSTableView!
+
+    private var dataSource:[MenuModel] = []
 
     override func loadView() {
         self.view = NSView.init()
@@ -22,13 +34,17 @@ class LeftMenuViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dataSource.append(MenuModel.init(name: "组件管理", icon: ""))
+        dataSource.append(MenuModel.init(name: "网络配置", icon: ""))
+        dataSource.append(MenuModel.init(name: "CI管理", icon: ""))
+        dataSource.append(MenuModel.init(name: "文档", icon: ""))
         initSubviews()
         initSubviewConstaints()
+        tableView.selectRowIndexes(IndexSet.init(arrayLiteral: 0), byExtendingSelection: true)
     }
 }
 
-extension LeftMenuViewController {
+extension MenuViewController {
     private func initSubviews() {
         userIconImageView = NSImageView.init()
 
@@ -88,9 +104,9 @@ extension LeftMenuViewController {
 }
 
 
-extension LeftMenuViewController: NSTableViewDelegate, NSTableViewDataSource {
+extension MenuViewController: NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return 3
+        return dataSource.count
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         var cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell"), owner: self) as? MenuTableViewCell
@@ -98,13 +114,13 @@ extension LeftMenuViewController: NSTableViewDelegate, NSTableViewDataSource {
             cell = MenuTableViewCell(frame: NSRect.zero)
             cell?.identifier = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
         }
+        cell?.objectValue = dataSource[row]
         return cell
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 40
     }
     func tableViewSelectionDidChange(_ notification: Notification) {
-        debugPrint("select")
+        self.delegate?.leftMenuViewController(viewController: self, tableView: tableView, didSelect: tableView.selectedRow)
     }
-
 }
