@@ -43,12 +43,10 @@ class RightContentViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.view.backgroundColor = NSColor.randomColor
+        testData()
         installSubviews()
         initSubviewConstaints()
-
     }
-    
 }
 
 extension RightContentViewController {
@@ -83,6 +81,7 @@ extension RightContentViewController {
         splitView.isVertical = false
         splitView.dividerStyle = .paneSplitter
         splitView.autoresizesSubviews = true
+        splitView.backgroundColor = NSColor.clear
         splitView.delegate = self
         splitView.adjustSubviews()
         view.addSubview(splitView)
@@ -201,7 +200,78 @@ extension RightContentViewController: NSTableViewDataSource, NSTableViewDelegate
         return nil
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        return nil
+        let _ = dataSource[row]
+        var cell:NSView? = nil
+        switch tableColumn?.identifier {
+        case TableViewIdentifier.name:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self)
+            if cell == nil {
+                cell = NameTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.name
+            }
+            // set data
+
+            break
+        case TableViewIdentifier.version:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.version, owner: self)
+            if cell == nil {
+                cell = VersionTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.version
+            }
+            // set data
+            break
+        case TableViewIdentifier.hasBinrary:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.hasBinrary, owner: self)
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.hasBinrary
+            }
+            // set data
+            break
+        case TableViewIdentifier.from:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.from, owner: self)
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.from
+            }
+            // set data
+            break
+        case TableViewIdentifier.manager:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self)
+            if cell == nil {
+                cell = NameTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.name
+            }
+            // set data
+            break
+        case TableViewIdentifier.test:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.test, owner: self)
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.test
+            }
+            // set data
+            break
+        case TableViewIdentifier.collection:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.collection, owner: self)
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.collection
+            }
+            // set data
+            break
+        case TableViewIdentifier.building:
+            cell = tableView.makeView(withIdentifier: TableViewIdentifier.building, owner: self)
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.building
+            }
+            // set data
+            break
+        default:
+            break
+        }
+        return cell
     }
 }
 
@@ -215,5 +285,20 @@ extension RightContentViewController : NSSplitViewDelegate {
 //    }
     func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
             return splitView.frame.height - 100
+    }
+}
+
+
+
+extension RightContentViewController {
+    private func testData() {
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
+        dataSource.append(ComponentModel.init())
     }
 }
