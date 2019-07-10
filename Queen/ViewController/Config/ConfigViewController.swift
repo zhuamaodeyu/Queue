@@ -11,7 +11,6 @@ import Cocoa
 class ConfigViewController: NSViewController {
 
     override func loadView() {
-        super.loadView()
         self.view = NSView.init()
     }
     override func viewDidLoad() {
