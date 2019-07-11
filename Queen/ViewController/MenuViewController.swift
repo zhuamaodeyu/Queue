@@ -40,6 +40,9 @@ class MenuViewController: NSViewController {
         dataSource.append(MenuModel.init(name: "文档", icon: ""))
         initSubviews()
         initSubviewConstaints()
+    }
+    override func viewDidAppear() {
+        super.viewDidAppear()
         tableView.selectRowIndexes(IndexSet.init(arrayLiteral: 0), byExtendingSelection: true)
     }
 }

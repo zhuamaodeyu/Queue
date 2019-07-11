@@ -22,6 +22,14 @@ extension NSView {
             self.layer?.backgroundColor = newValue?.cgColor
         }
     }
+
+
+    public func removeAllSubviews() {
+        self.subviews.forEach { (v) in
+            v.removeFromSuperview()
+        }
+    }
+
 }
 
 extension NSView {

@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 private struct TableViewIdentifier {
     //名字
     static var name = NSUserInterfaceItemIdentifier.init("name")
@@ -25,6 +26,7 @@ private struct TableViewIdentifier {
     static var collection = NSUserInterfaceItemIdentifier.init("collection")
     // 构建
     static var building = NSUserInterfaceItemIdentifier.init("building")
+
 }
 
 class ManagerViewController: NSViewController {
@@ -33,7 +35,7 @@ class ManagerViewController: NSViewController {
     private var tableView: NSTableView!
     private var scrollView: NSScrollView!
     private var splitView: NSSplitView!
-    private var terminalView: TerminalView!
+    private var terminalView: SyntaxTextView!
 
 
     private var dataSource: [ComponentModel] = []
@@ -43,9 +45,9 @@ class ManagerViewController: NSViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        testData()
         installSubviews()
         initSubviewConstaints()
+        testData()
     }
 }
 
@@ -86,8 +88,12 @@ extension ManagerViewController {
         splitView.adjustSubviews()
         view.addSubview(splitView)
 
-        terminalView = TerminalView.init()
-        terminalView.autoresizesSubviews = true
+        terminalView = SyntaxTextView.init()
+        terminalView.delegate = self
+        terminalView.contentTextView.isEditable = false
+        terminalView.backgroundColor = NSColor.clear
+        terminalView.scrollView.hasVerticalScroller = false
+        terminalView.scrollView.hasHorizontalScroller = false
         splitView.addSubview(scrollView)
         splitView.addSubview(terminalView)
     }
@@ -288,6 +294,28 @@ extension ManagerViewController : NSSplitViewDelegate {
     }
 }
 
+extension ManagerViewController: SyntaxTextViewDelegate {
+
+    func didChangeText(_ syntaxTextView: SyntaxTextView) {
+
+    }
+
+    func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
+
+    }
+
+    func lexerForSource(_ source: String) -> Lexer {
+        return MyLexer.init()
+    }
+}
+
+class MyLexer: Lexer {
+    func getSavannaTokens(input: String) -> [Token] {
+        return []
+    }
+}
+
+
 
 
 extension ManagerViewController {
@@ -300,5 +328,12 @@ extension ManagerViewController {
         dataSource.append(ComponentModel.init())
         dataSource.append(ComponentModel.init())
         dataSource.append(ComponentModel.init())
+
+        self.tableView.reloadData()
+
+        terminalView.text = """
+        This is an example of SavannaKit.
+        This example highlights words that are longer than 6 characters in red.
+        """
     }
 }

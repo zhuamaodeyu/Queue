@@ -13,80 +13,79 @@ class MainViewController: NSViewController {
 
     private var menuViewController: MenuViewController = MenuViewController.init()
 
-//    private var ciManagerViewController = CIManagerViewController.init()
-//    private var documentViewController = DocumentationViewController.init()
-//    private var configViewController = ConfigViewController.init()
-//    private var buildingViewController = BuildingViewController.init()
 
-    private var menuView: NSView?
-    private var contentView: NSView?
+    private var menuView: NSView!
+    private var contentView: ContainerView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        menuViewController.delegate = self
         initSubviews()
         initSubviewConstaints()
+    }
+
+    override func updateViewConstraints() {
+
+        super.updateViewConstraints()
     }
 }
 
 extension MainViewController {
     private func initSubviews() {
-        menuViewController.delegate = self
         menuView = menuViewController.view
-        contentView = ManagerViewController.init().view
-        self.view.addSubview(menuView!)
-        self.view.addSubview(contentView!)
-//        self.addChild(leftViewController)
-//        self.addChild(rightViewController)
+
+        contentView = ContainerView.init()
+
+        self.view.addSubview(menuView)
+        self.view.addSubview(contentView)
     }
     private func initSubviewConstaints() {
-        menuView?.snp.makeConstraints({ (make) in
+        menuView.snp.makeConstraints({ (make) in
             make.top.left.bottom.equalTo(view)
             make.width.equalTo(200)
         })
-        contentView?.snp.makeConstraints({ (make) in
+        contentView.snp.makeConstraints({ (make) in
             make.right.top.bottom.equalTo(view)
-            make.left.equalTo(menuView?.snp.right ?? self.view)
+            make.left.equalTo(menuView.snp.right)
         })
     }
 }
 
 extension MainViewController: MenuViewControllerDelegate {
     func leftMenuViewController(viewController: MenuViewController, tableView: NSTableView, didSelect row: Int) {
+        clearViewController()
+        contentView.removeAllSubviews()
         switch row {
         case 0:
             let  managerViewController = ManagerViewController.init()
-            self.contentView = managerViewController.view
-            clearViewController()
+            self.contentView.addSubview(managerViewController.view)
             self.addChild(managerViewController)
             break
         case 1:
             let configViewController = ConfigViewController.init()
-            self.contentView = configViewController.view
-            clearViewController()
+            self.contentView.addSubview(configViewController.view)
             self.addChild(configViewController)
             break
         case 2:
-            let  ciManagerViewController = CIManagerViewController.init()
-            self.contentView = ciManagerViewController.view
-            clearViewController()
+            let ciManagerViewController = CIManagerViewController.init()
+            self.contentView.addSubview(ciManagerViewController.view)
             self.addChild(ciManagerViewController)
             break
         case 3:
             let  documentViewController = DocumentationViewController.init()
-            self.contentView = documentViewController.view
-            clearViewController()
+            self.contentView.addSubview(documentViewController.view)
             self.addChild(documentViewController)
             break
         case 4:
             let  buildingViewController = BuildingViewController.init()
-            self.contentView = buildingViewController.view
-            clearViewController()
+            self.contentView.addSubview(buildingViewController.view)
             self.addChild(buildingViewController)
             break
 
         default:
             break
         }
+        self.view.displayIfNeeded()
     }
 }
 

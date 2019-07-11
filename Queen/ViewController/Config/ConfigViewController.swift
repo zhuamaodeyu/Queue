@@ -16,6 +16,7 @@ class ConfigViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+        self.view.backgroundColor = NSColor.yellow
     }
     
 }
