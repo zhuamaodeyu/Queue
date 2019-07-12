@@ -26,6 +26,40 @@
             </objects>
             <point key="canvasLocation" x="641" y="149"/>
         </scene>
+        <!--Window Controller-->
+        <scene sceneID="oUQ-2s-25q">
+            <objects>
+                <windowController storyboardIdentifier="VersionEditWindowController" id="wFP-eQ-hhQ" customClass="VersionEditWindowController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
+                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="6Vr-gG-pps">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+                        <rect key="contentRect" x="163" y="199" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+                        <connections>
+                            <outlet property="delegate" destination="wFP-eQ-hhQ" id="0hI-Sg-VYc"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="D3Y-nG-G8r" kind="relationship" relationship="window.shadowedContentViewController" id="9nA-AC-aQl"/>
+                    </connections>
+                </windowController>
+                <customObject id="nTn-Fp-yRE" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="738" y="522"/>
+        </scene>
+        <!--Version Edit View Controller-->
+        <scene sceneID="cBQ-CR-Web">
+            <objects>
+                <viewController storyboardIdentifier="VersionEditViewController" id="D3Y-nG-G8r" customClass="VersionEditViewController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="FTv-n4-Ejp">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="l6H-Hz-rVN" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1445" y="497"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="yV1-AN-i1d">
             <objects>
