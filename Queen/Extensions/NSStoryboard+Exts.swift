@@ -19,11 +19,11 @@ extension NSStoryboard {
         return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateInitialController() as? NSWindowController
     }
 
-    public static func viewController(name: String, from storyboard: String, bundle: Bundle? = nil) -> NSViewController? {
-        return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateController(withIdentifier: name) as? NSViewController
+    public static func viewController(name: String, storyboard from: String, bundle: Bundle? = nil) -> NSViewController? {
+        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: name) as? NSViewController
     }
 
-    public static func windowController(name: String,from storyboard: String, bundle: Bundle? = nil) -> NSWindowController? {
-        return NSStoryboard.init(name: storyboard, bundle: bundle).instantiateController(withIdentifier: name) as? NSWindowController
+    public static func windowController(name: String, storyboard from: String, bundle: Bundle? = nil) -> NSWindowController? {
+        return NSStoryboard.init(name: from, bundle: bundle).instantiateController(withIdentifier: name) as? NSWindowController
     }
 }

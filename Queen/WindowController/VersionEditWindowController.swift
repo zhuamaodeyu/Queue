@@ -12,8 +12,11 @@ class VersionEditWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        // 无边界
+//        window?.styleMask = .borderless
+//        window?.titlebarAppearsTransparent = true
+
+
     }
 }
 
@@ -21,3 +24,24 @@ class VersionEditWindowController: NSWindowController {
 extension VersionEditWindowController {
 
 }
+//(2)子类化NSWindow的view,重载drawRect，其中的圆角半径和背景颜色 自己可以调整
+//
+//- (void)drawRect:(NSRect)dirtyRect {
+//
+//    [NSGraphicsContext saveGraphicsState];
+//
+//    NSRect rect = [self bounds];
+//
+//    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:rect xRadius:5 yRadius:5];
+//
+//    [path addClip];
+//
+//    [[NSColor controlColor] set];
+//
+//    NSRectFill(dirtyRect);
+//
+//    [NSGraphicsContext restoreGraphicsState];
+//
+//    [super drawRect:dirtyRect];
+//
+//}

@@ -337,3 +337,19 @@ extension ManagerViewController {
         """
     }
 }
+
+extension ManagerViewController {
+    // module version window
+    private func popVersionWindow() {
+        // 1. modal window
+        guard let windowController = NSStoryboard.windowController(name: "VersionWindowController", storyboard: "MainUI") as? VersionEditWindowController else {
+            return
+        }
+        NSApplication.shared.runModal(for: windowController.window!)
+//        NSApplication.shared.stopModal()
+
+        // 2, modal session
+        let _ = NSApplication.shared.beginModalSession(for: windowController.window!)
+//        NSApplication.shared.endModalSession(sessionCode)
+    }
+}
