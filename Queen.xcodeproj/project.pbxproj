@@ -29,7 +29,6 @@
 		10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCF22D4E1E70034A505 /* TerminalView.swift */; };
 		10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */; };
 		10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD322D631E90034A505 /* ButtonTableViewCell.swift */; };
-		10636FD822D634BA0034A505 /* VersionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD722D634BA0034A505 /* VersionTableViewCell.swift */; };
 		10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD922D634FC0034A505 /* NameTableViewCell.swift */; };
 		10636FDC22D640800034A505 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDB22D640800034A505 /* MainWindowController.swift */; };
 		10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDD22D6413E0034A505 /* MainViewController.swift */; };
@@ -65,6 +64,9 @@
 		1063703D22D794220034A505 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1063703C22D794220034A505 /* NetworkExtension.framework */; };
 		1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */; };
 		1063704122D8D3F00034A505 /* VersionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704022D8D3F00034A505 /* VersionEditViewController.swift */; };
+		1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */; };
+		1063704522DA103F0034A505 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704422DA103F0034A505 /* KeyWindow.swift */; };
+		1063704722DA13B90034A505 /* VerticallyCenteredTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704622DA13B90034A505 /* VerticallyCenteredTextFieldCell.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,7 +95,6 @@
 		10636FCF22D4E1E70034A505 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 		10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Exts.swift"; sourceTree = "<group>"; };
 		10636FD322D631E90034A505 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
-		10636FD722D634BA0034A505 /* VersionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionTableViewCell.swift; sourceTree = "<group>"; };
 		10636FD922D634FC0034A505 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
 		10636FDB22D640800034A505 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
 		10636FDD22D6413E0034A505 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +130,9 @@
 		1063703C22D794220034A505 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionEditWindowController.swift; sourceTree = "<group>"; };
 		1063704022D8D3F00034A505 /* VersionEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionEditViewController.swift; sourceTree = "<group>"; };
+		1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
+		1063704422DA103F0034A505 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
+		1063704622DA13B90034A505 /* VerticallyCenteredTextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticallyCenteredTextFieldCell.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +207,7 @@
 		10636F7B22CFA5280034A505 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */,
 				10636F7C22CFA5460034A505 /* NSColor+Exts.swift */,
 				10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */,
 				10636F8622D0A0860034A505 /* NSView+Exts.swift */,
@@ -244,6 +249,7 @@
 				10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */,
 				10636FA922D4D08C0034A505 /* Building */,
 				10636FE922D7788F0034A505 /* ContainerView.swift */,
+				1063704622DA13B90034A505 /* VerticallyCenteredTextFieldCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,7 +290,6 @@
 				10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */,
 				10636FCF22D4E1E70034A505 /* TerminalView.swift */,
 				10636FD322D631E90034A505 /* ButtonTableViewCell.swift */,
-				10636FD722D634BA0034A505 /* VersionTableViewCell.swift */,
 				10636FD922D634FC0034A505 /* NameTableViewCell.swift */,
 			);
 			path = Manager;
@@ -378,6 +383,7 @@
 		10636FB922D4D08C0034A505 /* Window */ = {
 			isa = PBXGroup;
 			children = (
+				1063704422DA103F0034A505 /* KeyWindow.swift */,
 			);
 			path = Window;
 			sourceTree = "<group>";
@@ -650,8 +656,11 @@
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
+				1063704522DA103F0034A505 /* KeyWindow.swift in Sources */,
 				10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */,
 				1063702E22D78E090034A505 /* Paragraph.swift in Sources */,
+				1063704722DA13B90034A505 /* VerticallyCenteredTextFieldCell.swift in Sources */,
+				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
@@ -667,7 +676,6 @@
 				1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */,
 				10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */,
 				1063702B22D78E090034A505 /* SwiftLexer.swift in Sources */,
-				10636FD822D634BA0034A505 /* VersionTableViewCell.swift in Sources */,
 				10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */,
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,

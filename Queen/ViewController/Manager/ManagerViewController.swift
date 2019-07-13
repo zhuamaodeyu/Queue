@@ -161,9 +161,9 @@ extension ManagerViewController {
 
         let testColumn = NSTableColumn.init(identifier: TableViewIdentifier.test)
         testColumn.headerCell.alignment = .center
-        testColumn.title = "是否支持单侧"
+        testColumn.title = "支持单侧"
         testColumn.width = 100
-        testColumn.minWidth = 80
+        testColumn.minWidth = 100
         testColumn.isEditable = false
         testColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(testColumn)
@@ -217,17 +217,29 @@ extension ManagerViewController: NSTableViewDataSource, NSTableViewDelegate {
                 cell?.identifier = TableViewIdentifier.version
             }
             // set data
-            cell?.config(image: nil, title: model.version, type: TableViewIdentifier.version, complation: { (button) in
+            cell?.config(image: nil, title: model.version, type: TableViewIdentifier.version, complation: { [weak self](button) in
+                guard let windowController = NSStoryboard.windowController(name: "VersionEditWindowController", storyboard: "MainUI") as? VersionEditWindowController else {
+                    return
+                }
 
+                (windowController.contentViewController as? VersionEditViewController)?.config(model: VersionEditModel.init(segmentControlIndex: 0, type: .tag, address: "http://xxxxnkdsnakg.get", version: "0.1.0"), complation: { (model) in
+
+                })
+                self?.view.window?.beginSheet(windowController.window!, completionHandler: { (modeResponse) in
+
+                })
             })
             return cell
         case TableViewIdentifier.hasBinrary:
-            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.hasBinrary, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.hasBinrary, owner: self) as? ButtonTableViewCell
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.hasBinrary
             }
             // set data
+            cell?.config(image: nil, title: "二进制", type: TableViewIdentifier.hasBinrary, complation: { (button ) in
+
+            })
             return cell
         case TableViewIdentifier.from:
             var cell = tableView.makeView(withIdentifier: TableViewIdentifier.from, owner: self) as? ButtonTableViewCell
@@ -252,13 +264,15 @@ extension ManagerViewController: NSTableViewDataSource, NSTableViewDelegate {
             })
             return cell
         case TableViewIdentifier.test:
-            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.test, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.test, owner: self) as? ButtonTableViewCell
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.test
             }
             // set data
-
+            cell?.config(image: nil, title: "是否支持单侧", type: TableViewIdentifier.test, complation: { (button) in
+                
+            })
             return cell
         case TableViewIdentifier.collection:
             var cell = tableView.makeView(withIdentifier: TableViewIdentifier.collection, owner: self) as? ButtonTableViewCell

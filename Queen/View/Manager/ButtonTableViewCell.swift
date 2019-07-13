@@ -30,26 +30,51 @@ class ButtonTableViewCell: NSTableCellView {
 extension ButtonTableViewCell {
     func config(image:NSImage?, title: String?,type: NSUserInterfaceItemIdentifier,complation:((_ button: NSButton) -> Void)?) {
         self.block = complation
-        button.image =  image
-        if let t = title {
-            button.stringValue = t
+        if let im = image {
+            button.image = im
         }
+        if let t = title {
+            button.title = t
+        }
+
+        button.alignment = .center
+        button.isBordered = false
+
         switch type {
         case TableViewIdentifier.version:
             button.setButtonType(.momentaryLight)
-            button.bezelStyle = .circular
-            button.alignment = .center
-//            button.cell?.font = NSFont.init(name: "<#T##String#>", size: 0)
+            button.bezelStyle = .texturedRounded
+            button.isBordered = true
             break
+        case TableViewIdentifier.hasBinrary:
+            button.setButtonType(.switch)
+            button.bezelStyle = .recessed
+            button.isEnabled = false 
+
         case TableViewIdentifier.from:
-            button.isBordered = false
+            button.bezelStyle = .circular
+            button.setButtonType(.accelerator)
 
         case TableViewIdentifier.manager:
-            button.isBordered = false
+            button.bezelStyle = .circular
+            button.setButtonType(.accelerator)
 
+        case TableViewIdentifier.test:
+            button.setButtonType(.switch)
+            button.bezelStyle = .recessed
+
+        case TableViewIdentifier.collection:
+            button.setButtonType(.accelerator)
+            button.bezelStyle = .circular
+
+        case TableViewIdentifier.building:
+            button.setButtonType(.momentaryPushIn)
+            button.bezelStyle = .texturedRounded
+            button.isBordered = true
         default:
             break
         }
+        self.animationUpdate()
     }
 }
 
@@ -59,16 +84,16 @@ extension ButtonTableViewCell {
     private func installSubviews() {
         button = NSButton.init()
         button.target = self
-//        button.image = NSImage.init(named: "close_icon")
         button.action = #selector(buttonAction(sender:))
         button.isBordered = false
         button.bezelStyle = .regularSquare
         button.focusRingType = .none
 
-
         self.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.center.equalTo(self)
+            make.left.equalTo(self).offset(10)
+            make.right.equalTo(self).offset(-10)
         }
     }
 }
