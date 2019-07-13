@@ -10,5 +10,12 @@ import Foundation
 
 
 struct ComponentModel {
-    
+    var name: String
+    var version: String
+    var binaray: Bool
+    var from: String
+    var manager: String
+    var test: Bool
+    var collection: Bool
+    var building: Bool
 }

@@ -30,6 +30,11 @@ extension NSView {
         }
     }
 
+    public func animationUpdate() {
+        self.updateConstraintsForSubtreeIfNeeded()
+        self.updateConstraints()
+        self.layoutSubtreeIfNeeded()
+    }
 }
 
 extension NSView {

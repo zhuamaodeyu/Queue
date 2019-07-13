@@ -11,11 +11,10 @@ import Cocoa
 class ButtonTableViewCell: NSTableCellView {
 
     private var button: NSButton!
-
+    private var block:((_ button: NSButton) -> Void)?
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         installSubviews()
-        self.backgroundColor = NSColor.yellow
     }
 
     required init?(coder decoder: NSCoder) {
@@ -24,17 +23,49 @@ class ButtonTableViewCell: NSTableCellView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
         // Drawing code here.
     }
-    
 }
 
+extension ButtonTableViewCell {
+    func config(image:NSImage?, title: String?,type: NSUserInterfaceItemIdentifier,complation:((_ button: NSButton) -> Void)?) {
+        self.block = complation
+        button.image =  image
+        if let t = title {
+            button.stringValue = t
+        }
+        switch type {
+        case TableViewIdentifier.version:
+            button.setButtonType(.momentaryLight)
+            button.bezelStyle = .circular
+            button.alignment = .center
+//            button.cell?.font = NSFont.init(name: "<#T##String#>", size: 0)
+            break
+        case TableViewIdentifier.from:
+            button.isBordered = false
 
+        case TableViewIdentifier.manager:
+            button.isBordered = false
+
+        default:
+            break
+        }
+    }
+}
+
+//button.imagePosition = .imageOnly
+//button.setButtonType(.pushOnPushOff)
 extension ButtonTableViewCell {
     private func installSubviews() {
         button = NSButton.init()
-        button.sizeToFit()
+        button.target = self
+//        button.image = NSImage.init(named: "close_icon")
+        button.action = #selector(buttonAction(sender:))
+        button.isBordered = false
+        button.bezelStyle = .regularSquare
+        button.focusRingType = .none
+
+
         self.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.center.equalTo(self)
@@ -43,7 +74,7 @@ extension ButtonTableViewCell {
 }
 
 extension ButtonTableViewCell {
-    @objc private func buttonAction() {
-        debugPrint("Action")
+    @objc private func buttonAction(sender: NSButton) {
+        self.block?(sender)
     }
 }

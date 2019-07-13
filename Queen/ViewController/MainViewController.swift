@@ -42,7 +42,7 @@ extension MainViewController {
     private func initSubviewConstaints() {
         menuView.snp.makeConstraints({ (make) in
             make.top.left.bottom.equalTo(view)
-            make.width.equalTo(200)
+            make.width.equalTo(180)
         })
         contentView.snp.makeConstraints({ (make) in
             make.right.top.bottom.equalTo(view)

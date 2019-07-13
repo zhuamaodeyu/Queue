@@ -9,7 +9,7 @@
 import Cocoa
 
 
-private struct TableViewIdentifier {
+struct TableViewIdentifier {
     //名字
     static var name = NSUserInterfaceItemIdentifier.init("name")
     // 版本
@@ -64,14 +64,15 @@ extension ManagerViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowSizeStyle = .large
+        tableView.selectionHighlightStyle = .none
         tableView.gridStyleMask = [.solidHorizontalGridLineMask, .solidVerticalGridLineMask]
-        tableView.columnAutoresizingStyle = .uniformColumnAutoresizingStyle
+        tableView.columnAutoresizingStyle = .sequentialColumnAutoresizingStyle
         tableView.sizeLastColumnToFit()
         configTableView()
 
 
         scrollView = NSScrollView.init()
-        scrollView.backgroundColor = NSColor.randomColor
+        scrollView.backgroundColor = NSColor.clear
         scrollView.documentView = tableView
         scrollView.drawsBackground = false
         scrollView.hasVerticalScroller = false
@@ -117,28 +118,26 @@ extension ManagerViewController {
         let nameColumn = NSTableColumn.init(identifier: TableViewIdentifier.name)
         nameColumn.headerCell.alignment = .center
         nameColumn.title = "组件名称"
-        nameColumn.width = 100
-        nameColumn.minWidth = 80
+        nameColumn.width = 200
+        nameColumn.minWidth = 150
         nameColumn.isEditable = false
-        nameColumn.sizeToFit()
-
         nameColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(nameColumn)
 
         let versionColumn = NSTableColumn.init(identifier: TableViewIdentifier.version)
         versionColumn.headerCell.alignment = .center
         versionColumn.title = "当前版本"
-        versionColumn.width = 100
-        versionColumn.minWidth = 80
+        versionColumn.width = 280
+        versionColumn.minWidth = 250
+        versionColumn.maxWidth = 280
         versionColumn.isEditable = false
         versionColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(versionColumn)
 
-        let binraryColumn = NSTableColumn.init(identifier: TableViewIdentifier.name)
+        let binraryColumn = NSTableColumn.init(identifier: TableViewIdentifier.hasBinrary)
         binraryColumn.headerCell.alignment = .center
         binraryColumn.title = "是否支持二进制"
         binraryColumn.width = 100
-        binraryColumn.minWidth = 80
         binraryColumn.isEditable = false
         binraryColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(binraryColumn)
@@ -147,8 +146,6 @@ extension ManagerViewController {
         fromColumn.headerCell.alignment = .center
         fromColumn.title = "所属业务线"
         fromColumn.width = 100
-
-        fromColumn.minWidth = 80
         fromColumn.isEditable = false
         fromColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(fromColumn)
@@ -157,7 +154,6 @@ extension ManagerViewController {
         managerColumn.headerCell.alignment = .center
         managerColumn.title = "负责人"
         managerColumn.width = 100
-
         managerColumn.minWidth = 80
         managerColumn.isEditable = false
         managerColumn.resizingMask = .autoresizingMask
@@ -167,7 +163,6 @@ extension ManagerViewController {
         testColumn.headerCell.alignment = .center
         testColumn.title = "是否支持单侧"
         testColumn.width = 100
-
         testColumn.minWidth = 80
         testColumn.isEditable = false
         testColumn.resizingMask = .autoresizingMask
@@ -177,7 +172,6 @@ extension ManagerViewController {
         collectionColumn.headerCell.alignment = .center
         collectionColumn.title = "收藏"
         collectionColumn.width = 100
-
         collectionColumn.minWidth = 80
         collectionColumn.isEditable = false
         collectionColumn.resizingMask = .autoresizingMask
@@ -187,7 +181,6 @@ extension ManagerViewController {
         buildingColumn.headerCell.alignment = .center
         buildingColumn.title = "构建"
         buildingColumn.width = 100
-
         buildingColumn.minWidth = 80
         buildingColumn.isEditable = false
         buildingColumn.resizingMask = .autoresizingMask
@@ -206,78 +199,93 @@ extension ManagerViewController: NSTableViewDataSource, NSTableViewDelegate {
         return nil
     }
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let _ = dataSource[row]
-        var cell:NSView? = nil
+        let model = dataSource[row]
         switch tableColumn?.identifier {
         case TableViewIdentifier.name:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self)
+           var cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self) as? NameTableViewCell
             if cell == nil {
                 cell = NameTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.name
             }
             // set data
-
-            break
+           cell?.config(name: model.name, document: true)
+           return cell
         case TableViewIdentifier.version:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.version, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.version, owner: self) as? ButtonTableViewCell
             if cell == nil {
-                cell = VersionTableViewCell.init()
+                cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.version
             }
             // set data
-            break
+            cell?.config(image: nil, title: model.version, type: TableViewIdentifier.version, complation: { (button) in
+
+            })
+            return cell
         case TableViewIdentifier.hasBinrary:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.hasBinrary, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.hasBinrary, owner: self)
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.hasBinrary
             }
             // set data
-            break
+            return cell
         case TableViewIdentifier.from:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.from, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.from, owner: self) as? ButtonTableViewCell
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.from
             }
             // set data
-            break
+            cell?.config(image: nil, title: "", type: TableViewIdentifier.from, complation: { (button) in
+
+            })
+            return cell
         case TableViewIdentifier.manager:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.name, owner: self) as? ButtonTableViewCell
             if cell == nil {
-                cell = NameTableViewCell.init()
+                cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.name
             }
             // set data
-            break
+            cell?.config(image: nil, title: model.manager, type: TableViewIdentifier.manager, complation: { (button) in
+                
+            })
+            return cell
         case TableViewIdentifier.test:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.test, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.test, owner: self)
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.test
             }
             // set data
-            break
+
+            return cell
         case TableViewIdentifier.collection:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.collection, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.collection, owner: self) as? ButtonTableViewCell
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.collection
             }
             // set data
-            break
+            cell?.config(image: nil, title: nil , type: TableViewIdentifier.collection, complation: { (button) in
+
+            })
+            return cell
         case TableViewIdentifier.building:
-            cell = tableView.makeView(withIdentifier: TableViewIdentifier.building, owner: self)
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.building, owner: self) as? ButtonTableViewCell
             if cell == nil {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.building
             }
             // set data
-            break
+            cell?.config(image: nil, title: "Build", type: TableViewIdentifier.building, complation: { (button) in
+                
+            })
+            return cell
         default:
             break
         }
-        return cell
+        return nil
     }
 }
 
@@ -320,14 +328,15 @@ class MyLexer: Lexer {
 
 extension ManagerViewController {
     private func testData() {
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
-        dataSource.append(ComponentModel.init())
+        let component1 = ComponentModel.init(name: "授信",
+                                             version: "0.1.1",
+                                             binaray: false,
+                                             from: "项目2线",
+                                             manager: "张三",
+                                             test: false,
+                                             collection: false,
+                                             building: false)
+        dataSource.append(component1)
 
         self.tableView.reloadData()
 
@@ -351,5 +360,6 @@ extension ManagerViewController {
         // 2, modal session
         let _ = NSApplication.shared.beginModalSession(for: windowController.window!)
 //        NSApplication.shared.endModalSession(sessionCode)
+
     }
 }
