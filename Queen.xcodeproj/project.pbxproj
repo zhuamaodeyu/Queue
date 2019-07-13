@@ -70,6 +70,7 @@
 		1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */; };
 		1063705022DA412F0034A505 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704F22DA412F0034A505 /* Command.swift */; };
 		1063705222DA442A0034A505 /* Process+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705122DA442A0034A505 /* Process+Exts.swift */; };
+		1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705322DA462E0034A505 /* WelcomeViewActionView.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -139,6 +140,7 @@
 		1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserNotification+Exts.swift"; sourceTree = "<group>"; };
 		1063704F22DA412F0034A505 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		1063705122DA442A0034A505 /* Process+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+Exts.swift"; sourceTree = "<group>"; };
+		1063705322DA462E0034A505 /* WelcomeViewActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewActionView.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */,
+				1063705322DA462E0034A505 /* WelcomeViewActionView.swift */,
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				1063702622D78E090034A505 /* String+Range.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
 				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
+				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
 				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
 				1063705222DA442A0034A505 /* Process+Exts.swift in Sources */,

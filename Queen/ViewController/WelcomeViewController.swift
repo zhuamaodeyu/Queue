@@ -21,6 +21,8 @@ class WelcomeViewController: NSViewController {
     private var leftContentView: NSView!
     private var rightContentView: NSVisualEffectView!
 
+    private var createButton:WelcomeViewActionView!
+
     private var dataSource:[String] = []
     override func loadView() {
         super.loadView()
@@ -113,6 +115,12 @@ extension WelcomeViewController {
         launchButton.action = #selector(launchButtonAction(sender:))
         leftContentView.addSubview(launchButton)
 
+        createButton = WelcomeViewActionView.init()
+//        createButton.updateUI(image: NSImage.init(named: ""), title: "Create", desc: "denkandkg")
+        createButton.target = self
+        createButton.action = #selector(createButtonAction)
+        leftContentView.addSubview(createButton)
+
 
         rightContentView = NSVisualEffectView.init()
         rightContentView.wantsLayer = true
@@ -121,7 +129,6 @@ extension WelcomeViewController {
 
         tableView = NSTableView.init()
         tableView.backgroundColor = NSColor.clear
-//        tableView.selectionHighlightStyle = .none
         tableView.focusRingType = .none
         tableView.autoresizesSubviews = true
         tableView.delegate = self
@@ -171,10 +178,19 @@ extension WelcomeViewController {
             make.centerX.equalTo(leftContentView)
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
         }
+
         launchButton.snp.makeConstraints { (make) in
             make.centerX.equalTo(leftContentView)
             make.bottom.equalTo(leftContentView.snp.bottom).offset(-10)
         }
+
+        createButton.snp.makeConstraints { (make) in
+            make.left.equalTo(leftContentView).offset(20)
+            make.right.equalTo(leftContentView).offset(-20)
+            make.bottom.equalTo(launchButton.snp.top).offset(-40)
+            make.height.equalTo(80)
+        }
+
         rightContentView.snp.makeConstraints { (make) in
             make.top.right.equalTo(view)
             make.height.equalTo(view)
@@ -260,6 +276,9 @@ extension WelcomeViewController {
         let mainWindow = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil)
         mainWindow?.window?.makeKeyAndOrderFront(nil)
         view.window?.close()
+    }
+    @objc private func createButtonAction() {
+        debugPrint("\(#function)")
     }
 }
 
