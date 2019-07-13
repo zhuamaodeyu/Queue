@@ -141,7 +141,6 @@ extension VersionEditViewController {
 
         addressTextField = NSTextField.init()
         addressTextField.alignment = .justified
-        cell?.drawsBackground = true
         addressTextField.placeholderString = "请输入仓库地址"
         addressTextField.isBordered = true
         addressTextField.delegate = self
@@ -290,11 +289,15 @@ extension VersionEditViewController {
             break
         }
 
-        // address
-        self.addressTextField.stringValue = self.model.address
+        if checkGit(address: self.model.address) {
+            // address
+            self.addressTextField.stringValue = self.model.address
 
-        // version
-        self.versionComboBox.stringValue = self.model.version
+            if checkVersion(version: self.model.version) {
+                // version
+                self.versionComboBox.stringValue = self.model.version
+            }
+        }
 
         // desc message
         if self.model.descMessage.isEmpty {
@@ -342,6 +345,9 @@ extension VersionEditViewController {
             break
         case 1:
             debugPrint("OK  ==== \(String(describing: openPanel.url))")
+            if checkGit(address: openPanel.url?.absoluteString ?? "") {
+
+            }
             break
         default:
             break
@@ -375,7 +381,12 @@ extension VersionEditViewController : NSTextFieldDelegate {
 // MARK: - private
 extension VersionEditViewController {
     // check address is git repo
-    private func checkGit() {
-
+    private func checkGit(address:String )  -> Bool{
+        return false
     }
+
+    private func checkVersion(version: String) -> Bool {
+        return false
+    }
+
 }

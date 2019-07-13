@@ -216,6 +216,7 @@ extension ManagerViewController: NSTableViewDataSource, NSTableViewDelegate {
                 cell = ButtonTableViewCell.init()
                 cell?.identifier = TableViewIdentifier.version
             }
+
             // set data
             cell?.config(image: nil, title: model.version, type: TableViewIdentifier.version, complation: { [weak self](button) in
                 guard let windowController = NSStoryboard.windowController(name: "VersionEditWindowController", storyboard: "MainUI") as? VersionEditWindowController else {
@@ -364,16 +365,22 @@ extension ManagerViewController {
 extension ManagerViewController {
     // module version window
     private func popVersionWindow() {
-        // 1. modal window
-        guard let windowController = NSStoryboard.windowController(name: "VersionWindowController", storyboard: "MainUI") as? VersionEditWindowController else {
-            return
-        }
-        NSApplication.shared.runModal(for: windowController.window!)
-//        NSApplication.shared.stopModal()
+        let notification = NSUserNotification()
+        notification.identifier = "unique-id"
+        notification.title = "Hello"
+        notification.subtitle = "How are you?"
+        notification.informativeText = "This is a test"
+        notification.soundName = NSUserNotificationDefaultSoundName
+//        notification.contentImage = NSImage(contentsOf: NSURL(string: "https://placehold.it/300")! as URL)
+        // Manually display the notification
 
-        // 2, modal session
-        let _ = NSApplication.shared.beginModalSession(for: windowController.window!)
-//        NSApplication.shared.endModalSession(sessionCode)
+        // 延迟10 🐱 scheduleNotification 发送通知
+        notification.deliveryDate = NSDate(timeIntervalSinceNow: 10) as Date
+        let notificationCenter = NSUserNotificationCenter.default
+        notificationCenter.scheduleNotification(notification)
+//        notificationCenter.deliver(notification)
+        // 默认情况下 
+
 
     }
 }
