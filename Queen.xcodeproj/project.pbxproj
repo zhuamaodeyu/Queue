@@ -76,6 +76,7 @@
 		1063705A22DAEA520034A505 /* Xcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705922DAEA520034A505 /* Xcode.swift */; };
 		1063705C22DAEC0D0034A505 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1063705B22DAEC0D0034A505 /* Cartfile */; };
 		1063705F22DB01AC0034A505 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1063705E22DB01AC0034A505 /* .gitignore */; };
+		1063706222DB0ADF0034A505 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063706122DB0ADF0034A505 /* Config.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -151,6 +152,7 @@
 		1063705922DAEA520034A505 /* Xcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode.swift; sourceTree = "<group>"; };
 		1063705B22DAEC0D0034A505 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		1063705E22DB01AC0034A505 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		1063706122DB0ADF0034A505 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 			children = (
 				1063705E22DB01AC0034A505 /* .gitignore */,
 				1063705B22DAEC0D0034A505 /* Cartfile */,
+				1063704A22DA36FA0034A505 /* Note.md */,
 				10636F5622CFA2A70034A505 /* Queen */,
 				10636F5522CFA2A70034A505 /* Products */,
 				0B0803A6D89ED92AC0A4AB21 /* Pods */,
@@ -201,6 +204,7 @@
 		10636F5622CFA2A70034A505 /* Queen */ = {
 			isa = PBXGroup;
 			children = (
+				1063706022DB0AD50034A505 /* Config */,
 				1063704E22DA40DD0034A505 /* Core */,
 				10636FB622D4D08C0034A505 /* Model */,
 				10636FB722D4D08C0034A505 /* Storyboard */,
@@ -213,7 +217,6 @@
 				10636F6922CFA3380034A505 /* Documents */,
 				10636F5722CFA2A70034A505 /* AppDelegate.swift */,
 				10636F9A22D4D0700034A505 /* Info.plist */,
-				1063704A22DA36FA0034A505 /* Note.md */,
 			);
 			path = Queen;
 			sourceTree = "<group>";
@@ -536,6 +539,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		1063706022DB0AD50034A505 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1063706122DB0ADF0034A505 /* Config.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +737,7 @@
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
+				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
 				1063702D22D78E090034A505 /* Lexer.swift in Sources */,
 				10636FC422D4D08C0034A505 /* ManagerViewController.swift in Sources */,
 				10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */,

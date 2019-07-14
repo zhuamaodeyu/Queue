@@ -29,7 +29,7 @@ extension Git {
             return false
         }
         let result = Process.run(command: gp, args: ["ls-remote","--exit-code",path])
-        if let r =  result {
+        if let _ =  result {
 
         }
         return false

@@ -110,3 +110,15 @@ descLabel.isEnabled = false
 var acceptsTouchEvents: Bool { get set }
 
 ```
+
+9. NSTableView 
+
+```
+tableContainerView.snp.makeConstraints { (make) in
+make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
+}
+// 此处只能设置 scrollView 约束 不然就会无效
+//        tableView.snp.makeConstraints { (make) in
+//            make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
+//        }
+```

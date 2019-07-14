@@ -24,7 +24,7 @@ extension Xcode {
     ///
     /// - Returns:
     func check() -> Bool {
-        if let p = self.xcodePath {
+        if let _ = self.xcodePath {
             return true
         }
         return false

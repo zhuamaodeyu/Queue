@@ -60,7 +60,6 @@ extension NameTableViewCell {
 
         document = NSButton.init(title: "doc", target: nil, action: nil)
         document.bezelStyle = .roundRect
-        document.acceptsTouchEvents = false
         button.sizeToFit()
         self.addSubview(document)
     }

@@ -40,7 +40,7 @@ class Document: NSDocument {
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
         let  fileWrappers  = FileWrapper(directoryWithFileWrappers: [:])
 
-        return fileWrappers
+        return fileWrappers 
     }
 
     //读取时调用~ 包中的数据可以通过 filleWraper获取

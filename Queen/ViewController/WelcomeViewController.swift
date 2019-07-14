@@ -8,6 +8,12 @@
 
 import Cocoa
 
+struct WelcomeProjectModel {
+    var address: String?
+    var projectName: String?
+}
+
+
 private let CellIdentifier = "WelcomeViewController_cell"
 class WelcomeViewController: NSViewController {
 
@@ -200,10 +206,6 @@ extension WelcomeViewController {
         tableContainerView.snp.makeConstraints { (make) in
             make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
         }
-        // 此处只能设置 scrollView 约束 不然就会无效
-//        tableView.snp.makeConstraints { (make) in
-//            make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
-//        }
     }
 
     private func reloadView() {
@@ -223,7 +225,6 @@ extension WelcomeViewController {
 // MARK: - mouse Action
 extension WelcomeViewController {
     override func mouseEntered(with event: NSEvent) {
-        print("\(#function)")
         if closeButton.mouseInView() {
 
             return
@@ -266,11 +267,12 @@ extension WelcomeViewController {
 // MARK: - Action
 extension WelcomeViewController {
     @objc private func closeButtonAction() {
-        debugPrint("===========\(#function)")
         view.window?.close()
+
     }
     @objc private func launchButtonAction(sender: NSButton) {
         debugPrint("============\(#function)")
+        
     }
     @objc private func tableViewDoubleAction(sender:AnyObject) {
         let mainWindow = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil)
@@ -286,7 +288,6 @@ extension WelcomeViewController {
         let result = openPanel.runModal()
         switch result.rawValue {
         case 0:
-            debugPrint("Cancel")
             break
         case 1:
             if let u = openPanel.url {

@@ -7,6 +7,6 @@ target 'Queen' do
   use_frameworks!
   pod 'SnapKit', '~> 5.0.0'
   pod 'LeanCloud'
+  pod 'Yaml'
 #  pod 'SavannaKit'
-  # Pods for Queen
 end
