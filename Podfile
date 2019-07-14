@@ -9,5 +9,4 @@ target 'Queen' do
   pod 'LeanCloud'
 #  pod 'SavannaKit'
   # Pods for Queen
-
 end

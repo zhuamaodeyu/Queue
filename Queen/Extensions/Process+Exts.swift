@@ -8,6 +8,15 @@
 
 import Cocoa
 
+/**
+ 1. 直接返回
+ 2. 回调返回
+ 3. 一行行回调返回
+
+ 4. 同步 异步
+ 
+
+ */
 
 
 extension Process {
@@ -47,7 +56,11 @@ extension Process {
         let pipe = Pipe.init()
         process.standardOutput = pipe
 
+        let errPipe = Pipe.init()
+        process.standardError = errPipe
+
         process.launch()
+        // 阻塞当前 runloop 直到结束
         process.waitUntilExit()
 
         if process.terminationStatus == 0 {

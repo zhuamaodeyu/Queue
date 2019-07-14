@@ -29,6 +29,10 @@ class WelcomeViewActionView: NSControl {
         // Drawing code here.
     }
     
+    override func mouseDown(with event: NSEvent) {
+        super.mouseDown(with: event)
+        sendAction(self.action, to: self.target)
+    }
 }
 
 
@@ -54,6 +58,7 @@ extension WelcomeViewActionView {
         titleLabel.isBordered = false
         titleLabel.maximumNumberOfLines = 1
         titleLabel.font = NSFont.init(name: "", size: 20.0)
+        titleLabel.isEnabled = false
         titleLabel.textColor = NSColor.withHex(hexString: "")
         addSubview(titleLabel)
 
@@ -62,6 +67,7 @@ extension WelcomeViewActionView {
         descLabel.isSelectable = true
         descLabel.isBordered = false
         descLabel.maximumNumberOfLines = 1
+        descLabel.isEnabled = false
         descLabel.textColor = NSColor.withHex(hexString: "")
         descLabel.font = NSFont.init(name: "", size: 16.0)
         addSubview(descLabel)

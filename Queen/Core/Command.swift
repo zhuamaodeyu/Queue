@@ -31,7 +31,7 @@ extension Command {
         if self.shell.isEmpty {
             return nil
         }
-        if let path = Process.run(command: shell, args: ["-l","-c","which \(name)"]) {
+        if let path = Process.run(command: shell, args: ["-l","-c","which \(name)"])?.trimmingCharacters(in: .whitespacesAndNewlines) {
             return path
         }
         return nil

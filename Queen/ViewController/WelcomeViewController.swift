@@ -278,7 +278,24 @@ extension WelcomeViewController {
         view.window?.close()
     }
     @objc private func createButtonAction() {
-        debugPrint("\(#function)")
+        let openPanel = NSOpenPanel.init()
+        openPanel.canChooseDirectories = true
+        openPanel.canChooseFiles = false
+        openPanel.allowedFileTypes = ["queue"]
+        openPanel.allowsMultipleSelection = false
+        let result = openPanel.runModal()
+        switch result.rawValue {
+        case 0:
+            debugPrint("Cancel")
+            break
+        case 1:
+            if let u = openPanel.url {
+                 checkOpenUrl(url: u)
+            }
+            break
+        default:
+            break
+        }
     }
 }
 
@@ -311,5 +328,24 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 80
+    }
+}
+
+
+// MARK: - private
+extension WelcomeViewController {
+    private func checkOpenUrl(url:URL) {
+        var isDir : ObjCBool = false
+        if FileManager.default.fileExists(atPath: url.path, isDirectory:&isDir) {
+            if isDir.boolValue {
+                // file exists and is a directory
+
+            } else {
+                // file exists and is not a directory
+
+            }
+        } else {
+            // file does not exist
+        }
     }
 }

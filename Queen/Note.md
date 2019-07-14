@@ -91,3 +91,22 @@ return true
 }
 
 ```
+
+7. 自定义 NSControl 鼠标事件 
+
+```
+// 重载此方法，手动发送action   
+override func mouseDown(with event: NSEvent) {
+super.mouseDown(with: event)
+sendAction(self.action, to: self.target)
+}
+
+```
+
+8. 禁止鼠标事件  
+
+```
+descLabel.isEnabled = false
+var acceptsTouchEvents: Bool { get set }
+
+```

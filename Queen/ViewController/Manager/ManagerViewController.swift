@@ -222,7 +222,6 @@ extension ManagerViewController: NSTableViewDataSource, NSTableViewDelegate {
                 guard let windowController = NSStoryboard.windowController(name: "VersionEditWindowController", storyboard: "MainUI") as? VersionEditWindowController else {
                     return
                 }
-
                 (windowController.contentViewController as? VersionEditViewController)?.config(model: VersionEditModel.init(segmentControlIndex: 0, type: .tag, address: "http://xxxxnkdsnakg.get", version: "0.1.0"), complation: { (model) in
 
                 })
