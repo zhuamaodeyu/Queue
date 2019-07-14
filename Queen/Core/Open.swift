@@ -11,6 +11,9 @@ import TKFoundationModule
 class Open {
 
     public static func xcode(path: String) {
+        if !FileManager.ns.isFile(path: path) {
+            return
+        }
         guard let _ = Command.shared.which(command: "open") else {
             debugPrint("is not found open , please check , system error")
             return
@@ -30,11 +33,9 @@ class Open {
             debugPrint("is not found code , please check , system error")
             return
         }
-        if FileManager.ns.isDic(path: path) != .dic {
+        if !FileManager.ns.isDir(path: path) {
             debugPrint("is not open dir, please ")
         }
         Process.run(command: open, args: [path])
     }
-
-
 }

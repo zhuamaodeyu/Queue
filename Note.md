@@ -132,3 +132,23 @@ make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
 //        cell?.isEmphasized = false
 //        cell?.backgroundColor = NSColor.randomColor
 ```
+
+10. NSDocument 
+```
+
+////将当前文档保存时调用
+//override func data(ofType typeName: String) throws -> Data {
+//    //在此处插入代码，将文档写入指定类型的数据，如果失败则抛出错误。
+//    //或者，您可以删除此方法并覆盖fileWrapper（ofType :)，write（to：ofType :)或write（to：ofType：for：originalContentsURL :)。
+//    throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+//}
+////当读取新的数据时调用
+//override func read(from data: Data, ofType typeName: String) throws {
+//    // Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
+//    // Alternatively, you could remove this method and override read(from:ofType:) instead.
+//    // If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
+//    throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
+//}
+
+
+```

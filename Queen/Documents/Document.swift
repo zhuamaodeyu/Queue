@@ -9,8 +9,11 @@
 import Cocoa
 
 //https://juejin.im/post/5a45b2e65188257d7242be62
+//https://www.meandmark.com/blog/2017/08/creating-a-document-based-mac-application-using-swift-and-storyboards/
+// https://stackoverflow.com/questions/12130632/using-nsfilewrapper-in-nsdocument-made-of-various-files
 class Document: NSDocument {
 
+    private var rootWrapper: FileWrapper?
 
     override init() {
         super.init()
@@ -36,33 +39,36 @@ class Document: NSDocument {
     }
 
 
-     //保存时调用
+     //返回根目录
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
-        let  fileWrappers  = FileWrapper(directoryWithFileWrappers: [:])
+//        1. 创建目录文件包装器。
+       if self.rootWrapper == nil {
+            self.rootWrapper = FileWrapper.init(directoryWithFileWrappers: [:])
+        }
 
-        return fileWrappers 
+//        2. 将您应用的数据导入Data对象。
+            // 2.1 子文件夹
+        let subDirectory = FileWrapper.init(directoryWithFileWrappers: [:])
+        subDirectory.filename = "xxxxx"
+        let data = "".data(using: .utf8)
+//        3. 创建文件包装器并将该文件添加到目录文件包装器中。
+        let wrapper = FileWrapper.init(regularFileWithContents: data!)
+        subDirectory.addFileWrapper(wrapper)
+        rootWrapper?.addFileWrapper(subDirectory)
+        return self.rootWrapper!
     }
 
     //读取时调用~ 包中的数据可以通过 filleWraper获取
     override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
-        for item in fileWrapper.fileWrappers! {
-            Swift.print("获得\(item.key)")
+        // 1. 获取所有子的
+        if let wrappers = fileWrapper.fileWrappers {
+            let subDir = wrappers["xxxxx"]
+            if let files = subDir?.fileWrappers,let _ = files["xxx.html"] {
+                // 2. 读取数据
+            }
         }
     }
+//    [self updateChangeCount:NSChangeDone];
 }
 
 
-
-////将当前文档保存时调用
-//override func data(ofType typeName: String) throws -> Data {
-//    //在此处插入代码，将文档写入指定类型的数据，如果失败则抛出错误。
-//    //或者，您可以删除此方法并覆盖fileWrapper（ofType :)，write（to：ofType :)或write（to：ofType：for：originalContentsURL :)。
-//    throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-//}
-////当读取新的数据时调用
-//override func read(from data: Data, ofType typeName: String) throws {
-//    // Insert code here to read your document from the given data of the specified type, throwing an error in case of failure.
-//    // Alternatively, you could remove this method and override read(from:ofType:) instead.
-//    // If you do, you should also override isEntireFileLoaded to return false if the contents are lazily loaded.
-//    throw NSError(domain: NSOSStatusErrorDomain, code: unimpErr, userInfo: nil)
-//}

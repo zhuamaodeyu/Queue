@@ -33,9 +33,9 @@ extension Carthage {
     /// 安装
     ///
     /// - Returns:
-    func install() -> Bool {
+    func install() {
 
-        return false
+        
     }
 }
 
