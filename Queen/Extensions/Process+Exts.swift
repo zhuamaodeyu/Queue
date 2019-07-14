@@ -19,6 +19,7 @@ import Cocoa
  */
 
 
+// MARK: - Open
 extension Process {
     /// 打开APP
     ///
@@ -43,13 +44,43 @@ extension Process {
     }
 
 
-    /// run command
+    /// run
+    ///
+    /// - Parameters:
+    ///   - path: path
+    ///   - args: args
+    /// - Returns: defult nil
+    @discardableResult
+    public static func run(command path :String, args: [String] = []) -> String? {
+        let process = Process.init()
+        process.launchPath = path
+        process.arguments = args
+        let pipe = Pipe.init()
+        process.standardOutput = pipe
+
+        process.launch()
+        // 阻塞当前 runloop 直到结束
+        process.waitUntilExit()
+
+        if process.terminationStatus == 0 {
+            return String.init(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: String.Encoding.utf8) ?? ""
+        }
+        return nil
+    }
+
+}
+
+
+// MARK: - sync Run
+extension Process {
+
+    /// sync run command
     ///
     /// - Parameters:
     ///   - path: path description
     ///   - args: args description
     /// - Returns: return value description success string or "" , false nil
-    public static func run(command path :String, args: [String] = []) -> String? {
+    public static func syncRun(command path :String, args: [String] = []) -> (output:String?,error:String?) {
         let process = Process.init()
         process.launchPath = path
         process.arguments = args
@@ -64,9 +95,9 @@ extension Process {
         process.waitUntilExit()
 
         if process.terminationStatus == 0 {
-            return String.init(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: String.Encoding.utf8) ?? ""
+            return (String.init(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: String.Encoding.utf8) ?? "", nil)
         }
-        return nil
+        return (nil, String.init(data: pipe.fileHandleForReading.readDataToEndOfFile(), encoding: String.Encoding.utf8) ?? "")
     }
 
     /// 执行 命令
@@ -75,7 +106,7 @@ extension Process {
     ///   - path: path
     ///   - args: 参数
     ///   - complation: 执行结果回调
-    public static func run(command path :String, args: [String] = [], environment:[String:String] = [:],complation:((_ process: Process,_ output: String?, _ error:String?)-> Void)? = nil) {
+    public static func syncRun(command path :String, args: [String] = [], environment:[String:String] = [:],complation:((_ process: Process,_ output: String?, _ error:String?)-> Void)? = nil) {
 
         let process = Process.init()
         process.launchPath = path
@@ -99,6 +130,83 @@ extension Process {
 
     }
 }
+
+extension Process {
+    public static func asyncRun(command path:String,
+                                args: [String] = [],
+                                environment:[String:String] = [:],
+                                workDirectory wPath:String? = nil,
+                                complation:((_ process: Process,_ output: String?)-> Void)? = nil) {
+
+        let process = Process.init()
+        process.launchPath = path
+        process.arguments = args
+
+        if let workPath = wPath {
+            process.currentDirectoryPath = workPath
+        }
+
+        for (key,value) in environment {
+            process.environment?.updateValue(value, forKey: key)
+        }
+
+        //1. 设置标准输出管道
+        let pipe = Pipe.init()
+        process.standardOutput = pipe
+        process.standardError = pipe
+
+        process.launch()
+
+        //2. 在后台线程等待数据和通知
+        pipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
+
+        //3. 接受到通知消息
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: pipe.fileHandleForReading, queue: nil) { (notification) in
+            //4. 获取管道数据 转为字符串
+            let output = pipe.fileHandleForReading.availableData
+            let outputString = String(data: output, encoding: String.Encoding.utf8) ?? ""
+            if !outputString.isEmpty {
+                complation?(process,outputString)
+            }
+            //6. 继续等待新数据和通知
+            pipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
+        }
+
+    }
+}
+
+
+
+//fileprivate func captureStandardOutputAndRouteToTextView(_ task:Process) {
+//    //1. 设置标准输出管道
+//    outputPipe = Pipe()
+//    task.standardOutput = outputPipe
+//
+//    //2. 在后台线程等待数据和通知
+//    outputPipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
+//
+//    //3. 接受到通知消息
+//    NotificationCenter.default.addObserver(forName: NSNotification.Name.NSFileHandleDataAvailable, object: outputPipe.fileHandleForReading , queue: nil) { notification in
+//
+//        //4. 获取管道数据 转为字符串
+//        let output = self.outputPipe.fileHandleForReading.availableData
+//        let outputString = String(data: output, encoding: String.Encoding.utf8) ?? ""
+//        if outputString != ""{
+//            //5. 在主线程处理UI
+//            DispatchQueue.main.async(execute: {
+//                let previousOutput = self.showInfoTextView.string ?? ""
+//                let nextOutput = previousOutput + "\n" + outputString
+//                self.showInfoTextView.string = nextOutput
+//                // 滚动到可视位置
+//                let range = NSRange(location:nextOutput.characters.count,length:0)
+//                self.showInfoTextView.scrollRangeToVisible(range)
+//            })
+//        }
+//        //6. 继续等待新数据和通知
+//        self.outputPipe.fileHandleForReading.waitForDataInBackgroundAndNotify()
+//    }
+//}
+//}
 
 
 //public static func runRoot(command path: String, arg:[String] = [], complation:((_ output: String?, _ error:String?)-> Void)? = nil) {

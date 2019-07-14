@@ -28,9 +28,8 @@ extension Git {
         guard let gp = self.path else {
             return false
         }
-        let result = Process.run(command: gp, args: ["ls-remote","--exit-code",path])
-        if let _ =  result {
-
+        if let result = Process.run(command: gp, args: ["ls-remote","--exit-code",path]), !result.isEmpty {
+            return true
         }
         return false
     }
