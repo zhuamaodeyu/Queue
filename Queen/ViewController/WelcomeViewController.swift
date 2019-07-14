@@ -8,11 +8,6 @@
 
 import Cocoa
 
-struct WelcomeProjectModel {
-    var address: String?
-    var projectName: String?
-}
-
 
 private let CellIdentifier = "WelcomeViewController_cell"
 class WelcomeViewController: NSViewController {
@@ -29,7 +24,7 @@ class WelcomeViewController: NSViewController {
 
     private var createButton:WelcomeViewActionView!
 
-    private var dataSource:[String] = []
+    private var dataSource:[WelcomeWorkspaceModel] = []
     override func loadView() {
         super.loadView()
         initSubviews()
@@ -43,7 +38,6 @@ class WelcomeViewController: NSViewController {
         self.view.wantsLayer = true
         self.view.layer?.cornerRadius = 10
         self.view.layer?.masksToBounds = true
-        
     }
 
     override func viewWillAppear() {
@@ -149,7 +143,7 @@ extension WelcomeViewController {
 
 
         tableContainerView = NSScrollView.init()
-        tableContainerView.backgroundColor = NSColor.randomColor
+        tableContainerView.backgroundColor = NSColor.clear
         tableContainerView.documentView = tableView
         tableContainerView.drawsBackground = false
         tableContainerView.hasVerticalScroller = false
@@ -212,7 +206,6 @@ extension WelcomeViewController {
         self.tableView.wantsLayer = true
         if dataSource.count == 0 {
             self.tableView.isHidden =  true
-
         }else {
             self.tableView.isHidden = false
             
@@ -260,7 +253,7 @@ extension WelcomeViewController {
 // MARK: - Data
 extension WelcomeViewController {
     private func loadData() {
-        dataSource.append(contentsOf: ["data","name","test","sg","x","xd","dada","xgsdgad","dangkdnagk"])
+        dataSource = Config.shared.workspaceList
     }
 }
 
@@ -333,7 +326,7 @@ extension WelcomeViewController {
         if FileManager.default.fileExists(atPath: url.path, isDirectory:&isDir) {
             if isDir.boolValue {
                 // file exists and is a directory
-                
+
             } else {
                 // file exists and is not a directory
                 // check is queue

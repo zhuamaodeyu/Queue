@@ -12,10 +12,15 @@ private let userDefault = UserDefaults.standard
 
 
 class Config {
-    
     private struct AssociatedKeys {
-        static var kUsedAsTableHeaderView = "kUsedAsTableHeaderView"
+        static var kOpenWorkspaceList = "kOpenWorkspaceList"
     }
-    var podLastDate: Date?
-    
+    static let shared = Config.init()
+    private init() {
+
+    }
+
+
+
+    var workspaceList:[WelcomeWorkspaceModel] = []
 }
