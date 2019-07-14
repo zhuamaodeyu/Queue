@@ -16,5 +16,6 @@ class Config {
     private struct AssociatedKeys {
         static var kUsedAsTableHeaderView = "kUsedAsTableHeaderView"
     }
-
+    var podLastDate: Date?
+    
 }

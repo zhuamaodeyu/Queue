@@ -306,12 +306,10 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
         return dataSource.count
     }
     func tableView(_ tableView: NSTableView, rowViewForRow row: Int) -> NSTableRowView? {
-        print("\(#function)")
         return nil
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        print("\(#function)")
         var cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier.init(CellIdentifier), owner: self) as? WelcomeTableViewCell
         if cell == nil {
             cell = WelcomeTableViewCell.init()
@@ -320,11 +318,6 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
         return cell
     }
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
-//        print("\(#function)")
-//        let cell  = tableView.rowView(atRow: row, makeIfNecessary: false)
-//        cell?.selectionHighlightStyle = .regular
-//        cell?.isEmphasized = false
-//        cell?.backgroundColor = NSColor.randomColor
         return true
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
@@ -340,10 +333,10 @@ extension WelcomeViewController {
         if FileManager.default.fileExists(atPath: url.path, isDirectory:&isDir) {
             if isDir.boolValue {
                 // file exists and is a directory
-
+                
             } else {
                 // file exists and is not a directory
-
+                // check is queue
             }
         } else {
             // file does not exist

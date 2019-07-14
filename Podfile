@@ -8,5 +8,6 @@ target 'Queen' do
   pod 'SnapKit', '~> 5.0.0'
   pod 'LeanCloud'
   pod 'Yaml'
+  pod 'TKFoundationModule', :path => '/Users/niezi/Documents/framework/TKFoundationModule'
 #  pod 'SavannaKit'
 end

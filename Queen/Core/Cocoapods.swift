@@ -11,9 +11,9 @@ import Cocoa
 
 class Cocoapods {
     static let shared = Cocoapods.init()
-    private var podPath: String?
+    private var path: String?
     private init() {
-        self.podPath = Command.shared.which(command: "pod")
+        self.path = Command.shared.which(command: "pod")
     }
 }
 
@@ -45,6 +45,27 @@ extension Cocoapods {
     func install() -> Bool {
 
         return false 
+    }
+}
+
+
+// MARK: - check Podfile
+extension Cocoapods {
+    func checkPodfileUpdate(last date: Date) -> Bool {
+        return false
+    }
+}
+
+// MARK: - cocoapods
+extension Cocoapods {
+    public func podInstall() {
+
+    }
+    public func podUpdate() {
+
+    }
+    public func podSearch() {
+
     }
 }
 

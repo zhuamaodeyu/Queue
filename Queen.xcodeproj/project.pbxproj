@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
+		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F5722CFA2A70034A505 /* AppDelegate.swift */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6122CFA2A80034A505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
+		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10636F5722CFA2A70034A505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10636F5D22CFA2A80034A505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -535,6 +539,8 @@
 				1063705522DAE9600034A505 /* Git.swift */,
 				1063705722DAE9680034A505 /* Cocoapods.swift */,
 				1063705922DAEA520034A505 /* Xcode.swift */,
+				1036287822DB126200D7FA2D /* Carthage.swift */,
+				1036287A22DB13AC00D7FA2D /* Open.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -733,6 +739,7 @@
 				1063702E22D78E090034A505 /* Paragraph.swift in Sources */,
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
+				1036287922DB126200D7FA2D /* Carthage.swift in Sources */,
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
@@ -758,6 +765,7 @@
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
+				1036287B22DB13AC00D7FA2D /* Open.swift in Sources */,
 				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,
 				1063702922D78E090034A505 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,

@@ -10,9 +10,9 @@ import Cocoa
 
 class Git {
     static let shared = Git.init()
-    private var gitPath: String?
+    private var path: String?
     private init() {
-        self.gitPath = Command.shared.which(command: "git")
+        self.path = Command.shared.which(command: "git")
     }
     
 }
@@ -25,7 +25,7 @@ extension Git {
     /// - Parameter path: path
     /// - Returns: defualt false
     func check(url path: String) -> Bool {
-        guard let gp = self.gitPath else {
+        guard let gp = self.path else {
             return false
         }
         let result = Process.run(command: gp, args: ["ls-remote","--exit-code",path])
