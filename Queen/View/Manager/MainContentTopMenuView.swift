@@ -100,7 +100,7 @@ extension MainContentTopMenuView {
         stopButton.sizeToFit()
         self.addSubview(stopButton)
 
-        mappingButton = NSButton.init(title: "stop", target: self, action: #selector(mappingButtonAction(sender:)))
+        mappingButton = NSButton.init(title: "mapping", target: self, action: #selector(mappingButtonAction(sender:)))
         mappingButton.sizeToFit()
         self.addSubview(mappingButton)
 

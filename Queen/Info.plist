@@ -9,21 +9,21 @@
 		<dict>
 			<key>CFBundleTypeExtensions</key>
 			<array>
-				<string>queen</string>
+				<string>qworkspace</string>
 			</array>
 			<key>CFBundleTypeIconFile</key>
 			<string></string>
 			<key>CFBundleTypeName</key>
-			<string>DocumentType</string>
+			<string>qworkspace</string>
 			<key>CFBundleTypeOSTypes</key>
 			<array>
-				<string>????</string>
+				<string>com.taokan.doc.qworkspace</string>
 			</array>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>public.queue</string>
+				<string>com.taokan.doc.qworkspace</string>
 			</array>
 			<key>NSDocumentClass</key>
 			<string>$(PRODUCT_MODULE_NAME).Document</string>
@@ -61,16 +61,16 @@
 				<string>com.apple.package</string>
 			</array>
 			<key>UTTypeDescription</key>
-			<string>Queue</string>
+			<string>Queue doc</string>
 			<key>UTTypeIconFile</key>
 			<string></string>
 			<key>UTTypeIdentifier</key>
-			<string>public.package</string>
+			<string>com.taokan.doc.qworkspace</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>queue</string>
+					<string>qworkspace</string>
 				</array>
 			</dict>
 		</dict>
