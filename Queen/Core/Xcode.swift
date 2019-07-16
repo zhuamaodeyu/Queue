@@ -10,8 +10,8 @@ import Cocoa
 
 
 private struct XcodeProject {
-    static var xcodeproj = "xcodeproj"
-    static var xcworkspace = "xcworkspace"
+    static var xcodeproj:String = "xcodeproj"
+    static var xcworkspace:String = "xcworkspace"
 }
 
 
@@ -96,8 +96,10 @@ extension Xcode {
         if url.pathExtension == XcodeProject.xcodeproj || url.pathExtension == XcodeProject.xcworkspace {
             return (url.lastPathComponent as NSString).deletingPathExtension
         }
+
         if let path = FileManager.ns.exportPath(url: url)?.filter({ (u) -> Bool in
-            return  url.pathExtension == XcodeProject.xcodeproj || url.pathExtension == XcodeProject.xcworkspace
+            let pathExtension = u.pathExtension
+            return  pathExtension == XcodeProject.xcodeproj || pathExtension == XcodeProject.xcworkspace
         }).first {
             return (path.lastPathComponent as NSString).deletingPathExtension
         }

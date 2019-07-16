@@ -37,16 +37,17 @@ class WorkspaceManager {
         return false
     }
 
-    static func initizale(path: String) {
+    static func initizale(path: String) -> String {
         if WorkspaceManager.check(with: path) {
-            return
+            return ""
         }
         guard let projectName = Xcode.shared.projectName(path: path) else {
-            return
+            return ""
         }
         if FileManager.ns.createFolder(name: "\(projectName).\(DocumentAssociatedKeys.qworkspace)", baseUrl: URL.init(fileURLWithPath: path)) {
-
+            return ""
         }
+        return ""
     }
 }
 
