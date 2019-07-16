@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5822DDF2A60067E402 /* DefaultSettings.swift */; };
 		1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */; };
-		1023EB5D22DDF45A0067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5C22DDF45A0067E402 /* DocumentType.swift */; };
 		1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */; };
 		1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6022DDFB140067E402 /* DocumentController.swift */; };
 		1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6222DDFCE70067E402 /* PodContactViewController.swift */; };
 		1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */; };
+		1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6622DE00120067E402 /* WorkspaceManager.swift */; };
+		1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6822DE07D10067E402 /* DocumentType.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -93,11 +94,12 @@
 /* Begin PBXFileReference section */
 		1023EB5822DDF2A60067E402 /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
 		1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusWindow.swift; sourceTree = "<group>"; };
-		1023EB5C22DDF45A0067E402 /* DocumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Exts.swift"; sourceTree = "<group>"; };
 		1023EB6022DDFB140067E402 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		1023EB6222DDFCE70067E402 /* PodContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
 		1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
+		1023EB6622DE00120067E402 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
+		1023EB6822DE07D10067E402 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -419,7 +421,6 @@
 				10636FC922D4D4100034A505 /* Documentation */,
 				10636FC822D4D4100034A505 /* Manager */,
 				10636FCB22D4D4100034A505 /* Welcome */,
-				1023EB5C22DDF45A0067E402 /* DocumentType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -564,6 +565,7 @@
 				1063705922DAEA520034A505 /* Xcode.swift */,
 				1036287822DB126200D7FA2D /* Carthage.swift */,
 				1036287A22DB13AC00D7FA2D /* Open.swift */,
+				1023EB6622DE00120067E402 /* WorkspaceManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -573,6 +575,7 @@
 			children = (
 				1063706122DB0ADF0034A505 /* Config.swift */,
 				1023EB5822DDF2A60067E402 /* DefaultSettings.swift */,
+				1023EB6822DE07D10067E402 /* DocumentType.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
 				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
+				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
@@ -771,8 +775,8 @@
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
-				1023EB5D22DDF45A0067E402 /* DocumentType.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
+				1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
 				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
 				1063702D22D78E090034A505 /* Lexer.swift in Sources */,

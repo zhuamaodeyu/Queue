@@ -11,6 +11,15 @@ import Foundation
 private let userDefault = UserDefaults.standard
 
 
+struct DocumentAssociatedKeys {
+    static var qworkspace = "qworkspace"
+    static var yaml = "yaml"
+    static var config = "config"
+}
+
+
+
+
 class Config {
     private struct AssociatedKeys {
         static var kOpenWorkspaceList = "kOpenWorkspaceList"

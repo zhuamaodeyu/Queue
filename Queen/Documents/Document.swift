@@ -12,9 +12,6 @@ import Cocoa
 //https://www.meandmark.com/blog/2017/08/creating-a-document-based-mac-application-using-swift-and-storyboards/
 // https://stackoverflow.com/questions/12130632/using-nsfilewrapper-in-nsdocument-made-of-various-files
 
-private struct AssociatedKeys {
-
-}
 
 private let uniqueFileIDLength = 13
 

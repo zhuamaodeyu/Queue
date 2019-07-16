@@ -9,6 +9,11 @@
 import Cocoa
 
 
+private struct XcodeProject {
+    static var xcodeproj = "xcodeproj"
+    static var xcworkspace = "xcworkspace"
+}
+
 
 class Xcode {
     static let shared = Xcode.init()
@@ -76,5 +81,26 @@ extension Xcode {
         //        -exportOptionsPlist exprotOptionsPlist.plist
         //        CODE_SIGN_IDENTITY=证书
         //        PROVISIONING_PROFILE=描述文件UUID
+    }
+}
+
+extension Xcode {
+
+    /// 获取项目名称
+    ///
+    /// - Parameter path: <#path description#>
+    /// - Returns: <#return value description#>
+    public func projectName(path: String) -> String? {
+        let url = URL.init(fileURLWithPath: path)
+        // 当前就是
+        if url.pathExtension == XcodeProject.xcodeproj || url.pathExtension == XcodeProject.xcworkspace {
+            return (url.lastPathComponent as NSString).deletingPathExtension
+        }
+        if let path = FileManager.ns.exportPath(url: url)?.filter({ (u) -> Bool in
+            return  url.pathExtension == XcodeProject.xcodeproj || url.pathExtension == XcodeProject.xcworkspace
+        }).first {
+            return (path.lastPathComponent as NSString).deletingPathExtension
+        }
+        return nil
     }
 }

@@ -283,7 +283,7 @@ extension WelcomeViewController {
             break
         case 1:
             if let u = openPanel.url {
-                 checkOpenUrl(url: u)
+//                 checkOpenUrl(url: u)
             }
             break
         default:
@@ -314,24 +314,5 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
         return 80
-    }
-}
-
-
-// MARK: - private
-extension WelcomeViewController {
-    private func checkOpenUrl(url:URL) {
-        var isDir : ObjCBool = false
-        if FileManager.default.fileExists(atPath: url.path, isDirectory:&isDir) {
-            if isDir.boolValue {
-                // file exists and is a directory
-
-            } else {
-                // file exists and is not a directory
-                // check is queue
-            }
-        } else {
-            // file does not exist
-        }
     }
 }
