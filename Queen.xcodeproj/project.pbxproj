@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5822DDF2A60067E402 /* DefaultSettings.swift */; };
+		1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */; };
+		1023EB5D22DDF45A0067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5C22DDF45A0067E402 /* DocumentType.swift */; };
+		1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */; };
+		1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6022DDFB140067E402 /* DocumentController.swift */; };
+		1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6222DDFCE70067E402 /* PodContactViewController.swift */; };
+		1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -84,6 +91,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1023EB5822DDF2A60067E402 /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
+		1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusWindow.swift; sourceTree = "<group>"; };
+		1023EB5C22DDF45A0067E402 /* DocumentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
+		1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Exts.swift"; sourceTree = "<group>"; };
+		1023EB6022DDFB140067E402 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
+		1023EB6222DDFCE70067E402 /* PodContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
+		1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -231,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				10636F6D22CFA34A0034A505 /* Document.swift */,
+				1023EB6022DDFB140067E402 /* DocumentController.swift */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -245,6 +260,7 @@
 				10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */,
 				1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */,
 				1063705122DA442A0034A505 /* Process+Exts.swift */,
+				1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -380,6 +396,8 @@
 			children = (
 				1063704822DA2D990034A505 /* VersionEditViewController.swift */,
 				10636FB322D4D08C0034A505 /* ManagerViewController.swift */,
+				1023EB6222DDFCE70067E402 /* PodContactViewController.swift */,
+				1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -401,6 +419,7 @@
 				10636FC922D4D4100034A505 /* Documentation */,
 				10636FC822D4D4100034A505 /* Manager */,
 				10636FCB22D4D4100034A505 /* Welcome */,
+				1023EB5C22DDF45A0067E402 /* DocumentType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,6 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				1063704422DA103F0034A505 /* KeyWindow.swift */,
+				1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */,
 			);
 			path = Window;
 			sourceTree = "<group>";
@@ -552,6 +572,7 @@
 			isa = PBXGroup;
 			children = (
 				1063706122DB0ADF0034A505 /* Config.swift */,
+				1023EB5822DDF2A60067E402 /* DefaultSettings.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -713,16 +734,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */,
 				1063703722D78E090034A505 /* SyntaxTextViewLayoutManager.swift in Sources */,
 				1063702C22D78E090034A505 /* ASTVisualizer.swift in Sources */,
 				10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */,
 				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
 				1063703522D78E090034A505 /* TextViewWrapperView.swift in Sources */,
 				10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */,
+				1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */,
 				10636FDC22D640800034A505 /* MainWindowController.swift in Sources */,
 				1063702622D78E090034A505 /* String+Range.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
 				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
+				1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */,
 				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
 				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
@@ -733,6 +757,7 @@
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
+				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
@@ -746,6 +771,7 @@
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
+				1023EB5D22DDF45A0067E402 /* DocumentType.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
 				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
@@ -768,8 +794,10 @@
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
+				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
 				1036287B22DB13AC00D7FA2D /* Open.swift in Sources */,
+				1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */,
 				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,
 				1063702922D78E090034A505 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,

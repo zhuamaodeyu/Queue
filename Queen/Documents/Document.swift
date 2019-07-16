@@ -11,17 +11,29 @@ import Cocoa
 //https://juejin.im/post/5a45b2e65188257d7242be62
 //https://www.meandmark.com/blog/2017/08/creating-a-document-based-mac-application-using-swift-and-storyboards/
 // https://stackoverflow.com/questions/12130632/using-nsfilewrapper-in-nsdocument-made-of-various-files
+
+private struct AssociatedKeys {
+
+}
+
+private let uniqueFileIDLength = 13
+
 class Document: NSDocument {
 
-    private var rootWrapper: FileWrapper?
+    private var rootWrapper: FileWrapper = FileWrapper.init(directoryWithFileWrappers: [:])
+
+    private(set) var writeEncoding:String.Encoding
+    private(set) var readEncoding:String.Encoding
+    private var autosaveIdentifier: String
+    private var lastSaveData: Data?
 
     override init() {
+        self.writeEncoding = .utf8
+        self.readEncoding = .utf8
+        self.autosaveIdentifier = String(UUID.init().uuidString.prefix(uniqueFileIDLength))
         super.init()
+        self.hasUndoManager = true
 
-    }
-    //是否自动保存(出用户选择外的所有保存方式 都是非自动保存,像按钮..点击的方法中可以保存,其他的不能)
-    override class var autosavesInPlace: Bool {
-        return true
     }
 
     //用于为Document绑定WindowController,当打开新的Document时,对应的WindowController就会被打开~(不绑定也是可以的)
@@ -32,30 +44,51 @@ class Document: NSDocument {
         self.addWindowController(windowController)
     }
 
+
+}
+
+
+extension Document {
+    //是否自动保存(出用户选择外的所有保存方式 都是非自动保存,像按钮..点击的方法中可以保存,其他的不能)
+    override class var autosavesInPlace: Bool {
+        return true
+    }
+    override class func canConcurrentlyReadDocuments(ofType: String) -> Bool {
+
+        return true
+    }
+
+    /// enable asynchronous saving
+    // 异步保存
+    override func canAsynchronouslyWrite(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) -> Bool {
+
+        // -> Async-saving may cause an occasional crash. (2017-10 macOS 10.13 SDK)
+        return UserDefaults.standard.bool(forKey: "enablesAsynchronousSaving")
+    }
+
     //自动保存时调用的方法~ 当前是否能判断是否
     override func autosave(withImplicitCancellability autosavingIsImplicitlyCancellable: Bool, completionHandler: @escaping (Error?) -> Void) {
 
         completionHandler(NSError.init(domain: "错误提示", code: 0, userInfo: nil))
     }
 
+}
 
-     //返回根目录
+extension Document {
+
+    //返回根目录
     override func fileWrapper(ofType typeName: String) throws -> FileWrapper {
-//        1. 创建目录文件包装器。
-       if self.rootWrapper == nil {
-            self.rootWrapper = FileWrapper.init(directoryWithFileWrappers: [:])
-        }
-
-//        2. 将您应用的数据导入Data对象。
-            // 2.1 子文件夹
+        //        1. 创建目录文件包装器。
+        //        2. 将您应用的数据导入Data对象。
+        // 2.1 子文件夹
         let subDirectory = FileWrapper.init(directoryWithFileWrappers: [:])
         subDirectory.filename = "xxxxx"
         let data = "".data(using: .utf8)
-//        3. 创建文件包装器并将该文件添加到目录文件包装器中。
+        //        3. 创建文件包装器并将该文件添加到目录文件包装器中。
         let wrapper = FileWrapper.init(regularFileWithContents: data!)
         subDirectory.addFileWrapper(wrapper)
-        rootWrapper?.addFileWrapper(subDirectory)
-        return self.rootWrapper!
+        rootWrapper.addFileWrapper(subDirectory)
+        return self.rootWrapper
     }
 
     //读取时调用~ 包中的数据可以通过 filleWraper获取
@@ -68,7 +101,28 @@ class Document: NSDocument {
             }
         }
     }
-//    [self updateChangeCount:NSChangeDone];
+    //    [self updateChangeCount:NSChangeDone];
 }
 
 
+
+// MARK: - save extension
+extension Document {
+    // 以下两个方法配置，才能实现显示扩展名功能
+    override func prepareSavePanel(_ savePanel: NSSavePanel) -> Bool {
+        savePanel.isExtensionHidden = false
+        savePanel.canSelectHiddenExtension = false
+
+        if let fileType = self.fileType,
+            let pathExtension = self.fileNameExtension(forType: fileType, saveOperation: .saveOperation) {
+
+            savePanel.allowedFileTypes = [pathExtension]
+        }
+
+        return super.prepareSavePanel(savePanel)
+    }
+
+    override func fileNameExtension(forType typeName: String, saveOperation: NSDocument.SaveOperationType) -> String? {
+        return DocumentType.default.extensions.first
+    }
+}

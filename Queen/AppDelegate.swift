@@ -11,21 +11,31 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
-        registerNotification()
+    override init() {
+        AppDelegate.initialSettings()
+
+        _ = DocumentController.shared
+        super.init()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+}
+extension AppDelegate {
+    private static func initialSettings() {
+        let defaults = DefaultSettings.defaults.mapKeys { $0.rawValue }
+        UserDefaults.standard.register(defaults: defaults)
+        NSUserDefaultsController.shared.initialValues = defaults
     }
 }
 
 
-// MARK: - private
 extension AppDelegate {
-    private func registerNotification() {
-        NSUserNotificationCenter.default.delegate = self
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        registerNotification()
+    }
+
+    func applicationWillTerminate(_ aNotification: Notification) {
+
     }
 }
 
@@ -33,6 +43,10 @@ extension AppDelegate {
 
 // MARK: - NSUserNotificationCenterDelegate
 extension AppDelegate : NSUserNotificationCenterDelegate {
+
+    private func registerNotification() {
+        NSUserNotificationCenter.default.delegate = self
+    }
     func userNotificationCenter(_ center: NSUserNotificationCenter, didDeliver notification: NSUserNotification) {
 
     }
@@ -43,3 +57,72 @@ extension AppDelegate : NSUserNotificationCenterDelegate {
         return true
     }
 }
+
+extension AppDelegate {
+    // 系统调用此方法
+    func application(_ sender: NSApplication, openFiles filenames: [String]) {
+        let dispatchGroup = DispatchGroup.init()
+
+        for filename in filenames {
+            guard self.application(sender, openFile: filename) else {
+                continue
+            }
+            let url = URL.init(fileURLWithPath: filename)
+            dispatchGroup.enter()
+            DocumentController.shared.openDocument(withContentsOf: url, display: true) { (document, documentWasAlreadyOpen, error) in
+                defer {
+                    dispatchGroup.leave()
+                }
+                if let error = error {
+                    NSApp.presentError(error)
+
+                    let cancelled = (error as? CocoaError)?.code == .userCancelled
+                    NSApp.reply(toOpenOrPrint: cancelled ? .cancel : .failure)
+                }
+            }
+            dispatchGroup.notify(queue: .main) {
+
+            }
+        }
+    }
+    func application(_ sender: NSApplication, openFile filename: String) -> Bool {
+        // 判断是否支持当前的文件格式
+        let url = URL.init(fileURLWithPath: filename)
+        guard DocumentType.default.extensions.contains(url.pathExtension)  else {
+            return false
+        }
+        return true
+    }
+}
+
+
+// MARK: - menu action
+extension AppDelegate {
+    /// activate self and perform "New" menu action
+    @IBAction func newDocumentActivatingApplication(_ sender: Any?) {
+
+        NSApp.activate(ignoringOtherApps: true)
+        NSDocumentController.shared.newDocument(sender)
+    }
+
+
+    /// activate self and perform "Open..." menu action
+    @IBAction func openDocumentActivatingApplication(_ sender: Any?) {
+
+        NSApp.activate(ignoringOtherApps: true)
+        NSDocumentController.shared.openDocument(sender)
+    }
+    /// show preferences window
+    @IBAction func showPreferences(_ sender: Any?) {
+
+
+    }
+    /// open bug report page in default web browser
+    @IBAction func reportBug(_ sender: Any?) {
+
+
+    }
+}
+
+
+

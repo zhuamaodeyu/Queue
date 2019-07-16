@@ -20,6 +20,8 @@ enum TopViewButtonType {
     case xcode
     case vscode
     case floder
+
+    case mapping
 }
 
 
@@ -33,6 +35,8 @@ class MainContentTopMenuView: NSView {
     private var buildButton: NSButton!
     private var stopButton: NSButton!
     private var translationButton: NSButton!
+
+    private var mappingButton: NSButton!
 
     // ================= pod
     private var podInstallButton: NSButton!
@@ -56,6 +60,8 @@ class MainContentTopMenuView: NSView {
     private var searchTextField: NSSearchField!
 
 
+    private var complation:((_ sender: NSView, _ type:TopViewButtonType)-> Void)?
+
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         installSubviews()
@@ -71,6 +77,12 @@ class MainContentTopMenuView: NSView {
     }
 }
 
+extension MainContentTopMenuView {
+    func config( complation:((_ sender: NSView, _ type:TopViewButtonType)-> Void)? = nil) {
+        self.complation = complation
+    }
+}
+
 
 
 extension MainContentTopMenuView {
@@ -80,13 +92,17 @@ extension MainContentTopMenuView {
         reloadButton.sizeToFit()
         self.addSubview(reloadButton)
 
-        buildButton = NSButton.init(title: "build", target: self, action: #selector(reloadButtonAction(sender:)))
+        buildButton = NSButton.init(title: "build", target: self, action: #selector(buildButtonAction(sender:)))
         buildButton.sizeToFit()
         self.addSubview(buildButton)
 
-        stopButton = NSButton.init(title: "stop", target: self, action: #selector(reloadButtonAction(sender:)))
+        stopButton = NSButton.init(title: "stop", target: self, action: #selector(stopButtonAction(sender:)))
         stopButton.sizeToFit()
         self.addSubview(stopButton)
+
+        mappingButton = NSButton.init(title: "stop", target: self, action: #selector(mappingButtonAction(sender:)))
+        mappingButton.sizeToFit()
+        self.addSubview(mappingButton)
 
         podInstallButton = NSButton.init(title: "install", target: self, action: #selector(podInstallButtonAction(sender:)))
         podInstallButton.sizeToFit()
@@ -188,6 +204,12 @@ extension MainContentTopMenuView {
             make.left.equalTo(buildButton.snp.right).offset(5)
             make.centerY.equalTo(segmentControl)
         }
+
+        mappingButton.snp.makeConstraints { (make) in
+            make.centerY.equalTo(segmentControl)
+            make.left.equalTo(stopButton.snp.right).offset(30)
+        }
+
     }
 }
 extension MainContentTopMenuView {
@@ -210,38 +232,41 @@ extension MainContentTopMenuView {
         }
     }
 
-    @objc private func segmentControlAction (sender: NSSegmentedControl) {
+    @objc private func segmentControlAction(sender: NSSegmentedControl) {
 
     }
     @objc private func folderButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.floder)
     }
     @objc private func xcodeButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.xcode)
     }
     @objc private func vscodeButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.vscode)
     }
 
 
     @objc private func reloadButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.reload)
     }
     @objc private func buildButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.build)
     }
     @objc private func stopButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.stop)
     }
 
 
     @objc private func podInstallButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.pod_install)
     }
     @objc private func podUpdateButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.pod_update)
     }
     @objc private func podSearchButtonAction(sender: NSButton) {
-
+        self.complation?(sender,.pod_searach)
+    }
+    @objc private func mappingButtonAction(sender: NSButton) {
+        self.complation?(sender,.mapping)
     }
 }

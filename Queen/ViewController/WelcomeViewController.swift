@@ -35,9 +35,6 @@ class WelcomeViewController: NSViewController {
         super.viewDidLoad()
         loadData()
         reloadView()
-        self.view.wantsLayer = true
-        self.view.layer?.cornerRadius = 10
-        self.view.layer?.masksToBounds = true
     }
 
     override func viewWillAppear() {
@@ -269,31 +266,9 @@ extension WelcomeViewController {
         
     }
     @objc private func tableViewDoubleAction(sender:AnyObject) {
-//        let mainWindow = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil)
-//        mainWindow?.window?.makeKeyAndOrderFront(nil)
-
-        let directoryURL = FileManager.default.urls(for: .desktopDirectory, in: .userDomainMask).first?.absoluteString ?? ""
-
-//        let docURL = URL(string:"Test/Test.queue", relativeTo:directoryURL)
-        let docURL = URL.init(string: "\(directoryURL)Test/Test.queue")
-
-        NSDocumentController.shared.openDocument(withContentsOf: docURL!, display: true) {
-            // completionHandler (NSDocument?, Bool, Error?)
-            (document, documentWasAlreadyOpen, error) in
-            if error != nil
-            {
-                print("An error occured")
-            } else {
-                if documentWasAlreadyOpen
-                {
-                    print("documentWasAlreadyOpen: true")
-                } else {
-                    print("documentWasAlreadyOpen: false")
-                }
-            }
-        }
-
-//        view.window?.close()
+        let mainWindow = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil)
+        mainWindow?.window?.makeKeyAndOrderFront(nil)
+        view.window?.close()
 
     }
     @objc private func createButtonAction() {
