@@ -9,8 +9,8 @@
 import Foundation
 
 struct WelcomeWorkspaceModel {
-    var address: String?
-    var projectName: String?
-    var update: NSDate?
+    var address: String
+    var projectName: String
+    var update: NSDate
 }
 

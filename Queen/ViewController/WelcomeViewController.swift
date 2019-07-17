@@ -251,7 +251,7 @@ extension WelcomeViewController {
 extension WelcomeViewController {
     private func loadData() {
         dataSource = Config.shared.workspaceList
-        dataSource.append(WelcomeWorkspaceModel.init())
+        dataSource.append(WelcomeWorkspaceModel.init(address: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace", projectName: "Queue", update: NSDate.init()))
     }
 }
 
@@ -265,11 +265,14 @@ extension WelcomeViewController {
         debugPrint("============\(#function)")
         
     }
-    @objc private func tableViewDoubleAction(sender:AnyObject) {
-        let mainWindow = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil)
-        mainWindow?.window?.makeKeyAndOrderFront(nil)
-        view.window?.close()
-
+    @objc private func tableViewDoubleAction(sender:NSTableView) {
+        let model = self.dataSource[sender.selectedRow]
+        DocumentController.shared.openDocument(withContentsOf:URL.init(fileURLWithPath: model.address), display: true) { (document, result, error) in
+            if let _ = error {
+                return
+            }
+            self.view.window?.close()
+        }
     }
     @objc private func createButtonAction() {
         let openPanel = NSOpenPanel.init()
@@ -285,7 +288,7 @@ extension WelcomeViewController {
             if let u = openPanel.url, let url = WorkspaceManager.initizale(path: u.path) {
                 // enter document window
                 DocumentController.shared.openDocument(withContentsOf: url, display: true) { (document , result, error) in
-                    debugPrint("")
+
                 }
             }
             break

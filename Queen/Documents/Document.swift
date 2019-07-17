@@ -24,6 +24,9 @@ class Document: NSDocument {
     private var autosaveIdentifier: String
     private var lastSaveData: Data?
 
+
+
+
     override init() {
         self.writeEncoding = .utf8
         self.readEncoding = .utf8
@@ -33,7 +36,6 @@ class Document: NSDocument {
 
     }
 
-    //用于为Document绑定WindowController,当打开新的Document时,对应的WindowController就会被打开~(不绑定也是可以的)
     override func makeWindowControllers() {
         guard let windowController = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil) else {
             return
@@ -44,7 +46,6 @@ class Document: NSDocument {
 
 
 extension Document {
-    //是否自动保存(出用户选择外的所有保存方式 都是非自动保存,像按钮..点击的方法中可以保存,其他的不能)
     override class var autosavesInPlace: Bool {
         return true
     }
@@ -53,13 +54,10 @@ extension Document {
         return true
     }
 
-    /// enable asynchronous saving
-    // 异步保存
     override func canAsynchronouslyWrite(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) -> Bool {
         return true
     }
 
-    //自动保存时调用的方法~ 当前是否能判断是否
     override func autosave(withImplicitCancellability autosavingIsImplicitlyCancellable: Bool, completionHandler: @escaping (Error?) -> Void) {
         //自动保存
         completionHandler(NSError.init(domain: "错误提示", code: 0, userInfo: nil))
@@ -101,7 +99,7 @@ extension Document {
 
 // MARK: - save extension
 extension Document {
-    // 以下两个方法配置，才能实现显示扩展名功能
+
     override func prepareSavePanel(_ savePanel: NSSavePanel) -> Bool {
         savePanel.isExtensionHidden = false
         savePanel.canSelectHiddenExtension = false
