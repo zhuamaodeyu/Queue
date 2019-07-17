@@ -9,7 +9,7 @@
 import Cocoa
 
 
-private struct XcodeProject {
+struct XcodeProject {
     static var xcodeproj:String = "xcodeproj"
     static var xcworkspace:String = "xcworkspace"
 }

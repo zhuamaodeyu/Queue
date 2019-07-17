@@ -282,9 +282,11 @@ extension WelcomeViewController {
         case 0:
             break
         case 1:
-            if let u = openPanel.url, WorkspaceManager.initizale(path: u.path) {
+            if let u = openPanel.url, let url = WorkspaceManager.initizale(path: u.path) {
                 // enter document window
-                DocumentController.shared.openDocument(withContentsOf: <#T##URL#>, display: <#T##Bool#>, completionHandler: <#T##(NSDocument?, Bool, Error?) -> Void#>)
+                DocumentController.shared.openDocument(withContentsOf: url, display: true) { (document , result, error) in
+                    debugPrint("")
+                }
             }
             break
         default:

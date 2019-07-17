@@ -40,8 +40,6 @@ class Document: NSDocument {
         }
         self.addWindowController(windowController)
     }
-
-
 }
 
 
@@ -58,14 +56,12 @@ extension Document {
     /// enable asynchronous saving
     // 异步保存
     override func canAsynchronouslyWrite(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) -> Bool {
-
-        // -> Async-saving may cause an occasional crash. (2017-10 macOS 10.13 SDK)
-        return UserDefaults.standard.bool(forKey: "enablesAsynchronousSaving")
+        return true
     }
 
     //自动保存时调用的方法~ 当前是否能判断是否
     override func autosave(withImplicitCancellability autosavingIsImplicitlyCancellable: Bool, completionHandler: @escaping (Error?) -> Void) {
-
+        //自动保存
         completionHandler(NSError.init(domain: "错误提示", code: 0, userInfo: nil))
     }
 
