@@ -15,7 +15,7 @@ class DocumentController: NSDocumentController {
                                                                                     create: true)
     override init() {
         super.init()
-        //        self.autosavingDelay = UserDefaults.standard[.autosavingDelay]
+        self.autosavingDelay = 2.0
         self.autosavingDelay = 10
     }
 

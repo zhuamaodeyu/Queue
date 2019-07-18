@@ -63,10 +63,9 @@ class WorkspaceManager {
 
         let baseUrl =  pathUrl.appendingPathComponent("\(projectName).\(DocumentAssociatedKeys.qworkspace)", isDirectory: true)
 
-        if FileManager.ns.createFolder(name: nil, baseUrl: baseUrl ) {
+        if FileManager.ns.createFolder(name: nil, baseUrl: baseUrl) {
             return baseUrl
         }
-
         return nil
     }
 }
