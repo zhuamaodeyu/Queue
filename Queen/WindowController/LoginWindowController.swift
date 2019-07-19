@@ -12,8 +12,21 @@ class LoginWindowController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        // 隐藏titleBar透明
+        window?.titlebarAppearsTransparent = true
+        // 隐藏title
+        window?.titleVisibility = .hidden
+        // 背景白色
+        window?.backgroundColor = .white
+        // 隐藏miniaturize按钮
+        window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        // 隐藏zoom按钮
+        window?.standardWindowButton(.zoomButton)?.isHidden = true
+        // 背景可以移动
+        window?.isMovableByWindowBackground = true
+
+        window?.isRestorable = true
+        window?.center()
     }
 
 }

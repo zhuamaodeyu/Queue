@@ -288,7 +288,7 @@ extension WelcomeViewController {
             if let u = openPanel.url, let url = WorkspaceManager.initizale(path: u.path) {
                 // enter document window
                 DocumentController.shared.openDocument(withContentsOf: url, display: true) { (document , result, error) in
-
+                     self.view.window?.close()
                 }
             }
             break
