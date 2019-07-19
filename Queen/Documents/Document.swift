@@ -39,17 +39,10 @@ class Document: NSDocument {
     }
 
     override func makeWindowControllers() {
-        if self.fileURL != nil {
-            guard let windowController = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil) else {
-                return
-            }
-            self.addWindowController(windowController)
+        guard let windowController = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI", bundle: nil) else {
             return
         }
-        guard let welcomeWindowControler = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") else {
-            return
-        }
-        welcomeWindowControler.window?.makeKeyAndOrderFront(nil)
+        self.addWindowController(windowController)
     }
 }
 

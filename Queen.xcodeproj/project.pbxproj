@@ -15,6 +15,8 @@
 		1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */; };
 		1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6622DE00120067E402 /* WorkspaceManager.swift */; };
 		1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6822DE07D10067E402 /* DocumentType.swift */; };
+		1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6A22E1F6110067E402 /* LoginWindowController.swift */; };
+		1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6D22E1F6360067E402 /* LoginViewController.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -100,6 +102,8 @@
 		1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
 		1023EB6622DE00120067E402 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
 		1023EB6822DE07D10067E402 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
+		1023EB6A22E1F6110067E402 /* LoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
+		1023EB6D22E1F6360067E402 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -202,6 +206,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1023EB6C22E1F6240067E402 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1023EB6D22E1F6360067E402 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		10636F4B22CFA2A70034A505 = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +297,7 @@
 				10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */,
 				10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */,
 				1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */,
+				1023EB6A22E1F6110067E402 /* LoginWindowController.swift */,
 			);
 			path = WindowController;
 			sourceTree = "<group>";
@@ -356,6 +369,7 @@
 		10636FAA22D4D08C0034A505 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1023EB6C22E1F6240067E402 /* Login */,
 				10636FDD22D6413E0034A505 /* MainViewController.swift */,
 				10636FDE22D6413E0034A505 /* MenuViewController.swift */,
 				10636FB022D4D08C0034A505 /* PreferencesViewController.swift */,
@@ -772,6 +786,7 @@
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
 				1036287922DB126200D7FA2D /* Carthage.swift in Sources */,
+				1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */,
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
@@ -799,6 +814,7 @@
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
+				1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
 				1036287B22DB13AC00D7FA2D /* Open.swift in Sources */,
 				1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */,

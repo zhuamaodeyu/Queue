@@ -37,6 +37,29 @@ extension AppDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
 
     }
+    func applicationWillBecomeActive(_ notification: Notification) {
+        if NSApp.orderedDocuments.count == 0 {
+            showWelcomeWindow()
+        }
+    }
+
+    func applicationShouldHandleReopen(_ sender: NSApplication, hasVisibleWindows flag: Bool) -> Bool {
+        if !flag {
+            showWelcomeWindow()
+        }
+        return true
+    }
+
+}
+
+extension AppDelegate {
+    private func showWelcomeWindow() {
+        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
+            return
+        }
+        welcomeWindowController.window?.center()
+        welcomeWindowController.showWindow(nil)
+    }
 }
 
 
@@ -93,6 +116,10 @@ extension AppDelegate {
         }
         return true
     }
+    func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
+        return false
+    }
+
 }
 
 
