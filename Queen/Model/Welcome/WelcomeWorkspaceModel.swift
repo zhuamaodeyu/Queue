@@ -9,8 +9,19 @@
 import Foundation
 
 struct WelcomeWorkspaceModel {
-    var address: String
+    var address: URL
     var projectName: String
-    var update: NSDate
+    var update: Date
+    var image:String
+    var desc: String
+
+    init(file url: URL) {
+        self.address = url
+        self.projectName = ""
+        self.update = Date.init()
+        self.image = ""
+        self.desc = ""
+    }
+
 }
 

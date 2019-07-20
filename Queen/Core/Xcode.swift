@@ -106,3 +106,16 @@ extension Xcode {
         return nil
     }
 }
+
+extension Xcode {
+    public static func selectXcodeProj(_ completaion:@escaping (URL?) -> Void) {
+        let openPanel = NSOpenPanel.init()
+        openPanel.allowsMultipleSelection = false
+        openPanel.allowedFileTypes = [XcodeProject.xcodeproj, XcodeProject.xcworkspace]
+        openPanel.begin { (response) in
+            guard response == NSApplication.ModalResponse.OK else  {return}
+            guard let fileURL = openPanel.url else {completaion(.none); return}
+            completaion(fileURL)
+        }
+    }
+}

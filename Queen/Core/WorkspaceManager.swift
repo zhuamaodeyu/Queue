@@ -70,3 +70,7 @@ class WorkspaceManager {
     }
 }
 
+
+extension WorkspaceManager {
+
+}

@@ -69,3 +69,40 @@ extension Cocoapods {
     }
 }
 
+
+
+// MARK: - Open
+extension Cocoapods {
+    public func openPodspecReference() {
+        NotificationCenter.default.post(name: .openPodspecReference, object: nil, userInfo: [
+            DocumentationAssociatedKey.name:"openPodspecReference",
+            DocumentationAssociatedKey.url : "https://guides.cocoapods.org/syntax/podspec.html"
+            ])
+    }
+    public func openSearch() {
+        NotificationCenter.default.post(name: .openSearch, object: nil, userInfo: [
+            DocumentationAssociatedKey.name:"openSearch",
+            DocumentationAssociatedKey.url : "https://cocoapods.org/"
+            ])
+    }
+    public func openPod(with name: String) {
+        NotificationCenter.default.post(name: .openPodWithName, object: nil, userInfo: [
+            DocumentationAssociatedKey.name:"openPodWithName",
+            DocumentationAssociatedKey.url : "https://cocoapods.org/pods/\(name)"
+            ])
+    }
+    public func openPodfileReference() {
+        NotificationCenter.default.post(name: .openPodfileReference, object: nil, userInfo: [
+            DocumentationAssociatedKey.name:"openPodfileReference",
+            DocumentationAssociatedKey.url : "https://guides.cocoapods.org/syntax/podfile.html"
+            ])
+    }
+}
+
+
+extension Notification.Name {
+    static var openPodspecReference = Notification.Name.init("openPodspecReference")
+    static var openSearch = Notification.Name.init("openSearch")
+    static var openPodWithName = Notification.Name.init("openPod")
+    static var openPodfileReference = Notification.Name.init("openPodfileReference")
+}

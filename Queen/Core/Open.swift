@@ -39,3 +39,17 @@ class Open {
         Process.run(command: open, args: [path])
     }
 }
+
+
+extension Open {
+    public static func openDocumentation(with name: String, url: String) {
+        NotificationCenter.default.post(name: .documentation, object: nil, userInfo: [
+            DocumentationAssociatedKey.name: name,
+            DocumentationAssociatedKey.url: url
+            ])
+    }
+}
+
+extension Notification.Name {
+    static var documentation = Notification.Name.init("documentation")
+}

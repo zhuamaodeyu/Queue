@@ -251,7 +251,8 @@ extension WelcomeViewController {
 extension WelcomeViewController {
     private func loadData() {
         dataSource = Config.shared.workspaceList
-        dataSource.append(WelcomeWorkspaceModel.init(address: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace", projectName: "Queue", update: NSDate.init()))
+//        dataSource.append(WelcomeWorkspaceModel.init(address: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace", projectName: "Queue", update: NSDate.init()))
+        dataSource.append(WelcomeWorkspaceModel.init(file: URL.init(fileURLWithPath: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace")))
     }
 }
 
@@ -267,7 +268,7 @@ extension WelcomeViewController {
     }
     @objc private func tableViewDoubleAction(sender:NSTableView) {
         let model = self.dataSource[sender.selectedRow]
-        DocumentController.shared.openDocument(withContentsOf:URL.init(fileURLWithPath: model.address), display: true) { (document, result, error) in
+        DocumentController.shared.openDocument(withContentsOf:model.address, display: true) { (document, result, error) in
             if let _ = error {
                 return
             }

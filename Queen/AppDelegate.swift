@@ -116,8 +116,8 @@ extension AppDelegate {
         }
         return true
     }
-    func applicationOpenUntitledFile(_ sender: NSApplication) -> Bool {
-        return false
+    func applicationShouldOpenUntitledFile(_ sender: NSApplication) -> Bool {
+        return false 
     }
 
 }

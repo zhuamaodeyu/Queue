@@ -17,6 +17,9 @@
 		1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6822DE07D10067E402 /* DocumentType.swift */; };
 		1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6A22E1F6110067E402 /* LoginWindowController.swift */; };
 		1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6D22E1F6360067E402 /* LoginViewController.swift */; };
+		1023EB7422E208240067E402 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7322E208240067E402 /* IconImageView.swift */; };
+		1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */; };
+		1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7922E2D2410067E402 /* CommandLine.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -104,6 +107,9 @@
 		1023EB6822DE07D10067E402 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1023EB6A22E1F6110067E402 /* LoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
 		1023EB6D22E1F6360067E402 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1023EB7322E208240067E402 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
+		1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInterfaction+NSView.swift"; sourceTree = "<group>"; };
+		1023EB7922E2D2410067E402 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -214,6 +220,14 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		1023EB7222E208240067E402 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				1023EB7322E208240067E402 /* IconImageView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		10636F4B22CFA2A70034A505 = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +289,7 @@
 				1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */,
 				1063705122DA442A0034A505 /* Process+Exts.swift */,
 				1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */,
+				1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -305,6 +320,7 @@
 		10636F9F22D4D08C0034A505 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1023EB7222E208240067E402 /* Login */,
 				10636FA022D4D08C0034A505 /* Documentation */,
 				10636FA122D4D08C0034A505 /* Config */,
 				10636FA222D4D08C0034A505 /* CI */,
@@ -580,6 +596,7 @@
 				1036287822DB126200D7FA2D /* Carthage.swift */,
 				1036287A22DB13AC00D7FA2D /* Open.swift */,
 				1023EB6622DE00120067E402 /* WorkspaceManager.swift */,
+				1023EB7922E2D2410067E402 /* CommandLine.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -790,6 +807,7 @@
 				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
 				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
+				1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
 				1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
@@ -808,6 +826,7 @@
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
 				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
+				1023EB7422E208240067E402 /* IconImageView.swift in Sources */,
 				1063703022D78E090034A505 /* Token.swift in Sources */,
 				1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */,
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
@@ -820,6 +839,7 @@
 				1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */,
 				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,
 				1063702922D78E090034A505 /* NSMutableAttributedString+Tokens.swift in Sources */,
+				1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,
 				1063703922D78E090034A505 /* SourceCodeTheme.swift in Sources */,
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,

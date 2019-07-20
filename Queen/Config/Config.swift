@@ -15,6 +15,12 @@ struct DocumentAssociatedKeys {
     static var qworkspace = "qworkspace"
     static var yaml = "yaml"
     static var config = "config"
+    static var mapping = "mapping"
+}
+
+struct DocumentationAssociatedKey {
+    static var url = "url"
+    static var name = "name"
 }
 
 

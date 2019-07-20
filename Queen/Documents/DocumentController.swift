@@ -32,7 +32,9 @@ class DocumentController: NSDocumentController {
 
     override func openDocument(withContentsOf url: URL, display displayDocument: Bool, completionHandler: @escaping (NSDocument?, Bool, Error?) -> Void) {
         super.openDocument(withContentsOf: url, display: displayDocument) {  (document, documentWasAlreadyOpen, error) in
-
+            if let _ = document {
+                NotificationCenter.default.post(name: .DocumentOpenedNotification, object: self, userInfo: [:])
+            }
             completionHandler(document, documentWasAlreadyOpen, error)
         }
     }
@@ -41,4 +43,20 @@ class DocumentController: NSDocumentController {
         let document = try super.makeDocument(for: urlOrNil, withContentsOf: contentsURL, ofType: typeName)
         return document
     }
+
+    override func noteNewRecentDocumentURL(_ url: URL) {
+        super.noteNewRecentDocumentURL(url)
+        NotificationCenter.default.post(name: .RecentDocumentUpdateNotification, object: self, userInfo: [:])
+    }
+
+    override func clearRecentDocuments(_ sender: Any?) {
+        super.clearRecentDocuments(sender)
+        NotificationCenter.default.post(name: .ClearRecentDocumentsNotification, object: self, userInfo: [:])
+    }
+}
+
+extension Notification.Name {
+    static var DocumentOpenedNotification = Notification.Name.init("DocumentOpenedNotification")
+    static var RecentDocumentUpdateNotification = Notification.Name.init("RecentDocumentUpdateNotification")
+    static var ClearRecentDocumentsNotification = Notification.Name.init("ClearRecentDocumentsNotification")
 }

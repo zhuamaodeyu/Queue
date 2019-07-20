@@ -54,4 +54,5 @@ extension NSView {
         point = self.convert(point, from: nil)
         return NSPointInRect(point, self.visibleRect)
     }
+
 }
