@@ -93,6 +93,8 @@
 		1063705C22DAEC0D0034A505 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1063705B22DAEC0D0034A505 /* Cartfile */; };
 		1063705F22DB01AC0034A505 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1063705E22DB01AC0034A505 /* .gitignore */; };
 		1063706222DB0ADF0034A505 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063706122DB0ADF0034A505 /* Config.swift */; };
+		10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226A22E3088500DE3433 /* CIStatusViewController.swift */; };
+		10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -185,6 +187,8 @@
 		1063705B22DAEC0D0034A505 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		1063705E22DB01AC0034A505 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1063706122DB0ADF0034A505 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		10E0226A22E3088500DE3433 /* CIStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
+		10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -350,6 +354,7 @@
 		10636FA222D4D08C0034A505 /* CI */ = {
 			isa = PBXGroup;
 			children = (
+				10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */,
 			);
 			path = CI;
 			sourceTree = "<group>";
@@ -419,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				10636FE122D641E50034A505 /* CIManagerViewController.swift */,
+				10E0226A22E3088500DE3433 /* CIStatusViewController.swift */,
 			);
 			path = CI;
 			sourceTree = "<group>";
@@ -788,9 +794,11 @@
 				1063705222DA442A0034A505 /* Process+Exts.swift in Sources */,
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
 				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
+				10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */,
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
 				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
+				10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
