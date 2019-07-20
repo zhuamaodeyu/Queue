@@ -34,8 +34,5 @@ class Config {
     private init() {
 
     }
-
-
-
     var workspaceList:[WelcomeWorkspaceModel] = []
 }

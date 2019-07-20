@@ -251,7 +251,6 @@ extension WelcomeViewController {
 extension WelcomeViewController {
     private func loadData() {
         dataSource = Config.shared.workspaceList
-//        dataSource.append(WelcomeWorkspaceModel.init(address: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace", projectName: "Queue", update: NSDate.init()))
         dataSource.append(WelcomeWorkspaceModel.init(file: URL.init(fileURLWithPath: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace")))
     }
 }

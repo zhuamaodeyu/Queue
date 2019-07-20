@@ -27,6 +27,7 @@ class Document: NSDocument {
 
     var yamlData: Data?
     var configData: Data?
+    var mapping: Data?
 
     override init() {
         self.writeEncoding = .utf8

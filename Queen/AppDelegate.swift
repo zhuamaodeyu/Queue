@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-
+import LeanCloud
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
@@ -15,6 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         AppDelegate.initialSettings()
 
         _ = DocumentController.shared
+        AppDelegate.initLeanCloud()
         super.init()
     }
 
@@ -24,6 +25,35 @@ extension AppDelegate {
         let defaults = DefaultSettings.defaults.mapKeys { $0.rawValue }
         UserDefaults.standard.register(defaults: defaults)
         NSUserDefaultsController.shared.initialValues = defaults
+    }
+
+    private static func initLeanCloud() {
+        LCApplication.logLevel = .all
+        do {
+            try LCApplication.default.set(
+                id: "8B9PpR2PlW8msf33yoGik2uO-MdYXbMMI",
+                key: "fGrV7MkKgwpT7JRs0vFcVBma"
+            )
+        } catch {
+            fatalError("\(error)")
+        }
+    }
+
+    private func testLeanCloud() {
+        do {
+            let post = LCObject(className: "Post")
+            try post.set("words", value: "Hello World!")
+            _ = post.save { result in
+                switch result {
+                case .success:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -39,7 +69,7 @@ extension AppDelegate {
     }
     func applicationWillBecomeActive(_ notification: Notification) {
         if NSApp.orderedDocuments.count == 0 {
-            showWelcomeWindow()
+//            showWelcomeWindow()
         }
     }
 
@@ -49,7 +79,6 @@ extension AppDelegate {
         }
         return true
     }
-
 }
 
 extension AppDelegate {

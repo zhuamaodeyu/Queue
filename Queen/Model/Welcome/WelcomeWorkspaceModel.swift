@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Yaml
 
-struct WelcomeWorkspaceModel {
+struct WelcomeWorkspaceModel:Codable {
     var address: URL
     var projectName: String
     var update: Date
@@ -22,6 +23,6 @@ struct WelcomeWorkspaceModel {
         self.image = ""
         self.desc = ""
     }
-
 }
+
 
