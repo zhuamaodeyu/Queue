@@ -99,6 +99,8 @@
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227722E413E600DE3433 /* CINetworkManager.swift */; };
 		10E0227A22E4194100DE3433 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0227922E4194100DE3433 /* Login.storyboard */; };
+		10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */; };
+		10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227D22E4765A00DE3433 /* ProgressHUD.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -197,6 +199,8 @@
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0227722E413E600DE3433 /* CINetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CINetworkManager.swift; sourceTree = "<group>"; };
 		10E0227922E4194100DE3433 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRKSpinningProgressIndicatorLayer.swift; sourceTree = "<group>"; };
+		10E0227D22E4765A00DE3433 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +315,7 @@
 		10636F9922D4D01D0034A505 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				10E0227B22E4765A00DE3433 /* ProgressHUD */,
 				1063700822D78E090034A505 /* Sources */,
 				10636F6322CFA2A80034A505 /* Queen.entitlements */,
 				10636F5D22CFA2A80034A505 /* Assets.xcassets */,
@@ -637,6 +642,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		10E0227B22E4765A00DE3433 /* ProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */,
+				10E0227D22E4765A00DE3433 /* ProgressHUD.swift */,
+			);
+			path = ProgressHUD;
+			sourceTree = "<group>";
+		};
 		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -815,6 +829,7 @@
 				1063705822DAE9680034A505 /* Cocoapods.swift in Sources */,
 				1063705222DA442A0034A505 /* Process+Exts.swift in Sources */,
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
+				10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */,
 				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
 				10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */,
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
@@ -857,6 +872,7 @@
 				10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */,
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
+				10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */,
 				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
 				1023EB7422E208240067E402 /* IconImageView.swift in Sources */,
 				1063703022D78E090034A505 /* Token.swift in Sources */,

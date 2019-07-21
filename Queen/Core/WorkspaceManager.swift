@@ -72,5 +72,12 @@ class WorkspaceManager {
 
 
 extension WorkspaceManager {
-
+   static func insert(workspcace model: WelcomeWorkspaceModel) {
+        if Config.shared.workspaceList.filter({ (m) -> Bool in
+            m.address.stringValue == model.address.stringValue
+        }).count > 0 {
+            return
+        }
+        Config.shared.workspaceList.insert(model, at: 0)
+    }
 }

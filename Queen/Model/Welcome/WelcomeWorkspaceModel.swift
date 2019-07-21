@@ -18,10 +18,10 @@ struct WelcomeWorkspaceModel:Codable {
 
     init(file url: URL) {
         self.address = url
-        self.projectName = ""
+        self.projectName = url.lastPathComponent
         self.update = Date.init()
-        self.image = ""
-        self.desc = ""
+        self.image = "project"
+        self.desc = url.path
     }
 }
 

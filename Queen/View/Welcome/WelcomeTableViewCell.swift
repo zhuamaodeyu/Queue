@@ -48,8 +48,9 @@ extension WelcomeTableViewCell {
         titleLabel.isSelectable = true
         titleLabel.isBordered = false
         titleLabel.maximumNumberOfLines = 1
-        titleLabel.font = NSFont.init(name: "", size: 20.0)
-        titleLabel.textColor = NSColor.withHex(hexString: "")
+        titleLabel.font = NSFont.systemFont(ofSize: 15)
+        titleLabel.drawsBackground = false
+        titleLabel.textColor = NSColor.black
         addSubview(titleLabel)
 
         descLabel = NSTextField.init()
@@ -57,13 +58,15 @@ extension WelcomeTableViewCell {
         descLabel.isSelectable = true
         descLabel.isBordered = false
         descLabel.maximumNumberOfLines = 1
-        descLabel.textColor = NSColor.withHex(hexString: "")
-        descLabel.font = NSFont.init(name: "", size: 16.0)
+        descLabel.drawsBackground = false
+        descLabel.textColor = NSColor.black
+        descLabel.font = NSFont.systemFont(ofSize: 13)
+        (descLabel.cell as? NSTextFieldCell)?.lineBreakMode = .byTruncatingHead
         addSubview(descLabel)
 
         iconImageView.backgroundColor = NSColor.randomColor
-        titleLabel.backgroundColor = NSColor.randomColor
-        descLabel.backgroundColor = NSColor.randomColor
+//        titleLabel.backgroundColor = NSColor.randomColor
+//        descLabel.backgroundColor = NSColor.randomColor
     }
 
 

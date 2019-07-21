@@ -86,7 +86,7 @@ extension LoginViewController {
         closeButton.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(10)
             make.top.equalTo(self.view).offset(10)
-            make.size.equalTo(CGSize.init(width: 10, height: 10))
+            make.size.equalTo(CGSize.init(width: 15, height: 15))
         }
 
         iconImageView.snp.makeConstraints { (make) in

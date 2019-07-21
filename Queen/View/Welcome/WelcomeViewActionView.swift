@@ -57,9 +57,9 @@ extension WelcomeViewActionView {
         titleLabel.isSelectable = true
         titleLabel.isBordered = false
         titleLabel.maximumNumberOfLines = 1
-        titleLabel.font = NSFont.init(name: "", size: 20.0)
+        titleLabel.font = NSFont.boldSystemFont(ofSize: 15)
         titleLabel.isEnabled = false
-        titleLabel.textColor = NSColor.withHex(hexString: "")
+        titleLabel.textColor = NSColor.black
         addSubview(titleLabel)
 
         descLabel = NSTextField.init()
@@ -68,13 +68,9 @@ extension WelcomeViewActionView {
         descLabel.isBordered = false
         descLabel.maximumNumberOfLines = 1
         descLabel.isEnabled = false
-        descLabel.textColor = NSColor.withHex(hexString: "")
-        descLabel.font = NSFont.init(name: "", size: 16.0)
+        descLabel.font = NSFont.systemFont(ofSize: 13)
+        descLabel.textColor = NSColor.black
         addSubview(descLabel)
-
-        iconImageView.backgroundColor = NSColor.randomColor
-        titleLabel.backgroundColor = NSColor.randomColor
-        descLabel.backgroundColor = NSColor.randomColor
     }
 
 
@@ -88,12 +84,12 @@ extension WelcomeViewActionView {
         }
         titleLabel.snp.makeConstraints { (make) in
             make.left.equalTo(iconImageView.snp.right).offset(10)
-            make.bottom.equalTo(self.snp.centerY).offset(-5)
+            make.bottom.equalTo(self.snp.centerY).offset(-2)
             make.right.equalTo(self).offset(-10)
         }
         descLabel.snp.makeConstraints { (make) in
             make.left.equalTo(titleLabel)
-            make.top.equalTo(self.snp.centerY).offset(5)
+            make.top.equalTo(self.snp.centerY).offset(3)
             make.width.equalTo(titleLabel)
         }
     }

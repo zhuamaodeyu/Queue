@@ -24,7 +24,9 @@ class WelcomeViewController: NSViewController {
 
     private var createButton:WelcomeViewActionView!
 
-    private var dataSource:[WelcomeWorkspaceModel] = []
+    private var dataSource:[WelcomeWorkspaceModel] {
+        return Config.shared.workspaceList
+    }
     override func loadView() {
         super.loadView()
         initSubviews()
@@ -33,7 +35,6 @@ class WelcomeViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
         reloadView()
     }
 
@@ -84,7 +85,7 @@ extension WelcomeViewController {
         titleLabel.font = NSFont.systemFont(ofSize: 28.0)
         titleLabel.isEditable = false
         titleLabel.isBezeled = false
-        titleLabel.stringValue = "Queue"
+        titleLabel.stringValue = "Welcome to Queue"
         titleLabel.sizeToFit()
         titleLabel.drawsBackground = false
         titleLabel.isSelectable = false
@@ -113,7 +114,7 @@ extension WelcomeViewController {
         leftContentView.addSubview(launchButton)
 
         createButton = WelcomeViewActionView.init()
-//        createButton.updateUI(image: NSImage.init(named: ""), title: "Create", desc: "denkandkg")
+        createButton.updateUI(image: NSImage.init(named: NSImage.Name.init("project"))!, title: "打开新项目", desc: "打开一个Xcode Project 项目")
         createButton.target = self
         createButton.action = #selector(createButtonAction)
         leftContentView.addSubview(createButton)
@@ -249,10 +250,8 @@ extension WelcomeViewController {
 
 // MARK: - Data
 extension WelcomeViewController {
-    private func loadData() {
-        dataSource = Config.shared.workspaceList
-        dataSource.append(WelcomeWorkspaceModel.init(file: URL.init(fileURLWithPath: "/Users/niezi/Documents/Project/Queen/Queen.qworkspace")))
-    }
+
+
 }
 
 // MARK: - Action
@@ -288,6 +287,7 @@ extension WelcomeViewController {
             if let u = openPanel.url, let url = WorkspaceManager.initizale(path: u.path) {
                 // enter document window
                 DocumentController.shared.openDocument(withContentsOf: url, display: true) { (document , result, error) in
+                    WorkspaceManager.insert(workspcace: WelcomeWorkspaceModel.init(file: url))
                      self.view.window?.close()
                 }
             }
@@ -313,12 +313,14 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
             cell = WelcomeTableViewCell.init()
             cell?.identifier = NSUserInterfaceItemIdentifier(rawValue: CellIdentifier)
         }
+        let model = dataSource[row]
+        cell?.updateUI(image: NSImage.init(named: model.image)!, title: model.projectName, desc: model.desc)
         return cell
     }
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
         return true
     }
     func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
-        return 80
+        return 60
     }
 }
