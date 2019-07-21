@@ -333,15 +333,15 @@ extension PodMessageViewController: SyntaxTextViewDelegate {
 
 extension PodMessageViewController {
     private func testData() {
-        let component1 = ComponentModel.init(name: "授信",
-                                             version: "0.1.1",
-                                             binaray: false,
-                                             from: "项目2线",
-                                             manager: "张三",
-                                             test: false,
-                                             collection: false,
-                                             building: false)
-        dataSource.append(component1)
+//        let component1 = ComponentModel.init(name: "授信",
+//                                             version: "0.1.1",
+//                                             binaray: false,
+//                                             from: "项目2线",
+//                                             manager: "张三",
+//                                             test: false,
+//                                             collection: false,
+//                                             building: false)
+//        dataSource.append(component1)
 
         self.tableView.reloadData()
 

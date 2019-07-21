@@ -23,9 +23,6 @@ struct DocumentationAssociatedKey {
     static var name = "name"
 }
 
-
-
-
 class Config {
     private struct AssociatedKeys {
         static var kOpenWorkspaceList = "kOpenWorkspaceList"

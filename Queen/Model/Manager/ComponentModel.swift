@@ -8,9 +8,12 @@
 
 import Foundation
 
-
+// 组件
 struct ComponentModel {
+    var id: String
     var name: String
+    var hasDoc: String
+    var desc: String
     var version: String
     var binaray: Bool
     var from: String
@@ -18,4 +21,6 @@ struct ComponentModel {
     var test: Bool
     var collection: Bool
     var building: Bool
+    var lastBuilding: String
+    var lastBuilder: String
 }

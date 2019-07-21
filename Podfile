@@ -10,4 +10,7 @@ target 'Queen' do
   pod 'Yaml'
   pod 'TKFoundationModule', :path => '/Users/niezi/Documents/framework/TKFoundationModule'
 #  pod 'SavannaKit'
+  pod 'Moya'
+  pod 'Sparkle'
+  pod 'LetsMove'
 end

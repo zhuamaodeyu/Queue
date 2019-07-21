@@ -34,6 +34,7 @@ addressLabel.setContentHuggingPriority(.required, for: .horizontal)
 ```
 // 不设置字体，导致不可编辑
 //        addressTextField.font = NSFont.init(name: "", size: 15.0)
+addressTextField.focusRingType = .none //选中高亮边框
 ```
 
 5. button 状态 
@@ -152,3 +153,6 @@ make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
 
 
 ```
+
+
+11. 无边框window默认不能成为第一响应者

@@ -96,6 +96,9 @@
 		10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226A22E3088500DE3433 /* CIStatusViewController.swift */; };
 		10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
+		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
+		10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227722E413E600DE3433 /* CINetworkManager.swift */; };
+		10E0227A22E4194100DE3433 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0227922E4194100DE3433 /* Login.storyboard */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -191,6 +194,9 @@
 		10E0226A22E3088500DE3433 /* CIStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
 		10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
+		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		10E0227722E413E600DE3433 /* CINetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CINetworkManager.swift; sourceTree = "<group>"; };
+		10E0227922E4194100DE3433 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -259,6 +265,7 @@
 		10636F5622CFA2A70034A505 /* Queen */ = {
 			isa = PBXGroup;
 			children = (
+				10E0227422E4136800DE3433 /* Network */,
 				1063706022DB0AD50034A505 /* Config */,
 				1063704E22DA40DD0034A505 /* Core */,
 				10636FB622D4D08C0034A505 /* Model */,
@@ -468,6 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				10636FB822D4D08C0034A505 /* MainUI.storyboard */,
+				10E0227922E4194100DE3433 /* Login.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -616,8 +624,17 @@
 				1063706122DB0ADF0034A505 /* Config.swift */,
 				1023EB5822DDF2A60067E402 /* DefaultSettings.swift */,
 				1023EB6822DE07D10067E402 /* DocumentType.swift */,
+				10E0227522E4137E00DE3433 /* NetworkConfig.swift */,
 			);
 			path = Config;
+			sourceTree = "<group>";
+		};
+		10E0227422E4136800DE3433 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				10E0227722E413E600DE3433 /* CINetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
@@ -709,6 +726,7 @@
 				10636F6122CFA2A80034A505 /* Main.storyboard in Resources */,
 				10636F9B22D4D0700034A505 /* Info.plist in Resources */,
 				10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */,
+				10E0227A22E4194100DE3433 /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,6 +822,7 @@
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
 				10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
+				10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
@@ -812,6 +831,7 @@
 				10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */,
 				1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */,
 				1063702E22D78E090034A505 /* Paragraph.swift in Sources */,
+				10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */,
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
 				1036287922DB126200D7FA2D /* Carthage.swift in Sources */,
