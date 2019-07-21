@@ -65,8 +65,6 @@ extension WelcomeTableViewCell {
         addSubview(descLabel)
 
         iconImageView.backgroundColor = NSColor.randomColor
-//        titleLabel.backgroundColor = NSColor.randomColor
-//        descLabel.backgroundColor = NSColor.randomColor
     }
 
 

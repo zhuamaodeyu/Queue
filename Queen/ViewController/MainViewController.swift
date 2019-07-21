@@ -24,8 +24,14 @@ class MainViewController: NSViewController {
         initSubviewConstaints()
     }
 
-    override func updateViewConstraints() {
+    override func viewWillAppear() {
+        super.viewWillAppear()
+    }
+    override func viewDidAppear() {
+        super.viewDidAppear()
+    }
 
+    override func updateViewConstraints() {
         super.updateViewConstraints()
     }
 }

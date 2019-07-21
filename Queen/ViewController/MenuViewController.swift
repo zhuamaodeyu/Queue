@@ -8,6 +8,7 @@
 
 import Cocoa
 import SnapKit
+import LeanCloud
 
 protocol MenuViewControllerDelegate:class {
     func leftMenuViewController(viewController: MenuViewController, tableView:NSTableView, didSelect row:Int)
@@ -34,12 +35,9 @@ class MenuViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.append(MenuModel.init(name: "组件管理", icon: ""))
-        dataSource.append(MenuModel.init(name: "网络配置", icon: ""))
-        dataSource.append(MenuModel.init(name: "CI管理", icon: ""))
-        dataSource.append(MenuModel.init(name: "文档", icon: ""))
         initSubviews()
         initSubviewConstaints()
+        initData()
     }
     override func viewDidAppear() {
         super.viewDidAppear()
@@ -76,16 +74,11 @@ extension MenuViewController {
         column.width = self.tableView.frame.width
         tableView.addTableColumn(column)
 
-
         view.addSubview(userIconImageView)
         view.addSubview(userNameLabel)
         view.addSubview(tableView)
 
-
         userIconImageView.backgroundColor  = NSColor.randomColor
-        userNameLabel.backgroundColor = NSColor.randomColor
-
-
     }
     private func initSubviewConstaints() {
         userIconImageView.snp.makeConstraints { (make) in
@@ -125,5 +118,18 @@ extension MenuViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
     func tableViewSelectionDidChange(_ notification: Notification) {
         self.delegate?.leftMenuViewController(viewController: self, tableView: tableView, didSelect: tableView.selectedRow)
+    }
+}
+
+
+extension MenuViewController {
+    private func initData() {
+//        self.userIconImageView.image = ""
+        self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
+        dataSource.append(MenuModel.init(name: "组件管理", icon: ""))
+        dataSource.append(MenuModel.init(name: "网络配置", icon: ""))
+        dataSource.append(MenuModel.init(name: "CI管理", icon: ""))
+        dataSource.append(MenuModel.init(name: "文档", icon: ""))
+        self.tableView.reloadData()
     }
 }

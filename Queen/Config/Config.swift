@@ -10,26 +10,30 @@ import Foundation
 
 private let userDefault = UserDefaults.standard
 
-
-struct DocumentAssociatedKeys {
-    static var qworkspace = "qworkspace"
-    static var yaml = "yaml"
-    static var config = "config"
-    static var mapping = "mapping"
-}
-
-struct DocumentationAssociatedKey {
-    static var url = "url"
-    static var name = "name"
+struct UserDefaultsKeys {
+    struct WelcomeWindowKeys {
+        static var kOpenWorkspaceList = "kOpenWorkspaceList"
+    }
 }
 
 class Config {
-    private struct AssociatedKeys {
-        static var kOpenWorkspaceList = "kOpenWorkspaceList"
-    }
     static let shared = Config.init()
     private init() {
 
     }
-    var workspaceList:[WelcomeWorkspaceModel] = []
+    var workspaceList:[WelcomeWorkspaceModel] {
+        get {
+            if let data = userDefault.value(forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList) as? Data {
+                if let repo = try? JSONDecoder().decode([WelcomeWorkspaceModel].self, from: data) {
+                    return repo
+                }
+            }
+            return []
+        }
+        set {
+            if let data = try? JSONEncoder.init().encode(newValue) {
+                userDefault.set(data, forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList)
+            }
+        }
+    }
 }

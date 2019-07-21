@@ -13,3 +13,18 @@ struct DocumentType {
 
     static let `default` = DocumentType.init(extensions: ["queue"])
 }
+
+
+
+// Documentation Notification keys
+struct DocumentationAssociatedKey {
+    static var url = "url"
+    static var name = "name"
+}
+
+struct DocumentAssociatedKeys {
+    static var qworkspace = "qworkspace"
+    static var yaml = "yaml"
+    static var config = "config"
+    static var mapping = "mapping"
+}
