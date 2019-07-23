@@ -36,7 +36,8 @@ module Pod
     # @return [Lockfile] a new lockfile.
     #
     def self.from_file(path)
-      return nil unless path.exist?
+#      return nil unless path.exist?
+      return nil unless File.exist?(path) 
       hash = YAMLHelper.load_file(path)
       unless hash && hash.is_a?(Hash)
         raise Informative, "Invalid Lockfile in `#{path}`"
