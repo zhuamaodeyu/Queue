@@ -24,6 +24,7 @@ class Document: NSDocument {
     private var autosaveIdentifier: String
     private var lastSaveData: Data?
 
+    var newCreate:Bool = false
 
     var yamlData: Data?
     var configData: Data?

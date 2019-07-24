@@ -13,7 +13,6 @@ class MainViewController: NSViewController {
 
     private var menuViewController: MenuViewController = MenuViewController.init()
 
-
     private var menuView: NSView!
     private var contentView: ContainerView!
 

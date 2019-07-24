@@ -124,7 +124,7 @@ extension MenuViewController: NSTableViewDelegate, NSTableViewDataSource {
 
 extension MenuViewController {
     private func initData() {
-//        self.userIconImageView.image = ""
+//        self.userIconImageView.image = LCApplication.default.currentUser
         self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
         dataSource.append(MenuModel.init(name: "组件管理", icon: ""))
         dataSource.append(MenuModel.init(name: "网络配置", icon: ""))

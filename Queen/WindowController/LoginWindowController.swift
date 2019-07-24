@@ -17,7 +17,7 @@ class LoginWindowController: NSWindowController {
         // 隐藏title
         window?.titleVisibility = .hidden
         // 背景白色
-        window?.backgroundColor = .white
+//        window?.backgroundColor = .white
         // 隐藏miniaturize按钮
         window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
         // 隐藏zoom按钮

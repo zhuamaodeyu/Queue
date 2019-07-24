@@ -59,7 +59,7 @@ extension WelcomeViewActionView {
         titleLabel.maximumNumberOfLines = 1
         titleLabel.font = NSFont.boldSystemFont(ofSize: 15)
         titleLabel.isEnabled = false
-        titleLabel.textColor = NSColor.black
+        titleLabel.drawsBackground = false 
         addSubview(titleLabel)
 
         descLabel = NSTextField.init()
@@ -69,7 +69,7 @@ extension WelcomeViewActionView {
         descLabel.maximumNumberOfLines = 1
         descLabel.isEnabled = false
         descLabel.font = NSFont.systemFont(ofSize: 13)
-        descLabel.textColor = NSColor.black
+        descLabel.drawsBackground = false
         addSubview(descLabel)
     }
 

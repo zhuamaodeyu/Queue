@@ -15,6 +15,7 @@ class LoginViewController: NSViewController {
     private var iconImageView: IconImageView!
     private var loginButton:NSButton!
     private var closeButton: NSButton!
+    private var progressView:NSProgressIndicator!
 
     private var accountLineView:NSView = NSView.init()
     private var passwordLineView: NSView = NSView.init()
@@ -25,6 +26,8 @@ class LoginViewController: NSViewController {
     }
     override func viewWillAppear() {
         super.viewWillAppear()
+        accountField.stringValue = "playtomandjerry"
+        passwordField.stringValue = "Xiaohundan3575"
         if accountField.stringValue.isEmpty {
             accountField.becomeFirstResponder()
         }else {
@@ -43,8 +46,6 @@ extension LoginViewController {
         closeButton.focusRingType = .none
         closeButton.setButtonType(.momentaryPushIn)
         self.view.addSubview(closeButton)
-
-
 
         iconImageView = IconImageView.init()
         iconImageView.image = NSImage.init(named: NSImage.Name.init("personalImg"))
@@ -82,6 +83,13 @@ extension LoginViewController {
         loginButton.sizeToFit()
         loginButton.isBordered = false
         self.view.addSubview(loginButton)
+
+        progressView = NSProgressIndicator.init()
+        progressView.style = .spinning
+        progressView.controlSize = .mini
+        progressView.isHidden = true
+        progressView.sizeToFit()
+        self.view.addSubview(progressView)
 
         closeButton.snp.makeConstraints { (make) in
             make.left.equalTo(self.view).offset(10)
@@ -124,6 +132,12 @@ extension LoginViewController {
             make.height.equalTo(passwordField)
             make.width.equalTo(loginButton.snp.height)
         }
+
+        progressView.snp.makeConstraints { (make) in
+            make.center.equalTo(loginButton)
+            make.size.equalTo(loginButton)
+        }
+
     }
 
 }
@@ -145,6 +159,7 @@ extension LoginViewController {
         guard !accountField.stringValue.isEmpty && !passwordField.stringValue.isEmpty else {
             return
         }
+        self.progressView.startAnimation(nil)
         guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
             return
         }
@@ -155,6 +170,7 @@ extension LoginViewController {
         return
 
         let _ = LCUser.logIn(username: accountField.stringValue , password: passwordField.stringValue) { result in
+            self.progressView.stopAnimation(nil)
             switch result {
             case .success(object: _):
                 guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {

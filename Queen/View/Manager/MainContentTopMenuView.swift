@@ -59,8 +59,11 @@ class MainContentTopMenuView: NSView {
     private var checkTypeButton: NSPopUpButton!
     private var searchTextField: NSSearchField!
 
+    private var reloadProgress: NSProgressIndicator!
 
     private var complation:((_ sender: NSView, _ type:TopViewButtonType)-> Void)?
+
+    private var podCountComplation:(() -> Int)?
 
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
@@ -73,12 +76,12 @@ class MainContentTopMenuView: NSView {
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
     }
 }
 
 extension MainContentTopMenuView {
-    func config( complation:((_ sender: NSView, _ type:TopViewButtonType)-> Void)? = nil) {
+    func config(podCountComplation:(() -> Int)? = nil,complation:((_ sender: NSView, _ type:TopViewButtonType)-> Void)? = nil) {
+        self.podCountComplation = podCountComplation
         self.complation = complation
     }
 }
@@ -87,6 +90,10 @@ extension MainContentTopMenuView {
 
 extension MainContentTopMenuView {
     private func installSubviews() {
+        reloadProgress = NSProgressIndicator.init()
+        reloadProgress.style = .spinning
+        reloadProgress.controlSize = .mini
+        reloadProgress.sizeToFit()
 
         reloadButton = NSButton.init(title: "reload", target: self, action: #selector(reloadButtonAction(sender:)))
         reloadButton.sizeToFit()
@@ -209,14 +216,13 @@ extension MainContentTopMenuView {
             make.centerY.equalTo(segmentControl)
             make.left.equalTo(stopButton.snp.right).offset(30)
         }
-
     }
 }
 extension MainContentTopMenuView {
     @objc private func checkTypeButtonAction(sender: NSPopUpButton) {
         switch sender.indexOfSelectedItem {
         case 0:
-            searchTextField.placeholderString = "当前一共有100 个组件，"
+            searchTextField.placeholderString = "当前一共有\(self.podCountComplation?() ?? 0)个组件"
             break
         case 1:
             searchTextField.placeholderString = "请输入 是/否  or 0/1来进行搜索"

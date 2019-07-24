@@ -686,7 +686,7 @@
                 <windowController storyboardIdentifier="WelcomeWindowController" id="jGA-0Y-lOj" customClass="WelcomeWindowController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" animationBehavior="default" id="Ckk-yw-fiv">
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="480"/>
+                        <rect key="contentRect" x="196" y="240" width="560" height="480"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <value key="minSize" type="size" width="560" height="480"/>
                         <connections>

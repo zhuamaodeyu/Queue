@@ -41,20 +41,20 @@ class WorkspaceManager {
     }
 
     @discardableResult
-    static func initizale(path: String) -> URL? {
+    static func initizale(path: String) -> (url:URL,newCreate: Bool)? {
         if !WorkspaceManager.check(with: path) {
             return nil
         }
         let pathUrl = URL.init(fileURLWithPath: path)
         if pathUrl.pathExtension == DocumentAssociatedKeys.qworkspace {
-            return pathUrl
+            return (pathUrl, false)
         }
 
 
         if let url = FileManager.ns.exportPath(url: pathUrl)?.filter({ (u) -> Bool in
             u.pathExtension == DocumentAssociatedKeys.qworkspace
         }).first {
-            return url
+            return (url, false)
         }
 
         guard let projectName = Xcode.shared.projectName(path: path) else {
@@ -64,7 +64,7 @@ class WorkspaceManager {
         let baseUrl =  pathUrl.appendingPathComponent("\(projectName).\(DocumentAssociatedKeys.qworkspace)", isDirectory: true)
 
         if FileManager.ns.createFolder(name: nil, baseUrl: baseUrl) {
-            return baseUrl
+            return (baseUrl, true)
         }
         return nil
     }

@@ -26,7 +26,7 @@ class WelcomeWindowController: NSWindowController {
         // 隐藏 title
         window?.titleVisibility = .hidden
         //
-        window?.backgroundColor = .white
+//        window?.backgroundColor = .white
         // 隐藏
         window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
 

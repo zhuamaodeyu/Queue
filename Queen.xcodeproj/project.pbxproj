@@ -101,6 +101,7 @@
 		10E0227A22E4194100DE3433 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0227922E4194100DE3433 /* Login.storyboard */; };
 		10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */; };
 		10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227D22E4765A00DE3433 /* ProgressHUD.swift */; };
+		10E0228522E89FA900DE3433 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0228422E89FA900DE3433 /* Models.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -201,6 +202,7 @@
 		10E0227922E4194100DE3433 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRKSpinningProgressIndicatorLayer.swift; sourceTree = "<group>"; };
 		10E0227D22E4765A00DE3433 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
+		10E0228422E89FA900DE3433 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -315,6 +317,7 @@
 		10636F9922D4D01D0034A505 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				10E0228222E89F6B00DE3433 /* MindMapping */,
 				10E0227B22E4765A00DE3433 /* ProgressHUD */,
 				1063700822D78E090034A505 /* Sources */,
 				10636F6322CFA2A80034A505 /* Queen.entitlements */,
@@ -651,6 +654,22 @@
 			path = ProgressHUD;
 			sourceTree = "<group>";
 		};
+		10E0228222E89F6B00DE3433 /* MindMapping */ = {
+			isa = PBXGroup;
+			children = (
+				10E0228322E89F7400DE3433 /* Model */,
+			);
+			path = MindMapping;
+			sourceTree = "<group>";
+		};
+		10E0228322E89F7400DE3433 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10E0228422E89FA900DE3433 /* Models.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -879,6 +898,7 @@
 				1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */,
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
+				10E0228522E89FA900DE3433 /* Models.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
 				1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */,
