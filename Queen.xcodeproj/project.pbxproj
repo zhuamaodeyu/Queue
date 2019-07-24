@@ -102,6 +102,7 @@
 		10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */; };
 		10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227D22E4765A00DE3433 /* ProgressHUD.swift */; };
 		10E0228522E89FA900DE3433 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0228422E89FA900DE3433 /* Models.swift */; };
+		10E0228722E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0228622E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
 
@@ -203,6 +204,7 @@
 		10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRKSpinningProgressIndicatorLayer.swift; sourceTree = "<group>"; };
 		10E0227D22E4765A00DE3433 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
 		10E0228422E89FA900DE3433 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		10E0228622E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VerticallyCentered+TextFieldCell.swift"; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		BDC1F5DFED97A25965BDAE51 /* Pods-Queen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.debug.xcconfig"; sourceTree = "<group>"; };
 		CD88B27D84193590EF8382C9 /* Pods_Queen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Queen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -310,6 +312,7 @@
 				1063705122DA442A0034A505 /* Process+Exts.swift */,
 				1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */,
 				1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */,
+				10E0228622E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -859,6 +862,7 @@
 				10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
+				10E0228722E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
 				1063704522DA103F0034A505 /* KeyWindow.swift in Sources */,

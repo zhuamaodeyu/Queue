@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class UserInterfaction_NSView: NSView {
+extension NSView {
 
     fileprivate struct AssociatedKeys {
         static var UserInterface = "com.taokan.userinterface"
@@ -23,34 +23,34 @@ class UserInterfaction_NSView: NSView {
         }
     }
 
-    override func mouseDown(with theEvent: NSEvent) {
+    override open func mouseDown(with theEvent: NSEvent) {
         if userInteractionEnabled {
             super.mouseDown(with: theEvent)
         }
     }
 
-    override func mouseUp(with theEvent: NSEvent) {
+    override open func mouseUp(with theEvent: NSEvent) {
         if userInteractionEnabled {
             super.mouseUp(with: theEvent)
         }
     }
 
-    override func becomeFirstResponder() -> Bool {
+    override open func becomeFirstResponder() -> Bool {
         return userInteractionEnabled
     }
 
-    override func keyDown(with event: NSEvent) {
+    override open func keyDown(with event: NSEvent) {
         if userInteractionEnabled {
             super.keyDown(with: event)
         }
     }
 
-    override func keyUp(with event: NSEvent) {
+    override open func keyUp(with event: NSEvent) {
         if userInteractionEnabled {
             super.keyUp(with: event)
         }
     }
-    override func flagsChanged(with event: NSEvent) {
+    override open func flagsChanged(with event: NSEvent) {
         if userInteractionEnabled {
             super.flagsChanged(with: event)
         }

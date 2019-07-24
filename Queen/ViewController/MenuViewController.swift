@@ -17,6 +17,7 @@ protocol MenuViewControllerDelegate:class {
 struct MenuModel {
     var name: String
     var icon: String
+    var unreadCount:Int = 0
 }
 
 
@@ -126,10 +127,10 @@ extension MenuViewController {
     private func initData() {
 //        self.userIconImageView.image = LCApplication.default.currentUser
         self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
-        dataSource.append(MenuModel.init(name: "组件管理", icon: ""))
-        dataSource.append(MenuModel.init(name: "网络配置", icon: ""))
-        dataSource.append(MenuModel.init(name: "CI管理", icon: ""))
-        dataSource.append(MenuModel.init(name: "文档", icon: ""))
+        dataSource.append(MenuModel.init(name: "组件管理", icon: "", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "网络配置", icon: "", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "CI管理", icon: "", unreadCount: 5))
+        dataSource.append(MenuModel.init(name: "文档", icon: "", unreadCount: 0))
         self.tableView.reloadData()
     }
 }
