@@ -265,7 +265,9 @@ extension WelcomeViewController {
         
     }
     @objc private func tableViewDoubleAction(sender:NSTableView) {
-        let model = self.dataSource[sender.selectedRow]
+        guard let model = self.dataSource[safe: sender.selectedRow] else {
+            return
+        }
         DocumentController.shared.openDocument(withContentsOf:model.address, display: true) { (document, result, error) in
             if let _ = error {
                 return

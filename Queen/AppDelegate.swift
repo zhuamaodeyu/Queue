@@ -41,21 +41,8 @@ extension AppDelegate {
         }
     }
 
-    private func testLeanCloud() {
-        do {
-            let post = LCObject(className: "Post")
-            try post.set("words", value: "Hello World!")
-            _ = post.save { result in
-                switch result {
-                case .success:
-                    break
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        } catch {
-            print(error)
-        }
+    private func registerLeanCloudEntity() {
+        
     }
 }
 

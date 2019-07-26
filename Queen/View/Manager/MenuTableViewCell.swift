@@ -26,7 +26,7 @@ class MenuTableViewCell: NSTableCellView {
     }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        self.unreadCountView.layer?.cornerRadius = self.unreadCountView.frame.size.height / 2
+        self.unreadCountView.layer?.cornerRadius = (self.unreadCountView.cell?.cellSize.height) ?? 0 / 2
         self.unreadCountView.layer?.masksToBounds = true
     }
 

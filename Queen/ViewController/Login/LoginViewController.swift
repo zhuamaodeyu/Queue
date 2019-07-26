@@ -169,19 +169,40 @@ extension LoginViewController {
 
         return
 
-        let _ = LCUser.logIn(username: accountField.stringValue , password: passwordField.stringValue) { result in
-            self.progressView.stopAnimation(nil)
-            switch result {
-            case .success(object: _):
-                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
-                    return
+
+//        self.progressView.startAnimation(nil)
+//        login { [weak self] (result) in
+//            self?.progressView.stopAnimation(nil)
+//            switch result {
+//            case .success(object: _):
+//                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
+//                    return
+//                }
+//                welcomeWindowController.window?.center()
+//                welcomeWindowController.showWindow(nil)
+//            case .failure(error: _):
+//                break
+//            }
+//        }
+    }
+}
+
+
+extension LoginViewController {
+    private func login(compation: @escaping (LCValueResult<LCUser>) -> Void) {
+        if test(input: accountField.stringValue, pattern: "") {
+                let _ = LCUser.logIn(email: accountField.stringValue, password: passwordField.stringValue) { result in
+                   compation(result)
                 }
-                welcomeWindowController.window?.center()
-                welcomeWindowController.showWindow(nil)
-            case .failure(error: _):
-                break
+            }
+        if test(input: accountField.stringValue, pattern: "") {
+                let _ = LCUser.logIn(mobilePhoneNumber: accountField.stringValue, password: passwordField.stringValue) { result in
+                    compation(result)
+                }
+            }else {
+                let _ = LCUser.logIn(username: accountField.stringValue, password: passwordField.stringValue) { result in
+                        compation(result)
             }
         }
-
     }
 }

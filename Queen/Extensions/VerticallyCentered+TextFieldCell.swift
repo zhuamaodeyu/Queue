@@ -72,8 +72,9 @@ class VerticallyCenteredTextFieldCell:NSTextFieldCell {
         debugPrint("")
     }
     override func draw(withFrame cellFrame: NSRect, in controlView: NSView) {
-        let cellSize = self.cellSize
-        super.draw(withFrame: CGRect.init(x: cellFrame.origin.x, y: (cellFrame.size.height - cellSize.height) / 2, width: cellFrame.size.width, height: cellSize.height), in: controlView)
+        super.draw(withFrame: cellFrame, in: controlView)
+//        let cellSize = self.cellSize(forBounds: cellFrame)
+//        super.draw(withFrame: CGRect.init(x: cellFrame.origin.x, y: (cellFrame.size.height - cellSize.height) / 2, width: cellSize.height, height: cellSize.height), in: controlView)
         debugPrint("")
     }
     override func draw(withExpansionFrame cellFrame: NSRect, in view: NSView) {
