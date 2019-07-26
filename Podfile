@@ -14,9 +14,8 @@ target 'Queen' do
   pod 'Sparkle'
   pod 'LetsMove'
 
-  target 'QueueTest' do
-    inhibit_all_warnings
-    inherit! : search_path
+  target 'QueenTests' do
+    inherit! :search_paths
 
   end
 

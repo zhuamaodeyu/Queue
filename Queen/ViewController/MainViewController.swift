@@ -81,12 +81,12 @@ extension MainViewController: MenuViewControllerDelegate {
             self.contentView.addSubview(documentViewController.view)
             self.addChild(documentViewController)
             break
+//        case 4:
+//            let  buildingViewController = BuildingViewController.init()
+//            self.contentView.addSubview(buildingViewController.view)
+//            self.addChild(buildingViewController)
+//            break
         case 4:
-            let  buildingViewController = BuildingViewController.init()
-            self.contentView.addSubview(buildingViewController.view)
-            self.addChild(buildingViewController)
-            break
-        case 5:
             let administratorViewController = AdministratorViewController.init()
             self.contentView.addSubview(administratorViewController.view)
             self.addChild(administratorViewController)
