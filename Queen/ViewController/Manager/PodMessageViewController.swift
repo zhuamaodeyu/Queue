@@ -25,7 +25,8 @@ struct TableViewIdentifier {
     static var collection = NSUserInterfaceItemIdentifier.init("collection")
     // 构建
     static var building = NSUserInterfaceItemIdentifier.init("building")
-
+    // 源
+    static var source = NSUserInterfaceItemIdentifier.init("source")
 }
 
 
@@ -176,6 +177,15 @@ extension PodMessageViewController {
         buildingColumn.isEditable = false
         buildingColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(buildingColumn)
+
+        let sourceColumn = NSTableColumn.init(identifier: TableViewIdentifier.source)
+        sourceColumn.headerCell.alignment = .center
+        sourceColumn.title = "源"
+        sourceColumn.width = 100
+        sourceColumn.minWidth = 80
+        sourceColumn.isEditable = false
+        sourceColumn.resizingMask = .autoresizingMask
+        tableView.addTableColumn(sourceColumn)
     }
 }
 
@@ -287,6 +297,18 @@ extension PodMessageViewController: NSTableViewDataSource, NSTableViewDelegate {
 
             })
             return cell
+        case TableViewIdentifier.source:
+            var cell = tableView.makeView(withIdentifier: TableViewIdentifier.source, owner: self) as? ButtonTableViewCell
+            if cell == nil {
+                cell = ButtonTableViewCell.init()
+                cell?.identifier = TableViewIdentifier.source
+            }
+            // set data
+            cell?.config(image: nil, title: "Source", type: TableViewIdentifier.building, complation: { (button) in
+                
+            })
+            return cell
+
         default:
             break
         }
@@ -340,7 +362,7 @@ extension PodMessageViewController {
                                              manager: "张三",
                                              test: false,
                                              collection: false,
-                                             building: false, lastBuilding: "", lastBuilder: "")
+                                             building: false, lastBuilding: "", lastBuilder: "",frameworkLocalPath: nil,sourceLocalPath: nil)
         dataSource.append(component1)
 
         self.tableView.reloadData()

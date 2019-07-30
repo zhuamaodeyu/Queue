@@ -8,7 +8,7 @@
 
 import Cocoa
 
-
+//http://liumh.com/2015/11/25/ios-auto-archive-ipa/
 struct XcodeProject {
     static var xcodeproj:String = "xcodeproj"
     static var xcworkspace:String = "xcworkspace"
@@ -47,7 +47,6 @@ extension Xcode {
 
 // MARK: - xcode build
 extension Xcode {
-    //    http://liumh.com/2015/11/25/ios-auto-archive-ipa/
     public func build() {
         guard let _ = self.path else {
             return
@@ -66,10 +65,14 @@ extension Xcode {
         //        PROVISIONING_PROFILE=描述文件UUID
     }
 
-    public func list() {
-        guard let _ = self.path else {
-            return
+    public func list() -> String {
+        guard let xb = self.path else {
+            return ""
         }
+        if let result = Process.run(command: xb, args: ["-list","-json"]), !result.isEmpty {
+            return result
+        }
+        return ""
     }
 
     public func exportArchive() {
@@ -88,8 +91,8 @@ extension Xcode {
 
     /// 获取项目名称
     ///
-    /// - Parameter path: <#path description#>
-    /// - Returns: <#return value description#>
+    /// - Parameter path: path
+    /// - Returns: project Name
     public func projectName(path: String) -> String? {
         let url = URL.init(fileURLWithPath: path)
         // 当前就是
@@ -108,6 +111,10 @@ extension Xcode {
 }
 
 extension Xcode {
+
+    /// open Xcode project
+    ///
+    /// - Parameter completaion: completaion  url
     public static func selectXcodeProj(_ completaion:@escaping (URL?) -> Void) {
         let openPanel = NSOpenPanel.init()
         openPanel.allowsMultipleSelection = false

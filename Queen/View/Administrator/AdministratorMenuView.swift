@@ -13,7 +13,7 @@ protocol AdministratorMenuViewDelegate: class {
 }
 protocol AdministratorMenuViewDataSource: class {
     func numberOfSections(in menuView: AdministratorMenuView) -> Int
-    func menuView(_ menuView: AdministratorMenuView, cellForRowAt indexPath: IndexPath) -> NSView?
+    func menuView(_ menuView: AdministratorMenuView, cellForRowAt indexPath: Int) -> NSView?
 }
 
 class AdministratorMenuView: NSScrollView {

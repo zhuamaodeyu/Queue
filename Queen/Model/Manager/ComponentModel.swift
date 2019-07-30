@@ -23,4 +23,8 @@ struct ComponentModel {
     var building: Bool
     var lastBuilding: String
     var lastBuilder: String
+
+    // 本地路径
+    var frameworkLocalPath: String?
+    var sourceLocalPath: String?
 }

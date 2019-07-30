@@ -20,7 +20,6 @@ struct AdministratorMenuModel {
      var icon: String
 }
 
-
 class AdministratorViewController: NSViewController {
 
     /**
@@ -39,6 +38,9 @@ class AdministratorViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         installSubviews()
+        menuDataSource.append(AdministratorMenuModel.init(type: .spec, name: "Spec", icon: ""))
+        menuDataSource.append(AdministratorMenuModel.init(type: .team, name: "Team", icon: ""))
+        menuDataSource.append(AdministratorMenuModel.init(type: .user, name: "User", icon: ""))
     }
 }
 
@@ -86,7 +88,10 @@ extension AdministratorViewController: AdministratorMenuViewDataSource {
     func numberOfSections(in menuView: AdministratorMenuView) -> Int {
         return menuDataSource.count
     }
-    func menuView(_ menuView: AdministratorMenuView, cellForRowAt indexPath: IndexPath) -> NSView? {
+    func menuView(_ menuView: AdministratorMenuView, cellForRowAt indexPath: Int) -> NSView? {
+        let model = self.menuDataSource[indexPath]
+        let cell = AdministratorMenuCell.init()
+        
         return nil
     }
 }

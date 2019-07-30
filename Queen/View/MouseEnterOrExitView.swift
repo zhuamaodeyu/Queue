@@ -36,6 +36,5 @@ class MouseEnterOrExitView: NSView {
         if let t = trackingArea {
             addTrackingArea(t)
         }
-
     }
 }

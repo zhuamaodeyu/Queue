@@ -26,7 +26,7 @@ class LoginViewController: NSViewController {
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        accountField.stringValue = "playtomandjerry"
+        accountField.stringValue = "playtomandjerry@gmail.com"
         passwordField.stringValue = "Xiaohundan3575"
         if accountField.stringValue.isEmpty {
             accountField.becomeFirstResponder()
@@ -146,11 +146,6 @@ extension LoginViewController {
 extension LoginViewController {
 
     @objc private func close() {
-        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
-            return
-        }
-        welcomeWindowController.window?.center()
-        welcomeWindowController.showWindow(nil)
         self.view.window?.close()
     }
 
@@ -160,37 +155,27 @@ extension LoginViewController {
             return
         }
         self.progressView.startAnimation(nil)
-        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
-            return
+        login { [weak self] (result) in
+            self?.progressView.stopAnimation(nil)
+            switch result {
+            case .success(object: _):
+                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
+                    return
+                }
+                welcomeWindowController.window?.center()
+                welcomeWindowController.showWindow(nil)
+                self?.view.window?.close()
+            case .failure(error: _):
+                break
+            }
         }
-        welcomeWindowController.window?.center()
-        welcomeWindowController.showWindow(nil)
-        self.view.window?.close()
-
-        return
-
-
-//        self.progressView.startAnimation(nil)
-//        login { [weak self] (result) in
-//            self?.progressView.stopAnimation(nil)
-//            switch result {
-//            case .success(object: _):
-//                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
-//                    return
-//                }
-//                welcomeWindowController.window?.center()
-//                welcomeWindowController.showWindow(nil)
-//            case .failure(error: _):
-//                break
-//            }
-//        }
     }
 }
 
 
 extension LoginViewController {
     private func login(compation: @escaping (LCValueResult<LCUser>) -> Void) {
-        if test(input: accountField.stringValue, pattern: "") {
+        if test(input: accountField.stringValue, pattern: email_regex) {
                 let _ = LCUser.logIn(email: accountField.stringValue, password: passwordField.stringValue) { result in
                    compation(result)
                 }

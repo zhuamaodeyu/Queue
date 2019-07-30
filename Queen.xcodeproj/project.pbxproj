@@ -113,6 +113,7 @@
 		10E022A522EB41A700DE3433 /* LeanCloud+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A422EB41A700DE3433 /* LeanCloud+User.swift */; };
 		10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A722EB519C00DE3433 /* ContentContainterView.swift */; };
 		10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */; };
+		10E022AC22ED78C900DE3433 /* AdministratorMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */; };
 		B3A6ADFF8CD78FE8BB8DE585 /* Pods_QueenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
@@ -239,6 +240,7 @@
 		10E022A422EB41A700DE3433 /* LeanCloud+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+User.swift"; sourceTree = "<group>"; };
 		10E022A722EB519C00DE3433 /* ContentContainterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainterView.swift; sourceTree = "<group>"; };
 		10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuView.swift; sourceTree = "<group>"; };
+		10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuCell.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		32765BD05D8130AC383E25EE /* Pods-QueenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QueenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QueenTests/Pods-QueenTests.release.xcconfig"; sourceTree = "<group>"; };
 		42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QueenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -759,6 +761,7 @@
 			children = (
 				10E022A722EB519C00DE3433 /* ContentContainterView.swift */,
 				10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */,
+				10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */,
 			);
 			path = Administrator;
 			sourceTree = "<group>";
@@ -1006,6 +1009,7 @@
 				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
 				10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */,
+				10E022AC22ED78C900DE3433 /* AdministratorMenuCell.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
 				10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */,
 				10E022A322EB40D200DE3433 /* AdministratorViewController.swift in Sources */,

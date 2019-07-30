@@ -105,3 +105,24 @@ class PodSpecEntity: LCObject {
         return "Pod_Manager"
     }
 }
+
+
+class PodDescriptionEntity: LCObject {
+
+    /**
+     1. 名称
+     2. 负责人ID
+     3. 项目组ID
+     
+    */
+    @objc dynamic var name: LCString?
+    @objc dynamic var master_Id: LCString?
+    @objc dynamic var team_Id: LCString?
+
+
+
+
+    override static func objectClassName() -> String {
+        return "Pod_Description"
+    }
+}

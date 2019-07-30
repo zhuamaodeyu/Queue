@@ -35,7 +35,6 @@ extension Carthage {
     /// - Returns:
     func install() {
 
-        
     }
 }
 
@@ -46,7 +45,7 @@ extension Carthage {
     /// - Parameter path: path
     /// - Returns: default false 
     func check(path: String) -> Bool {
-
+ 
         return false
     }
 }
