@@ -12,6 +12,17 @@ protocol CommandLineDelegate:class {
     func commandLine(commandLine:CommandLine, didUpdateOutPut content:NSAttributedString)
     func commandLineDidFinish(commandLine: CommandLine)
 }
+enum CommandLineStatusType {
+    case none
+    case runing
+    case finish
+    case cancel
+    case prepar
+}
+
+protocol CommandProtocol {
+    
+}
 
 class CommandLine {
     private let environment = ["HOME": NSHomeDirectory(),
@@ -22,6 +33,7 @@ class CommandLine {
     var finishSuccess: Bool {
         return self.terminationStatus == 0
     }
+    private(set) var status:CommandLineStatusType = .none
 
     weak var delegate: CommandLineDelegate?
 
@@ -31,6 +43,10 @@ class CommandLine {
     private var terminationStatus:Int = -1
 
 
+    var uuid: String {
+        return UUID.init().uuidString
+    }
+
 
 
     init?(workSpace: String, command: String, arguments:[String],delegate: CommandLineDelegate?, qualityOfService: QualityOfService?) {
@@ -38,11 +54,13 @@ class CommandLine {
         guard let bundle = envBundleScript else {
             return nil
         }
-
+        self.delegate = delegate
         self.process = Process.init()
         self.process?.qualityOfService = qualityOfService ?? .background
-        self.process?.launchPath = "/bin/sh \(bundle) \(command)"
-        self.process?.arguments = arguments
+        self.process?.launchPath = "/bin/sh"
+        var arg = ["\(bundle)","\(command)"]
+        arg.append(contentsOf: arguments)
+        self.process?.arguments = arg
         self.process?.environment = self.environment
         self.process?.currentDirectoryPath = workSpace
 
@@ -61,6 +79,8 @@ class CommandLine {
         NotificationCenter.default.addObserver(self, selector: #selector(outputNotification(notification:)),
                                                name: .NSFileHandleDataAvailable,
                                                object: errPipe.fileHandleForReading)
+        self.status = .prepar
+
     }
 }
 
@@ -68,10 +88,14 @@ extension CommandLine {
     func run() {
         self.process?.launch()
         self.running = true
+        self.status = .runing
+
     }
     func cancel() {
         self.process?.interrupt()
         self.running = false
+        self.status = .cancel
+
     }
 }
 
@@ -96,7 +120,7 @@ extension CommandLine {
 extension CommandLine {
 
     private func stringToAttributeString(output: String) -> NSAttributedString {
-        return NSAttributedString.init(string: "")
+        return NSAttributedString.init(string: output)
     }
 
 
@@ -105,6 +129,7 @@ extension CommandLine {
         self.terminationStatus = Int(self.process?.terminationStatus ?? -1)
         self.process = nil
         self.running = false
+        self.status = .finish
         self.delegate?.commandLineDidFinish(commandLine: self)
     }
 }

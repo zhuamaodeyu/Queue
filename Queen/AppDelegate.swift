@@ -27,6 +27,9 @@ extension AppDelegate {
         let defaults = DefaultSettings.defaults.mapKeys { $0.rawValue }
         UserDefaults.standard.register(defaults: defaults)
         NSUserDefaultsController.shared.initialValues = defaults
+
+        ProgressHUD.setDefaultStyle(.dark)
+        ProgressHUD.setDefaultPosition(.center)
     }
 
     private static func initLeanCloud() {

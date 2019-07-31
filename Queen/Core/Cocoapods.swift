@@ -10,11 +10,14 @@ import Cocoa
 
 
 class Cocoapods {
-    static let shared = Cocoapods.init()
-    private var path: String?
-    private init() {
-        self.path = Command.shared.which(command: "pod")
+    private var path: String? {
+        return Command.shared.which(command: "pod")
     }
+    private var rubyPath : String? {
+        return Command.shared.which(command: "ruby")
+    }
+    private(set) var command: CommandLine?
+    private var complation:((_ cocoapods:Cocoapods, _ status: CommandLineStatusType, _ content: NSAttributedString?) -> Void)?
 }
 
 extension Cocoapods {
@@ -105,4 +108,33 @@ extension Notification.Name {
     static var openSearch = Notification.Name.init("openSearch")
     static var openPodWithName = Notification.Name.init("openPod")
     static var openPodfileReference = Notification.Name.init("openPodfileReference")
+}
+
+extension Cocoapods {
+    func allPods() -> [String] {
+        guard let _ = Bundle.main.path(forResource: "CococaPods", ofType: "rb", inDirectory: "bundle/script") else {
+            return []
+        }
+
+        return []
+    }
+
+    func podSpecUpdate(complation:((_ cocoapods:Cocoapods,_ status: CommandLineStatusType, _ content: NSAttributedString?) -> Void)?) {
+        self.complation = complation
+        self.command = CommandLine.init(workSpace: NSHomeDirectory(), command: "pod", arguments: ["repo","update"], delegate: self, qualityOfService: .userInitiated)
+        self.command?.run()
+    }
+}
+
+extension Cocoapods: CommandProtocol {
+    
+}
+extension Cocoapods:CommandLineDelegate {
+    func commandLine(commandLine: CommandLine, didUpdateOutPut content: NSAttributedString) {
+        self.complation?(self,commandLine.status, content)
+    }
+
+    func commandLineDidFinish(commandLine: CommandLine) {
+        self.complation?(self,commandLine.status, nil)
+    }
 }

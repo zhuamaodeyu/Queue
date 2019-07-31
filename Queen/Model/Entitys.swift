@@ -113,7 +113,7 @@ class PodDescriptionEntity: LCObject {
      1. 名称
      2. 负责人ID
      3. 项目组ID
-     
+
     */
     @objc dynamic var name: LCString?
     @objc dynamic var master_Id: LCString?

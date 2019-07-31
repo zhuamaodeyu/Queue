@@ -34,7 +34,8 @@ extension NSView {
             super.mouseUp(with: theEvent)
         }
     }
-
+    
+    @discardableResult
     override open func becomeFirstResponder() -> Bool {
         return userInteractionEnabled
     }

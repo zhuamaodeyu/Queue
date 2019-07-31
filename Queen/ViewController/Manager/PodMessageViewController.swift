@@ -35,7 +35,9 @@ class PodMessageViewController: NSViewController {
     private var tableView: NSTableView!
     private var scrollView: NSScrollView!
     private var splitView: NSSplitView!
-    private var terminalView: SyntaxTextView!
+    private var terminalViewController = TerminalViewConstroller.init()
+
+    private var commandLines:[CommandProtocol] = []
 
     private var dataSource: [ComponentModel] = []
 
@@ -48,6 +50,11 @@ class PodMessageViewController: NSViewController {
         initSubviewConstaints()
         testData()
     }
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        updateSpec()
+    }
+
 }
 
 
@@ -79,21 +86,18 @@ extension PodMessageViewController {
 
         splitView = NSSplitView.init()
         splitView.isVertical = false
-        splitView.dividerStyle = .paneSplitter
+        splitView.dividerStyle = .thin
         splitView.autoresizesSubviews = true
         splitView.backgroundColor = NSColor.clear
         splitView.delegate = self
         splitView.adjustSubviews()
         view.addSubview(splitView)
 
-        terminalView = SyntaxTextView.init()
-        terminalView.delegate = self
-        terminalView.contentTextView.isEditable = false
-        terminalView.backgroundColor = NSColor.clear
-        terminalView.scrollView.hasVerticalScroller = false
-        terminalView.scrollView.hasHorizontalScroller = false
         splitView.addSubview(scrollView)
-        splitView.addSubview(terminalView)
+        splitView.addSubview(terminalViewController.view)
+        self.addChild(terminalViewController)
+        terminalViewController.delegate = self
+
     }
 
     private func initSubviewConstaints() {
@@ -367,10 +371,28 @@ extension PodMessageViewController {
 
         self.tableView.reloadData()
 
-        terminalView.text = """
-        This is an example of SavannaKit.
-        This example highlights words that are longer than 6 characters in red.
-        """
+//        terminalView.text = """
+//        This is an example of SavannaKit.
+//        This example highlights words that are longer than 6 characters in red.
+//        """
     }
 }
 
+
+extension PodMessageViewController : TerminalViewConstrollerDelegate {
+
+
+}
+
+extension PodMessageViewController {
+    func updateSpec() {
+        let cocoapods = Cocoapods.init()
+        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
+            if type == .cancel || type == .finish {
+                debugPrint("需要删除")
+            }
+            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
+        }
+        self.commandLines.append(cocoapods)
+    }
+}

@@ -89,9 +89,9 @@ extension AdministratorViewController: AdministratorMenuViewDataSource {
         return menuDataSource.count
     }
     func menuView(_ menuView: AdministratorMenuView, cellForRowAt indexPath: Int) -> NSView? {
-        let model = self.menuDataSource[indexPath]
-        let cell = AdministratorMenuCell.init()
-        
+        let _ = self.menuDataSource[indexPath]
+        let _ = AdministratorMenuCell.init()
+
         return nil
     }
 }
