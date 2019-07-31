@@ -370,11 +370,6 @@ extension PodMessageViewController {
         dataSource.append(component1)
 
         self.tableView.reloadData()
-
-//        terminalView.text = """
-//        This is an example of SavannaKit.
-//        This example highlights words that are longer than 6 characters in red.
-//        """
     }
 }
 

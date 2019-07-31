@@ -15,23 +15,23 @@ class Queue_Search
     search = Pod::Command::Search.new(_args)
     puts search.instance_variable_get(:@query)
     search.ensure_master_spec_repo_exists!
-    if _args.flag?('web')
-      puts Queue_Search.web_search(search)
-    else
-      puts Queue_Search.local_search(search)
-    end
+#    if _args.flag?('web')
+#      puts Queue_Search.web_search(search)
+#    else
+    puts Queue_Search.local_search(search)
+#    end
   end
-  def self.web_search(search)
-    queries = search.instance_variable_get(:@platform_filters).map do |platform|
-      "on:#{platform}"
-    end
-    queries += search.instance_variable_get(:@query)
-    query_parameter = queries.compact.flatten.join(' ')
-    url = "https://cocoapods.org/?q=#{CGI.escape(query_parameter).gsub('+', '%20')}"
-    UI.puts("Opening #{url}")
-    # open!(url)
-    Executable.execute_command(:open, [url])
-  end
+#  def self.web_search(search)
+#    queries = search.instance_variable_get(:@platform_filters).map do |platform|
+#      "on:#{platform}"
+#    end
+#    queries += search.instance_variable_get(:@query)
+#    query_parameter = queries.compact.flatten.join(' ')
+#    url = "https://cocoapods.org/?q=#{CGI.escape(query_parameter).gsub('+', '%20')}"
+#    UI.puts("Opening #{url}")
+#    # open!(url)
+#    Executable.execute_command(:open, [url])
+#  end
 
   def self.local_search(search)
     query_regex = search.instance_variable_get(:@query).reduce([]) { |result, q|

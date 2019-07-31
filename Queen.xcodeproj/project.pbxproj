@@ -20,6 +20,10 @@
 		1023EB7422E208240067E402 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7322E208240067E402 /* IconImageView.swift */; };
 		1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */; };
 		1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7922E2D2410067E402 /* CommandLine.swift */; };
+		1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223022F1DA9400C38178 /* PodSearchCoordinator.swift */; };
+		1035223322F1DB1D00C38178 /* PodAnalyzerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */; };
+		1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */; };
+		1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -145,6 +149,10 @@
 		1023EB7322E208240067E402 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInterfaction+NSView.swift"; sourceTree = "<group>"; };
 		1023EB7922E2D2410067E402 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
+		1035223022F1DA9400C38178 /* PodSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSearchCoordinator.swift; sourceTree = "<group>"; };
+		1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodAnalyzerCoordinator.swift; sourceTree = "<group>"; };
+		1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodPluginCoordinator.swift; sourceTree = "<group>"; };
+		1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodRepoCoordinator.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -298,6 +306,17 @@
 				1023EB7322E208240067E402 /* IconImageView.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		1035222F22F1D6BE00C38178 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1035223022F1DA9400C38178 /* PodSearchCoordinator.swift */,
+				1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */,
+				1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */,
+				1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		10636F4B22CFA2A70034A505 = {
@@ -679,6 +698,7 @@
 		1063704E22DA40DD0034A505 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				1035222F22F1D6BE00C38178 /* Coordinator */,
 				1063704F22DA412F0034A505 /* Command.swift */,
 				1063705522DAE9600034A505 /* Git.swift */,
 				1063705722DAE9680034A505 /* Cocoapods.swift */,
@@ -1002,6 +1022,7 @@
 				10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
 				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
+				1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */,
 				1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */,
 				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
 				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
@@ -1059,12 +1080,14 @@
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
 				10E0229922EB3F7400DE3433 /* NSApplication+Exts.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
+				1035223322F1DB1D00C38178 /* PodAnalyzerCoordinator.swift in Sources */,
 				10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */,
 				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
 				1023EB7422E208240067E402 /* IconImageView.swift in Sources */,
 				1063703022D78E090034A505 /* Token.swift in Sources */,
 				1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */,
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
+				1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */,
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				10E0228522E89FA900DE3433 /* Models.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
@@ -1079,6 +1102,7 @@
 				10E022AE22F07F3B00DE3433 /* TerminalPopUpButton.swift in Sources */,
 				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,
 				1063703922D78E090034A505 /* SourceCodeTheme.swift in Sources */,
+				1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */,
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,
 				1063705A22DAEA520034A505 /* Xcode.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,

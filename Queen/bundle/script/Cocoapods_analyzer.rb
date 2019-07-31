@@ -134,7 +134,57 @@ class DependencyAnalyzer
       JSON.pretty_generate(results)
     end
 
+
+    # TODO This needs tests.
+    def analyze_podfile(podfile, installation_root)
+        config = Pod::Config.instance
+        config.podfile = podfile
+        config.installation_root = installation_root
+        Pod::Config.instance = config
+
+        puts config.sandbox
+        puts config.podfile
+        puts config.lockfile
+
+        analyzer = Pod::Installer::Analyzer.new(config.sandbox, config.podfile, config.lockfile)
+        analysis = analyzer.send(:inspect_targets_to_integrate).values
+
+        user_projects = {}
+        analysis.each do |target|
+            user_project = user_projects[target.client_root.to_s] ||= {}
+            user_targets = user_project["targets"] ||= {}
+            target.project_target_uuids.each do |uuid|
+                user_target = target.project.objects_by_uuid[uuid]
+                user_target_info = user_targets[user_target.name] ||= begin
+                    {
+                        "info_plist" => user_target.resolved_build_setting("INFOPLIST_FILE").values.first,
+                        "type" => user_target.product_type,
+                        "platform" => target.platform.to_s,
+                        "pod_targets" => [],
+                    }
+                end
+                user_target_info["pod_targets"] << target.target_definition.label
+            end
+        end
+
+        pod_targets = config.podfile.target_definitions.values.inject({}) do |h, target_definition|
+            h[target_definition.label] = target_definition.dependencies.map(&:name) unless target_definition.empty?
+            h
+        end
+
+        uses_frameworks = config.podfile.target_definitions.first.last.to_hash["uses_frameworks"]
+        last_installed_version = config.sandbox.manifest && config.sandbox.manifest.cocoapods_version.to_s
+        {
+            "projects" => user_projects,
+            "pod_targets" => pod_targets,
+            "uses_frameworks" => uses_frameworks,
+            "cocoapods_build_version" => last_installed_version
+        }
+    end
 end
+
+
+#===========================run =========================
 
 if ARGV.count < 3
   puts "参数不够"
