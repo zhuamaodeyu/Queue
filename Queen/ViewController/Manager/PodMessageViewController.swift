@@ -52,7 +52,7 @@ class PodMessageViewController: NSViewController {
     }
     override func viewDidAppear() {
         super.viewDidAppear()
-        updateSpec()
+//        updateSpec()
     }
 
 }
@@ -380,14 +380,14 @@ extension PodMessageViewController : TerminalViewConstrollerDelegate {
 }
 
 extension PodMessageViewController {
-    func updateSpec() {
-        let cocoapods = Cocoapods.init()
-        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
-            if type == .cancel || type == .finish {
-                debugPrint("需要删除")
-            }
-            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
-        }
-        self.commandLines.append(cocoapods)
-    }
+//    func updateSpec() {
+//        let cocoapods = Cocoapods.init()
+//        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
+//            if type == .cancel || type == .finish {
+//                debugPrint("需要删除")
+//            }
+//            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
+//        }
+//        self.commandLines.append(cocoapods)
+//    }
 }

@@ -9,9 +9,8 @@
 import Cocoa
 
 class Git {
-    static let shared = Git.init()
     private var path: String?
-    private init() {
+    init() {
         self.path = Command.shared.which(command: "git")
     }
     
@@ -34,4 +33,3 @@ extension Git {
         return false
     }
 }
-

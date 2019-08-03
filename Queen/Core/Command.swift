@@ -27,6 +27,11 @@ class Command {
 
 // MARK: - which
 extension Command {
+
+    /// 基础命令
+    ///
+    /// - Parameter name: 名字
+    /// - Returns: path 
     public func which(command name:String) -> String? {
         if self.shell.isEmpty {
             return nil

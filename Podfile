@@ -13,6 +13,7 @@ target 'Queen' do
   pod 'Moya'
   pod 'Sparkle'
   pod 'LetsMove'
+  pod 'ColorizeSwift'
 
   target 'QueenTests' do
     inherit! :search_paths

@@ -57,7 +57,7 @@ class WorkspaceManager {
             return (url, false)
         }
 
-        guard let projectName = Xcode.shared.projectName(path: path) else {
+        guard let projectName = Xcode.projectName(path: path) else {
             return nil
         }
 

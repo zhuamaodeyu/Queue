@@ -9,43 +9,14 @@
 import Cocoa
 
 
+private var carthagePath = Command.shared.which(command: "carthage")
 class Carthage {
-    static let shared = Carthage.init()
-    private var path: String?
-    private init() {
-        self.path = Command.shared.which(command: "carthage")
-    }
-}
-
-
-// MARK: - check
-extension Carthage {
-    /// 检测是否安装 Carthage
-    ///
-    /// - Returns:
-    func check() -> Bool {
-        if let _ = self.path {
-            return true
+    private var path: String
+     init?() {
+        if let p = carthagePath {
+            self.path = p
+            return
         }
-        return false
-    }
-
-    /// 安装
-    ///
-    /// - Returns:
-    func install() {
-
-    }
-}
-
-extension Carthage {
-
-    /// 检查当前目录是否是一个 Carthage 项目
-    ///
-    /// - Parameter path: path
-    /// - Returns: default false 
-    func check(path: String) -> Bool {
- 
-        return false
+        return nil
     }
 }

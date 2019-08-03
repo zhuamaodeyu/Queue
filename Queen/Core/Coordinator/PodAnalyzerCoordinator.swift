@@ -14,5 +14,8 @@ struct PodAnalyzerModel {
 }
 
 class PodAnalyzerCoordinator: NSObject {
-
+    private var successBlock:((_ models:PodAnalyzerModel) -> Void)?
+    private var logBlock:((_ log: NSAttributedString) -> Void)?
+    private var commandLine:CommandLine?
+    
 }

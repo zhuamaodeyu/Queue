@@ -9,132 +9,29 @@
 import Cocoa
 
 
+private var cocoapodPath = Command.shared.which(command: "pod")
+
+
 class Cocoapods {
-    private var path: String? {
-        return Command.shared.which(command: "pod")
+    private(set) var path: String
+    init?() {
+        if let p = cocoapodPath {
+            self.path = p
+            return
+        }
+        return nil
     }
-    private var rubyPath : String? {
-        return Command.shared.which(command: "ruby")
-    }
-    private(set) var command: CommandLine?
-    private var complation:((_ cocoapods:Cocoapods, _ status: CommandLineStatusType, _ content: NSAttributedString?) -> Void)?
+
 }
 
 extension Cocoapods {
-
     /// 检测路径是否是一个 cocoapod 项目
     ///
     /// - Parameter path: path
     /// - Returns: default false
-    func check(url path: String) -> Bool {
+    static func check(url path: String) -> Bool {
         
 
         return false
-    }
-
-
-    /// 检测是否安装cocoapod
-    ///
-    /// - Returns: default false
-    func check() -> Bool {
-
-        return false
-    }
-
-
-    /// 安装cocoapods
-    ///
-    /// - Returns: default false 
-    func install() -> Bool {
-
-        return false 
-    }
-}
-
-
-// MARK: - check Podfile
-extension Cocoapods {
-    func checkPodfileUpdate(last date: Date) -> Bool {
-        return false
-    }
-}
-
-// MARK: - cocoapods
-extension Cocoapods {
-    public func podInstall() {
-
-    }
-    public func podUpdate() {
-
-    }
-    public func podSearch() {
-
-    }
-}
-
-
-
-// MARK: - Open
-extension Cocoapods {
-    public func openPodspecReference() {
-        NotificationCenter.default.post(name: .openPodspecReference, object: nil, userInfo: [
-            DocumentationAssociatedKey.name:"openPodspecReference",
-            DocumentationAssociatedKey.url : "https://guides.cocoapods.org/syntax/podspec.html"
-            ])
-    }
-    public func openSearch() {
-        NotificationCenter.default.post(name: .openSearch, object: nil, userInfo: [
-            DocumentationAssociatedKey.name:"openSearch",
-            DocumentationAssociatedKey.url : "https://cocoapods.org/"
-            ])
-    }
-    public func openPod(with name: String) {
-        NotificationCenter.default.post(name: .openPodWithName, object: nil, userInfo: [
-            DocumentationAssociatedKey.name:"openPodWithName",
-            DocumentationAssociatedKey.url : "https://cocoapods.org/pods/\(name)"
-            ])
-    }
-    public func openPodfileReference() {
-        NotificationCenter.default.post(name: .openPodfileReference, object: nil, userInfo: [
-            DocumentationAssociatedKey.name:"openPodfileReference",
-            DocumentationAssociatedKey.url : "https://guides.cocoapods.org/syntax/podfile.html"
-            ])
-    }
-}
-
-
-extension Notification.Name {
-    static var openPodspecReference = Notification.Name.init("openPodspecReference")
-    static var openSearch = Notification.Name.init("openSearch")
-    static var openPodWithName = Notification.Name.init("openPod")
-    static var openPodfileReference = Notification.Name.init("openPodfileReference")
-}
-
-extension Cocoapods {
-    func allPods() -> [String] {
-        guard let _ = Bundle.main.path(forResource: "CococaPods", ofType: "rb", inDirectory: "bundle/script") else {
-            return []
-        }
-
-        return []
-    }
-
-    func podSpecUpdate(complation:((_ cocoapods:Cocoapods,_ status: CommandLineStatusType, _ content: NSAttributedString?) -> Void)?) {
-        self.complation = complation
-        self.command = CommandLine.init(workSpace: NSHomeDirectory(), command: "pod", arguments: ["repo","update"], delegate: self, qualityOfService: .userInitiated)
-        self.command?.run()
-    }
-}
-
-extension Cocoapods: CommandProtocol {
-    
-}
-extension Cocoapods:CommandLineDelegate {
-    func commandLine(commandLine: CommandLine, didUpdateOutPut content: NSAttributedString) {
-        self.complation?(self,commandLine.status, content)
-    }
-
-    func commandLineDidFinish(commandLine: CommandLine) {
-        self.complation?(self,commandLine.status, nil)
     }
 }

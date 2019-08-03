@@ -24,10 +24,17 @@
 		1035223322F1DB1D00C38178 /* PodAnalyzerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */; };
 		1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */; };
 		1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */; };
+		1035223922F5558200C38178 /* PodActionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223822F5558200C38178 /* PodActionCoordinator.swift */; };
+		1035223B22F555A100C38178 /* XcodeActionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223A22F555A100C38178 /* XcodeActionCoordinator.swift */; };
+		1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223D22F55B0500C38178 /* AppDelegate.swift */; };
+		1035224022F55B1B00C38178 /* AppDelegate+Basic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223F22F55B1B00C38178 /* AppDelegate+Basic.swift */; };
+		1035224222F55B3300C38178 /* Appdelegate+Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224122F55B3300C38178 /* Appdelegate+Notification.swift */; };
+		1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */; };
+		1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224522F55BB900C38178 /* AppDelegate+Document.swift */; };
+		1035224822F566FD00C38178 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1035224722F566FD00C38178 /* Welcome.storyboard */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
-		10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F5722CFA2A70034A505 /* AppDelegate.swift */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6122CFA2A80034A505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
 		10636F6E22CFA34A0034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6D22CFA34A0034A505 /* Document.swift */; };
@@ -153,11 +160,18 @@
 		1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodAnalyzerCoordinator.swift; sourceTree = "<group>"; };
 		1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodPluginCoordinator.swift; sourceTree = "<group>"; };
 		1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodRepoCoordinator.swift; sourceTree = "<group>"; };
+		1035223822F5558200C38178 /* PodActionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodActionCoordinator.swift; sourceTree = "<group>"; };
+		1035223A22F555A100C38178 /* XcodeActionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeActionCoordinator.swift; sourceTree = "<group>"; };
+		1035223D22F55B0500C38178 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1035223F22F55B1B00C38178 /* AppDelegate+Basic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Basic.swift"; sourceTree = "<group>"; };
+		1035224122F55B3300C38178 /* Appdelegate+Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Appdelegate+Notification.swift"; sourceTree = "<group>"; };
+		1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Menu.swift"; sourceTree = "<group>"; };
+		1035224522F55BB900C38178 /* AppDelegate+Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Document.swift"; sourceTree = "<group>"; };
+		1035224722F566FD00C38178 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		10636F5722CFA2A70034A505 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10636F5D22CFA2A80034A505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10636F6022CFA2A80034A505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		10636F6322CFA2A80034A505 /* Queen.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Queen.entitlements; sourceTree = "<group>"; };
@@ -315,8 +329,22 @@
 				1035223222F1DB1D00C38178 /* PodAnalyzerCoordinator.swift */,
 				1035223422F1DB6000C38178 /* PodPluginCoordinator.swift */,
 				1035223622F1DC1F00C38178 /* PodRepoCoordinator.swift */,
+				1035223822F5558200C38178 /* PodActionCoordinator.swift */,
+				1035223A22F555A100C38178 /* XcodeActionCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		1035223C22F55B0500C38178 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				1035223D22F55B0500C38178 /* AppDelegate.swift */,
+				1035223F22F55B1B00C38178 /* AppDelegate+Basic.swift */,
+				1035224122F55B3300C38178 /* Appdelegate+Notification.swift */,
+				1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */,
+				1035224522F55BB900C38178 /* AppDelegate+Document.swift */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		10636F4B22CFA2A70034A505 = {
@@ -359,8 +387,8 @@
 				10636F9922D4D01D0034A505 /* Other */,
 				10636F7B22CFA5280034A505 /* Extensions */,
 				10636F6922CFA3380034A505 /* Documents */,
-				10636F5722CFA2A70034A505 /* AppDelegate.swift */,
 				10636F9A22D4D0700034A505 /* Info.plist */,
+				1035223C22F55B0500C38178 /* AppDelegate */,
 			);
 			path = Queen;
 			sourceTree = "<group>";
@@ -568,6 +596,7 @@
 			children = (
 				10636FB822D4D08C0034A505 /* MainUI.storyboard */,
 				10E0227922E4194100DE3433 /* Login.storyboard */,
+				1035224722F566FD00C38178 /* Welcome.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -907,6 +936,7 @@
 				10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */,
 				10636F6122CFA2A80034A505 /* Main.storyboard in Resources */,
 				10636F9B22D4D0700034A505 /* Info.plist in Resources */,
+				1035224822F566FD00C38178 /* Welcome.storyboard in Resources */,
 				10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */,
 				10E0227A22E4194100DE3433 /* Login.storyboard in Resources */,
 			);
@@ -1020,6 +1050,7 @@
 				10636FDC22D640800034A505 /* MainWindowController.swift in Sources */,
 				1063702622D78E090034A505 /* String+Range.swift in Sources */,
 				10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */,
+				1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
 				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
 				1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */,
@@ -1030,6 +1061,7 @@
 				1063705822DAE9680034A505 /* Cocoapods.swift in Sources */,
 				1063705222DA442A0034A505 /* Process+Exts.swift in Sources */,
 				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
+				1035224222F55B3300C38178 /* Appdelegate+Notification.swift in Sources */,
 				10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */,
 				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
 				10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */,
@@ -1043,6 +1075,7 @@
 				10E022A322EB40D200DE3433 /* AdministratorViewController.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
+				1035223B22F555A100C38178 /* XcodeActionCoordinator.swift in Sources */,
 				10E0228722E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
@@ -1061,6 +1094,7 @@
 				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
 				1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
+				1035224022F55B1B00C38178 /* AppDelegate+Basic.swift in Sources */,
 				1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */,
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
 				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
@@ -1072,6 +1106,7 @@
 				10E0229E22EB401800DE3433 /* Utils.swift in Sources */,
 				10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */,
 				10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */,
+				1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */,
 				1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */,
 				10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */,
 				1063702B22D78E090034A505 /* SwiftLexer.swift in Sources */,
@@ -1091,6 +1126,7 @@
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				10E0228522E89FA900DE3433 /* Models.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
+				1035223922F5558200C38178 /* PodActionCoordinator.swift in Sources */,
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
 				1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
@@ -1100,13 +1136,13 @@
 				1063702922D78E090034A505 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */,
 				10E022AE22F07F3B00DE3433 /* TerminalPopUpButton.swift in Sources */,
-				10636F5822CFA2A70034A505 /* AppDelegate.swift in Sources */,
 				1063703922D78E090034A505 /* SourceCodeTheme.swift in Sources */,
 				1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */,
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,
 				1063705A22DAEA520034A505 /* Xcode.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
 				10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */,
+				1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
