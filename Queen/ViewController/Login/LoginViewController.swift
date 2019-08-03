@@ -159,7 +159,7 @@ extension LoginViewController {
             self?.progressView.stopAnimation(nil)
             switch result {
             case .success(object: _):
-                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
+                guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
                     return
                 }
                 welcomeWindowController.window?.center()
@@ -179,8 +179,7 @@ extension LoginViewController {
                 let _ = LCUser.logIn(email: accountField.stringValue, password: passwordField.stringValue) { result in
                    compation(result)
                 }
-            }
-        if test(input: accountField.stringValue, pattern: "") {
+            }else if test(input: accountField.stringValue, pattern: phone_regex) {
                 let _ = LCUser.logIn(mobilePhoneNumber: accountField.stringValue, password: passwordField.stringValue) { result in
                     compation(result)
                 }

@@ -9,6 +9,7 @@
 import Foundation
 
 let email_regex:String = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$"
+let phone_regex: String = "^1(3|4|5|7|8)\\d{9}$"
 //只能为中文
 public func onlyInputChineseCharacters(_ string: String) -> Bool {
     let inputString = "[\u{4e00}-\u{9fa5}]+"
