@@ -16,8 +16,8 @@ extension AppDelegate {
         UserDefaults.standard.register(defaults: defaults)
         NSUserDefaultsController.shared.initialValues = defaults
 
-        ProgressHUD.setDefaultStyle(.dark)
-        ProgressHUD.setDefaultPosition(.center)
+//        ProgressHUD.setDefaultStyle(.dark)
+//        ProgressHUD.setDefaultPosition(.center)
     }
 
     static func initLeanCloud() {
@@ -43,6 +43,32 @@ extension AppDelegate {
 }
 
 extension AppDelegate {
+    private func showWelcomeWindow() {
+        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
+            return
+        }
+        welcomeWindowController.window?.center()
+        welcomeWindowController.window?.makeKeyAndOrderFront(nil)
+    }
+
+    private func showLoginWindow() {
+        guard let loginWindowController = NSStoryboard.windowController(name: "LoginWindowController", storyboard: "Login") as? LoginWindowController else {
+            return
+        }
+        loginWindowController.window?.center()
+        loginWindowController.window?.makeKeyAndOrderFront(nil)
+    }
+
+    func showWindow() {
+        if NSApp.orderedWindows.count > 0 || NSApp.orderedDocuments.count > 0 {
+            return
+        }
+        if let _  = LCApplication.default.currentUser {
+            showWelcomeWindow()
+        }else {
+            showLoginWindow()
+        }
+    }
 
 }
 

@@ -8,7 +8,7 @@
         <!--Window Controller-->
         <scene sceneID="R8N-Mx-Vdn">
             <objects>
-                <windowController id="1Il-Nq-sSl" customClass="WelcomeWindowController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController storyboardIdentifier="WelcomeWindowController" id="1Il-Nq-sSl" customClass="WelcomeWindowController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="km9-tF-hga">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -29,7 +29,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="AFl-3T-rN6">
             <objects>
-                <viewController id="9Yj-wD-OJV" customClass="WelcomeViewController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="9Yj-wD-OJV" customClass="WelcomeViewController" customModule="Queen" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Ju0-An-0oK">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
