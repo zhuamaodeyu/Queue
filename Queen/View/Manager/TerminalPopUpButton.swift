@@ -13,12 +13,10 @@ class TerminalPopUpButton: NSPopUpButton {
     private var trackingArea: NSTrackingArea?
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-        self.alphaValue = 0.3
     }
 
     override func mouseEntered(with event: NSEvent) {
         super.mouseEntered(with: event)
-        self.alphaValue = 1.0
     }
 
     override func mouseExited(with event: NSEvent) {

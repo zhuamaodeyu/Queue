@@ -13,11 +13,33 @@ struct PodRepoModel {
 }
 
 class PodRepoCoordinator: NSObject {
-    func getSourceRepos(_ callback: (([PodRepoModel])->())? = nil) {
+    private var successBlock:((_ models:PodAnalyzerModel) -> Void)?
+    private var logBlock:((_ log: NSAttributedString) -> Void)?
+    private var commandLines:[CommandLine] = []
+}
+
+
+extension PodRepoCoordinator {
+
+    /// 获取所有的 source Repo
+    ///
+    /// - Parameter callback: callback
+    func sourceRepos(_ callback: (([PodRepoModel])->())? = nil) {
 
     }
 
     func cocoaPodsSpecSort(_ lhs: PodRepoModel, rhs: PodRepoModel) -> Bool {
-        return false 
+        return false
+    }
+
+    func update() {
+        
+    }
+}
+
+
+extension PodRepoCoordinator {
+    private func checkUpdate() -> Bool {
+        return false
     }
 }

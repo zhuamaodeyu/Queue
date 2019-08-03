@@ -34,7 +34,7 @@ class UserEntity: LCUser {
      */
     @objc dynamic var admin: LCBool = false
     @objc dynamic var master: LCBool = false
-    @objc dynamic var teamId: LCString?
+    @objc dynamic var teamId: [LCString] = []
 }
 // 专门用于用户查询的
 class UserFindEntity: LCObject {
@@ -70,6 +70,7 @@ class ProjectTeamEntity:LCObject {
      1. 项目组名称
      2. 项目组负责任ID
      3. 项目组简介描述
+
      */
     @objc dynamic var name: LCString?
     @objc dynamic var managerId: LCString?
@@ -80,7 +81,7 @@ class ProjectTeamEntity:LCObject {
     }
 }
 
-
+// spec 源
 class PodSpecEntity: LCObject {
     /**
      1. 名字

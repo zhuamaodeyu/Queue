@@ -64,6 +64,7 @@ extension AppDelegate {
             return
         }
         if let _  = LCApplication.default.currentUser {
+            EntitysDataManager.instance.reload()
             showWelcomeWindow()
         }else {
             showLoginWindow()

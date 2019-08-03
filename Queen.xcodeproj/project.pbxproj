@@ -32,6 +32,8 @@
 		1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */; };
 		1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224522F55BB900C38178 /* AppDelegate+Document.swift */; };
 		1035224822F566FD00C38178 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1035224722F566FD00C38178 /* Welcome.storyboard */; };
+		1035224A22F5751500C38178 /* EntitysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224922F5751500C38178 /* EntitysDataManager.swift */; };
+		1035224C22F5854600C38178 /* TerminalButtomToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224B22F5854600C38178 /* TerminalButtomToolView.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
@@ -168,6 +170,8 @@
 		1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Menu.swift"; sourceTree = "<group>"; };
 		1035224522F55BB900C38178 /* AppDelegate+Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Document.swift"; sourceTree = "<group>"; };
 		1035224722F566FD00C38178 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		1035224922F5751500C38178 /* EntitysDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitysDataManager.swift; sourceTree = "<group>"; };
+		1035224B22F5854600C38178 /* TerminalButtomToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalButtomToolView.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
@@ -503,6 +507,7 @@
 				10636FD322D631E90034A505 /* ButtonTableViewCell.swift */,
 				10636FD922D634FC0034A505 /* NameTableViewCell.swift */,
 				10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */,
+				1035224B22F5854600C38178 /* TerminalButtomToolView.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -587,6 +592,7 @@
 				10636FC822D4D4100034A505 /* Manager */,
 				10636FCB22D4D4100034A505 /* Welcome */,
 				10E0229A22EB3FC600DE3433 /* Entitys.swift */,
+				1035224922F5751500C38178 /* EntitysDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1108,6 +1114,7 @@
 				10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */,
 				1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */,
 				1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */,
+				1035224A22F5751500C38178 /* EntitysDataManager.swift in Sources */,
 				10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */,
 				1063702B22D78E090034A505 /* SwiftLexer.swift in Sources */,
 				1063705022DA412F0034A505 /* Command.swift in Sources */,
@@ -1139,6 +1146,7 @@
 				1063703922D78E090034A505 /* SourceCodeTheme.swift in Sources */,
 				1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */,
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,
+				1035224C22F5854600C38178 /* TerminalButtomToolView.swift in Sources */,
 				1063705A22DAEA520034A505 /* Xcode.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
 				10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */,

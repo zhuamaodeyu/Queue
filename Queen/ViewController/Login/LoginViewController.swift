@@ -159,6 +159,7 @@ extension LoginViewController {
             self?.progressView.stopAnimation(nil)
             switch result {
             case .success(object: _):
+                EntitysDataManager.instance.reload()
                 guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
                     return
                 }

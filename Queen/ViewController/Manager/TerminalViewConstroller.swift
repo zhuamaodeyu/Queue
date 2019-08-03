@@ -18,14 +18,6 @@ class TerminalViewConstroller: NSViewController {
     private var terminalTextViews:[String:SyntaxTextView] = [:]
     private var currentTextViewId:String?
 
-    private let menuListView: TerminalPopUpButton = {
-        let button = TerminalPopUpButton.init()
-        button.target = self as AnyObject
-        button.action = #selector(menuListViewAction(_:))
-        button.addItems(withTitles: ["测试1","测试2","测试3","测试4","测试5","测试6"])
-        return button
-    }()
-
     private let welcomeLabel: NSTextField = {
         let label = NSTextField.init()
         label.placeholderString = "欢迎使用 Queue"
@@ -38,6 +30,9 @@ class TerminalViewConstroller: NSViewController {
         label.isEditable = false
         return label
     }()
+
+    private var buttomToolView:TerminalButtomToolView = TerminalButtomToolView.init()
+
 
     override func loadView() {
         self.view = NSView.init()
@@ -55,17 +50,18 @@ extension TerminalViewConstroller {
             return
         }
         view.addSubview(welcomeLabel)
+
         welcomeLabel.snp.makeConstraints { (make) in
             make.center.equalTo(view)
         }
 
-        view.addSubview(menuListView)
-        menuListView.snp.makeConstraints { (make) in
-            make.right.equalTo(view).offset(-20)
-            make.top.equalTo(view).offset(50)
-            make.width.equalTo(100)
+        view.addSubview(buttomToolView)
+        buttomToolView.delegate = self
+        buttomToolView.isHidden = true 
+        buttomToolView.snp.makeConstraints { (make) in
+            make.height.equalTo(40)
+            make.left.right.bottom.equalTo(view)
         }
-
     }
 
 
@@ -81,18 +77,11 @@ extension TerminalViewConstroller {
         terminalView.backgroundColor = NSColor.clear
         terminalView.scrollView.hasVerticalScroller = false
         terminalView.scrollView.hasHorizontalScroller = false
-        terminalView.frame = self.view.bounds
+        terminalView.frame = CGRect.init(origin: CGPoint.zero, size: CGSize.init(width: self.view.width, height: self.view.height - self.buttomToolView.height))
         terminalTextViews.updateValue(terminalView, forKey: tag)
         return terminalView
     }
 }
-
-extension TerminalViewConstroller {
-    @objc private func menuListViewAction(_ sender:NSPopUpButton) {
-
-    }
-}
-
 
 extension TerminalViewConstroller {
     func updateContent(type: String?, content: NSAttributedString?)  {
@@ -101,7 +90,8 @@ extension TerminalViewConstroller {
         }
         terminalView.insertText(content.string)
         if currentTextViewId == nil {
-            view.addSubview(terminalView, positioned: .below, relativeTo: menuListView)
+            view.addSubview(terminalView)
+            self.buttomToolView.isHidden = false
             self.currentTextViewId = type
         }
     }
@@ -127,4 +117,8 @@ extension TerminalViewConstroller: SyntaxTextViewDelegate {
     func lexerForSource(_ source: String) -> Lexer {
         return MyLexer.init()
     }
+}
+
+extension TerminalViewConstroller:TerminalButtomToolViewDelegate {
+
 }

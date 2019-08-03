@@ -29,6 +29,7 @@ struct TableViewIdentifier {
     static var source = NSUserInterfaceItemIdentifier.init("source")
 }
 
+import LeanCloud
 
 class PodMessageViewController: NSViewController {
 
@@ -37,9 +38,15 @@ class PodMessageViewController: NSViewController {
     private var splitView: NSSplitView!
     private var terminalViewController = TerminalViewConstroller.init()
 
-    private var commandLines:[CommandProtocol] = []
+    private var podAnalyzerCoordinator = PodAnalyzerCoordinator.init()
+    private var podRepoCoordinator = PodRepoCoordinator.init()
+    private var podActionCoordinator = PodActionCoordinator.init()
 
     private var dataSource: [ComponentModel] = []
+
+    private var document: Document? {
+        return DocumentController.shared.currentDocument as? Document
+    }
 
     override func loadView() {
         self.view = NSView.init()
@@ -52,7 +59,8 @@ class PodMessageViewController: NSViewController {
     }
     override func viewDidAppear() {
         super.viewDidAppear()
-//        updateSpec()
+        updateSpec()
+        analyzer()
     }
 
 }
@@ -380,7 +388,9 @@ extension PodMessageViewController : TerminalViewConstrollerDelegate {
 }
 
 extension PodMessageViewController {
-//    func updateSpec() {
+
+    func updateSpec() {
+        self.podRepoCoordinator.update()
 //        let cocoapods = Cocoapods.init()
 //        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
 //            if type == .cancel || type == .finish {
@@ -389,5 +399,12 @@ extension PodMessageViewController {
 //            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
 //        }
 //        self.commandLines.append(cocoapods)
-//    }
+    }
+
+
+    // 分析pod 引用,如果需要再刷新
+    func analyzer() {
+
+    }
+
 }
