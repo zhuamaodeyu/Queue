@@ -10,7 +10,7 @@ import Cocoa
 
 
 extension NSApplication {
-    func getHardwareUUID() -> String? {
+    static func getHardwareUUID() -> String? {
         let dev = IOServiceMatching("IOPlatformExpertDevice")
         let platformExpert: io_service_t = IOServiceGetMatchingService(kIOMasterPortDefault, dev)
         let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformUUIDKey as CFString, kCFAllocatorDefault, 0)
@@ -22,7 +22,7 @@ extension NSApplication {
         return nil
     }
 
-    func getHardwareSerialNumber() -> String? {
+    static func getHardwareSerialNumber() -> String? {
         let dev = IOServiceMatching("IOPlatformExpertDevice")
         let platformExpert: io_service_t = IOServiceGetMatchingService(kIOMasterPortDefault, dev)
         let serialNumberAsCFString = IORegistryEntryCreateCFProperty(platformExpert, kIOPlatformSerialNumberKey as CFString, kCFAllocatorDefault, 0)

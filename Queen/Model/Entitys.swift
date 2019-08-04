@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 import LeanCloud
 //let number       : LCNumber       = 42
 //let bool         : LCBool         = true
@@ -27,23 +26,17 @@ import LeanCloud
 
 class UserEntity: LCUser {
     /**
-     1. 管理员 每个项目组都会有多个
-     2. master 管理者  每个公司只有一个
-     3. 项目组ID
-
+     1. master 管理者  每个公司只有一个
      */
-    @objc dynamic var admin: LCBool = false
     @objc dynamic var master: LCBool = false
-    @objc dynamic var teamId: [LCString] = []
 }
+
 // 专门用于用户查询的
 class UserFindEntity: LCObject {
     @objc dynamic var username: LCString?
     @objc dynamic var email: LCString?
     @objc dynamic var mobilePhoneNumber: LCString?
-    @objc dynamic var admin: LCBool = false
     @objc dynamic var master: LCBool = false
-    @objc dynamic var teamId: LCString?
 
     override static func objectClassName() -> String {
         return "User_Find"
@@ -56,54 +49,57 @@ class UserClientASssociation: LCObject {
      2. 客户端md5
      3.
      */
-    @objc dynamic var user_ID: LCString?
-    @objc dynamic var client_ID: LCString?
+    @objc dynamic var user_id: LCString?
+    @objc dynamic var client_id: LCString?
 
     override static func objectClassName() -> String {
         return "User_Client_Association"
     }
+
+
 }
 
 // 项目组
-class ProjectTeamEntity:LCObject {
+class TeamEntity:LCObject {
     /**
      1. 项目组名称
      2. 项目组负责任ID
      3. 项目组简介描述
-
+     4. 项目组管理员id 组
+     5. 项目成员ids
      */
-    @objc dynamic var name: LCString?
-    @objc dynamic var managerId: LCString?
-    @objc dynamic var desc: LCString?
+    @objc dynamic var name: LCString = ""
+    @objc dynamic var manager_Id: LCString = ""
+    @objc dynamic var desc: LCString = ""
+    @objc dynamic var admin_ids:LCArray = []
+    @objc dynamic var member_ids:LCArray = []
 
     override static func objectClassName() -> String {
-        return "Project_Team"
+        return "Team_Entity"
     }
 }
 
 // spec 源
-class PodSpecEntity: LCObject {
+class SpecSourceEntity: LCObject {
     /**
      1. 名字
      2. 地址
      3. 项目组ID
-     4. 是否是master
+     4. 是否是 master
      5. 是否是默认的
      6. 是否是二进制版
-     7. 是否是源码版
-     8. 是否是私有的
+     7. 是否是私有的
      */
     @objc dynamic var name: LCString?
-    @objc dynamic var address: LCString?
+    @objc dynamic var host: LCString?
     @objc dynamic var teamId: LCString?
     @objc dynamic var master: LCBool = false
     @objc dynamic var `default`: LCBool = false
     @objc dynamic var binrary: LCBool = false
-    @objc dynamic var source: LCBool = false
-    @objc dynamic var `private`: LCBool = false
+    @objc dynamic var `public`: LCBool = false
 
     override static func objectClassName() -> String {
-        return "Pod_Manager"
+        return "Spec_Source_Entity"
     }
 }
 
@@ -127,3 +123,16 @@ class PodDescriptionEntity: LCObject {
         return "Pod_Description"
     }
 }
+
+// CI 源
+class CISourcesEntity: LCObject {
+    @objc dynamic var name: LCString?
+    @objc dynamic var host: LCString?
+    @objc dynamic var team_id: LCString?
+
+
+    override static func objectClassName() -> String {
+        return "CI_Sources_Manager"
+    }
+}
+

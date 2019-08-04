@@ -13,9 +13,9 @@ class EntitysDataManager {
     static let instance = EntitysDataManager.init()
 
     // 当前用户所在的项目组
-    private(set) var projectTeam:[ProjectTeamEntity] = []
+    private(set) var teams:[TeamEntity] = []
     //当前用户可访问的 spec 源
-    private(set) var podSpecs:[PodSpecEntity] = []
+    private(set) var specSources:[SpecSourceEntity] = []
 
     private init() {
 
@@ -32,16 +32,31 @@ extension EntitysDataManager {
 
 extension EntitysDataManager {
     private func getProjectTeam() {
-        let user = LCApplication.default.currentUser as? UserEntity
-        let query = LCQuery.init(application: LCApplication.default, className: ProjectTeamEntity.objectClassName())
-        query.whereKey("objectId", .equalTo(user?.teamId ?? []))
-        query.find { (result) in
-
+        let query = LCQuery.init(className: TeamEntity.objectClassName())
+        guard let userId = LCApplication.default.currentUser?.objectId else {
+            return
+        }
+        query.whereKey("member_ids", .containedIn([userId]))
+        let result = query.find()
+        if result.isSuccess , let objects = result.objects as? [TeamEntity] {
+            self.teams = objects
         }
     }
 
     private func getPodSpecs(){
+        var teams = Set<String>.init()
+        for team in self.teams {
+            teams.update(with: team.objectId?.stringValue ?? "")
+        }
 
+        let query = LCQuery.init(className: SpecSourceEntity.objectClassName())
+        query.whereKey("team", .containedIn(Array(teams)))
+        query.whereKey("team", .notExisted)
+        query.whereKey("public", .equalTo(LCBool.init(true)))
+        let result = query.find()
+        if result.isSuccess , let objects = result.objects as? [SpecSourceEntity] {
+            self.specSources = objects
+        }
     }
 
 }

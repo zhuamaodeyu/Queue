@@ -14,7 +14,6 @@ struct XcodeProject {
     static var xcworkspace:String = "xcworkspace"
 }
 
-
 private var path: String? = Command.shared.which(command: "xcodebuild")
 class Xcode {
     private var xcodePath: String

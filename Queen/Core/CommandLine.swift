@@ -20,10 +20,6 @@ enum CommandLineStatusType {
     case prepar
 }
 
-protocol CommandProtocol {
-    
-}
-
 class CommandLine {
     private let environment = ["HOME": NSHomeDirectory(),
                                "LANG": "en_GB.UTF-8",
@@ -131,5 +127,12 @@ extension CommandLine {
         self.running = false
         self.status = .finish
         self.delegate?.commandLineDidFinish(commandLine: self)
+    }
+}
+
+
+extension CommandLine:Equatable {
+    static func == (lhs: CommandLine, rhs: CommandLine) -> Bool {
+       return lhs.process == rhs.process
     }
 }

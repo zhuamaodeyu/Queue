@@ -1,0 +1,10 @@
+#!/bin/sh 
+
+
+echo PATH=$PATH
+echo RUBYOPT=$RUBYOPT
+echo RUBYLIB=$RUBYLIB
+echo GEM_HOME=$GEM_HOME
+echo GEM_PATH=$GEM_PATH
+echo GEM_CACHE=$GEM_CACHE
+

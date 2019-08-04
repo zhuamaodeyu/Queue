@@ -7,21 +7,30 @@
 //
 
 import Cocoa
+import ObjectMapper
 
+struct SpecSourceModel:Mappable {
+    init?(map: Map) {
 
-private var cocoapodPath = Command.shared.which(command: "pod")
-
-
-class Cocoapods {
-    private(set) var path: String
-    init?() {
-        if let p = cocoapodPath {
-            self.path = p
-            return
-        }
-        return nil
     }
 
+    mutating func mapping(map: Map) {
+        host    <- map["host"]
+        name    <- map["name"]
+    }
+
+    var host: String = ""
+    var name: String = ""
+
+}
+
+class Cocoapods {
+    static let instance = Cocoapods.init()
+    private(set) var sources:[SpecSourceModel] = []
+
+    private init() {
+        getSources()
+    }
 }
 
 extension Cocoapods {
@@ -31,7 +40,28 @@ extension Cocoapods {
     /// - Returns: default false
     static func check(url path: String) -> Bool {
         
-
         return false
+    }
+}
+
+extension Cocoapods {
+    private func getSources() {
+        if Path.ruby.isEmpty || Path.basicScript.isEmpty {
+            debugPrint("ruby command path is empty or basic script path is empty")
+            return
+        }
+        Process.syncRun(command: Path.ruby, args: [Path.basicScript ,"sources"]) { (process, output, error) in
+            // TODO: json string -----> object
+            if !(error?.isEmpty ?? false) {
+                debugPrint("\(String(describing: error))")
+                return
+            }
+
+            if output?.isEmpty ?? true {
+                debugPrint("output is empty, please check command")
+                return
+            }
+            self.sources = Mapper<SpecSourceModel>().mapArray(JSONString: output ?? "") ?? []
+        }
     }
 }

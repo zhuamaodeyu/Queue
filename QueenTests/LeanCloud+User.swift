@@ -24,4 +24,27 @@ class LeanCloud_User: XCTestCase {
 
     }
 
+    func test_regster() {
+        let user = UserEntity.init()
+        user.username = LCString.init("zhangsan")
+        user.email = LCString.init("playtomandjerry@gmail.com")
+        user.password = LCString.init("Xiaohundan3575")
+        user.admin = LCBool.init(true)
+        user.master = LCBool.init(true)
+        user.mobilePhoneNumber = LCString.init("13265549803")
+        assert(user.save().isSuccess)
+    }
+
+    func test_login() {
+        let _ = LCUser.logIn(email: "playtomandjerry@gmail.com", password: "Xiaohundan3575") { result in
+            switch result {
+            case .success(let object):
+                print("object_id\(object.objectId)")
+                break
+            case .failure(let error):
+                break
+            }
+        }
+    }
+
 }

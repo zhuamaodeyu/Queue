@@ -1,6 +1,7 @@
 #!/bin/sh
 
 # Clear known env variables that can influence the standalone installation in a bad way.
+# 清除可能以不良方式影响独立安装的已知env变量。
 unset RUBYOPT
 unset RUBYLIB
 unset GEM_HOME
@@ -9,6 +10,7 @@ unset GEM_CACHE
 
 # Now define env variables that we need for the standalone installation to work and override where
 # necessary.
+# 现在定义我们需要使独立安装工作和覆盖位置所需的env变量
 BIN=$(cd "$(dirname "$0")"; pwd)
 PREFIX=$(dirname $BIN)
 export PATH=$BIN:/usr/bin:/bin:/usr/sbin:/sbin
@@ -21,6 +23,7 @@ export LC_CTYPE=UTF-8
 export SSL_CERT_FILE=$PREFIX/share/roots.pem
 
 # Ensure these env variables we need are set.
+# 确保设置我们需要的这些env变量。
 if [ -z "$HOME" ]; then
   export HOME=$(cd ~; pwd)
 fi

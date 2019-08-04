@@ -8,32 +8,30 @@
 
 import Cocoa
 
-struct PodRepoModel {
-
-}
-
 class PodRepoCoordinator: NSObject {
-    private var successBlock:((_ models:PodAnalyzerModel) -> Void)?
+    private var successBlock:((_ success:Bool) -> Void)?
     private var logBlock:((_ log: NSAttributedString) -> Void)?
-    private var commandLines:[CommandLine] = []
+    private var updateLogBlock:((_ log: NSAttributedString) -> Void)?
+    private var updateSuccessBlock:((_ success:Bool) -> Void)?
+    private var addSourcesCommandLine:CommandLine?
+    private var updateCommandLine: CommandLine?
 }
 
 
 extension PodRepoCoordinator {
 
-    /// 获取所有的 source Repo
-    ///
-    /// - Parameter callback: callback
-    func sourceRepos(_ callback: (([PodRepoModel])->())? = nil) {
-
+    func update(logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ success:Bool)->Void)) {
+        self.updateLogBlock = logComplation
+        self.updateSuccessBlock = complation
+        self.updateCommandLine = CommandLine.init(workSpace: NSTemporaryDirectory(), command: Path.pod, arguments: ["repo","update"], delegate: self, qualityOfService: .background)
+        self.updateCommandLine?.run()
     }
 
-    func cocoaPodsSpecSort(_ lhs: PodRepoModel, rhs: PodRepoModel) -> Bool {
-        return false
-    }
-
-    func update() {
-        
+    func add(sources:[SpecSourceEntity], logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ success:Bool)->Void)) {
+        self.successBlock = complation
+        self.logBlock = logComplation
+        self.addSourcesCommandLine = CommandLine.init(workSpace: "", command: "", arguments: [""], delegate: self, qualityOfService: .userInitiated)
+        addSourcesCommandLine?.run()
     }
 }
 
@@ -42,4 +40,26 @@ extension PodRepoCoordinator {
     private func checkUpdate() -> Bool {
         return false
     }
+}
+
+extension PodRepoCoordinator : CommandLineDelegate {
+    func commandLine(commandLine: CommandLine, didUpdateOutPut content: NSAttributedString) {
+        if commandLine == addSourcesCommandLine {
+            self.logBlock?(content)
+        }
+        if commandLine == updateCommandLine {
+            self.updateLogBlock?(content)
+        }
+    }
+
+    func commandLineDidFinish(commandLine: CommandLine) {
+        if commandLine == addSourcesCommandLine {
+            self.successBlock?(commandLine.finishSuccess)
+        }
+        if commandLine == updateCommandLine {
+            self.updateSuccessBlock?(commandLine.finishSuccess)
+        }
+    }
+
+
 }

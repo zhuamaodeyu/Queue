@@ -33,7 +33,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         _ = DocumentController.shared
         AppDelegate.initLeanCloud()
+        AppDelegate.registerLeanCloudEntity()
         super.init()
+        cacheEnvironment()
+        setEnvironment()
+        initCocoaPodsBasicData()
     }
 }
 extension AppDelegate {
@@ -49,9 +53,9 @@ extension AppDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         //即将终止
+        reductionEnvironment()
     }
     func applicationWillBecomeActive(_ notification: Notification) {
-        debugPrint("\(#function)")
         showWindow()
     }
 //    只要Finder重新激活已在运行的应用程序，就会发送这些事件，因为有人再次双击它或使用Dock激活它。

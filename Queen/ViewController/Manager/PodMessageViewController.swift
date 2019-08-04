@@ -29,7 +29,6 @@ struct TableViewIdentifier {
     static var source = NSUserInterfaceItemIdentifier.init("source")
 }
 
-import LeanCloud
 
 class PodMessageViewController: NSViewController {
 
@@ -59,8 +58,12 @@ class PodMessageViewController: NSViewController {
     }
     override func viewDidAppear() {
         super.viewDidAppear()
-        updateSpec()
-        analyzer()
+
+        if Cocoapods.check(url: "") {
+            specSourceAction()
+        }else {
+            showAlert()
+        }
     }
 
 }
@@ -199,6 +202,16 @@ extension PodMessageViewController {
         sourceColumn.resizingMask = .autoresizingMask
         tableView.addTableColumn(sourceColumn)
     }
+
+
+    private func showAlert() {
+        NSAlert.alert(stye: .warning, message: "初始化", information: "是否初始化为CocoaPods项目?", button: ["取消","确定"]) { (result) in
+            debugPrint("是否初始化项目")
+
+        }
+    }
+
+
 }
 
 extension PodMessageViewController: NSTableViewDataSource, NSTableViewDelegate {
@@ -341,29 +354,6 @@ extension PodMessageViewController : NSSplitViewDelegate {
     }
 }
 
-extension PodMessageViewController: SyntaxTextViewDelegate {
-    class MyLexer: Lexer {
-        func getSavannaTokens(input: String) -> [Token] {
-            return []
-        }
-    }
-
-    func didChangeText(_ syntaxTextView: SyntaxTextView) {
-
-    }
-
-    func didChangeSelectedRange(_ syntaxTextView: SyntaxTextView, selectedRange: NSRange) {
-
-    }
-
-    func lexerForSource(_ source: String) -> Lexer {
-        return MyLexer.init()
-    }
-}
-
-
-
-
 
 extension PodMessageViewController {
     private func testData() {
@@ -388,23 +378,73 @@ extension PodMessageViewController : TerminalViewConstrollerDelegate {
 }
 
 extension PodMessageViewController {
+    private func specSourceAction() {
 
-    func updateSpec() {
-        self.podRepoCoordinator.update()
-//        let cocoapods = Cocoapods.init()
-//        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
-//            if type == .cancel || type == .finish {
-//                debugPrint("需要删除")
-//            }
-//            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
-//        }
-//        self.commandLines.append(cocoapods)
+        let group = DispatchGroup.init()
+        let queue = DispatchQueue.init(label: "com.repo.source")
+        let semaphore = DispatchSemaphore.init(value: 0)
+
+        // 1. 判断是否需要添加 sources
+        let localSourcesHost = Cocoapods.instance.sources.map { (m) -> String in
+            return m.host
+        }
+        let needAddSources = EntitysDataManager.instance.specSources.filter { (entity) -> Bool in
+            !localSourcesHost.contains(entity.host?.stringValue ?? "")
+        }
+        if needAddSources.count > 0 {
+            // 添加源地址
+            queue.async(group: group, qos: .default, flags: .barrier) {
+                self.podRepoCoordinator.add(sources: needAddSources, logComplation: { (log) in
+
+                }) { (result) in
+                    semaphore.signal()
+                }
+                semaphore.wait()
+            }
+
+        }
+        // 2. 更新sources
+        // pod repo update
+        queue.async(group: group, qos: .default, flags: .barrier) {
+            self.podRepoCoordinator.update(logComplation: { (log) in
+
+            }, complation: { (result) in
+                semaphore.signal()
+            })
+            semaphore.wait()
+        }
+
+        if document?.podMappingData?.isEmpty ?? false {
+            queue.async(group: group, qos: .default, flags: .barrier) {
+                self.podAnalyzerCoordinator.analyzer(podfile: URL.init(string: "")!, logComplation: { (log) in
+
+                }, complation: { (models) in
+                    semaphore.signal()
+                })
+                semaphore.wait()
+            }
+        }
+        //3. 更新完毕
+        group.notify(queue: queue) {
+            debugPrint("更新完毕了")
+        }
+
+        // 3. analyzer
+            // 1. 检查是否已经有数据，没有显示 HUD，然后分析，有就直接分析，然后
+        // 4. 检测是否有新版本
+
+
+
     }
-
-
-    // 分析pod 引用,如果需要再刷新
-    func analyzer() {
-
-    }
-
 }
+
+//    func updateSpec() {
+//        self.podRepoCoordinator.update()
+////        let cocoapods = Cocoapods.init()
+////        cocoapods.podSpecUpdate { [weak self](cocoapods, type, context) in
+////            if type == .cancel || type == .finish {
+////                debugPrint("需要删除")
+////            }
+////            self?.terminalViewController.updateContent(type: cocoapods.command?.uuid, content: context)
+////        }
+////        self.commandLines.append(cocoapods)

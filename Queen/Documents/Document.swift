@@ -26,8 +26,11 @@ class Document: NSDocument {
 
     var newCreate:Bool = false
 
-    var yamlData: Data?
+    //pod 分析
+    var podMappingData: Data?
+    // 配置数据
     var configData: Data?
+    // 图
     var mapping: Data?
 
     override init() {
@@ -80,8 +83,8 @@ extension Document {
         rootWrapper.filename = typeName
         rootWrapper.preferredFilename = typeName
         let yamlWrapper = FileWrapper.init(regularFileWithContents: "测试".data(using: .utf8)!)
-        yamlWrapper.filename = DocumentAssociatedKeys.yaml
-        yamlWrapper.preferredFilename = DocumentAssociatedKeys.yaml
+        yamlWrapper.filename = DocumentAssociatedKeys.poddata
+        yamlWrapper.preferredFilename = DocumentAssociatedKeys.poddata
         rootWrapper.addFileWrapper(yamlWrapper)
 
         let configWrapper = FileWrapper.init(regularFileWithContents: "config".data(using: .utf8)!)
@@ -95,8 +98,8 @@ extension Document {
     override func read(from fileWrapper: FileWrapper, ofType typeName: String) throws {
         // 1. 获取所有子的
         if let wrappers = fileWrapper.fileWrappers {
-            if let yamlWrapper = wrappers[DocumentAssociatedKeys.yaml], let configWrapper = wrappers[DocumentAssociatedKeys.config] {
-                self.yamlData = yamlWrapper.regularFileContents
+            if let yamlWrapper = wrappers[DocumentAssociatedKeys.poddata], let configWrapper = wrappers[DocumentAssociatedKeys.config] {
+                self.podMappingData = yamlWrapper.regularFileContents
                 self.configData = configWrapper.regularFileContents
             }
         }

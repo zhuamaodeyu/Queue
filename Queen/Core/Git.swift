@@ -8,14 +8,7 @@
 
 import Cocoa
 
-class Git {
-    private var path: String?
-    init() {
-        self.path = Command.shared.which(command: "git")
-    }
-    
-}
-
+class Git {}
 
 extension Git {
 
@@ -23,11 +16,12 @@ extension Git {
     ///
     /// - Parameter path: path
     /// - Returns: defualt false
-    func check(url path: String) -> Bool {
-        guard let gp = self.path else {
+    static func check(url path: String) -> Bool {
+        if path.isEmpty || Path.git.isEmpty {
+            debugPrint("path is empty or git command path is empty")
             return false
         }
-        if let result = Process.run(command: gp, args: ["ls-remote","--exit-code",path]), !result.isEmpty {
+        if let result = Process.run(command: Path.git, args: ["ls-remote","--exit-code",path]), !result.isEmpty {
             return true
         }
         return false

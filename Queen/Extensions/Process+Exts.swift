@@ -115,6 +115,12 @@ extension Process {
         for (key,value) in environment {
             process.environment?.updateValue(value, forKey: key)
         }
+
+        #if DEBUG
+            debugPrint("\(path) \(args.joined(separator: " "))")
+        #else
+        #endif
+
         let pipe = Pipe.init()
         process.standardOutput = pipe
 

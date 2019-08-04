@@ -21,7 +21,7 @@ extension AppDelegate {
     }
 
     static func initLeanCloud() {
-        LCApplication.logLevel = .all
+        LCApplication.logLevel = .off
         do {
             try LCApplication.default.set(
                 id: "8B9PpR2PlW8msf33yoGik2uO-MdYXbMMI",
@@ -32,13 +32,19 @@ extension AppDelegate {
         }
     }
 
-    private func registerLeanCloudEntity() {
+    static func registerLeanCloudEntity() {
         UserEntity.register()
         UserFindEntity.register()
         UserClientASssociation.register()
-        ProjectTeamEntity.register()
-        PodSpecEntity.register()
+
+        TeamEntity.register()
+        SpecSourceEntity.register()
         PodDescriptionEntity.register()
+    }
+
+    // 初始化 CocoaPods 对象，然后会读取一些数据
+    func initCocoaPodsBasicData() {
+       _ =  Cocoapods.instance
     }
 }
 

@@ -11,10 +11,10 @@ import Cocoa
 class Command {
     static let shared = Command.init()
 
-    private let shell:String
-    private let path:String
-    private let logname: String
-    private let user: String
+    let shell:String
+    let path:String
+    let logname: String
+    let user: String
 
     private init() {
         self.shell = ProcessInfo.processInfo.environment["SHELL"] ?? ""

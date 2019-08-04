@@ -6,7 +6,7 @@ require 'json'
 require 'yaml'
 require 'pathname'
 require 'fileutils'
-require 'tins/find'
+#require 'tins/find'
 require 'cocoapods'
 require 'strscan'
 require 'claide/command/plugin_manager'
@@ -24,19 +24,24 @@ class CocoaPods_Basic
 	  sources_manager.aggregate.all_pods
 	end
 
-      def installed_plugin
+    def installed_plugin
         CLAide::Command::PluginManager.installed_specifications_for_prefix("cocoapods")
-      end
+    end
 
 	def master_source
 	  sources_manager.master
 	end
 
 	def all_pod_sources
-	  sources_manager.all.map { |source|
-	    { source.name => source.url }
-
-	  }.reduce &:merge
+        sources = []
+        sources_manager.all.map do |s|
+            source = {}
+            source['name'] = s.name
+            source['host'] = s.url
+            sources.append(source)
+        end
+#        puts JSON.pretty_generate(sources)
+        puts sources.to_json
 	end
 
   # pod_versions(HandyJSON)
@@ -57,14 +62,8 @@ types = Array[
   "all_pods",
   "master_source",
   "pod_versions",
-
-  "lockfile_version",
   "compare_versions",
-  "analyze_podfile",
   "installed_plugin",
-  "DependencyAnalyzer",
-  "podfile",
-  "search"
 ]
 
 
@@ -72,7 +71,6 @@ type = ARGV.first
 if !types.include?(type)
 	puts "type faild, please user"
 end 
-
 
 case type
 
@@ -92,12 +90,5 @@ when "compare_versions"
     puts CocoaPods_Basic.new.compare_versions(ARGV.at(1),ARGV.at(2))
 when "installed_plugin"
   puts CocoaPods_Basic.new.installed_plugin
-#when "podfile"
-#  puts CocoaPods_Basic.new.podfile(ARGV.at(1))
-#when "lockfile_version"
-#  puts ARGV.at(1)
-#  puts CocoaPods_Basic.new.lockfile_version(ARGV.at(1))
-#when "analyze_podfile"
-#  puts CocoaPods_Basic.new.analyze_podfile(CocoaPods_Queue.new.podfile(ARGV.at(1)), Pathname.new(File.dirname(ARGV.at(1))))
 end
 

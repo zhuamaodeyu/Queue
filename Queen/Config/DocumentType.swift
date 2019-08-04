@@ -23,8 +23,12 @@ struct DocumentationAssociatedKey {
 }
 
 struct DocumentAssociatedKeys {
+    // 根
     static var qworkspace = "qworkspace"
-    static var yaml = "yaml"
+    //
+    static var poddata = "poddata"
+    // 配置
     static var config = "config"
+    // 图
     static var mapping = "mapping"
 }

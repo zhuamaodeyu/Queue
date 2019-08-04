@@ -15,6 +15,8 @@ struct PodPluginModel {
 class PodPluginCoordinator: NSObject {
     var installedPlugins = [PodPluginModel]()
 
+    private var installCommandLine:CommandLine?
+    
 
     func getPlugin(_ callback: (([PodPluginModel])->())? = nil) {
 

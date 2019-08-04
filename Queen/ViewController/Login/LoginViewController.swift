@@ -149,7 +149,6 @@ extension LoginViewController {
         self.view.window?.close()
     }
 
-
     @objc private func login(sender: NSButton) {
         guard !accountField.stringValue.isEmpty && !passwordField.stringValue.isEmpty else {
             return
@@ -160,6 +159,7 @@ extension LoginViewController {
             switch result {
             case .success(object: _):
                 EntitysDataManager.instance.reload()
+                self?.saveUserClientASssociation()
                 guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
                     return
                 }
@@ -189,5 +189,15 @@ extension LoginViewController {
                         compation(result)
             }
         }
+    }
+}
+
+
+extension LoginViewController {
+    private func saveUserClientASssociation() {
+        let model = UserClientASssociation.init()
+        model.user_id = LCApplication.default.currentUser?.objectId
+        model.client_id = LCString.init( md5((NSApplication.getHardwareUUID() ?? "") + (NSApplication.getHardwareSerialNumber() ?? "") + (model.user_id?.stringValue ?? "")))
+        _ = model.save()
     }
 }

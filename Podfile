@@ -14,6 +14,7 @@ target 'Queen' do
   pod 'Sparkle'
   pod 'LetsMove'
   pod 'ColorizeSwift'
+  pod 'ObjectMapper'
 
   target 'QueenTests' do
     inherit! :search_paths
