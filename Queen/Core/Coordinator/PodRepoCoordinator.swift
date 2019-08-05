@@ -23,14 +23,25 @@ extension PodRepoCoordinator {
     func update(logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ success:Bool)->Void)) {
         self.updateLogBlock = logComplation
         self.updateSuccessBlock = complation
-        self.updateCommandLine = CommandLine.init(workSpace: NSTemporaryDirectory(), command: Path.pod, arguments: ["repo","update"], delegate: self, qualityOfService: .background)
+        self.updateCommandLine = CommandLine.init(command: "pod", arguments: ["repo","update"], delegate: self, qualityOfService: .background)
         self.updateCommandLine?.run()
     }
 
     func add(sources:[SpecSourceEntity], logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ success:Bool)->Void)) {
         self.successBlock = complation
         self.logBlock = logComplation
-        self.addSourcesCommandLine = CommandLine.init(workSpace: "", command: "", arguments: [""], delegate: self, qualityOfService: .userInitiated)
+
+        var args = [String]()
+        args.append(contentsOf: ["repo","add"])
+        for (index, item) in sources.enumerated() {
+            args.append(item.name?.stringValue ?? "")
+            args.append(item.host?.stringValue ?? "")
+            if index != sources.count - 1 {
+                args.append(contentsOf: ["&&",Path.pod,"repo","add"])
+            }
+        }
+
+        self.addSourcesCommandLine = CommandLine.init(workSpace: NSHomeDirectory(), command: Path.pod, arguments: args, delegate: self, qualityOfService: .userInitiated)
         addSourcesCommandLine?.run()
     }
 }

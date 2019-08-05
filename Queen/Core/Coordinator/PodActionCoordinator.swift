@@ -35,7 +35,7 @@ extension PodActionCoordinator {
         }
         self.successBlock = successBlock
         self.logBlock = logBlock
-        self.commandLine = CommandLine.init(workSpace: NSHomeDirectory(), command: Path.pod, arguments: [], delegate: self, qualityOfService: .default)
+        self.commandLine = CommandLine.init(workSpace: "", command: "pod", arguments: [], delegate: self, qualityOfService: .default)
         self.commandLine?.run()
     }
 }

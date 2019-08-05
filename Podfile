@@ -15,10 +15,22 @@ target 'Queen' do
   pod 'LetsMove'
   pod 'ColorizeSwift'
   pod 'ObjectMapper'
+  pod 'Ansi', :git => 'https://github.com/zhuamaodeyu/Ansi.git'
 
   target 'QueenTests' do
     inherit! :search_paths
 
   end
 
+
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      swift_version = '4.0'
+      if swift_version
+        target.build_configurations.each do |config|
+          config.build_settings['SWIFT_VERSION'] = swift_version
+        end
+      end
+    end
+  end
 end

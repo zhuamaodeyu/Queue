@@ -38,9 +38,14 @@ extension Cocoapods {
     ///
     /// - Parameter path: path
     /// - Returns: default false
-    static func check(url path: String) -> Bool {
-        
-        return false
+    static func check(url path: URL?) -> Bool {
+        guard let url = path else {
+            return false
+        }
+        let paths = FileManager.ns.brothers(path: url).map { (url) -> String in
+            url.lastPathComponent
+        }
+        return paths.contains("Podfile")
     }
 }
 

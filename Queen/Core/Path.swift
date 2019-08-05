@@ -65,23 +65,8 @@ class Path {
         }
         return path
     }
-
-    static var resetEnvironment: String {
-        guard let path = Bundle.main.path(forResource: "resetEnvironment", ofType: nil, inDirectory: "bundle/script") else {
-            return ""
-        }
-        return path
-    }
-    static var cacheEnvironment: String {
-        guard let path = Bundle.main.path(forResource: "cacheEnvironment", ofType: nil, inDirectory: "bundle/script") else {
-            return ""
-        }
-        return path
-    }
-
-
-    static var environment: String {
-        guard let path = Bundle.main.path(forResource: "bundle-env", ofType: nil, inDirectory: "bundle/bin") else {
+    static var bundlePath: String {
+        guard let path = Bundle.main.path(forResource: "bundle", ofType: nil) else {
             return ""
         }
         return path

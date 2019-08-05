@@ -135,6 +135,8 @@
 		10FFF01722F5F37D003D61C7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01622F5F37D003D61C7 /* Path.swift */; };
 		10FFF01922F5F787003D61C7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01822F5F787003D61C7 /* Environment.swift */; };
 		10FFF01B22F6B9E6003D61C7 /* NSAlert+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */; };
+		10FFF01F22F72349003D61C7 /* Command+Pods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01E22F72349003D61C7 /* Command+Pods.swift */; };
+		10FFF02122F863C3003D61C7 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF02022F863C3003D61C7 /* AppInfo.swift */; };
 		B3A6ADFF8CD78FE8BB8DE585 /* Pods_QueenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
@@ -283,6 +285,8 @@
 		10FFF01622F5F37D003D61C7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		10FFF01822F5F787003D61C7 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Exts.swift"; sourceTree = "<group>"; };
+		10FFF01E22F72349003D61C7 /* Command+Pods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Pods.swift"; sourceTree = "<group>"; };
+		10FFF02022F863C3003D61C7 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		32765BD05D8130AC383E25EE /* Pods-QueenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QueenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QueenTests/Pods-QueenTests.release.xcconfig"; sourceTree = "<group>"; };
 		42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QueenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -769,6 +773,7 @@
 				1023EB5822DDF2A60067E402 /* DefaultSettings.swift */,
 				1023EB6822DE07D10067E402 /* DocumentType.swift */,
 				10E0227522E4137E00DE3433 /* NetworkConfig.swift */,
+				10FFF02022F863C3003D61C7 /* AppInfo.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 				10E022A422EB41A700DE3433 /* LeanCloud+User.swift */,
 				10FFF01022F5DA3A003D61C7 /* LeanCloud+Team.swift */,
 				10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */,
+				10FFF01E22F72349003D61C7 /* Command+Pods.swift */,
 			);
 			path = QueenTests;
 			sourceTree = "<group>";
@@ -1152,6 +1158,7 @@
 				1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */,
 				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
 				1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */,
+				10FFF02122F863C3003D61C7 /* AppInfo.swift in Sources */,
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
 				10E0228522E89FA900DE3433 /* Models.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
@@ -1180,6 +1187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10FFF01F22F72349003D61C7 /* Command+Pods.swift in Sources */,
 				10FFF01122F5DA3A003D61C7 /* LeanCloud+Team.swift in Sources */,
 				10E022A522EB41A700DE3433 /* LeanCloud+User.swift in Sources */,
 				10E0229122EB3ED500DE3433 /* QueenTests.swift in Sources */,

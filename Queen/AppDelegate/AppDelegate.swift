@@ -29,14 +29,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     override init() {
+
         AppDelegate.initialSettings()
 
         _ = DocumentController.shared
         AppDelegate.initLeanCloud()
         AppDelegate.registerLeanCloudEntity()
         super.init()
-        cacheEnvironment()
-        setEnvironment()
         initCocoaPodsBasicData()
     }
 }
@@ -53,7 +52,6 @@ extension AppDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         //即将终止
-        reductionEnvironment()
     }
     func applicationWillBecomeActive(_ notification: Notification) {
         showWindow()

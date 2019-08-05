@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Ansi
 
 protocol CommandLineDelegate:class {
     func commandLine(commandLine:CommandLine, didUpdateOutPut content:NSAttributedString)
@@ -21,10 +22,6 @@ enum CommandLineStatusType {
 }
 
 class CommandLine {
-    private let environment = ["HOME": NSHomeDirectory(),
-                               "LANG": "en_GB.UTF-8",
-                               "TERM": "xterm-256color"]
-
     private(set) var running: Bool = false
     var finishSuccess: Bool {
         return self.terminationStatus == 0
@@ -45,20 +42,14 @@ class CommandLine {
 
 
 
-    init?(workSpace: String, command: String, arguments:[String],delegate: CommandLineDelegate?, qualityOfService: QualityOfService?) {
-        let envBundleScript = Bundle.main.path(forResource: "bundle-env", ofType: nil, inDirectory: "bundle/bin")
-        guard let bundle = envBundleScript else {
-            return nil
-        }
+    init?(workSpace: String? = nil, command: String, arguments:[String],delegate: CommandLineDelegate?, qualityOfService: QualityOfService? = .default) {
         self.delegate = delegate
         self.process = Process.init()
         self.process?.qualityOfService = qualityOfService ?? .background
-        self.process?.launchPath = "/bin/sh"
-        var arg = ["\(bundle)","\(command)"]
-        arg.append(contentsOf: arguments)
-        self.process?.arguments = arg
-        self.process?.environment = self.environment
-        self.process?.currentDirectoryPath = workSpace
+        self.process?.launchPath = command
+        self.process?.arguments = arguments
+        self.process?.environment = environment
+        self.process?.currentDirectoryPath = workSpace ?? NSTemporaryDirectory()
 
         let outPipe = Pipe.init()
         outPipe.fileHandleForReading.waitForDataInBackgroundAndNotify(forModes: [.default,.eventTracking])
@@ -97,7 +88,7 @@ extension CommandLine {
 
 extension CommandLine {
     @objc private func outputNotification(notification: Notification) {
-        if let fileHandle = notification.object as? FileHandle{
+        if let fileHandle = notification.object as? FileHandle {
             guard let output = String.init(data: fileHandle.availableData, encoding: .utf8) else { return  }
 
             let attributeString = stringToAttributeString(output: output)
@@ -116,7 +107,11 @@ extension CommandLine {
 extension CommandLine {
 
     private func stringToAttributeString(output: String) -> NSAttributedString {
-        return NSAttributedString.init(string: output)
+        do {
+           return try output.ansified()
+        } catch _ {
+            return NSAttributedString.init(string: output)
+        }
     }
 
 

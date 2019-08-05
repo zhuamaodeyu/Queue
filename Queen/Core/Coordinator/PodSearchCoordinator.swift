@@ -24,7 +24,7 @@ class PodSearchCoordinator: NSObject {
     func search(key:String, logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ models:PodSearchModel)->Void)) {
         self.successBlock = complation
         self.logBlock = logComplation
-        self.commandLine = CommandLine.init(workSpace: "", command: "", arguments: [key], delegate: self, qualityOfService: .userInitiated)
+        self.commandLine = CommandLine.init(command: "pod", arguments: [key], delegate: self, qualityOfService: .userInitiated)
         self.commandLine?.run()
 
     }
