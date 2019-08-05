@@ -74,6 +74,7 @@ class CommandLine {
 extension CommandLine {
     func run() {
         self.process?.launch()
+//        self.process?.waitUntilExit()
         self.running = true
         self.status = .runing
 

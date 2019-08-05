@@ -23,7 +23,7 @@ extension PodRepoCoordinator {
     func update(logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_ success:Bool)->Void)) {
         self.updateLogBlock = logComplation
         self.updateSuccessBlock = complation
-        self.updateCommandLine = CommandLine.init(command: "pod", arguments: ["repo","update"], delegate: self, qualityOfService: .background)
+        self.updateCommandLine = CommandLine.init(command: Path.pod, arguments: ["repo","update","--verbose"], delegate: self, qualityOfService: .userInitiated)
         self.updateCommandLine?.run()
     }
 

@@ -376,62 +376,26 @@ extension PodMessageViewController : TerminalViewConstrollerDelegate {
 
 }
 
+
 extension PodMessageViewController {
     private func specSourceAction() {
-
-        let semaphore = DispatchSemaphore.init(value: 0)
-        let group = DispatchGroup.init()
-
-        // 1. 判断是否需要添加 sources
-        let localSourcesHost = Cocoapods.instance.sources.map { (m) -> String in
-            return m.host
-        }
-        let needAddSources = EntitysDataManager.instance.specSources.filter { (entity) -> Bool in
-            !localSourcesHost.contains(entity.host?.stringValue ?? "")
-        }
-//        if needAddSources.count > 0 {
-//            // 添加源地址
-//            DispatchQueue.global().async(group: group) {
-//                self.podRepoCoordinator.add(sources: needAddSources, logComplation: { (log) in
-//                    debugPrint("add Sources:\(log)")
-//                }) { (result) in
-//                    semaphore.signal()
-//                }
-//            }
-//            semaphore.wait()
-//        }
         // 2. 更新sources
         // pod repo update
-        DispatchQueue.global().async(group: group) {
-            self.podRepoCoordinator.update(logComplation: { (log) in
-                debugPrint("update Sources:\(log)")
-            }, complation: { (result) in
-//                semaphore.signal()
+        ProgressHUD.show(from: self.view)
+        self.podRepoCoordinator.update(logComplation: { (log) in
+            debugPrint("update Sources:\(log)")
+        }, complation: { [weak self] (result) in
+            if !(self?.document?.podMappingData?.isEmpty ?? true) {
+                ProgressHUD.dismiss()
+            }
+            self?.podAnalyzerCoordinator.analyzer(podfile: URL.init(string: "")!, complation: { (models) in
+                ProgressHUD.dismiss()
+
             })
-        }
-//        semaphore.wait()
-
-//        if document?.podMappingData?.isEmpty ?? false {
-//            DispatchQueue.global().async(group: group) {
-//                self.podAnalyzerCoordinator.analyzer(podfile: URL.init(string: "")!, logComplation: { (log) in
-//                     debugPrint("Analyzer:\(log)")
-//                }, complation: { (models) in
-//                    semaphore.signal()
-//                })
-//            }
-//            semaphore.wait()
-//        }
-        //3. 更新完毕
-
-        group.notify(queue: DispatchQueue.global()) {
-            debugPrint("更新完毕了")
-        }
+        })
         // 3. analyzer
             // 1. 检查是否已经有数据，没有显示 HUD，然后分析，有就直接分析，然后
         // 4. 检测是否有新版本
-
-
-
     }
 }
 

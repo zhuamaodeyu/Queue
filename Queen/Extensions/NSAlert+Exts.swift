@@ -13,7 +13,7 @@ extension NSAlert {
     static func alert(stye:NSAlert.Style,
                       message: String,
                       information:String,
-                      button titles:[String], complation:(Bool) ->Void) {
+                      button titles:[String], complation:@escaping (Bool) ->Void) {
 
         let alert = NSAlert.init()
         alert.messageText = message
@@ -22,7 +22,13 @@ extension NSAlert {
         titles.forEach { (t) in
             alert.addButton(withTitle: t)
         }
-        complation(alert.runModal().rawValue == NSAlertDefaultReturn)
 
+        if let window = NSApp.mainWindow {
+            alert.beginSheetModal(for: window) { (result) in
+                complation(result == .OK)
+            }
+        }else {
+            complation(alert.runModal().rawValue == NSAlertDefaultReturn)
+        }
     }
 }

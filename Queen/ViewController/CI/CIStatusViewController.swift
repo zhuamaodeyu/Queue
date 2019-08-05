@@ -41,7 +41,7 @@ class CIStatusViewController: NSViewController {
 
     override func viewDidAppear() {
         super.viewDidAppear()
-        debugPrint("")
+
     }
 }
 extension CIStatusViewController {

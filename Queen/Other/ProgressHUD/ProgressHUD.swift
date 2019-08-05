@@ -154,9 +154,14 @@ class ProgressHUD: NSView {
     // MARK: - Presentation
 
     /// Presents an indeterminate `ProgressHUD` with no status message
-    class func show() {
+    class func show(from view:NSView? = nil) {
+        if let view = view {
+            self.setContainerView(view)
+        }
         ProgressHUD.show(withStatus: "")
     }
+
+
 
     /// Presents an indeterminate `ProgressHUD` with a status message
     class func show(withStatus status: String) {

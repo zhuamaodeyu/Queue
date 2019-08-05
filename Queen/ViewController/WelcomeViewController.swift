@@ -27,6 +27,9 @@ class WelcomeViewController: NSViewController {
     private var dataSource:[WelcomeWorkspaceModel] {
         return Config.shared.workspaceList
     }
+
+    private var podRepoCoordinator = PodRepoCoordinator.init()
+
     override func loadView() {
         super.loadView()
         initSubviews()
@@ -43,6 +46,7 @@ class WelcomeViewController: NSViewController {
     }
     override func viewDidAppear() {
         super.viewDidAppear()
+        checkShowAddSources()
     }
 
     override func viewDidLayout() {
@@ -210,6 +214,15 @@ extension WelcomeViewController {
             self.tableView.reloadData()
         }
     }
+
+    private func checkShowAddSources() {
+        let source = newSources()
+        if source.count >= 0 {
+            NSAlert.alert(stye: .informational, message: "提示", information: "发现新的Spec源，是否安装?", button: ["取消","安装"]) { (result) in
+                debugPrint("安装新的源")
+            }
+        }
+    }
 }
 
 
@@ -225,23 +238,20 @@ extension WelcomeViewController {
             context.duration = 0.2
             launchButton.animator().alphaValue = 1.0
         }, completionHandler: {
-            debugPrint("显示动画执行完毕")
+
         })
     }
     override func mouseExited(with event: NSEvent) {
-        print("\(#function)")
         if closeButton.mouseInView() {
-
             return
         }
-
         if leftContentView?.alphaValue ?? 0.0  == 1.0 {
             launchButton.wantsLayer = true
             NSAnimationContext.runAnimationGroup({ (context) in
                 context.duration = 0.2
                 launchButton.animator().alphaValue = 0
             }, completionHandler:{
-                print("隐藏动画执行完毕")
+                
             })
         }
     }
@@ -251,8 +261,21 @@ extension WelcomeViewController {
 // MARK: - Data
 extension WelcomeViewController {
 
-
+    /// 获取需要添加的sources
+    ///
+    /// - Returns: sources
+    private func newSources() ->[SpecSourceEntity] {
+        // 1. 判断是否需要添加 sources
+        let localSourcesHost = Cocoapods.instance.sources.map { (m) -> String in
+            return m.host
+        }
+        let needAddSources = EntitysDataManager.instance.specSources.filter { (entity) -> Bool in
+            !localSourcesHost.contains(entity.host?.stringValue ?? "")
+        }
+        return needAddSources
+    }
 }
+
 
 // MARK: - Action
 extension WelcomeViewController {
@@ -261,7 +284,7 @@ extension WelcomeViewController {
 
     }
     @objc private func launchButtonAction(sender: NSButton) {
-        debugPrint("============\(#function)")
+
         
     }
     @objc private func tableViewDoubleAction(sender:NSTableView) {
@@ -302,6 +325,7 @@ extension WelcomeViewController {
 }
 
 
+// MARK: - NSTableViewDelegate, NSTableViewDataSource
 extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
     func numberOfRows(in tableView: NSTableView) -> Int {
         return dataSource.count
