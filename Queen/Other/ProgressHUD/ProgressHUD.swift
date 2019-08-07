@@ -155,16 +155,17 @@ class ProgressHUD: NSView {
 
     /// Presents an indeterminate `ProgressHUD` with no status message
     class func show(from view:NSView? = nil) {
-        if let view = view {
-            self.setContainerView(view)
+        if let v = view {
+            ProgressHUD.setContainerView(v)
         }
         ProgressHUD.show(withStatus: "")
     }
-
-
-
+    
     /// Presents an indeterminate `ProgressHUD` with a status message
-    class func show(withStatus status: String) {
+    class func show(withStatus status: String, to view: NSView? = nil) {
+        if let v = view {
+            ProgressHUD.setContainerView(v)
+        }
         ProgressHUD.shared.show(withStatus: status, mode: .indeterminate)
     }
 
@@ -205,7 +206,10 @@ class ProgressHUD: NSView {
     }
 
     /// Presents a HUD with the status message only, and dismisses the HUD a little bit later
-    class func showTextWithStatus(_ status: String) {
+    class func showTextWithStatus(_ status: String, to view: NSView? = nil) {
+        if let v = view {
+            ProgressHUD.setContainerView(v)
+        }
         ProgressHUD.shared.show(withStatus: status, mode: .text)
         ProgressHUD.dismiss(delay: ProgressHUD.shared.displayDuration(for: status))
     }

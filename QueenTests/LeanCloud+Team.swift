@@ -35,7 +35,7 @@ class LeanCloud_Team: XCTestCase {
         team.manager_Id = userID
         team.admin_ids = LCArray.init([userID])
         team.member_ids = LCArray.init([userID])
-        team.save()
+        _ = team.save()
     }
 
     func testf_find() {
@@ -44,7 +44,7 @@ class LeanCloud_Team: XCTestCase {
         query.whereKey("member_ids", .containedIn([userID]))
         let result = query.find()
         if result.isSuccess, let objects = result.objects as? [TeamEntity] {
-            debugPrint("\(objects.first?.admin_ids.value)")
+            debugPrint("\(String(describing: objects.first?.admin_ids.value))")
         }
 
     }

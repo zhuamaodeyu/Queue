@@ -39,9 +39,9 @@ class LeanCloud_User: XCTestCase {
         let _ = LCUser.logIn(email: "playtomandjerry@gmail.com", password: "Xiaohundan3575") { result in
             switch result {
             case .success(let object):
-                print("object_id\(object.objectId)")
+                print("object_id\(String(describing: object.objectId))")
                 break
-            case .failure(let error):
+            case .failure(let _):
                 break
             }
         }

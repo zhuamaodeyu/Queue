@@ -6,14 +6,14 @@ require 'json'
 require 'yaml'
 require 'pathname'
 require 'fileutils'
-require 'tins/find'
+#require 'tins/find'
 require 'cocoapods'
 require 'strscan'
 require 'claide/command/plugin_manager'
 require 'claide/ansi'
 
 
-class DependencyAnalyzer 
+class DependencyAnalyzer
   def self.analyze(podfile_dir_path)
       path = Pathname.new(podfile_dir_path)
       raise 'absolute path is needed' unless path.absolute?
@@ -68,6 +68,7 @@ class DependencyAnalyzer
 
       podfile_dependencies = podfile_dependencies(podfile)
 
+      map = {}
       specifications.each do |s|
         map[s.name] = if s.default_subspecs.count > 0
                         subspecs_with_name(s, s.default_subspecs) + s.dependencies
@@ -189,4 +190,5 @@ end
 if ARGV.count < 3
   puts "参数不够"
 end
+puts ARGV
 puts DependencyAnalyzer.to_d3js_json(ARGV.at(1),Pod::Podfile.from_file(ARGV.at(2)))

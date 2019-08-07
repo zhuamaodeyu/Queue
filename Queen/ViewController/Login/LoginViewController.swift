@@ -137,7 +137,23 @@ extension LoginViewController {
             make.center.equalTo(loginButton)
             make.size.equalTo(loginButton)
         }
+    }
 
+
+    private func beginAnimation() {
+        progressView.isHidden = false
+        progressView.startAnimation(nil)
+        passwordField.isEditable = false
+        accountField.isEditable = false
+        loginButton.isEnabled = false
+    }
+
+    private func endAnimation() {
+        progressView.isHidden = true
+        passwordField.isEditable = true
+        accountField.isEditable = true
+        progressView.stopAnimation(nil)
+        loginButton.isEnabled = true
     }
 
 }
@@ -153,9 +169,9 @@ extension LoginViewController {
         guard !accountField.stringValue.isEmpty && !passwordField.stringValue.isEmpty else {
             return
         }
-        self.progressView.startAnimation(nil)
+        self.beginAnimation()
         login { [weak self] (result) in
-            self?.progressView.stopAnimation(nil)
+            self?.endAnimation()
             switch result {
             case .success(object: _):
                 EntitysDataManager.instance.reload()

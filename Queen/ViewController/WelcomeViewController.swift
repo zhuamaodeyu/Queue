@@ -25,7 +25,7 @@ class WelcomeViewController: NSViewController {
     private var createButton:WelcomeViewActionView!
 
     private var dataSource:[WelcomeWorkspaceModel] {
-        return Config.shared.workspaceList
+        return AppInfo.shared.workspaceList
     }
 
     private var podRepoCoordinator = PodRepoCoordinator.init()

@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-
+import TKFoundationModule
 
 struct PodAnalyzerModel {
 
@@ -24,13 +24,14 @@ extension PodAnalyzerCoordinator {
     func analyzer(podfile path:URL,logComplation:((_ log: NSAttributedString) -> Void)? = nil,complation:@escaping ((_  models:[PodAnalyzerModel])->Void)) {
         self.logBlock = logComplation
         self.successBlock = complation
-        self.commandLine = CommandLine.init(workSpace: path.absoluteString, command: Path.analyzerScript, arguments: [path.path], delegate: self, qualityOfService: .background)
+        self.commandLine = CommandLine.init(workSpace: path.ns.parentDirectory().relativePath, command: Path.ruby, arguments: [Path.analyzerScript,path.path], delegate: self, qualityOfService: .background)
         self.commandLine?.run()
     }
 }
 extension PodAnalyzerCoordinator : CommandLineDelegate {
     func commandLine(commandLine: CommandLine, didUpdateOutPut content: NSAttributedString) {
         self.logBlock?(content)
+        print(message: "\(content)")
     }
 
     func commandLineDidFinish(commandLine: CommandLine) {

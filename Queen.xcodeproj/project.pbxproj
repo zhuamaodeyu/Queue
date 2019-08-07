@@ -43,7 +43,6 @@
 		10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7C22CFA5460034A505 /* NSColor+Exts.swift */; };
 		10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */; };
 		10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8622D0A0860034A505 /* NSView+Exts.swift */; };
-		10636F9B22D4D0700034A505 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10636F9A22D4D0700034A505 /* Info.plist */; };
 		10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */; };
 		10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */; };
 		10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */; };
@@ -137,6 +136,7 @@
 		10FFF01B22F6B9E6003D61C7 /* NSAlert+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */; };
 		10FFF01F22F72349003D61C7 /* Command+Pods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01E22F72349003D61C7 /* Command+Pods.swift */; };
 		10FFF02122F863C3003D61C7 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF02022F863C3003D61C7 /* AppInfo.swift */; };
+		10FFF02522FB047A003D61C7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10FFF02422FB047A003D61C7 /* Info.plist */; };
 		B3A6ADFF8CD78FE8BB8DE585 /* Pods_QueenTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */; };
 		CEE7A8F95A0081A52D9B66F1 /* Pods_Queen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD88B27D84193590EF8382C9 /* Pods_Queen.framework */; };
 /* End PBXBuildFile section */
@@ -191,7 +191,6 @@
 		10636F7C22CFA5460034A505 /* NSColor+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Exts.swift"; sourceTree = "<group>"; };
 		10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Exts.swift"; sourceTree = "<group>"; };
 		10636F8622D0A0860034A505 /* NSView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Exts.swift"; sourceTree = "<group>"; };
-		10636F9A22D4D0700034A505 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
 		10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -287,6 +286,7 @@
 		10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Exts.swift"; sourceTree = "<group>"; };
 		10FFF01E22F72349003D61C7 /* Command+Pods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Pods.swift"; sourceTree = "<group>"; };
 		10FFF02022F863C3003D61C7 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		10FFF02422FB047A003D61C7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Queen/Info.plist; sourceTree = "<group>"; };
 		24978B135F1AB0C8C8FFCB58 /* Pods-Queen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Queen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Queen/Pods-Queen.release.xcconfig"; sourceTree = "<group>"; };
 		32765BD05D8130AC383E25EE /* Pods-QueenTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QueenTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-QueenTests/Pods-QueenTests.release.xcconfig"; sourceTree = "<group>"; };
 		42B826F55DF0058DFB2F9F9A /* Pods_QueenTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QueenTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -377,6 +377,7 @@
 				1063705B22DAEC0D0034A505 /* Cartfile */,
 				1063704A22DA36FA0034A505 /* Note.md */,
 				10636F5622CFA2A70034A505 /* Queen */,
+				10FFF02422FB047A003D61C7 /* Info.plist */,
 				10E0228F22EB3ED500DE3433 /* QueenTests */,
 				10636F5522CFA2A70034A505 /* Products */,
 				0B0803A6D89ED92AC0A4AB21 /* Pods */,
@@ -408,7 +409,6 @@
 				10636F9922D4D01D0034A505 /* Other */,
 				10636F7B22CFA5280034A505 /* Extensions */,
 				10636F6922CFA3380034A505 /* Documents */,
-				10636F9A22D4D0700034A505 /* Info.plist */,
 				1035223C22F55B0500C38178 /* AppDelegate */,
 			);
 			path = Queen;
@@ -965,8 +965,8 @@
 				10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */,
 				10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */,
 				10636F6122CFA2A80034A505 /* Main.storyboard in Resources */,
-				10636F9B22D4D0700034A505 /* Info.plist in Resources */,
 				1035224822F566FD00C38178 /* Welcome.storyboard in Resources */,
+				10FFF02522FB047A003D61C7 /* Info.plist in Resources */,
 				10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */,
 				10E0227A22E4194100DE3433 /* Login.storyboard in Resources */,
 			);

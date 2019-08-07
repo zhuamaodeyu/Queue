@@ -47,6 +47,30 @@ extension Cocoapods {
         }
         return paths.contains("Podfile")
     }
+
+    static func podfile(url path: URL?) -> URL? {
+        guard let url = path else {
+            return nil
+        }
+        let paths = FileManager.ns.brothers(path: url).filter { (url) -> Bool in
+            url.lastPathComponent == "Podfile"
+        }
+        return paths.first
+    }
+
+    static func createPodfile(url path: URL?) -> Bool {
+        guard let url = path else {
+            return false
+        }
+        let paths = FileManager.ns.brothers(path: url).filter { (url) -> Bool in
+            url.lastPathComponent == "Podfile"
+        }
+        if paths.count > 0 {
+            return true
+        }
+        return false
+    }
+
 }
 
 extension Cocoapods {

@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import LeanCloud
+
 
 let environment:[String: String] = [
     "HOME": NSHomeDirectory(),
@@ -22,3 +24,52 @@ let environment:[String: String] = [
 ]
 
 
+
+private let userDefault = UserDefaults.standard
+
+struct UserDefaultsKeys {
+    struct WelcomeWindowKeys {
+        static var kOpenWorkspaceList = "kOpenWorkspaceList"
+    }
+
+    static var kSourceLastUpdateDate = "kSourceLastUpdateDate"
+}
+
+class AppInfo {
+    static let shared = AppInfo.init()
+    private init() {
+
+    }
+    var workspaceList:[WelcomeWorkspaceModel] {
+        get {
+            if let data = userDefault.value(forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList) as? Data {
+                if let repo = try? JSONDecoder().decode([WelcomeWorkspaceModel].self, from: data) {
+                    return repo
+                }
+            }
+            return []
+        }
+        set {
+            if let data = try? JSONEncoder.init().encode(newValue) {
+                userDefault.set(data, forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList)
+                userDefault.synchronize()
+            }
+        }
+    }
+
+    var sourceLastUpdateDate: Date? {
+        get {
+            if let dateString = userDefault.value(forKey: UserDefaultsKeys.kSourceLastUpdateDate) as? String {
+                let datef = DateFormatter.init(withFormat: "yyyy-MM-dd", locale: "en_US_POSIX")
+                return datef.date(from: dateString)
+            }
+            return nil
+        }
+        set {
+            let datef = DateFormatter.init(withFormat: "yyyy-MM-dd", locale: "en_US_POSIX")
+            userDefault.set(datef.string(from: sourceLastUpdateDate ?? Date.init()), forKey: UserDefaultsKeys.kSourceLastUpdateDate)
+            userDefault.synchronize()
+        }
+    }
+
+}

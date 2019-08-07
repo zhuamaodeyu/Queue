@@ -50,3 +50,15 @@ extension PodActionCoordinator: CommandLineDelegate {
         self.commandLine = nil
     }
 }
+
+extension PodActionCoordinator {
+    func initPod(path: URL?) -> Bool {
+        guard let path = path else {
+            return false 
+        }
+        if let _ =  Process.syncRun(workspace: path.ns.parentDirectory().relativePath,command: Path.pod, args: ["init"]).error {
+            return false
+        }
+        return true
+    }
+}

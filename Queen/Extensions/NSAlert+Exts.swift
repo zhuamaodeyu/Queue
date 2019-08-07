@@ -28,7 +28,7 @@ extension NSAlert {
                 complation(result == .OK)
             }
         }else {
-            complation(alert.runModal().rawValue == NSAlertDefaultReturn)
+            complation(alert.runModal().rawValue == NSApplication.ModalResponse.alertFirstButtonReturn.rawValue)
         }
     }
 }

@@ -77,14 +77,14 @@ class LeanCloud_SpecSources: XCTestCase {
 
 
     func test_find() {
-        var teams = Set<String>.init()
+        let _ = Set<String>.init()
 
         let query = LCQuery.init(className: SpecSourceEntity.objectClassName())
         query.whereKey("team", .containedIn(Array(teams)))
         query.whereKey("team", .notExisted)
         query.whereKey("public", .equalTo(LCBool.init(true)))
         let result = query.find()
-        if result.isSuccess , let objects = result.objects as? [SpecSourceEntity] {
+        if result.isSuccess , let _ = result.objects as? [SpecSourceEntity] {
             debugPrint("")
         }
     }

@@ -51,10 +51,13 @@ extension Process {
     ///   - args: args
     /// - Returns: defult nil
     @discardableResult
-    public static func run(command path :String, args: [String] = []) -> String? {
+    public static func run(workspace: String? = nil,command path :String, args: [String] = [],environment:[String:String] = [:]) -> String? {
         let process = Process.init()
         process.launchPath = path
         process.arguments = args
+        process.environment = environment
+        process.currentDirectoryPath = workspace ?? NSTemporaryDirectory()
+
         let pipe = Pipe.init()
         process.standardOutput = pipe
 
@@ -80,10 +83,13 @@ extension Process {
     ///   - path: path description
     ///   - args: args description
     /// - Returns: return value description success string or "" , false nil
-    public static func syncRun(command path :String, args: [String] = []) -> (output:String?,error:String?) {
+    public static func syncRun(workspace: String? = nil,command path :String, args: [String] = []) -> (output:String?,error:String?) {
         let process = Process.init()
         process.launchPath = path
         process.arguments = args
+        process.currentDirectoryPath = workspace ?? NSTemporaryDirectory()
+
+
         let pipe = Pipe.init()
         process.standardOutput = pipe
 
@@ -106,7 +112,7 @@ extension Process {
     ///   - path: path
     ///   - args: 参数
     ///   - complation: 执行结果回调
-    public static func syncRun(command path :String, args: [String] = [], environment:[String:String] = [:],complation:((_ process: Process,_ output: String?, _ error:String?)-> Void)? = nil) {
+    public static func syncRun(workspace: String? = nil, command path :String, args: [String] = [], environment:[String:String] = [:],complation:((_ process: Process,_ output: String?, _ error:String?)-> Void)? = nil) {
 
         let process = Process.init()
         process.launchPath = path
@@ -115,6 +121,7 @@ extension Process {
         for (key,value) in environment {
             process.environment?.updateValue(value, forKey: key)
         }
+        process.currentDirectoryPath = workspace ?? NSTemporaryDirectory()
 
         #if DEBUG
             debugPrint("\(path) \(args.joined(separator: " "))")
@@ -148,9 +155,7 @@ extension Process {
         process.launchPath = path
         process.arguments = args
 
-        if let workPath = wPath {
-            process.currentDirectoryPath = workPath
-        }
+        process.currentDirectoryPath = wPath ?? NSTemporaryDirectory()
 
         for (key,value) in environment {
             process.environment?.updateValue(value, forKey: key)

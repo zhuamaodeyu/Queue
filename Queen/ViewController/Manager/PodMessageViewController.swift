@@ -44,7 +44,7 @@ class PodMessageViewController: NSViewController {
     private var dataSource: [ComponentModel] = []
 
     private var document: Document? {
-        return DocumentController.shared.currentDocument as? Document
+        return self.view.window?.windowController?.document as? Document
     }
 
     override func loadView() {
@@ -55,14 +55,18 @@ class PodMessageViewController: NSViewController {
         installSubviews()
         initSubviewConstaints()
         testData()
-        if Cocoapods.check(url: document?.fileURL) {
-            specSourceAction()
-        }else {
-            showAlert()
-        }
     }
     override func viewDidAppear() {
         super.viewDidAppear()
+        if Cocoapods.check(url: document?.fileURL) {
+            if AppInfo.shared.sourceLastUpdateDate?.ns.isToday() ?? false {
+                analyzer()
+            }else {
+                updateSource()
+            }
+        }else {
+            showAlert()
+        }
     }
 
 }
@@ -204,13 +208,17 @@ extension PodMessageViewController {
 
 
     private func showAlert() {
-        NSAlert.alert(stye: .warning, message: "初始化", information: "是否初始化为CocoaPods项目?", button: ["取消","确定"]) { (result) in
+        NSAlert.alert(stye: .warning, message: "初始化", information: "是否初始化为CocoaPods项目?", button: ["确定","取消"]) { [weak self](result) in
             debugPrint("是否初始化项目")
-
+            if result {
+                guard self?.podActionCoordinator.initPod(path: self?.document?.fileURL) ?? false else {
+                    debugPrint("Create Podfile faild")
+                    return
+                }
+                self?.updateSource()
+            }
         }
     }
-
-
 }
 
 extension PodMessageViewController: NSTableViewDataSource, NSTableViewDelegate {
@@ -378,25 +386,36 @@ extension PodMessageViewController : TerminalViewConstrollerDelegate {
 
 
 extension PodMessageViewController {
-    private func specSourceAction() {
+    private func updateSource() {
         // 2. 更新sources
         // pod repo update
-        ProgressHUD.show(from: self.view)
+        ProgressHUD.show(withStatus: "Update Sources", to: self.view)
         self.podRepoCoordinator.update(logComplation: { (log) in
             debugPrint("update Sources:\(log)")
         }, complation: { [weak self] (result) in
-            if !(self?.document?.podMappingData?.isEmpty ?? true) {
-                ProgressHUD.dismiss()
-            }
-            self?.podAnalyzerCoordinator.analyzer(podfile: URL.init(string: "")!, complation: { (models) in
-                ProgressHUD.dismiss()
-
-            })
+            AppInfo.shared.sourceLastUpdateDate = Date.init()
+            ProgressHUD.dismiss()
+            self?.analyzer()
         })
         // 3. analyzer
             // 1. 检查是否已经有数据，没有显示 HUD，然后分析，有就直接分析，然后
         // 4. 检测是否有新版本
     }
+
+    private func analyzer() {
+
+        if (self.document?.podMappingData?.isEmpty ?? true) {
+            ProgressHUD.show(withStatus: "Analyzer", to: self.view)
+        }
+
+        if let url = self.document?.fileURL, let podfile = Cocoapods.podfile(url: url) {
+            self.podAnalyzerCoordinator.analyzer(podfile: podfile, complation: { (models) in
+                ProgressHUD.dismiss()
+            })
+        }
+    }
+
+
 }
 
 //    func updateSpec() {
