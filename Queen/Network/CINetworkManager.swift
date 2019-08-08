@@ -8,7 +8,3 @@
 
 import Foundation
 
-enum DefaultSpecSource:String {
-    case master
-    case binrary
-}

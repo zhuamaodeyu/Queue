@@ -131,7 +131,10 @@ extension MenuViewController {
         dataSource.append(MenuModel.init(name: "网络配置", icon: "", unreadCount: 0))
         dataSource.append(MenuModel.init(name: "CI管理", icon: "", unreadCount: 5))
         dataSource.append(MenuModel.init(name: "文档", icon: "", unreadCount: 0))
-        dataSource.append(MenuModel.init(name: "Administrator", icon: "", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "构建", icon: "", unreadCount: 0))
+        if (LCApplication.default.currentUser as? UserEntity)?.master.boolValue ?? false {
+            dataSource.append(MenuModel.init(name: "Administrator", icon: "", unreadCount: 0))
+        }
         self.tableView.reloadData()
     }
 }

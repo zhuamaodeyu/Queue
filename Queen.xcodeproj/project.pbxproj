@@ -37,6 +37,8 @@
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
 		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
+		105A974D22FC6CD2002B3072 /* BuildingTerminalManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */; };
+		105A974F22FC6D56002B3072 /* BuildingManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6122CFA2A80034A505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
 		10636F6E22CFA34A0034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6D22CFA34A0034A505 /* Document.swift */; };
@@ -182,6 +184,8 @@
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
 		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
+		105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTerminalManagerController.swift; sourceTree = "<group>"; };
+		105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingManagerCell.swift; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10636F5D22CFA2A80034A505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10636F6022CFA2A80034A505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -531,6 +535,7 @@
 		10636FA922D4D08C0034A505 /* Building */ = {
 			isa = PBXGroup;
 			children = (
+				105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 			isa = PBXGroup;
 			children = (
 				10636FE722D6421A0034A505 /* BuildingViewController.swift */,
+				105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */,
 			);
 			path = Building;
 			sourceTree = "<group>";
@@ -1080,6 +1086,7 @@
 				1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
 				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
+				105A974D22FC6CD2002B3072 /* BuildingTerminalManagerController.swift in Sources */,
 				1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */,
 				1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */,
 				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
@@ -1114,6 +1121,7 @@
 				10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */,
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
+				105A974F22FC6D56002B3072 /* BuildingManagerCell.swift in Sources */,
 				10E022A022EB403200DE3433 /* Regex.swift in Sources */,
 				1036287922DB126200D7FA2D /* Carthage.swift in Sources */,
 				1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */,
