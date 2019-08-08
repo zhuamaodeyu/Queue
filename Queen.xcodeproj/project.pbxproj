@@ -132,7 +132,6 @@
 		10FFF01322F5E674003D61C7 /* LeanCloud+SpecSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */; };
 		10FFF01522F5F038003D61C7 /* AppDelegate+ Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */; };
 		10FFF01722F5F37D003D61C7 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01622F5F37D003D61C7 /* Path.swift */; };
-		10FFF01922F5F787003D61C7 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01822F5F787003D61C7 /* Environment.swift */; };
 		10FFF01B22F6B9E6003D61C7 /* NSAlert+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */; };
 		10FFF01F22F72349003D61C7 /* Command+Pods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01E22F72349003D61C7 /* Command+Pods.swift */; };
 		10FFF02122F863C3003D61C7 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF02022F863C3003D61C7 /* AppInfo.swift */; };
@@ -282,7 +281,6 @@
 		10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+SpecSources.swift"; sourceTree = "<group>"; };
 		10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ Environment.swift"; sourceTree = "<group>"; };
 		10FFF01622F5F37D003D61C7 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
-		10FFF01822F5F787003D61C7 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAlert+Exts.swift"; sourceTree = "<group>"; };
 		10FFF01E22F72349003D61C7 /* Command+Pods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Command+Pods.swift"; sourceTree = "<group>"; };
 		10FFF02022F863C3003D61C7 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
@@ -611,7 +609,6 @@
 				10636FCB22D4D4100034A505 /* Welcome */,
 				10E0229A22EB3FC600DE3433 /* Entitys.swift */,
 				1035224922F5751500C38178 /* EntitysDataManager.swift */,
-				10FFF01822F5F787003D61C7 /* Environment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1134,7 +1131,6 @@
 				10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */,
 				10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */,
 				10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */,
-				10FFF01922F5F787003D61C7 /* Environment.swift in Sources */,
 				10E0229E22EB401800DE3433 /* Utils.swift in Sources */,
 				10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */,
 				10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */,

@@ -7,21 +7,46 @@
 //
 
 import Foundation
-import LeanCloud
-class Config {
+import ObjectMapper
+
+let environment:[String: String] = [
+    "HOME": NSHomeDirectory(),
+    "LANG": "en_GB.UTF-8",
+    "TERM": "xterm-256color",
+    "LC_CTYPE": "UTF-8",
+    "PATH": "\(Path.bundlePath)/bin:\(Path.bundlePath)/libexec/git-core:/usr/bin:/bin:/usr/sbin:/sbin",
+    "PYTHONPATH": "\(Path.bundlePath)/lib/python2.7/site-packages",
+    "GIT_SSL_CAINFO": "\(Path.bundlePath)/share/roots.pem",
+    "GIT_TEMPLATE_DIR": "\(Path.bundlePath)/share/git-core/templates",
+    "GIT_EXEC_PATH": "\(Path.bundlePath)/libexec/git-core",
+    "SSL_CERT_FILE": "\(Path.bundlePath)/share/roots.pem"
+]
+
+struct Config:Mappable {
+    struct CIConfig:Mappable {
+        var url: String?
+        var token: String?
+        init?(map: Map) {
+        }
+        mutating func mapping(map: Map) {
+            url    <- map["url"]
+            token    <- map["token"]
+        }
+    }
+
+    var workspaceList:[WelcomeWorkspaceModel] = []
+    // CI 配置
+    var ciConfig: CIConfig?
+
+    init(){
+    }
+
+    init?(map: Map) {
+    }
+
+    mutating func mapping(map: Map) {
+        ciConfig    <- map["ciConfig"]
+        workspaceList    <- map["workspaceList"]
+    }
 }
-
-//extension Config {
-//    static func configFileName() -> String {
-//        guard let uuid = getHardwareUUID(), let number = getHardwareSerialNumber() else {
-//            return ""
-//        }
-//        if let user = LCApplication.default.currentUser {
-//            return md5(user.username?.stringValue ?? uuid + number)
-//        }else {
-//            return md5(uuid + number)
-//        }
-//    }
-//}
-
 

@@ -25,7 +25,7 @@ class WelcomeViewController: NSViewController {
     private var createButton:WelcomeViewActionView!
 
     private var dataSource:[WelcomeWorkspaceModel] {
-        return AppInfo.shared.workspaceList
+        return AppInfo.shared.config.workspaceList
     }
 
     private var podRepoCoordinator = PodRepoCoordinator.init()
@@ -291,7 +291,7 @@ extension WelcomeViewController {
         guard let model = self.dataSource[safe: sender.selectedRow] else {
             return
         }
-        DocumentController.shared.openDocument(withContentsOf:model.address, display: true) { (document, result, error) in
+        DocumentController.shared.openDocument(withContentsOf:URL.init(fileURLWithPath: model.address ?? ""), display: true) { (document, result, error) in
             if let _ = error {
                 return
             }
@@ -341,7 +341,7 @@ extension WelcomeViewController : NSTableViewDelegate, NSTableViewDataSource {
             cell?.identifier = NSUserInterfaceItemIdentifier(rawValue: CellIdentifier)
         }
         let model = dataSource[row]
-        cell?.updateUI(image: NSImage.init(named: model.image)!, title: model.projectName, desc: model.desc)
+        cell?.updateUI(image: NSImage.init(named: model.image ?? "")!, title: model.projectName ?? "", desc: model.desc ?? "")
         return cell
     }
     func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {

@@ -8,53 +8,22 @@
 
 import Foundation
 import LeanCloud
+import ObjectMapper
 
-
-let environment:[String: String] = [
-    "HOME": NSHomeDirectory(),
-    "LANG": "en_GB.UTF-8",
-    "TERM": "xterm-256color",
-    "LC_CTYPE": "UTF-8",
-    "PATH": "\(Path.bundlePath)/bin:\(Path.bundlePath)/libexec/git-core:/usr/bin:/bin:/usr/sbin:/sbin",
-    "PYTHONPATH": "\(Path.bundlePath)/lib/python2.7/site-packages",
-    "GIT_SSL_CAINFO": "\(Path.bundlePath)/share/roots.pem",
-    "GIT_TEMPLATE_DIR": "\(Path.bundlePath)/share/git-core/templates",
-    "GIT_EXEC_PATH": "\(Path.bundlePath)/libexec/git-core",
-    "SSL_CERT_FILE": "\(Path.bundlePath)/share/roots.pem"
-]
 
 
 
 private let userDefault = UserDefaults.standard
 
 struct UserDefaultsKeys {
-    struct WelcomeWindowKeys {
-        static var kOpenWorkspaceList = "kOpenWorkspaceList"
-    }
-
     static var kSourceLastUpdateDate = "kSourceLastUpdateDate"
+    static var kConfigKey = "kConfigKey"
 }
 
 class AppInfo {
     static let shared = AppInfo.init()
     private init() {
 
-    }
-    var workspaceList:[WelcomeWorkspaceModel] {
-        get {
-            if let data = userDefault.value(forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList) as? Data {
-                if let repo = try? JSONDecoder().decode([WelcomeWorkspaceModel].self, from: data) {
-                    return repo
-                }
-            }
-            return []
-        }
-        set {
-            if let data = try? JSONEncoder.init().encode(newValue) {
-                userDefault.set(data, forKey: UserDefaultsKeys.WelcomeWindowKeys.kOpenWorkspaceList)
-                userDefault.synchronize()
-            }
-        }
     }
 
     var sourceLastUpdateDate: Date? {
@@ -72,4 +41,16 @@ class AppInfo {
         }
     }
 
+    var config: Config {
+        get {
+            if let jsonString = userDefault.value(forKey: LCApplication.default.currentUser?.username?.stringValue ?? UserDefaultsKeys.kConfigKey) as? String {
+                return (try? Config.init(JSONString: jsonString)) ?? Config.init()
+            }
+            return Config.init()
+        }
+        set {
+            userDefault.set(config.toJSONString(), forKey: LCApplication.default.currentUser?.username?.stringValue ?? UserDefaultsKeys.kConfigKey)
+            userDefault.synchronize()
+        }
+    }
 }
