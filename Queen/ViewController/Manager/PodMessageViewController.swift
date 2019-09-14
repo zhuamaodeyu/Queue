@@ -389,12 +389,11 @@ extension PodMessageViewController {
     private func updateSource() {
         // 2. 更新sources
         // pod repo update
-        ProgressHUD.show(withStatus: "Update Sources", to: self.view)
         self.podRepoCoordinator.update(logComplation: { (log) in
             debugPrint("update Sources:\(log)")
+            self.terminalViewController.update(content: log)
         }, complation: { [weak self] (result) in
             AppInfo.shared.sourceLastUpdateDate = Date.init()
-            ProgressHUD.dismiss()
             self?.analyzer()
         })
         // 3. analyzer
@@ -405,12 +404,12 @@ extension PodMessageViewController {
     private func analyzer() {
 
         if (self.document?.podMappingData?.isEmpty ?? true) {
-            ProgressHUD.show(withStatus: "Analyzer", to: self.view)
+
         }
 
         if let url = self.document?.fileURL, let podfile = Cocoapods.podfile(url: url) {
             self.podAnalyzerCoordinator.analyzer(podfile: podfile, complation: { (models) in
-                ProgressHUD.dismiss()
+
             })
         }
     }

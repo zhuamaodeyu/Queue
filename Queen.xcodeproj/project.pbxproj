@@ -11,8 +11,6 @@
 		1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */; };
 		1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */; };
 		1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6022DDFB140067E402 /* DocumentController.swift */; };
-		1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6222DDFCE70067E402 /* PodContactViewController.swift */; };
-		1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */; };
 		1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6622DE00120067E402 /* WorkspaceManager.swift */; };
 		1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6822DE07D10067E402 /* DocumentType.swift */; };
 		1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6A22E1F6110067E402 /* LoginWindowController.swift */; };
@@ -53,7 +51,6 @@
 		10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */; };
 		10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */; };
 		10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB022D4D08C0034A505 /* PreferencesViewController.swift */; };
-		10636FC422D4D08C0034A505 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB322D4D08C0034A505 /* ManagerViewController.swift */; };
 		10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636FB822D4D08C0034A505 /* MainUI.storyboard */; };
 		10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCD22D4D42F0034A505 /* ComponentModel.swift */; };
 		10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCF22D4E1E70034A505 /* TerminalView.swift */; };
@@ -95,7 +92,6 @@
 		1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */; };
 		1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */; };
 		1063704522DA103F0034A505 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704422DA103F0034A505 /* KeyWindow.swift */; };
-		1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704822DA2D990034A505 /* VersionEditViewController.swift */; };
 		1063704B22DA36FA0034A505 /* Note.md in Resources */ = {isa = PBXBuildFile; fileRef = 1063704A22DA36FA0034A505 /* Note.md */; };
 		1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */; };
 		1063705022DA412F0034A505 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704F22DA412F0034A505 /* Command.swift */; };
@@ -110,6 +106,13 @@
 		1081D700232B8CAD006A7358 /* AdminUserManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */; };
 		1081D702232B8CD5006A7358 /* AdminTeamManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */; };
 		1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */; };
+		1081D711232CD5CC006A7358 /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70B232CD5CC006A7358 /* PodContactViewController.swift */; };
+		1081D712232CD5CC006A7358 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */; };
+		1081D713232CD5CC006A7358 /* VersionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */; };
+		1081D714232CD5CC006A7358 /* TerminalViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */; };
+		1081D715232CD5CC006A7358 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D710232CD5CC006A7358 /* ManagerViewController.swift */; };
+		1081D718232CD6CA006A7358 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D717232CD6CA006A7358 /* NSLabel.swift */; };
+		1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D719232CDA7C006A7358 /* TerminalTextView.swift */; };
 		10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226A22E3088500DE3433 /* CIStatusViewController.swift */; };
 		10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
@@ -132,7 +135,6 @@
 		10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */; };
 		10E022AC22ED78C900DE3433 /* AdministratorMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */; };
 		10E022AE22F07F3B00DE3433 /* TerminalPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */; };
-		10E022B022F0806C00DE3433 /* TerminalViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AF22F0806C00DE3433 /* TerminalViewConstroller.swift */; };
 		10FFF01122F5DA3A003D61C7 /* LeanCloud+Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01022F5DA3A003D61C7 /* LeanCloud+Team.swift */; };
 		10FFF01322F5E674003D61C7 /* LeanCloud+SpecSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */; };
 		10FFF01522F5F038003D61C7 /* AppDelegate+ Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */; };
@@ -161,8 +163,6 @@
 		1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusWindow.swift; sourceTree = "<group>"; };
 		1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Exts.swift"; sourceTree = "<group>"; };
 		1023EB6022DDFB140067E402 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
-		1023EB6222DDFCE70067E402 /* PodContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
-		1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
 		1023EB6622DE00120067E402 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
 		1023EB6822DE07D10067E402 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
 		1023EB6A22E1F6110067E402 /* LoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
@@ -205,7 +205,6 @@
 		10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEnterOrExitView.swift; sourceTree = "<group>"; };
 		10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		10636FB022D4D08C0034A505 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		10636FB322D4D08C0034A505 /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		10636FB822D4D08C0034A505 /* MainUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainUI.storyboard; sourceTree = "<group>"; };
 		10636FCD22D4D42F0034A505 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
 		10636FCF22D4E1E70034A505 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
@@ -247,7 +246,6 @@
 		1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionEditWindowController.swift; sourceTree = "<group>"; };
 		1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
 		1063704422DA103F0034A505 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
-		1063704822DA2D990034A505 /* VersionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionEditViewController.swift; sourceTree = "<group>"; };
 		1063704A22DA36FA0034A505 /* Note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note.md; sourceTree = "<group>"; };
 		1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserNotification+Exts.swift"; sourceTree = "<group>"; };
 		1063704F22DA412F0034A505 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
@@ -262,6 +260,13 @@
 		1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserManagerController.swift; sourceTree = "<group>"; };
 		1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTeamManagerController.swift; sourceTree = "<group>"; };
 		1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSpecManagerController.swift; sourceTree = "<group>"; };
+		1081D70B232CD5CC006A7358 /* PodContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
+		1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
+		1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionEditViewController.swift; sourceTree = "<group>"; };
+		1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewConstroller.swift; sourceTree = "<group>"; };
+		1081D710232CD5CC006A7358 /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		1081D717232CD6CA006A7358 /* NSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
+		1081D719232CDA7C006A7358 /* TerminalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalTextView.swift; sourceTree = "<group>"; };
 		10E0226A22E3088500DE3433 /* CIStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
 		10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
@@ -286,7 +291,6 @@
 		10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuView.swift; sourceTree = "<group>"; };
 		10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuCell.swift; sourceTree = "<group>"; };
 		10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalPopUpButton.swift; sourceTree = "<group>"; };
-		10E022AF22F0806C00DE3433 /* TerminalViewConstroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalViewConstroller.swift; sourceTree = "<group>"; };
 		10FFF01022F5DA3A003D61C7 /* LeanCloud+Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+Team.swift"; sourceTree = "<group>"; };
 		10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+SpecSources.swift"; sourceTree = "<group>"; };
 		10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ Environment.swift"; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 		10636F5622CFA2A70034A505 /* Queen */ = {
 			isa = PBXGroup;
 			children = (
+				1081D716232CD6AC006A7358 /* Widget */,
 				10E0227422E4136800DE3433 /* Network */,
 				1063706022DB0AD50034A505 /* Config */,
 				1063704E22DA40DD0034A505 /* Core */,
@@ -446,6 +451,7 @@
 				10E0228622E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift */,
 				10E0229822EB3F7400DE3433 /* NSApplication+Exts.swift */,
 				10FFF01A22F6B9E6003D61C7 /* NSAlert+Exts.swift */,
+				1081D719232CDA7C006A7358 /* TerminalTextView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -549,6 +555,7 @@
 		10636FAA22D4D08C0034A505 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1081D70A232CD5CC006A7358 /* Manager */,
 				10E022A122EB40BD00DE3433 /* Administrator */,
 				1023EB6C22E1F6240067E402 /* Login */,
 				10636FDD22D6413E0034A505 /* MainViewController.swift */,
@@ -558,7 +565,6 @@
 				10636FAB22D4D08C0034A505 /* Documentation */,
 				10636FAD22D4D08C0034A505 /* Config */,
 				10636FAE22D4D08C0034A505 /* CI */,
-				10636FB122D4D08C0034A505 /* Manager */,
 				10636FB522D4D08C0034A505 /* Building */,
 			);
 			path = ViewController;
@@ -587,18 +593,6 @@
 				10E0226A22E3088500DE3433 /* CIStatusViewController.swift */,
 			);
 			path = CI;
-			sourceTree = "<group>";
-		};
-		10636FB122D4D08C0034A505 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				1063704822DA2D990034A505 /* VersionEditViewController.swift */,
-				10636FB322D4D08C0034A505 /* ManagerViewController.swift */,
-				1023EB6222DDFCE70067E402 /* PodContactViewController.swift */,
-				1023EB6422DDFCFB0067E402 /* PodMessageViewController.swift */,
-				10E022AF22F0806C00DE3433 /* TerminalViewConstroller.swift */,
-			);
-			path = Manager;
 			sourceTree = "<group>";
 		};
 		10636FB522D4D08C0034A505 /* Building */ = {
@@ -795,6 +789,34 @@
 				1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */,
 			);
 			path = Children;
+			sourceTree = "<group>";
+		};
+		1081D70A232CD5CC006A7358 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				1081D70D232CD5CC006A7358 /* Sub */,
+				1081D70B232CD5CC006A7358 /* PodContactViewController.swift */,
+				1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */,
+				1081D710232CD5CC006A7358 /* ManagerViewController.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1081D70D232CD5CC006A7358 /* Sub */ = {
+			isa = PBXGroup;
+			children = (
+				1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */,
+				1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */,
+			);
+			path = Sub;
+			sourceTree = "<group>";
+		};
+		1081D716232CD6AC006A7358 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				1081D717232CD6CA006A7358 /* NSLabel.swift */,
+			);
+			path = Widget;
 			sourceTree = "<group>";
 		};
 		10E0227422E4136800DE3433 /* Network */ = {
@@ -1088,14 +1110,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				10E0229B22EB3FC600DE3433 /* Entitys.swift in Sources */,
-				1023EB6522DDFCFB0067E402 /* PodMessageViewController.swift in Sources */,
 				1063703722D78E090034A505 /* SyntaxTextViewLayoutManager.swift in Sources */,
 				1063702C22D78E090034A505 /* ASTVisualizer.swift in Sources */,
 				10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */,
 				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
-				10E022B022F0806C00DE3433 /* TerminalViewConstroller.swift in Sources */,
 				1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */,
+				1081D712232CD5CC006A7358 /* PodMessageViewController.swift in Sources */,
 				1063703522D78E090034A505 /* TextViewWrapperView.swift in Sources */,
+				1081D711232CD5CC006A7358 /* PodContactViewController.swift in Sources */,
 				10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */,
 				1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */,
 				10636FDC22D640800034A505 /* MainWindowController.swift in Sources */,
@@ -1103,10 +1125,8 @@
 				10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */,
 				1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
-				1063704922DA2D990034A505 /* VersionEditViewController.swift in Sources */,
 				105A974D22FC6CD2002B3072 /* BuildingTerminalManagerController.swift in Sources */,
 				1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */,
-				1023EB6322DDFCE70067E402 /* PodContactViewController.swift in Sources */,
 				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
 				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
@@ -1119,6 +1139,7 @@
 				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
 				10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */,
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
+				1081D715232CD5CC006A7358 /* ManagerViewController.swift in Sources */,
 				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
 				10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */,
@@ -1138,6 +1159,7 @@
 				1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */,
 				1063702E22D78E090034A505 /* Paragraph.swift in Sources */,
 				10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */,
+				1081D713232CD5CC006A7358 /* VersionEditViewController.swift in Sources */,
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
 				105A974F22FC6D56002B3072 /* BuildingManagerCell.swift in Sources */,
@@ -1154,7 +1176,6 @@
 				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
 				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
 				1063702D22D78E090034A505 /* Lexer.swift in Sources */,
-				10636FC422D4D08C0034A505 /* ManagerViewController.swift in Sources */,
 				10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */,
 				10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */,
 				10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */,
@@ -1169,12 +1190,14 @@
 				1063705022DA412F0034A505 /* Command.swift in Sources */,
 				10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */,
 				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
+				1081D718232CD6CA006A7358 /* NSLabel.swift in Sources */,
 				10FFF01722F5F37D003D61C7 /* Path.swift in Sources */,
 				10E0229922EB3F7400DE3433 /* NSApplication+Exts.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
 				1035223322F1DB1D00C38178 /* PodAnalyzerCoordinator.swift in Sources */,
 				10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */,
 				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
+				1081D714232CD5CC006A7358 /* TerminalViewConstroller.swift in Sources */,
 				10FFF01B22F6B9E6003D61C7 /* NSAlert+Exts.swift in Sources */,
 				1023EB7422E208240067E402 /* IconImageView.swift in Sources */,
 				1063703022D78E090034A505 /* Token.swift in Sources */,
@@ -1201,6 +1224,7 @@
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,
 				1035224C22F5854600C38178 /* TerminalButtomToolView.swift in Sources */,
 				1063705A22DAEA520034A505 /* Xcode.swift in Sources */,
+				1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
 				10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */,
 				1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */,
