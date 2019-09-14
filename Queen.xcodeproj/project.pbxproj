@@ -107,6 +107,9 @@
 		1063705C22DAEC0D0034A505 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1063705B22DAEC0D0034A505 /* Cartfile */; };
 		1063705F22DB01AC0034A505 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1063705E22DB01AC0034A505 /* .gitignore */; };
 		1063706222DB0ADF0034A505 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063706122DB0ADF0034A505 /* Config.swift */; };
+		1081D700232B8CAD006A7358 /* AdminUserManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */; };
+		1081D702232B8CD5006A7358 /* AdminTeamManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */; };
+		1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */; };
 		10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226A22E3088500DE3433 /* CIStatusViewController.swift */; };
 		10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
@@ -256,6 +259,9 @@
 		1063705B22DAEC0D0034A505 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		1063705E22DB01AC0034A505 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1063706122DB0ADF0034A505 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserManagerController.swift; sourceTree = "<group>"; };
+		1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTeamManagerController.swift; sourceTree = "<group>"; };
+		1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSpecManagerController.swift; sourceTree = "<group>"; };
 		10E0226A22E3088500DE3433 /* CIStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
 		10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
@@ -781,6 +787,16 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		1081D6FE232B8C84006A7358 /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */,
+				1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */,
+				1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */,
+			);
+			path = Children;
+			sourceTree = "<group>";
+		};
 		10E0227422E4136800DE3433 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,6 +855,7 @@
 		10E022A122EB40BD00DE3433 /* Administrator */ = {
 			isa = PBXGroup;
 			children = (
+				1081D6FE232B8C84006A7358 /* Children */,
 				10E022A222EB40D200DE3433 /* AdministratorViewController.swift */,
 			);
 			path = Administrator;
@@ -1077,6 +1094,7 @@
 				10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */,
 				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
 				10E022B022F0806C00DE3433 /* TerminalViewConstroller.swift in Sources */,
+				1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */,
 				1063703522D78E090034A505 /* TextViewWrapperView.swift in Sources */,
 				10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */,
 				1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */,
@@ -1110,6 +1128,7 @@
 				10E022A322EB40D200DE3433 /* AdministratorViewController.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
+				1081D702232B8CD5006A7358 /* AdminTeamManagerController.swift in Sources */,
 				1035223B22F555A100C38178 /* XcodeActionCoordinator.swift in Sources */,
 				10E0228722E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
@@ -1170,6 +1189,7 @@
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
 				1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
+				1081D700232B8CAD006A7358 /* AdminUserManagerController.swift in Sources */,
 				1036287B22DB13AC00D7FA2D /* Open.swift in Sources */,
 				1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */,
 				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,

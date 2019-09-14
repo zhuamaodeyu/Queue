@@ -156,3 +156,13 @@ make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
 
 
 11. 无边框window默认不能成为第一响应者
+
+
+12. NSCollectionView cell 可点击  
+
+```
+    self.collectionView.isSelectable = true
+```
+13. NSCollectionView 不可多次点击  
+
+

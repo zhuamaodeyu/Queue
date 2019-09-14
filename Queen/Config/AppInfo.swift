@@ -11,8 +11,6 @@ import LeanCloud
 import ObjectMapper
 
 
-
-
 private let userDefault = UserDefaults.standard
 
 struct UserDefaultsKeys {
