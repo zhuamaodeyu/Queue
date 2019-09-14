@@ -10,7 +10,14 @@ import Cocoa
 import SnapKit
 
 protocol TerminalButtomToolViewDelegate:class {
+    func toolView(view: TerminalButtomToolView , didSelect button: NSButton,type: TerminalButtomType)
+}
 
+enum TerminalButtomType {
+    case clear
+    case autoScroll
+    case close
+    case menuList
 }
 
 class TerminalButtomToolView: NSView {
@@ -19,6 +26,11 @@ class TerminalButtomToolView: NSView {
     private var closeButton: NSButton!
     private var autoScrollButton: NSButton!
     private var clearButton: NSButton!
+
+    var autoScroll: Bool {
+        return autoScrollButton.state == .on
+    }
+
     private let menuListView: TerminalPopUpButton = {
         let button = TerminalPopUpButton.init()
         let cell  = button.cell as? NSMenuItemCell
@@ -46,7 +58,7 @@ extension TerminalButtomToolView {
     private func installSubviews() {
         closeButton = NSButton.init(title: "Close", target: self, action: #selector(buttonAction(sender:)))
         closeButton.sizeToFit()
-        self.addSubview(closeButton)
+//        self.addSubview(closeButton)
 
         autoScrollButton = NSButton.init(checkboxWithTitle: "Auto Scroll", target: self, action: #selector(buttonAction(sender:)))
         autoScrollButton.sizeToFit()
@@ -57,15 +69,15 @@ extension TerminalButtomToolView {
         self.addSubview(clearButton)
 
 
-        self.addSubview(menuListView)
+//        self.addSubview(menuListView)
 
     }
 
     private func initSubviewsConstaints()  {
-        closeButton.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.left.equalTo(self).offset(50)
-        }
+//        closeButton.snp.makeConstraints { (make) in
+//            make.centerY.equalTo(self)
+//            make.left.equalTo(self).offset(50)
+//        }
         autoScrollButton.snp.makeConstraints { (make) in
             make.centerY.equalTo(self)
             make.right.equalTo(clearButton.snp.left).offset(-10)
@@ -74,10 +86,10 @@ extension TerminalButtomToolView {
             make.centerY.equalTo(self)
             make.right.equalTo(self).offset(-10)
         }
-        menuListView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.right.equalTo(autoScrollButton.snp.left).offset(-50)
-        }
+//        menuListView.snp.makeConstraints { (make) in
+//            make.centerY.equalTo(self)
+//            make.right.equalTo(autoScrollButton.snp.left).offset(-50)
+//        }
     }
 }
 
@@ -85,6 +97,12 @@ extension TerminalButtomToolView {
 // MARK: - Action
 extension TerminalButtomToolView {
     @objc private func buttonAction(sender: NSButton) {
+        if sender == clearButton {
+            self.delegate?.toolView(view: self, didSelect: sender, type: .clear)
+        }
+        if sender == autoScrollButton {
+            self.delegate?.toolView(view: self, didSelect: sender, type: .autoScroll)
+        }
 
     }
 

@@ -93,8 +93,10 @@ extension CommandLine {
             guard let output = String.init(data: fileHandle.availableData, encoding: .utf8) else { return  }
 
             let attributeString = stringToAttributeString(output: output)
+
             self.output.append(attributeString)
-            self.delegate?.commandLine(commandLine: self, didUpdateOutPut: self.output)
+
+            self.delegate?.commandLine(commandLine: self, didUpdateOutPut: attributeString)
 
             if self.process?.isRunning ?? false {
                 fileHandle.waitForDataInBackgroundAndNotify(forModes: [.default,.eventTracking])
@@ -110,7 +112,7 @@ extension CommandLine {
     private func stringToAttributeString(output: String) -> NSAttributedString {
         do {
            return try output.ansified()
-        } catch _ {
+        } catch let error {
             return NSAttributedString.init(string: output)
         }
     }

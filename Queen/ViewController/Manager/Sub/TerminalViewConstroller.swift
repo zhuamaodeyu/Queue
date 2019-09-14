@@ -17,8 +17,9 @@ class TerminalViewConstroller: NSViewController {
 
     private var textView: NSTextView!
     private var scrollView: NSScrollView!
-
     private var buttomToolView:TerminalButtomToolView = TerminalButtomToolView.init()
+
+    private var autoScroll: Bool = false
 
 
     override func loadView() {
@@ -28,7 +29,11 @@ class TerminalViewConstroller: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        autoScroll = buttomToolView.autoScroll
+    }
+    override func viewDidLayout() {
+        super.viewDidLayout()
+        textView.frame = NSRect.init(x: 0, y: 0, width: self.view.width, height: self.view.height - 40)
     }
 }
 
@@ -42,12 +47,16 @@ extension TerminalViewConstroller {
             make.left.right.bottom.equalTo(view)
         }
 
-        //
-        scrollView = NSScrollView.init()
-        textView = NSTextView.init()
 
+        scrollView = NSScrollView.init()
+        scrollView.hasVerticalScroller = true
+        textView = NSTextView.init(frame: .zero)
+        textView.isEditable = false 
+        textView.string = ""
         scrollView.documentView = textView
 
+        view.addSubview(scrollView)
+        
         scrollView.snp.makeConstraints { (make) in
             make.left.right.top.equalTo(view)
             make.bottom.equalTo(buttomToolView.snp.top)
@@ -57,12 +66,26 @@ extension TerminalViewConstroller {
 
 extension TerminalViewConstroller {
     func update(content: NSAttributedString)  {
-
+        self.textView.textStorage?.append(content)
+        if autoScroll {
+            textView.scrollBottom()
+        }
     }
 }
 
 extension TerminalViewConstroller: TerminalButtomToolViewDelegate {
-
+    func toolView(view: TerminalButtomToolView, didSelect button: NSButton, type: TerminalButtomType) {
+        switch type {
+        case .autoScroll:
+            self.autoScroll = (button.state == .on)
+            break
+        case .clear:
+            self.textView.string = ""
+            break
+        default:
+            break
+        }
+    }
 }
 
 
