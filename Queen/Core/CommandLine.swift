@@ -112,7 +112,7 @@ extension CommandLine {
     private func stringToAttributeString(output: String) -> NSAttributedString {
         do {
            return try output.ansified()
-        } catch let error {
+        } catch _ {
             return NSAttributedString.init(string: output)
         }
     }
