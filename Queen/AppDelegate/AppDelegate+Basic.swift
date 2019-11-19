@@ -66,6 +66,9 @@ extension AppDelegate {
     }
 
     func showWindow() {
+        showWelcomeWindow()
+        return
+        
         if NSApp.orderedWindows.count > 0 || NSApp.orderedDocuments.count > 0 {
             return
         }

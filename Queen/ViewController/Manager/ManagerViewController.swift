@@ -40,6 +40,11 @@ class ManagerViewController: NSViewController {
     }
 }
 
+extension ManagerViewController: MainSubViewControllerProtocol {
+    var type: MenuType {
+        return .podManager
+    }
+}
 extension ManagerViewController {
     private func installSubviews() {
         view.addSubview(containerView)

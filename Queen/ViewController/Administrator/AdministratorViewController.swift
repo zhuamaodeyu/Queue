@@ -60,6 +60,11 @@ class AdministratorViewController: NSViewController {
         menuView.reloadData()
     }
 }
+extension AdministratorViewController : MainSubViewControllerProtocol {
+    var type: MenuType {
+        return .admin
+    }
+}
 
 extension AdministratorViewController {
 

@@ -28,6 +28,11 @@ class CIManagerViewController: NSViewController {
         super.viewDidLoad()
     }
 }
+extension CIManagerViewController : MainSubViewControllerProtocol{
+    var type: MenuType {
+        return .CIManager
+    }
+}
 
 extension CIManagerViewController {
     private func installSubviews() {

@@ -16,6 +16,9 @@ class MenuTableViewCell: NSTableCellView {
     private var titleLabel: NSTextField!
     private var unreadCountView: NSTextField!
 
+    private var type: MenuShowType?
+    private var model: MenuModel?
+
     override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         installSubviews()
@@ -29,23 +32,6 @@ class MenuTableViewCell: NSTableCellView {
         self.unreadCountView.layer?.cornerRadius = (self.unreadCountView.cell?.cellSize.height) ?? 0 / 2
         self.unreadCountView.layer?.masksToBounds = true
     }
-
-    override var objectValue: Any? {
-        didSet {
-            if let model =  objectValue as? MenuModel {
-                self.iconImageView.image = NSImage.init(named: model.icon)
-                self.titleLabel.stringValue = model.name
-                self.unreadCountView.stringValue = "\(model.unreadCount)"
-                self.unreadCountView.updateLayer()
-                if model.unreadCount == 0 {
-                    self.unreadCountView.isHidden = true
-                }else {
-                    self.unreadCountView.isHidden = false
-                }
-            }
-        }
-    }
-    
 }
 
 extension MenuTableViewCell {
@@ -102,5 +88,27 @@ extension MenuTableViewCell {
         }
 
         iconImageView.backgroundColor = NSColor.randomColor
+    }
+}
+
+extension MenuTableViewCell {
+    func config(model: MenuModel, type: MenuShowType) {
+        self.model = model
+        self.type = type
+        switch type {
+        case .onlyIcon:
+            break
+        default:
+            self.iconImageView.image = NSImage.init(named: model.icon)
+            self.titleLabel.stringValue = model.name
+            self.unreadCountView.stringValue = "\(model.unreadCount)"
+            self.unreadCountView.updateLayer()
+            if model.unreadCount == 0 {
+                self.unreadCountView.isHidden = true
+            }else {
+                self.unreadCountView.isHidden = false
+            }
+            break
+        }
     }
 }

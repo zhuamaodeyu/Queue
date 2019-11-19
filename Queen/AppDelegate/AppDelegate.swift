@@ -47,6 +47,7 @@ extension AppDelegate {
         #endif
     }
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        UserDefaults.standard.set(true, forKey: "NSConstraintBasedLayoutVisualizeMutuallyExclusiveConstraints")
         registerNotification()
     }
 

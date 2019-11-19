@@ -42,7 +42,7 @@ class Open {
             debugPrint("is not found code , please check , system error")
             return
         }
-        if !FileManager.ns.isDir(path: path) {
+        if !FileManager.ns.dir(path: path) {
             debugPrint("is not open dir, please ")
         }
         Process.run(command: open, args: [path])

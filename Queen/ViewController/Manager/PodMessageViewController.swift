@@ -59,7 +59,7 @@ class PodMessageViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         if Cocoapods.check(url: document?.fileURL) {
-            if AppInfo.shared.sourceLastUpdateDate?.ns.isToday() ?? false {
+            if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
                 analyzer()
             }else {
                 updateSource()
@@ -356,9 +356,12 @@ extension PodMessageViewController : NSSplitViewDelegate {
     //        }
     //        return 500
     //    }
-    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-        return splitView.frame.height - 100
-    }
+//    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+//        if dividerIndex == 1 {
+//                return splitView.frame.height - 100
+//        }
+//        return splitView.height
+//    }
 }
 
 

@@ -20,3 +20,9 @@ class ConfigViewController: NSViewController {
     }
     
 }
+
+extension ConfigViewController: MainSubViewControllerProtocol {
+    var type: MenuType {
+        return .none
+    }
+}

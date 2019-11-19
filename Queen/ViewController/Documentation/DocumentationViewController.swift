@@ -40,6 +40,11 @@ extension DocumentationViewController {
     }
 }
 
+extension DocumentationViewController : MainSubViewControllerProtocol {
+    var type: MenuType {
+        return .document
+    }
+}
 
 extension DocumentationViewController : WKNavigationDelegate {
     // 页面开始加载时调用

@@ -166,3 +166,27 @@ make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
 13. NSCollectionView 不可多次点击  
 
 
+14. 配置cell 的值 
+```
+//    override var objectValue: Any? {
+//        didSet {
+//            if let model =  objectValue as? MenuModel {
+//                self.iconImageView.image = NSImage.init(named: model.icon)
+//                self.titleLabel.stringValue = model.name
+//                self.unreadCountView.stringValue = "\(model.unreadCount)"
+//                self.unreadCountView.updateLayer()
+//                if model.unreadCount == 0 {
+//                    self.unreadCountView.isHidden = true
+//                }else {
+//                    self.unreadCountView.isHidden = false
+//                }
+//            }
+//        }
+//    }
+//    
+
+
+
+
+```
+

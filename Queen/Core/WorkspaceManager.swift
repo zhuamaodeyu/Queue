@@ -19,7 +19,7 @@ class WorkspaceManager {
             return false
         }
         // 不是文件夹
-        if !FileManager.ns.isDir(path: path) {
+        if !FileManager.ns.dir(path: path) {
             return false
         }
 
