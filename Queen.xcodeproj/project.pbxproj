@@ -8,14 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5822DDF2A60067E402 /* DefaultSettings.swift */; };
-		1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */; };
 		1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */; };
 		1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6022DDFB140067E402 /* DocumentController.swift */; };
 		1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6622DE00120067E402 /* WorkspaceManager.swift */; };
 		1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6822DE07D10067E402 /* DocumentType.swift */; };
-		1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6A22E1F6110067E402 /* LoginWindowController.swift */; };
-		1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB6D22E1F6360067E402 /* LoginViewController.swift */; };
-		1023EB7422E208240067E402 /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7322E208240067E402 /* IconImageView.swift */; };
 		1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */; };
 		1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1023EB7922E2D2410067E402 /* CommandLine.swift */; };
 		1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035223022F1DA9400C38178 /* PodSearchCoordinator.swift */; };
@@ -30,41 +26,69 @@
 		1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */; };
 		1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224522F55BB900C38178 /* AppDelegate+Document.swift */; };
 		1035224822F566FD00C38178 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1035224722F566FD00C38178 /* Welcome.storyboard */; };
-		1035224A22F5751500C38178 /* EntitysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224922F5751500C38178 /* EntitysDataManager.swift */; };
-		1035224C22F5854600C38178 /* TerminalButtomToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1035224B22F5854600C38178 /* TerminalButtomToolView.swift */; };
 		1036287922DB126200D7FA2D /* Carthage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287822DB126200D7FA2D /* Carthage.swift */; };
 		1036287B22DB13AC00D7FA2D /* Open.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287A22DB13AC00D7FA2D /* Open.swift */; };
-		1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */; };
-		105A974D22FC6CD2002B3072 /* BuildingTerminalManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */; };
-		105A974F22FC6D56002B3072 /* BuildingManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */; };
+		103B49182389486100502B9E /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48D72389486000502B9E /* PreferencesViewController.swift */; };
+		103B49192389486100502B9E /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48D82389486000502B9E /* PreferencesWindowController.swift */; };
+		103B491A2389486100502B9E /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48DA2389486000502B9E /* WelcomeWindowController.swift */; };
+		103B491B2389486100502B9E /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48DB2389486000502B9E /* WelcomeWorkspaceModel.swift */; };
+		103B491C2389486100502B9E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48DC2389486000502B9E /* WelcomeViewController.swift */; };
+		103B491D2389486100502B9E /* WelcomeViewActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48DE2389486000502B9E /* WelcomeViewActionView.swift */; };
+		103B491E2389486100502B9E /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48DF2389486000502B9E /* WelcomeTableViewCell.swift */; };
+		103B491F2389486100502B9E /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48E22389486000502B9E /* DocumentationViewController.swift */; };
+		103B49202389486100502B9E /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48E32389486000502B9E /* MainWindowController.swift */; };
+		103B49212389486100502B9E /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48E52389486000502B9E /* ConfigViewController.swift */; };
+		103B49222389486100502B9E /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48E82389486000502B9E /* CIManagerViewCell.swift */; };
+		103B49232389486100502B9E /* CIManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48E92389486000502B9E /* CIManagerViewController.swift */; };
+		103B49242389486100502B9E /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48EA2389486000502B9E /* CIStatusViewController.swift */; };
+		103B49252389486100502B9E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48EB2389486000502B9E /* MainViewController.swift */; };
+		103B49262389486100502B9E /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48ED2389486000502B9E /* PodContactViewController.swift */; };
+		103B49272389486100502B9E /* VersionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48EE2389486000502B9E /* VersionEditViewController.swift */; };
+		103B49282389486100502B9E /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48EF2389486000502B9E /* PodMessageViewController.swift */; };
+		103B49292389486100502B9E /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F12389486000502B9E /* ComponentModel.swift */; };
+		103B492A2389486100502B9E /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F22389486000502B9E /* ManagerViewController.swift */; };
+		103B492B2389486100502B9E /* VersionEditWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F32389486000502B9E /* VersionEditWindowController.swift */; };
+		103B492D2389486100502B9E /* TerminalPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F62389486000502B9E /* TerminalPopUpButton.swift */; };
+		103B492E2389486100502B9E /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F72389486000502B9E /* NameTableViewCell.swift */; };
+		103B492F2389486100502B9E /* MainContentTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F82389486000502B9E /* MainContentTopMenuView.swift */; };
+		103B49302389486100502B9E /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48F92389486000502B9E /* MenuTableViewCell.swift */; };
+		103B49312389486100502B9E /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48FA2389486000502B9E /* TerminalView.swift */; };
+		103B49322389486100502B9E /* TerminalButtomToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48FB2389486000502B9E /* TerminalButtomToolView.swift */; };
+		103B49332389486100502B9E /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48FC2389486000502B9E /* ButtonTableViewCell.swift */; };
+		103B49342389486100502B9E /* TerminalViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48FD2389486000502B9E /* TerminalViewConstroller.swift */; };
+		103B49352389486100502B9E /* AdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48FF2389486000502B9E /* AdministratorViewController.swift */; };
+		103B49362389486100502B9E /* AdministratorMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49012389486000502B9E /* AdministratorMenuView.swift */; };
+		103B49372389486100502B9E /* AdministratorMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49022389486000502B9E /* AdministratorMenuCell.swift */; };
+		103B49382389486100502B9E /* ContentContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49032389486000502B9E /* ContentContainterView.swift */; };
+		103B49392389486100502B9E /* AdminUserManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49052389486000502B9E /* AdminUserManagerController.swift */; };
+		103B493A2389486100502B9E /* AdminSpecManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49062389486000502B9E /* AdminSpecManagerController.swift */; };
+		103B493B2389486100502B9E /* AdminTeamManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49072389486000502B9E /* AdminTeamManagerController.swift */; };
+		103B493C2389486100502B9E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49082389486000502B9E /* MenuViewController.swift */; };
+		103B493D2389486100502B9E /* BuriedPoint3DShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B490A2389486000502B9E /* BuriedPoint3DShowViewController.swift */; };
+		103B493E2389486100502B9E /* BuriedPointShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B490B2389486000502B9E /* BuriedPointShowViewController.swift */; };
+		103B493F2389486100502B9E /* BuriedTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B490C2389486000502B9E /* BuriedTreeViewController.swift */; };
+		103B49402389486100502B9E /* BuriedPointEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B490D2389486000502B9E /* BuriedPointEditViewController.swift */; };
+		103B49412389486100502B9E /* BuriedPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B490E2389486000502B9E /* BuriedPointViewController.swift */; };
+		103B49422389486100502B9E /* BuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49102389486000502B9E /* BuildingViewController.swift */; };
+		103B49432389486100502B9E /* BuildingManagerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49122389486000502B9E /* BuildingManagerCell.swift */; };
+		103B49442389486100502B9E /* BuildingTerminalManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49132389486000502B9E /* BuildingTerminalManagerController.swift */; };
+		103B49452389486100502B9E /* LoginWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49152389486000502B9E /* LoginWindowController.swift */; };
+		103B49462389486100502B9E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49162389486000502B9E /* LoginViewController.swift */; };
+		103B49472389486100502B9E /* IconImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B49172389486000502B9E /* IconImageView.swift */; };
+		103B494F2389489600502B9E /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B494A2389489600502B9E /* KeyWindow.swift */; };
+		103B49502389489600502B9E /* CornerRadiusWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B494B2389489600502B9E /* CornerRadiusWindow.swift */; };
+		103B49512389489600502B9E /* MouseEnterOrExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B494D2389489600502B9E /* MouseEnterOrExitView.swift */; };
+		103B49522389489600502B9E /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B494E2389489600502B9E /* ContainerView.swift */; };
+		103B4956238948D100502B9E /* EntitysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B4954238948D100502B9E /* EntitysDataManager.swift */; };
+		103B4957238948D100502B9E /* Entitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B4955238948D100502B9E /* Entitys.swift */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6122CFA2A80034A505 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
 		10636F6E22CFA34A0034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6D22CFA34A0034A505 /* Document.swift */; };
 		10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7C22CFA5460034A505 /* NSColor+Exts.swift */; };
 		10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */; };
 		10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F8622D0A0860034A505 /* NSView+Exts.swift */; };
-		10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */; };
-		10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */; };
-		10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */; };
-		10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA622D4D08C0034A505 /* MainContentTopMenuView.swift */; };
-		10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */; };
-		10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */; };
-		10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */; };
-		10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FB022D4D08C0034A505 /* PreferencesViewController.swift */; };
 		10636FC622D4D08C0034A505 /* MainUI.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636FB822D4D08C0034A505 /* MainUI.storyboard */; };
-		10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCD22D4D42F0034A505 /* ComponentModel.swift */; };
-		10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FCF22D4E1E70034A505 /* TerminalView.swift */; };
 		10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */; };
-		10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD322D631E90034A505 /* ButtonTableViewCell.swift */; };
-		10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FD922D634FC0034A505 /* NameTableViewCell.swift */; };
-		10636FDC22D640800034A505 /* MainWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDB22D640800034A505 /* MainWindowController.swift */; };
-		10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDD22D6413E0034A505 /* MainViewController.swift */; };
-		10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FDE22D6413E0034A505 /* MenuViewController.swift */; };
-		10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE122D641E50034A505 /* CIManagerViewController.swift */; };
-		10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE322D641F30034A505 /* ConfigViewController.swift */; };
-		10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE522D6420B0034A505 /* DocumentationViewController.swift */; };
-		10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE722D6421A0034A505 /* BuildingViewController.swift */; };
-		10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636FE922D7788F0034A505 /* ContainerView.swift */; };
 		1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063700922D78E090034A505 /* SourceCodeRegexLexer.swift */; };
 		1063702622D78E090034A505 /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063700B22D78E090034A505 /* String+Range.swift */; };
 		1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063700C22D78E090034A505 /* NSTextView+UIKit.swift */; };
@@ -89,40 +113,21 @@
 		1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063702222D78E090034A505 /* SourceCodeToken.swift */; };
 		1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063702422D78E090034A505 /* DefaultSourceCodeTheme.swift */; };
 		1063703D22D794220034A505 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1063703C22D794220034A505 /* NetworkExtension.framework */; };
-		1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */; };
 		1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */; };
-		1063704522DA103F0034A505 /* KeyWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704422DA103F0034A505 /* KeyWindow.swift */; };
 		1063704B22DA36FA0034A505 /* Note.md in Resources */ = {isa = PBXBuildFile; fileRef = 1063704A22DA36FA0034A505 /* Note.md */; };
 		1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */; };
 		1063705022DA412F0034A505 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063704F22DA412F0034A505 /* Command.swift */; };
 		1063705222DA442A0034A505 /* Process+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705122DA442A0034A505 /* Process+Exts.swift */; };
-		1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705322DA462E0034A505 /* WelcomeViewActionView.swift */; };
 		1063705622DAE9600034A505 /* Git.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705522DAE9600034A505 /* Git.swift */; };
 		1063705822DAE9680034A505 /* Cocoapods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705722DAE9680034A505 /* Cocoapods.swift */; };
 		1063705A22DAEA520034A505 /* Xcode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063705922DAEA520034A505 /* Xcode.swift */; };
 		1063705C22DAEC0D0034A505 /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = 1063705B22DAEC0D0034A505 /* Cartfile */; };
 		1063705F22DB01AC0034A505 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 1063705E22DB01AC0034A505 /* .gitignore */; };
 		1063706222DB0ADF0034A505 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063706122DB0ADF0034A505 /* Config.swift */; };
-		1081D700232B8CAD006A7358 /* AdminUserManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */; };
-		1081D702232B8CD5006A7358 /* AdminTeamManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */; };
-		1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */; };
-		1081D711232CD5CC006A7358 /* PodContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70B232CD5CC006A7358 /* PodContactViewController.swift */; };
-		1081D712232CD5CC006A7358 /* PodMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */; };
-		1081D713232CD5CC006A7358 /* VersionEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */; };
-		1081D714232CD5CC006A7358 /* TerminalViewConstroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */; };
-		1081D715232CD5CC006A7358 /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D710232CD5CC006A7358 /* ManagerViewController.swift */; };
 		1081D718232CD6CA006A7358 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D717232CD6CA006A7358 /* NSLabel.swift */; };
 		1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D719232CDA7C006A7358 /* TerminalTextView.swift */; };
-		1081D721233E69A1006A7358 /* BuriedPointViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D720233E69A1006A7358 /* BuriedPointViewController.swift */; };
-		1081D723233E6C64006A7358 /* BuriedPointEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D722233E6C64006A7358 /* BuriedPointEditViewController.swift */; };
-		1081D725233E6C7B006A7358 /* BuriedPointShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D724233E6C7B006A7358 /* BuriedPointShowViewController.swift */; };
-		1081D727233E6FF9006A7358 /* BuriedTreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D726233E6FF9006A7358 /* BuriedTreeViewController.swift */; };
-		1081D729233E7149006A7358 /* BuriedPoint3DShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D728233E7149006A7358 /* BuriedPoint3DShowViewController.swift */; };
-		10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226A22E3088500DE3433 /* CIStatusViewController.swift */; };
-		10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
-		10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227722E413E600DE3433 /* CINetworkManager.swift */; };
 		10E0227A22E4194100DE3433 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0227922E4194100DE3433 /* Login.storyboard */; };
 		10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */; };
 		10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227D22E4765A00DE3433 /* ProgressHUD.swift */; };
@@ -131,15 +136,9 @@
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
 		10E0229122EB3ED500DE3433 /* QueenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0229022EB3ED500DE3433 /* QueenTests.swift */; };
 		10E0229922EB3F7400DE3433 /* NSApplication+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0229822EB3F7400DE3433 /* NSApplication+Exts.swift */; };
-		10E0229B22EB3FC600DE3433 /* Entitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0229A22EB3FC600DE3433 /* Entitys.swift */; };
 		10E0229E22EB401800DE3433 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0229D22EB401800DE3433 /* Utils.swift */; };
 		10E022A022EB403200DE3433 /* Regex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0229F22EB403200DE3433 /* Regex.swift */; };
-		10E022A322EB40D200DE3433 /* AdministratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A222EB40D200DE3433 /* AdministratorViewController.swift */; };
 		10E022A522EB41A700DE3433 /* LeanCloud+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A422EB41A700DE3433 /* LeanCloud+User.swift */; };
-		10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A722EB519C00DE3433 /* ContentContainterView.swift */; };
-		10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */; };
-		10E022AC22ED78C900DE3433 /* AdministratorMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */; };
-		10E022AE22F07F3B00DE3433 /* TerminalPopUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */; };
 		10FFF01122F5DA3A003D61C7 /* LeanCloud+Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01022F5DA3A003D61C7 /* LeanCloud+Team.swift */; };
 		10FFF01322F5E674003D61C7 /* LeanCloud+SpecSources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */; };
 		10FFF01522F5F038003D61C7 /* AppDelegate+ Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */; };
@@ -165,14 +164,10 @@
 /* Begin PBXFileReference section */
 		04E3755F5FA11A5500E8AF63 /* Pods-QueenTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QueenTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QueenTests/Pods-QueenTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1023EB5822DDF2A60067E402 /* DefaultSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
-		1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusWindow.swift; sourceTree = "<group>"; };
 		1023EB5E22DDFADD0067E402 /* Dictionary+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Exts.swift"; sourceTree = "<group>"; };
 		1023EB6022DDFB140067E402 /* DocumentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentController.swift; sourceTree = "<group>"; };
 		1023EB6622DE00120067E402 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
 		1023EB6822DE07D10067E402 /* DocumentType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentType.swift; sourceTree = "<group>"; };
-		1023EB6A22E1F6110067E402 /* LoginWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
-		1023EB6D22E1F6360067E402 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		1023EB7322E208240067E402 /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
 		1023EB7722E2BFD10067E402 /* UserInterfaction+NSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserInterfaction+NSView.swift"; sourceTree = "<group>"; };
 		1023EB7922E2D2410067E402 /* CommandLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandLine.swift; sourceTree = "<group>"; };
 		1035223022F1DA9400C38178 /* PodSearchCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodSearchCoordinator.swift; sourceTree = "<group>"; };
@@ -187,13 +182,61 @@
 		1035224322F55B9B00C38178 /* AppDelegate+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Menu.swift"; sourceTree = "<group>"; };
 		1035224522F55BB900C38178 /* AppDelegate+Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Document.swift"; sourceTree = "<group>"; };
 		1035224722F566FD00C38178 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
-		1035224922F5751500C38178 /* EntitysDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitysDataManager.swift; sourceTree = "<group>"; };
-		1035224B22F5854600C38178 /* TerminalButtomToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalButtomToolView.swift; sourceTree = "<group>"; };
 		1036287822DB126200D7FA2D /* Carthage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carthage.swift; sourceTree = "<group>"; };
 		1036287A22DB13AC00D7FA2D /* Open.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Open.swift; sourceTree = "<group>"; };
-		1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
-		105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingTerminalManagerController.swift; sourceTree = "<group>"; };
-		105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingManagerCell.swift; sourceTree = "<group>"; };
+		103B48D72389486000502B9E /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		103B48D82389486000502B9E /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		103B48DA2389486000502B9E /* WelcomeWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
+		103B48DB2389486000502B9E /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
+		103B48DC2389486000502B9E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		103B48DE2389486000502B9E /* WelcomeViewActionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewActionView.swift; sourceTree = "<group>"; };
+		103B48DF2389486000502B9E /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
+		103B48E22389486000502B9E /* DocumentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
+		103B48E32389486000502B9E /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
+		103B48E52389486000502B9E /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		103B48E82389486000502B9E /* CIManagerViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
+		103B48E92389486000502B9E /* CIManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIManagerViewController.swift; sourceTree = "<group>"; };
+		103B48EA2389486000502B9E /* CIStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
+		103B48EB2389486000502B9E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		103B48ED2389486000502B9E /* PodContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
+		103B48EE2389486000502B9E /* VersionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionEditViewController.swift; sourceTree = "<group>"; };
+		103B48EF2389486000502B9E /* PodMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
+		103B48F12389486000502B9E /* ComponentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
+		103B48F22389486000502B9E /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		103B48F32389486000502B9E /* VersionEditWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionEditWindowController.swift; sourceTree = "<group>"; };
+		103B48F62389486000502B9E /* TerminalPopUpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalPopUpButton.swift; sourceTree = "<group>"; };
+		103B48F72389486000502B9E /* NameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
+		103B48F82389486000502B9E /* MainContentTopMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentTopMenuView.swift; sourceTree = "<group>"; };
+		103B48F92389486000502B9E /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		103B48FA2389486000502B9E /* TerminalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
+		103B48FB2389486000502B9E /* TerminalButtomToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalButtomToolView.swift; sourceTree = "<group>"; };
+		103B48FC2389486000502B9E /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
+		103B48FD2389486000502B9E /* TerminalViewConstroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewConstroller.swift; sourceTree = "<group>"; };
+		103B48FF2389486000502B9E /* AdministratorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorViewController.swift; sourceTree = "<group>"; };
+		103B49012389486000502B9E /* AdministratorMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorMenuView.swift; sourceTree = "<group>"; };
+		103B49022389486000502B9E /* AdministratorMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdministratorMenuCell.swift; sourceTree = "<group>"; };
+		103B49032389486000502B9E /* ContentContainterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentContainterView.swift; sourceTree = "<group>"; };
+		103B49052389486000502B9E /* AdminUserManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminUserManagerController.swift; sourceTree = "<group>"; };
+		103B49062389486000502B9E /* AdminSpecManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminSpecManagerController.swift; sourceTree = "<group>"; };
+		103B49072389486000502B9E /* AdminTeamManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminTeamManagerController.swift; sourceTree = "<group>"; };
+		103B49082389486000502B9E /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		103B490A2389486000502B9E /* BuriedPoint3DShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedPoint3DShowViewController.swift; sourceTree = "<group>"; };
+		103B490B2389486000502B9E /* BuriedPointShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedPointShowViewController.swift; sourceTree = "<group>"; };
+		103B490C2389486000502B9E /* BuriedTreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedTreeViewController.swift; sourceTree = "<group>"; };
+		103B490D2389486000502B9E /* BuriedPointEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedPointEditViewController.swift; sourceTree = "<group>"; };
+		103B490E2389486000502B9E /* BuriedPointViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedPointViewController.swift; sourceTree = "<group>"; };
+		103B49102389486000502B9E /* BuildingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingViewController.swift; sourceTree = "<group>"; };
+		103B49122389486000502B9E /* BuildingManagerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingManagerCell.swift; sourceTree = "<group>"; };
+		103B49132389486000502B9E /* BuildingTerminalManagerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuildingTerminalManagerController.swift; sourceTree = "<group>"; };
+		103B49152389486000502B9E /* LoginWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginWindowController.swift; sourceTree = "<group>"; };
+		103B49162389486000502B9E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		103B49172389486000502B9E /* IconImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconImageView.swift; sourceTree = "<group>"; };
+		103B494A2389489600502B9E /* KeyWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
+		103B494B2389489600502B9E /* CornerRadiusWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusWindow.swift; sourceTree = "<group>"; };
+		103B494D2389489600502B9E /* MouseEnterOrExitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEnterOrExitView.swift; sourceTree = "<group>"; };
+		103B494E2389489600502B9E /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
+		103B4954238948D100502B9E /* EntitysDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitysDataManager.swift; sourceTree = "<group>"; };
+		103B4955238948D100502B9E /* Entitys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entitys.swift; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10636F5D22CFA2A80034A505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10636F6022CFA2A80034A505 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -202,28 +245,8 @@
 		10636F7C22CFA5460034A505 /* NSColor+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSColor+Exts.swift"; sourceTree = "<group>"; };
 		10636F7E22D084BF0034A505 /* NSStoryboard+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Exts.swift"; sourceTree = "<group>"; };
 		10636F8622D0A0860034A505 /* NSView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSView+Exts.swift"; sourceTree = "<group>"; };
-		10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
-		10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
-		10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeTableViewCell.swift; sourceTree = "<group>"; };
-		10636FA622D4D08C0034A505 /* MainContentTopMenuView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentTopMenuView.swift; sourceTree = "<group>"; };
-		10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MouseEnterOrExitView.swift; sourceTree = "<group>"; };
-		10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		10636FB022D4D08C0034A505 /* PreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
 		10636FB822D4D08C0034A505 /* MainUI.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainUI.storyboard; sourceTree = "<group>"; };
-		10636FCD22D4D42F0034A505 /* ComponentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentModel.swift; sourceTree = "<group>"; };
-		10636FCF22D4E1E70034A505 /* TerminalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalView.swift; sourceTree = "<group>"; };
 		10636FD122D4E98B0034A505 /* NSScrollView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSScrollView+Exts.swift"; sourceTree = "<group>"; };
-		10636FD322D631E90034A505 /* ButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTableViewCell.swift; sourceTree = "<group>"; };
-		10636FD922D634FC0034A505 /* NameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTableViewCell.swift; sourceTree = "<group>"; };
-		10636FDB22D640800034A505 /* MainWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainWindowController.swift; sourceTree = "<group>"; };
-		10636FDD22D6413E0034A505 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		10636FDE22D6413E0034A505 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		10636FE122D641E50034A505 /* CIManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewController.swift; sourceTree = "<group>"; };
-		10636FE322D641F30034A505 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
-		10636FE522D6420B0034A505 /* DocumentationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentationViewController.swift; sourceTree = "<group>"; };
-		10636FE722D6421A0034A505 /* BuildingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildingViewController.swift; sourceTree = "<group>"; };
-		10636FE922D7788F0034A505 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		1063700922D78E090034A505 /* SourceCodeRegexLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeRegexLexer.swift; sourceTree = "<group>"; };
 		1063700B22D78E090034A505 /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
 		1063700C22D78E090034A505 /* NSTextView+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextView+UIKit.swift"; sourceTree = "<group>"; };
@@ -248,40 +271,21 @@
 		1063702222D78E090034A505 /* SourceCodeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeToken.swift; sourceTree = "<group>"; };
 		1063702422D78E090034A505 /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
 		1063703C22D794220034A505 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
-		1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionEditWindowController.swift; sourceTree = "<group>"; };
 		1063704222D9E25D0034A505 /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
-		1063704422DA103F0034A505 /* KeyWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyWindow.swift; sourceTree = "<group>"; };
 		1063704A22DA36FA0034A505 /* Note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Note.md; sourceTree = "<group>"; };
 		1063704C22DA3D660034A505 /* NSUserNotification+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSUserNotification+Exts.swift"; sourceTree = "<group>"; };
 		1063704F22DA412F0034A505 /* Command.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
 		1063705122DA442A0034A505 /* Process+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Process+Exts.swift"; sourceTree = "<group>"; };
-		1063705322DA462E0034A505 /* WelcomeViewActionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewActionView.swift; sourceTree = "<group>"; };
 		1063705522DAE9600034A505 /* Git.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Git.swift; sourceTree = "<group>"; };
 		1063705722DAE9680034A505 /* Cocoapods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cocoapods.swift; sourceTree = "<group>"; };
 		1063705922DAEA520034A505 /* Xcode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xcode.swift; sourceTree = "<group>"; };
 		1063705B22DAEC0D0034A505 /* Cartfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		1063705E22DB01AC0034A505 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		1063706122DB0ADF0034A505 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUserManagerController.swift; sourceTree = "<group>"; };
-		1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTeamManagerController.swift; sourceTree = "<group>"; };
-		1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminSpecManagerController.swift; sourceTree = "<group>"; };
-		1081D70B232CD5CC006A7358 /* PodContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodContactViewController.swift; sourceTree = "<group>"; };
-		1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodMessageViewController.swift; sourceTree = "<group>"; };
-		1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VersionEditViewController.swift; sourceTree = "<group>"; };
-		1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TerminalViewConstroller.swift; sourceTree = "<group>"; };
-		1081D710232CD5CC006A7358 /* ManagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
 		1081D717232CD6CA006A7358 /* NSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
 		1081D719232CDA7C006A7358 /* TerminalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalTextView.swift; sourceTree = "<group>"; };
-		1081D720233E69A1006A7358 /* BuriedPointViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuriedPointViewController.swift; sourceTree = "<group>"; };
-		1081D722233E6C64006A7358 /* BuriedPointEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuriedPointEditViewController.swift; sourceTree = "<group>"; };
-		1081D724233E6C7B006A7358 /* BuriedPointShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuriedPointShowViewController.swift; sourceTree = "<group>"; };
-		1081D726233E6FF9006A7358 /* BuriedTreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuriedTreeViewController.swift; sourceTree = "<group>"; };
-		1081D728233E7149006A7358 /* BuriedPoint3DShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuriedPoint3DShowViewController.swift; sourceTree = "<group>"; };
-		10E0226A22E3088500DE3433 /* CIStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIStatusViewController.swift; sourceTree = "<group>"; };
-		10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIManagerViewCell.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
-		10E0227722E413E600DE3433 /* CINetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CINetworkManager.swift; sourceTree = "<group>"; };
 		10E0227922E4194100DE3433 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		10E0227C22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRKSpinningProgressIndicatorLayer.swift; sourceTree = "<group>"; };
 		10E0227D22E4765A00DE3433 /* ProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressHUD.swift; sourceTree = "<group>"; };
@@ -292,15 +296,9 @@
 		10E0229022EB3ED500DE3433 /* QueenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueenTests.swift; sourceTree = "<group>"; };
 		10E0229222EB3ED500DE3433 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10E0229822EB3F7400DE3433 /* NSApplication+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApplication+Exts.swift"; sourceTree = "<group>"; };
-		10E0229A22EB3FC600DE3433 /* Entitys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entitys.swift; sourceTree = "<group>"; };
 		10E0229D22EB401800DE3433 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		10E0229F22EB403200DE3433 /* Regex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Regex.swift; sourceTree = "<group>"; };
-		10E022A222EB40D200DE3433 /* AdministratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorViewController.swift; sourceTree = "<group>"; };
 		10E022A422EB41A700DE3433 /* LeanCloud+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+User.swift"; sourceTree = "<group>"; };
-		10E022A722EB519C00DE3433 /* ContentContainterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentContainterView.swift; sourceTree = "<group>"; };
-		10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuView.swift; sourceTree = "<group>"; };
-		10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdministratorMenuCell.swift; sourceTree = "<group>"; };
-		10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalPopUpButton.swift; sourceTree = "<group>"; };
 		10FFF01022F5DA3A003D61C7 /* LeanCloud+Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+Team.swift"; sourceTree = "<group>"; };
 		10FFF01222F5E674003D61C7 /* LeanCloud+SpecSources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LeanCloud+SpecSources.swift"; sourceTree = "<group>"; };
 		10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+ Environment.swift"; sourceTree = "<group>"; };
@@ -348,22 +346,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		1023EB6C22E1F6240067E402 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				1023EB6D22E1F6360067E402 /* LoginViewController.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		1023EB7222E208240067E402 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				1023EB7322E208240067E402 /* IconImageView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
 		1035222F22F1D6BE00C38178 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +370,240 @@
 				10FFF01422F5F038003D61C7 /* AppDelegate+ Environment.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		103B48D52389486000502B9E /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				103B48D62389486000502B9E /* Preferences */,
+				103B48D92389486000502B9E /* Welcome */,
+				103B48E02389486000502B9E /* Main */,
+				103B49142389486000502B9E /* Login */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		103B48D62389486000502B9E /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				103B48D72389486000502B9E /* PreferencesViewController.swift */,
+				103B48D82389486000502B9E /* PreferencesWindowController.swift */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		103B48D92389486000502B9E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				103B48DA2389486000502B9E /* WelcomeWindowController.swift */,
+				103B48DB2389486000502B9E /* WelcomeWorkspaceModel.swift */,
+				103B48DC2389486000502B9E /* WelcomeViewController.swift */,
+				103B48DD2389486000502B9E /* View */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		103B48DD2389486000502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B48DE2389486000502B9E /* WelcomeViewActionView.swift */,
+				103B48DF2389486000502B9E /* WelcomeTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B48E02389486000502B9E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				103B48E32389486000502B9E /* MainWindowController.swift */,
+				103B48EB2389486000502B9E /* MainViewController.swift */,
+				103B49082389486000502B9E /* MenuViewController.swift */,
+				103B48E12389486000502B9E /* Documentation */,
+				103B48E42389486000502B9E /* Config */,
+				103B48E62389486000502B9E /* CI */,
+				103B48EC2389486000502B9E /* Manager */,
+				103B48FE2389486000502B9E /* Administrator */,
+				103B49092389486000502B9E /* BuriedPoint */,
+				103B490F2389486000502B9E /* Building */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		103B48E12389486000502B9E /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				103B48E22389486000502B9E /* DocumentationViewController.swift */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		103B48E42389486000502B9E /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				103B48E52389486000502B9E /* ConfigViewController.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		103B48E62389486000502B9E /* CI */ = {
+			isa = PBXGroup;
+			children = (
+				103B48E72389486000502B9E /* View */,
+				103B48E92389486000502B9E /* CIManagerViewController.swift */,
+				103B48EA2389486000502B9E /* CIStatusViewController.swift */,
+			);
+			path = CI;
+			sourceTree = "<group>";
+		};
+		103B48E72389486000502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B48E82389486000502B9E /* CIManagerViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B48EC2389486000502B9E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				103B48ED2389486000502B9E /* PodContactViewController.swift */,
+				103B48EE2389486000502B9E /* VersionEditViewController.swift */,
+				103B48EF2389486000502B9E /* PodMessageViewController.swift */,
+				103B48F02389486000502B9E /* Models */,
+				103B48F22389486000502B9E /* ManagerViewController.swift */,
+				103B48F32389486000502B9E /* VersionEditWindowController.swift */,
+				103B48F52389486000502B9E /* View */,
+				103B48FD2389486000502B9E /* TerminalViewConstroller.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		103B48F02389486000502B9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				103B48F12389486000502B9E /* ComponentModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		103B48F52389486000502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B48F62389486000502B9E /* TerminalPopUpButton.swift */,
+				103B48F72389486000502B9E /* NameTableViewCell.swift */,
+				103B48F82389486000502B9E /* MainContentTopMenuView.swift */,
+				103B48F92389486000502B9E /* MenuTableViewCell.swift */,
+				103B48FA2389486000502B9E /* TerminalView.swift */,
+				103B48FB2389486000502B9E /* TerminalButtomToolView.swift */,
+				103B48FC2389486000502B9E /* ButtonTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B48FE2389486000502B9E /* Administrator */ = {
+			isa = PBXGroup;
+			children = (
+				103B48FF2389486000502B9E /* AdministratorViewController.swift */,
+				103B49002389486000502B9E /* View */,
+				103B49042389486000502B9E /* Children */,
+			);
+			path = Administrator;
+			sourceTree = "<group>";
+		};
+		103B49002389486000502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B49012389486000502B9E /* AdministratorMenuView.swift */,
+				103B49022389486000502B9E /* AdministratorMenuCell.swift */,
+				103B49032389486000502B9E /* ContentContainterView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B49042389486000502B9E /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				103B49052389486000502B9E /* AdminUserManagerController.swift */,
+				103B49062389486000502B9E /* AdminSpecManagerController.swift */,
+				103B49072389486000502B9E /* AdminTeamManagerController.swift */,
+			);
+			path = Children;
+			sourceTree = "<group>";
+		};
+		103B49092389486000502B9E /* BuriedPoint */ = {
+			isa = PBXGroup;
+			children = (
+				103B490A2389486000502B9E /* BuriedPoint3DShowViewController.swift */,
+				103B490B2389486000502B9E /* BuriedPointShowViewController.swift */,
+				103B490C2389486000502B9E /* BuriedTreeViewController.swift */,
+				103B490D2389486000502B9E /* BuriedPointEditViewController.swift */,
+				103B490E2389486000502B9E /* BuriedPointViewController.swift */,
+			);
+			path = BuriedPoint;
+			sourceTree = "<group>";
+		};
+		103B490F2389486000502B9E /* Building */ = {
+			isa = PBXGroup;
+			children = (
+				103B49102389486000502B9E /* BuildingViewController.swift */,
+				103B49112389486000502B9E /* View */,
+				103B49132389486000502B9E /* BuildingTerminalManagerController.swift */,
+			);
+			path = Building;
+			sourceTree = "<group>";
+		};
+		103B49112389486000502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B49122389486000502B9E /* BuildingManagerCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B49142389486000502B9E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				103B49152389486000502B9E /* LoginWindowController.swift */,
+				103B49162389486000502B9E /* LoginViewController.swift */,
+				103B49172389486000502B9E /* IconImageView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		103B49482389489600502B9E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				103B49492389489600502B9E /* Window */,
+				103B494C2389489600502B9E /* View */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		103B49492389489600502B9E /* Window */ = {
+			isa = PBXGroup;
+			children = (
+				103B494A2389489600502B9E /* KeyWindow.swift */,
+				103B494B2389489600502B9E /* CornerRadiusWindow.swift */,
+			);
+			path = Window;
+			sourceTree = "<group>";
+		};
+		103B494C2389489600502B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				103B494D2389489600502B9E /* MouseEnterOrExitView.swift */,
+				103B494E2389489600502B9E /* ContainerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		103B4953238948D100502B9E /* LeanCloud */ = {
+			isa = PBXGroup;
+			children = (
+				103B4954238948D100502B9E /* EntitysDataManager.swift */,
+				103B4955238948D100502B9E /* Entitys.swift */,
+			);
+			path = LeanCloud;
 			sourceTree = "<group>";
 		};
 		10636F4B22CFA2A70034A505 = {
@@ -419,16 +635,13 @@
 		10636F5622CFA2A70034A505 /* Queen */ = {
 			isa = PBXGroup;
 			children = (
+				103B4953238948D100502B9E /* LeanCloud */,
+				103B49482389489600502B9E /* Common */,
+				103B48D52389486000502B9E /* Classes */,
 				1081D716232CD6AC006A7358 /* Widget */,
-				10E0227422E4136800DE3433 /* Network */,
 				1063706022DB0AD50034A505 /* Config */,
 				1063704E22DA40DD0034A505 /* Core */,
-				10636FB622D4D08C0034A505 /* Model */,
 				10636FB722D4D08C0034A505 /* Storyboard */,
-				10636F9F22D4D08C0034A505 /* View */,
-				10636FAA22D4D08C0034A505 /* ViewController */,
-				10636FB922D4D08C0034A505 /* Window */,
-				10636F9C22D4D08C0034A505 /* WindowController */,
 				10636F9922D4D01D0034A505 /* Other */,
 				10636F7B22CFA5280034A505 /* Extensions */,
 				10636F6922CFA3380034A505 /* Documents */,
@@ -480,156 +693,6 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
-		10636F9C22D4D08C0034A505 /* WindowController */ = {
-			isa = PBXGroup;
-			children = (
-				10636FDB22D640800034A505 /* MainWindowController.swift */,
-				10636F9D22D4D08C0034A505 /* WelcomeWindowController.swift */,
-				10636F9E22D4D08C0034A505 /* PreferencesWindowController.swift */,
-				1063703E22D8D3AE0034A505 /* VersionEditWindowController.swift */,
-				1023EB6A22E1F6110067E402 /* LoginWindowController.swift */,
-			);
-			path = WindowController;
-			sourceTree = "<group>";
-		};
-		10636F9F22D4D08C0034A505 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				10E022A622EB517800DE3433 /* Administrator */,
-				1023EB7222E208240067E402 /* Login */,
-				10636FA022D4D08C0034A505 /* Documentation */,
-				10636FA122D4D08C0034A505 /* Config */,
-				10636FA222D4D08C0034A505 /* CI */,
-				10636FA322D4D08C0034A505 /* Welcome */,
-				10636FA522D4D08C0034A505 /* Manager */,
-				10636FA822D4D08C0034A505 /* MouseEnterOrExitView.swift */,
-				10636FA922D4D08C0034A505 /* Building */,
-				10636FE922D7788F0034A505 /* ContainerView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		10636FA022D4D08C0034A505 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
-		10636FA122D4D08C0034A505 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		10636FA222D4D08C0034A505 /* CI */ = {
-			isa = PBXGroup;
-			children = (
-				10E0226C22E30BCF00DE3433 /* CIManagerViewCell.swift */,
-			);
-			path = CI;
-			sourceTree = "<group>";
-		};
-		10636FA322D4D08C0034A505 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				10636FA422D4D08C0034A505 /* WelcomeTableViewCell.swift */,
-				1063705322DA462E0034A505 /* WelcomeViewActionView.swift */,
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		10636FA522D4D08C0034A505 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				10636FA622D4D08C0034A505 /* MainContentTopMenuView.swift */,
-				10636FA722D4D08C0034A505 /* MenuTableViewCell.swift */,
-				10636FCF22D4E1E70034A505 /* TerminalView.swift */,
-				10636FD322D631E90034A505 /* ButtonTableViewCell.swift */,
-				10636FD922D634FC0034A505 /* NameTableViewCell.swift */,
-				10E022AD22F07F3B00DE3433 /* TerminalPopUpButton.swift */,
-				1035224B22F5854600C38178 /* TerminalButtomToolView.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		10636FA922D4D08C0034A505 /* Building */ = {
-			isa = PBXGroup;
-			children = (
-				105A974E22FC6D56002B3072 /* BuildingManagerCell.swift */,
-			);
-			path = Building;
-			sourceTree = "<group>";
-		};
-		10636FAA22D4D08C0034A505 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				1081D71F233E6984006A7358 /* BuriedPoint */,
-				1081D70A232CD5CC006A7358 /* Manager */,
-				10E022A122EB40BD00DE3433 /* Administrator */,
-				1023EB6C22E1F6240067E402 /* Login */,
-				10636FDD22D6413E0034A505 /* MainViewController.swift */,
-				10636FDE22D6413E0034A505 /* MenuViewController.swift */,
-				10636FB022D4D08C0034A505 /* PreferencesViewController.swift */,
-				10636FAF22D4D08C0034A505 /* WelcomeViewController.swift */,
-				10636FAB22D4D08C0034A505 /* Documentation */,
-				10636FAD22D4D08C0034A505 /* Config */,
-				10636FAE22D4D08C0034A505 /* CI */,
-				10636FB522D4D08C0034A505 /* Building */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		10636FAB22D4D08C0034A505 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-				10636FE522D6420B0034A505 /* DocumentationViewController.swift */,
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
-		10636FAD22D4D08C0034A505 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				10636FE322D641F30034A505 /* ConfigViewController.swift */,
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		10636FAE22D4D08C0034A505 /* CI */ = {
-			isa = PBXGroup;
-			children = (
-				10636FE122D641E50034A505 /* CIManagerViewController.swift */,
-				10E0226A22E3088500DE3433 /* CIStatusViewController.swift */,
-			);
-			path = CI;
-			sourceTree = "<group>";
-		};
-		10636FB522D4D08C0034A505 /* Building */ = {
-			isa = PBXGroup;
-			children = (
-				10636FE722D6421A0034A505 /* BuildingViewController.swift */,
-				105A974C22FC6CD2002B3072 /* BuildingTerminalManagerController.swift */,
-			);
-			path = Building;
-			sourceTree = "<group>";
-		};
-		10636FB622D4D08C0034A505 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				10636FCA22D4D4100034A505 /* Building */,
-				10636FCC22D4D4100034A505 /* CI */,
-				10636FC722D4D4100034A505 /* Config */,
-				10636FC922D4D4100034A505 /* Documentation */,
-				10636FC822D4D4100034A505 /* Manager */,
-				10636FCB22D4D4100034A505 /* Welcome */,
-				10E0229A22EB3FC600DE3433 /* Entitys.swift */,
-				1035224922F5751500C38178 /* EntitysDataManager.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		10636FB722D4D08C0034A505 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,59 +701,6 @@
 				1035224722F566FD00C38178 /* Welcome.storyboard */,
 			);
 			path = Storyboard;
-			sourceTree = "<group>";
-		};
-		10636FB922D4D08C0034A505 /* Window */ = {
-			isa = PBXGroup;
-			children = (
-				1063704422DA103F0034A505 /* KeyWindow.swift */,
-				1023EB5A22DDF38C0067E402 /* CornerRadiusWindow.swift */,
-			);
-			path = Window;
-			sourceTree = "<group>";
-		};
-		10636FC722D4D4100034A505 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Config;
-			sourceTree = "<group>";
-		};
-		10636FC822D4D4100034A505 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				10636FCD22D4D42F0034A505 /* ComponentModel.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		10636FC922D4D4100034A505 /* Documentation */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Documentation;
-			sourceTree = "<group>";
-		};
-		10636FCA22D4D4100034A505 /* Building */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Building;
-			sourceTree = "<group>";
-		};
-		10636FCB22D4D4100034A505 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-				1036287E22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift */,
-			);
-			path = Welcome;
-			sourceTree = "<group>";
-		};
-		10636FCC22D4D4100034A505 /* CI */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CI;
 			sourceTree = "<group>";
 		};
 		1063700822D78E090034A505 /* Sources */ = {
@@ -792,62 +802,12 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
-		1081D6FE232B8C84006A7358 /* Children */ = {
-			isa = PBXGroup;
-			children = (
-				1081D6FF232B8CAD006A7358 /* AdminUserManagerController.swift */,
-				1081D701232B8CD5006A7358 /* AdminTeamManagerController.swift */,
-				1081D703232B8CF8006A7358 /* AdminSpecManagerController.swift */,
-			);
-			path = Children;
-			sourceTree = "<group>";
-		};
-		1081D70A232CD5CC006A7358 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				1081D70D232CD5CC006A7358 /* Sub */,
-				1081D70B232CD5CC006A7358 /* PodContactViewController.swift */,
-				1081D70C232CD5CC006A7358 /* PodMessageViewController.swift */,
-				1081D710232CD5CC006A7358 /* ManagerViewController.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
-		1081D70D232CD5CC006A7358 /* Sub */ = {
-			isa = PBXGroup;
-			children = (
-				1081D70E232CD5CC006A7358 /* VersionEditViewController.swift */,
-				1081D70F232CD5CC006A7358 /* TerminalViewConstroller.swift */,
-			);
-			path = Sub;
-			sourceTree = "<group>";
-		};
 		1081D716232CD6AC006A7358 /* Widget */ = {
 			isa = PBXGroup;
 			children = (
 				1081D717232CD6CA006A7358 /* NSLabel.swift */,
 			);
 			path = Widget;
-			sourceTree = "<group>";
-		};
-		1081D71F233E6984006A7358 /* BuriedPoint */ = {
-			isa = PBXGroup;
-			children = (
-				1081D720233E69A1006A7358 /* BuriedPointViewController.swift */,
-				1081D722233E6C64006A7358 /* BuriedPointEditViewController.swift */,
-				1081D724233E6C7B006A7358 /* BuriedPointShowViewController.swift */,
-				1081D726233E6FF9006A7358 /* BuriedTreeViewController.swift */,
-				1081D728233E7149006A7358 /* BuriedPoint3DShowViewController.swift */,
-			);
-			path = BuriedPoint;
-			sourceTree = "<group>";
-		};
-		10E0227422E4136800DE3433 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				10E0227722E413E600DE3433 /* CINetworkManager.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		10E0227B22E4765A00DE3433 /* ProgressHUD */ = {
@@ -895,25 +855,6 @@
 				10E0229F22EB403200DE3433 /* Regex.swift */,
 			);
 			path = Utils;
-			sourceTree = "<group>";
-		};
-		10E022A122EB40BD00DE3433 /* Administrator */ = {
-			isa = PBXGroup;
-			children = (
-				1081D6FE232B8C84006A7358 /* Children */,
-				10E022A222EB40D200DE3433 /* AdministratorViewController.swift */,
-			);
-			path = Administrator;
-			sourceTree = "<group>";
-		};
-		10E022A622EB517800DE3433 /* Administrator */ = {
-			isa = PBXGroup;
-			children = (
-				10E022A722EB519C00DE3433 /* ContentContainterView.swift */,
-				10E022A922EB51FD00DE3433 /* AdministratorMenuView.swift */,
-				10E022AB22ED78C900DE3433 /* AdministratorMenuCell.swift */,
-			);
-			path = Administrator;
 			sourceTree = "<group>";
 		};
 		CE1E0D15174E500A37C029D4 /* Frameworks */ = {
@@ -1132,129 +1073,128 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10E0229B22EB3FC600DE3433 /* Entitys.swift in Sources */,
+				103B491B2389486100502B9E /* WelcomeWorkspaceModel.swift in Sources */,
 				1063703722D78E090034A505 /* SyntaxTextViewLayoutManager.swift in Sources */,
 				1063702C22D78E090034A505 /* ASTVisualizer.swift in Sources */,
-				10636FE822D6421A0034A505 /* BuildingViewController.swift in Sources */,
+				103B49272389486100502B9E /* VersionEditViewController.swift in Sources */,
+				103B49312389486100502B9E /* TerminalView.swift in Sources */,
 				10636FD222D4E98B0034A505 /* NSScrollView+Exts.swift in Sources */,
-				1081D704232B8CF8006A7358 /* AdminSpecManagerController.swift in Sources */,
-				1081D712232CD5CC006A7358 /* PodMessageViewController.swift in Sources */,
+				103B49232389486100502B9E /* CIManagerViewController.swift in Sources */,
 				1063703522D78E090034A505 /* TextViewWrapperView.swift in Sources */,
-				1081D711232CD5CC006A7358 /* PodContactViewController.swift in Sources */,
-				1081D723233E6C64006A7358 /* BuriedPointEditViewController.swift in Sources */,
-				10636FDF22D6413E0034A505 /* MainViewController.swift in Sources */,
 				1023EB5F22DDFADD0067E402 /* Dictionary+Exts.swift in Sources */,
-				10636FDC22D640800034A505 /* MainWindowController.swift in Sources */,
+				103B49242389486100502B9E /* CIStatusViewController.swift in Sources */,
+				103B491C2389486100502B9E /* WelcomeViewController.swift in Sources */,
 				1063702622D78E090034A505 /* String+Range.swift in Sources */,
-				10E022A822EB519C00DE3433 /* ContentContainterView.swift in Sources */,
+				103B4957238948D100502B9E /* Entitys.swift in Sources */,
+				103B49192389486100502B9E /* PreferencesWindowController.swift in Sources */,
+				103B492F2389486100502B9E /* MainContentTopMenuView.swift in Sources */,
+				103B492A2389486100502B9E /* ManagerViewController.swift in Sources */,
+				103B4956238948D100502B9E /* EntitysDataManager.swift in Sources */,
+				103B493C2389486100502B9E /* MenuViewController.swift in Sources */,
+				103B49342389486100502B9E /* TerminalViewConstroller.swift in Sources */,
 				1035224622F55BB900C38178 /* AppDelegate+Document.swift in Sources */,
 				1063703B22D78E090034A505 /* DefaultSourceCodeTheme.swift in Sources */,
-				105A974D22FC6CD2002B3072 /* BuildingTerminalManagerController.swift in Sources */,
-				1081D727233E6FF9006A7358 /* BuriedTreeViewController.swift in Sources */,
 				1035223522F1DB6000C38178 /* PodPluginCoordinator.swift in Sources */,
-				1063705422DA462E0034A505 /* WelcomeViewActionView.swift in Sources */,
-				10636FDA22D634FC0034A505 /* NameTableViewCell.swift in Sources */,
 				10636F7F22D084BF0034A505 /* NSStoryboard+Exts.swift in Sources */,
 				1063705822DAE9680034A505 /* Cocoapods.swift in Sources */,
 				1063705222DA442A0034A505 /* Process+Exts.swift in Sources */,
-				10636FCE22D4D42F0034A505 /* ComponentModel.swift in Sources */,
+				103B49452389486100502B9E /* LoginWindowController.swift in Sources */,
 				10FFF01522F5F038003D61C7 /* AppDelegate+ Environment.swift in Sources */,
+				103B49442389486100502B9E /* BuildingTerminalManagerController.swift in Sources */,
+				103B49522389489600502B9E /* ContainerView.swift in Sources */,
 				1035224222F55B3300C38178 /* Appdelegate+Notification.swift in Sources */,
+				103B49402389486100502B9E /* BuriedPointEditViewController.swift in Sources */,
+				103B49352389486100502B9E /* AdministratorViewController.swift in Sources */,
 				10E0227E22E4765A00DE3433 /* YRKSpinningProgressIndicatorLayer.swift in Sources */,
-				10636FE222D641E50034A505 /* CIManagerViewController.swift in Sources */,
-				10E0226D22E30BCF00DE3433 /* CIManagerViewCell.swift in Sources */,
+				103B493F2389486100502B9E /* BuriedTreeViewController.swift in Sources */,
+				103B492B2389486100502B9E /* VersionEditWindowController.swift in Sources */,
 				1063703422D78E090034A505 /* InnerTextView.swift in Sources */,
-				1081D725233E6C7B006A7358 /* BuriedPointShowViewController.swift in Sources */,
-				1081D715232CD5CC006A7358 /* ManagerViewController.swift in Sources */,
+				103B49392389486100502B9E /* AdminUserManagerController.swift in Sources */,
 				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
-				10E0226B22E3088500DE3433 /* CIStatusViewController.swift in Sources */,
-				10E022AC22ED78C900DE3433 /* AdministratorMenuCell.swift in Sources */,
+				103B491F2389486100502B9E /* DocumentationViewController.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
 				10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */,
-				10E022A322EB40D200DE3433 /* AdministratorViewController.swift in Sources */,
+				103B491A2389486100502B9E /* WelcomeWindowController.swift in Sources */,
 				1023EB5922DDF2A60067E402 /* DefaultSettings.swift in Sources */,
+				103B49332389486100502B9E /* ButtonTableViewCell.swift in Sources */,
 				1063703622D78E090034A505 /* LineNumberLayoutManager.swift in Sources */,
-				1081D702232B8CD5006A7358 /* AdminTeamManagerController.swift in Sources */,
 				1035223B22F555A100C38178 /* XcodeActionCoordinator.swift in Sources */,
 				10E0228722E8AD7D00DE3433 /* VerticallyCentered+TextFieldCell.swift in Sources */,
+				103B493A2389486100502B9E /* AdminSpecManagerController.swift in Sources */,
+				103B494F2389489600502B9E /* KeyWindow.swift in Sources */,
+				103B49382389486100502B9E /* ContentContainterView.swift in Sources */,
+				103B49362389486100502B9E /* AdministratorMenuView.swift in Sources */,
 				10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */,
 				10636F6E22CFA34A0034A505 /* Document.swift in Sources */,
-				1063704522DA103F0034A505 /* KeyWindow.swift in Sources */,
-				10636FC222D4D08C0034A505 /* PreferencesViewController.swift in Sources */,
 				1063704D22DA3D660034A505 /* NSUserNotification+Exts.swift in Sources */,
 				1063702E22D78E090034A505 /* Paragraph.swift in Sources */,
-				10E0227822E413E600DE3433 /* CINetworkManager.swift in Sources */,
-				1081D713232CD5CC006A7358 /* VersionEditViewController.swift in Sources */,
 				1063704322D9E25D0034A505 /* ConstraintArrayDSL.swift in Sources */,
+				103B49432389486100502B9E /* BuildingManagerCell.swift in Sources */,
 				1063703822D78E090034A505 /* Paragraphs.swift in Sources */,
-				105A974F22FC6D56002B3072 /* BuildingManagerCell.swift in Sources */,
 				10E022A022EB403200DE3433 /* Regex.swift in Sources */,
 				1036287922DB126200D7FA2D /* Carthage.swift in Sources */,
-				1023EB6B22E1F6110067E402 /* LoginWindowController.swift in Sources */,
-				10636FEA22D7788F0034A505 /* ContainerView.swift in Sources */,
 				1063703122D78E090034A505 /* RegexLexer.swift in Sources */,
-				1036287F22DB6D9400D7FA2D /* WelcomeWorkspaceModel.swift in Sources */,
 				1023EB7A22E2D2410067E402 /* CommandLine.swift in Sources */,
-				1081D729233E7149006A7358 /* BuriedPoint3DShowViewController.swift in Sources */,
 				1063702A22D78E090034A505 /* Python3Lexer.swift in Sources */,
+				103B49512389489600502B9E /* MouseEnterOrExitView.swift in Sources */,
 				1035224022F55B1B00C38178 /* AppDelegate+Basic.swift in Sources */,
 				1023EB6722DE00120067E402 /* WorkspaceManager.swift in Sources */,
-				10636FD422D631E90034A505 /* ButtonTableViewCell.swift in Sources */,
+				103B49462389486100502B9E /* LoginViewController.swift in Sources */,
 				1063706222DB0ADF0034A505 /* Config.swift in Sources */,
 				1063702D22D78E090034A505 /* Lexer.swift in Sources */,
-				10E022AA22EB51FD00DE3433 /* AdministratorMenuView.swift in Sources */,
-				10636FE422D641F30034A505 /* ConfigViewController.swift in Sources */,
-				10636FBE22D4D08C0034A505 /* MenuTableViewCell.swift in Sources */,
-				1081D721233E69A1006A7358 /* BuriedPointViewController.swift in Sources */,
+				103B493D2389486100502B9E /* BuriedPoint3DShowViewController.swift in Sources */,
 				10E0229E22EB401800DE3433 /* Utils.swift in Sources */,
-				10636FC122D4D08C0034A505 /* WelcomeViewController.swift in Sources */,
-				10636FBC22D4D08C0034A505 /* WelcomeTableViewCell.swift in Sources */,
+				103B49422389486100502B9E /* BuildingViewController.swift in Sources */,
 				1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */,
-				1063703F22D8D3AE0034A505 /* VersionEditWindowController.swift in Sources */,
-				1035224A22F5751500C38178 /* EntitysDataManager.swift in Sources */,
-				10636FBB22D4D08C0034A505 /* PreferencesWindowController.swift in Sources */,
 				1063702B22D78E090034A505 /* SwiftLexer.swift in Sources */,
+				103B49202389486100502B9E /* MainWindowController.swift in Sources */,
+				103B49182389486100502B9E /* PreferencesViewController.swift in Sources */,
 				1063705022DA412F0034A505 /* Command.swift in Sources */,
-				10636FBF22D4D08C0034A505 /* MouseEnterOrExitView.swift in Sources */,
-				10636FBD22D4D08C0034A505 /* MainContentTopMenuView.swift in Sources */,
 				1081D718232CD6CA006A7358 /* NSLabel.swift in Sources */,
+				103B49502389489600502B9E /* CornerRadiusWindow.swift in Sources */,
+				103B49282389486100502B9E /* PodMessageViewController.swift in Sources */,
+				103B49222389486100502B9E /* CIManagerViewCell.swift in Sources */,
 				10FFF01722F5F37D003D61C7 /* Path.swift in Sources */,
 				10E0229922EB3F7400DE3433 /* NSApplication+Exts.swift in Sources */,
 				1063703322D78E090034A505 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
+				103B49292389486100502B9E /* ComponentModel.swift in Sources */,
 				1035223322F1DB1D00C38178 /* PodAnalyzerCoordinator.swift in Sources */,
 				10E0227F22E4765A00DE3433 /* ProgressHUD.swift in Sources */,
-				10636FE622D6420B0034A505 /* DocumentationViewController.swift in Sources */,
-				1081D714232CD5CC006A7358 /* TerminalViewConstroller.swift in Sources */,
 				10FFF01B22F6B9E6003D61C7 /* NSAlert+Exts.swift in Sources */,
-				1023EB7422E208240067E402 /* IconImageView.swift in Sources */,
 				1063703022D78E090034A505 /* Token.swift in Sources */,
+				103B49212389486100502B9E /* ConfigViewController.swift in Sources */,
+				103B49302389486100502B9E /* MenuTableViewCell.swift in Sources */,
 				1063703A22D78E090034A505 /* SourceCodeToken.swift in Sources */,
-				10636FD022D4E1E70034A505 /* TerminalView.swift in Sources */,
+				103B49372389486100502B9E /* AdministratorMenuCell.swift in Sources */,
+				103B49252389486100502B9E /* MainViewController.swift in Sources */,
 				1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */,
+				103B491D2389486100502B9E /* WelcomeViewActionView.swift in Sources */,
 				10FFF02122F863C3003D61C7 /* AppInfo.swift in Sources */,
+				103B49472389486100502B9E /* IconImageView.swift in Sources */,
 				1063703222D78E090034A505 /* SyntaxTextView.swift in Sources */,
+				103B491E2389486100502B9E /* WelcomeTableViewCell.swift in Sources */,
 				10E0228522E89FA900DE3433 /* Models.swift in Sources */,
 				1063702722D78E090034A505 /* NSTextView+UIKit.swift in Sources */,
 				1035223922F5558200C38178 /* PodActionCoordinator.swift in Sources */,
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
-				1023EB6E22E1F6360067E402 /* LoginViewController.swift in Sources */,
 				1063702822D78E090034A505 /* Types.swift in Sources */,
-				1081D700232B8CAD006A7358 /* AdminUserManagerController.swift in Sources */,
+				103B492D2389486100502B9E /* TerminalPopUpButton.swift in Sources */,
+				103B493E2389486100502B9E /* BuriedPointShowViewController.swift in Sources */,
 				1036287B22DB13AC00D7FA2D /* Open.swift in Sources */,
-				1023EB5B22DDF38C0067E402 /* CornerRadiusWindow.swift in Sources */,
-				10636FBA22D4D08C0034A505 /* WelcomeWindowController.swift in Sources */,
 				1063702922D78E090034A505 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				1023EB7822E2BFD10067E402 /* UserInterfaction+NSView.swift in Sources */,
-				10E022AE22F07F3B00DE3433 /* TerminalPopUpButton.swift in Sources */,
+				103B492E2389486100502B9E /* NameTableViewCell.swift in Sources */,
 				1063703922D78E090034A505 /* SourceCodeTheme.swift in Sources */,
 				1035223122F1DA9400C38178 /* PodSearchCoordinator.swift in Sources */,
+				103B49262389486100502B9E /* PodContactViewController.swift in Sources */,
 				1063702522D78E090034A505 /* SourceCodeRegexLexer.swift in Sources */,
-				1035224C22F5854600C38178 /* TerminalButtomToolView.swift in Sources */,
 				1063705A22DAEA520034A505 /* Xcode.swift in Sources */,
 				1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */,
+				103B493B2389486100502B9E /* AdminTeamManagerController.swift in Sources */,
+				103B49322389486100502B9E /* TerminalButtomToolView.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
-				10636FE022D6413E0034A505 /* MenuViewController.swift in Sources */,
+				103B49412389486100502B9E /* BuriedPointViewController.swift in Sources */,
 				1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

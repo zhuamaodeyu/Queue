@@ -31,7 +31,22 @@ extension AppDelegate {
             fatalError("\(error)")
         }
     }
-
+    private func testLeanCloud() {
+        do {
+            let post = LCObject(className: "Post")
+            try post.set("words", value: "Hello World!")
+            _ = post.save { result in
+                switch result {
+                case .success:
+                    break
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
     static func registerLeanCloudEntity() {
         UserEntity.register()
         UserFindEntity.register()
@@ -69,15 +84,15 @@ extension AppDelegate {
         showWelcomeWindow()
         return
         
-        if NSApp.orderedWindows.count > 0 || NSApp.orderedDocuments.count > 0 {
-            return
-        }
-        if let _  = LCApplication.default.currentUser {
-            EntitysDataManager.instance.reload()
-            showWelcomeWindow()
-        }else {
-            showLoginWindow()
-        }
+//        if NSApp.orderedWindows.count > 0 || NSApp.orderedDocuments.count > 0 {
+//            return
+//        }
+//        if let _  = LCApplication.default.currentUser {
+//            EntitysDataManager.instance.reload()
+//            showWelcomeWindow()
+//        }else {
+//            showLoginWindow()
+//        }
     }
 
 }
