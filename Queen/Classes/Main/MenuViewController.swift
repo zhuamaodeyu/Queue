@@ -188,19 +188,19 @@ extension MenuViewController {
     private func initData() {
 
         self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
-        dataSource.append(MenuModel.init(name: "组件管理", icon: "", unreadCount: 0))
-        dataSource.append(MenuModel.init(name: "网络配置", icon: "", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "组件管理", icon: "component-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "网络配置", icon: "network-setting-normal", unreadCount: 0))
         // 包括CI 管理和 本地构建
-        dataSource.append(MenuModel.init(name: "构建", icon: "", unreadCount: 0))
-        dataSource.append(MenuModel.init(name: "文档", icon: "", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "构建", icon: "building-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "文档", icon: "document-normal", unreadCount: 0))
         // 二进制framework 下的缓存
-        dataSource.append(MenuModel.init(name: "Source 缓存", icon: "", unreadCount: 0))
-        dataSource.append(MenuModel.init(name:"埋点",icon: "",unreadCount: 0))
+        dataSource.append(MenuModel.init(name: "Source 缓存", icon: "source-merge-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(name:"埋点",icon: "buried-point-normal",unreadCount: 0))
         #if DEBUG
-             dataSource.append(MenuModel.init(name: "Administrator", icon: "", unreadCount: 0))
+             dataSource.append(MenuModel.init(name: "Administrator", icon: "administrator-normal", unreadCount: 0))
         #else
         if (LCApplication.default.currentUser as? UserEntity)?.master.boolValue ?? false {
-            dataSource.append(MenuModel.init(name: "Administrator", icon: "", unreadCount: 0))
+            dataSource.append(MenuModel.init(name: "Administrator", icon: "administrator-normal", unreadCount: 0))
         }
         #endif
         self.tableView.reloadData()
