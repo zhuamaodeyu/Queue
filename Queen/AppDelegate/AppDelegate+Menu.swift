@@ -8,7 +8,6 @@
 
 import Cocoa
 
-
 // MARK: - menu action
 extension AppDelegate {
     /// activate self and perform "New" menu action
@@ -48,6 +47,3 @@ extension AppDelegate {
 extension AppDelegate {
     
 }
-
-
-
