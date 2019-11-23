@@ -53,4 +53,3 @@ extension AppDelegate {
         welcomeWindowController.showWindow(nil)
     }
 }
-
