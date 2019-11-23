@@ -46,7 +46,7 @@ extension AppDelegate {
 
 extension AppDelegate {
     private func showWelcomeWindow() {
-        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Main") as? WelcomeWindowController else {
+        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
             return
         }
         welcomeWindowController.window?.center()
