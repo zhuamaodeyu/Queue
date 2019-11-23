@@ -17,6 +17,10 @@ class BuildingViewController: NSViewController {
 
     private var dataSource:[String] = []
 
+}
+
+extension BuildingViewController {
+    
     override func loadView() {
         self.view = NSView.init()
         installSubviews()
@@ -28,6 +32,7 @@ class BuildingViewController: NSViewController {
         super.viewDidLoad()
     }
 }
+
 extension BuildingViewController : MainSubViewControllerProtocol {
     var type: MenuType {
         return .build

@@ -30,17 +30,22 @@ class WelcomeViewController: NSViewController {
 
     private var podRepoCoordinator = PodRepoCoordinator.init()
 
+
+}
+
+// MARK: system function 
+extension WelcomeViewController {
     override func loadView() {
         super.loadView()
         initSubviews()
         subviewsConstains()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         reloadView()
     }
-
+    
     override func viewWillAppear() {
         super.viewWillAppear()
     }
@@ -48,7 +53,7 @@ class WelcomeViewController: NSViewController {
         super.viewDidAppear()
         checkShowAddSources()
     }
-
+    
     override func viewDidLayout() {
         super.viewDidLayout()
         if leftContentView.trackingAreas.count <= 0 {
@@ -60,8 +65,6 @@ class WelcomeViewController: NSViewController {
     }
 
 }
-
-
 
 // MARK: - UI
 extension WelcomeViewController {

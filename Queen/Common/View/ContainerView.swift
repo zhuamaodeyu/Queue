@@ -10,11 +10,15 @@ import Cocoa
 
 class ContainerView: NSView {
 
+}
+
+// MARK: system function 
+extension ContainerView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
-
-
+    
+    
     override func addSubview(_ view: NSView) {
         if self.subviews.count >= 1 {
             return

@@ -12,10 +12,15 @@ class BuildingTerminalManagerController: NSViewController {
 
     private var textView: SyntaxTextView!
 
+ 
+    
+}
+
+extension BuildingTerminalManagerController {
     override func loadView() {
         self.view = NSView.init()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         textView = SyntaxTextView.init()
@@ -24,5 +29,4 @@ class BuildingTerminalManagerController: NSViewController {
             make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
         }
     }
-    
 }

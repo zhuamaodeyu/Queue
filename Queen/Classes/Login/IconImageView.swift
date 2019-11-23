@@ -11,25 +11,26 @@ import Cocoa
 class IconImageView: NSImageView {
 
     private var trackingArea: NSTrackingArea?
+  
+
+}
+
+// MARK: system function
+extension IconImageView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         layer?.cornerRadius = bounds.width / 2
         layer?.masksToBounds = true
         setLayerBoard(.lightGray, width: 1)
     }
-
+    
     override func mouseEntered(with event: NSEvent) {
         setLayerBoard(NSColor.init(red:0.52, green:0.84, blue:0.96, alpha:1.00), width: 3)
     }
-
+    
     override func mouseExited(with event: NSEvent) {
         setLayerBoard(.lightGray, width: 1)
     }
-    private func setLayerBoard(_ color:NSColor, width: CGFloat) {
-        layer?.borderColor = color.cgColor
-        layer?.borderWidth = width
-    }
-
 
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
@@ -45,5 +46,14 @@ class IconImageView: NSImageView {
             addTrackingArea(t)
         }
     }
+}
 
+// MAKR: private function
+extension IconImageView {
+    private func setLayerBoard(_ color:NSColor, width: CGFloat) {
+        layer?.borderColor = color.cgColor
+        layer?.borderWidth = width
+    }
+    
+    
 }

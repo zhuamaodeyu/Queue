@@ -14,6 +14,10 @@ class MouseEnterOrExitView: NSView {
     public var mouseEnteredCallBlock:((_ event:NSEvent)-> Void)?
     public var mouseExitedCallBlock:((_ event:NSEvent)-> Void)?
 
+  
+}
+// MARK: system function 
+extension MouseEnterOrExitView {
     override func mouseEntered(with event: NSEvent) {
         super.mouseEntered(with: event)
         mouseEnteredCallBlock?(event)
@@ -22,7 +26,7 @@ class MouseEnterOrExitView: NSView {
         super.mouseExited(with: event)
         mouseExitedCallBlock?(event)
     }
-
+    
     override func updateTrackingAreas() {
         super.updateTrackingAreas()
         if let t = trackingArea {

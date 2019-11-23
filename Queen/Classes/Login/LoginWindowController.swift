@@ -10,6 +10,11 @@ import Cocoa
 
 class LoginWindowController: NSWindowController {
 
+
+}
+
+// MARK: system function 
+extension LoginWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         // 隐藏titleBar透明
@@ -17,14 +22,14 @@ class LoginWindowController: NSWindowController {
         // 隐藏title
         window?.titleVisibility = .hidden
         // 背景白色
-//        window?.backgroundColor = .white
+        //        window?.backgroundColor = .white
         // 隐藏miniaturize按钮
         window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
         // 隐藏zoom按钮
         window?.standardWindowButton(.zoomButton)?.isHidden = true
         // 背景可以移动
         window?.isMovableByWindowBackground = true
-
+        
         window?.isRestorable = true
         window?.center()
     }

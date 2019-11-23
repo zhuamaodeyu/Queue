@@ -10,6 +10,10 @@ import Cocoa
 
 class PreferencesViewController: NSViewController {
 
+ 
+}
+
+extension PreferencesViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

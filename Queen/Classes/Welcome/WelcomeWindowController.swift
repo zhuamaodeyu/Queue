@@ -10,39 +10,47 @@ import Cocoa
 
 class WelcomeWindowController: NSWindowController {
 
+ 
+
+}
+
+// MARK: system function
+extension WelcomeWindowController {
     override func windowWillLoad() {
         super.windowWillLoad()
     }
-
+    
     override func loadWindow() {
         super.loadWindow()
     }
-
+    
     override func windowDidLoad() {
         super.windowDidLoad()
-
+        
         // 隐藏titleBar 透明
         window?.titlebarAppearsTransparent = true
         // 隐藏 title
         window?.titleVisibility = .hidden
         //
-//        window?.backgroundColor = .white
+        //        window?.backgroundColor = .white
         // 隐藏
         window?.standardWindowButton(.miniaturizeButton)?.isHidden = true
-
+        
         window?.standardWindowButton(.zoomButton)?.isHidden = true
         // 背景可移动
         window?.isMovableByWindowBackground = true
-
+        
         window?.isRestorable = false
-
+        
         configWindowFrameSize()
-
+        
         window?.center()
     }
-
 }
 
+
+
+// MARK: private method
 extension WelcomeWindowController {
     private func configWindowFrameSize() {
         var frame = NSScreen.main?.visibleFrame

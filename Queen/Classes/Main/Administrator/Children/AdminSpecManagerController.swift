@@ -10,9 +10,14 @@ import Cocoa
 
 class AdminSpecManagerController: NSViewController {
 
+}
+
+
+extension AdminSpecManagerController {
+    
     override func loadView() {
         self.view = NSView.init()
-
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,6 +10,10 @@ import Cocoa
 
 class AdminTeamManagerController: NSViewController {
 
+
+}
+
+extension AdminTeamManagerController {
     override func loadView() {
         self.view = NSView.init()
         

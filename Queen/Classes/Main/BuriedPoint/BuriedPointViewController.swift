@@ -12,16 +12,20 @@ class BuriedPointViewController: NSViewController {
 
     private var splitView: NSSplitView!
     
+}
+
+extension BuriedPointViewController {
     override func loadView() {
         self.view = NSView.init()
         installSubviews()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
     
 }
+
 extension BuriedPointViewController : MainSubViewControllerProtocol {
     var type: MenuType {
         return .buriedPoint

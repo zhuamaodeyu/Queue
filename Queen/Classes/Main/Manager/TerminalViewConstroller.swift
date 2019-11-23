@@ -20,13 +20,15 @@ class TerminalViewConstroller: NSViewController {
     private var buttomToolView:TerminalButtomToolView = TerminalButtomToolView.init()
 
     private var autoScroll: Bool = false
+    
+}
 
-
+extension TerminalViewConstroller {
     override func loadView() {
         self.view = NSView.init()
         installSubviews()
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         autoScroll = buttomToolView.autoScroll
@@ -36,6 +38,7 @@ class TerminalViewConstroller: NSViewController {
         textView.frame = NSRect.init(x: 0, y: 0, width: self.view.width, height: self.view.height - 40)
     }
 }
+
 
 extension TerminalViewConstroller {
     func installSubviews()  {

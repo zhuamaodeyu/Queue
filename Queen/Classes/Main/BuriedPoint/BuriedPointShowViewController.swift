@@ -11,6 +11,10 @@ import Cocoa
 class BuriedPointShowViewController: NSViewController {
 
     private var splitView: NSSplitView!
+   
+}
+
+extension BuriedPointShowViewController {
     override func loadView() {
         self.view = NSView.init()
         installSubviews()
