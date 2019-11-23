@@ -32,7 +32,7 @@ enum MenuType:Int {
     case admin
 }
 
-enum MenuShowType {
+enum MenuShowType:Int {
     case all
     case onlyIcon
 }
@@ -44,7 +44,7 @@ class MenuViewController: NSViewController {
         static var cellKey = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
     }
 
-    public weak var delegate:MenuViewControllerDelegate?
+    weak var delegate:MenuViewControllerDelegate?
     private var userNameLabel: NSTextField!
     private var userIconImageView: NSImageView!
     private var tableView: NSTableView!
@@ -56,6 +56,15 @@ class MenuViewController: NSViewController {
         }
     }
 
+    init(type: MenuShowType = .all) {
+        self.type  = type
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func loadView() {
         self.view = NSView.init()
         initSubviews()
@@ -69,6 +78,10 @@ class MenuViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         tableView.selectRowIndexes(IndexSet.init(arrayLiteral: 0), byExtendingSelection: true)
+    }
+    override func updateViewConstraints() {
+        updateConstaints()
+        super.updateViewConstraints()
     }
 }
 
@@ -108,22 +121,42 @@ extension MenuViewController {
         userIconImageView.backgroundColor  = NSColor.randomColor
     }
     private func initSubviewConstaints() {
-        userIconImageView.snp.makeConstraints { (make) in
-            make.centerX.equalTo(view)
-            make.top.equalTo(view).offset(80)
-            make.width.greaterThanOrEqualTo(150)
-            make.width.lessThanOrEqualTo(80)
-            make.height.equalTo(userIconImageView.snp.width)
-        }
-        userNameLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(view)
-            make.top.equalTo(userIconImageView.snp.bottom).offset(20)
-        }
+        updateConstaints()
         tableView.snp.makeConstraints { (make) in
             make.bottom.equalTo(view).offset(-100)
             make.right.left.equalTo(view)
         }
     }
+    
+    private func updateConstaints() {
+        switch type {
+        case .onlyIcon:
+            userIconImageView.snp.remakeConstraints { (make) in
+                make.top.equalTo(view).offset(80)
+                make.left.equalTo(view).offset(10)
+                make.right.equalTo(view).offset(-10)
+                make.height.equalTo(userIconImageView.snp.width)
+            }
+            userNameLabel.snp.remakeConstraints { (make) in
+                make.size.equalTo(NSSize.zero)
+            }
+            break
+        case .all:
+            fallthrough
+        default:
+            userIconImageView.snp.remakeConstraints { (make) in
+                make.centerX.equalTo(view)
+                make.top.equalTo(view).offset(80)
+                make.width.greaterThanOrEqualTo(150)
+                make.height.equalTo(userIconImageView.snp.width)
+            }
+            userNameLabel.snp.remakeConstraints { (make) in
+                make.centerX.equalTo(view)
+                make.top.equalTo(userIconImageView.snp.bottom).offset(20)
+            }
+        }
+    }
+    
 }
 
 
@@ -153,7 +186,7 @@ extension MenuViewController: NSTableViewDelegate, NSTableViewDataSource {
 
 extension MenuViewController {
     private func initData() {
-//        self.userIconImageView.image = LCApplication.default.currentUser
+
         self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
         dataSource.append(MenuModel.init(name: "组件管理", icon: "", unreadCount: 0))
         dataSource.append(MenuModel.init(name: "网络配置", icon: "", unreadCount: 0))

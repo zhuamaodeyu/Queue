@@ -11,6 +11,7 @@ import LeanCloud
 
 // MARK: - init 
 extension AppDelegate {
+    // 注册默认值
     static func initialSettings() {
         let defaults = DefaultSettings.defaults.mapKeys { $0.rawValue }
         UserDefaults.standard.register(defaults: defaults)
