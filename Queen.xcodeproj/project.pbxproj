@@ -90,6 +90,7 @@
 		103B48572389204800502B9E /* NSStoryboard+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48052389204800502B9E /* NSStoryboard+Exts.swift */; };
 		103B48582389204800502B9E /* ConstraintArrayDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48062389204800502B9E /* ConstraintArrayDSL.swift */; };
 		103B48592389204800502B9E /* NSUserNotification+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B48072389204800502B9E /* NSUserNotification+Exts.swift */; };
+		103B485B238922B100502B9E /* AppDelegate+Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B485A238922B100502B9E /* AppDelegate+Menu.swift */; };
 		10636F9B22D4D0700034A505 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10636F9A22D4D0700034A505 /* Info.plist */; };
 		1063703D22D794220034A505 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1063703C22D794220034A505 /* NetworkExtension.framework */; };
 		1063704B22DA36FA0034A505 /* Note.md in Resources */ = {isa = PBXBuildFile; fileRef = 1063704A22DA36FA0034A505 /* Note.md */; };
@@ -183,6 +184,7 @@
 		103B48052389204800502B9E /* NSStoryboard+Exts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSStoryboard+Exts.swift"; sourceTree = "<group>"; };
 		103B48062389204800502B9E /* ConstraintArrayDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintArrayDSL.swift; sourceTree = "<group>"; };
 		103B48072389204800502B9E /* NSUserNotification+Exts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserNotification+Exts.swift"; sourceTree = "<group>"; };
+		103B485A238922B100502B9E /* AppDelegate+Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Menu.swift"; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10636F9A22D4D0700034A505 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1063703C22D794220034A505 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -220,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				103B47932389203B00502B9E /* AppDelegate.swift */,
+				103B485A238922B100502B9E /* AppDelegate+Menu.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				103B48102389204800502B9E /* KeyWindow.swift in Sources */,
 				103B48462389204800502B9E /* NameTableViewCell.swift in Sources */,
 				103B48442389204800502B9E /* VersionEditWindowController.swift in Sources */,
+				103B485B238922B100502B9E /* AppDelegate+Menu.swift in Sources */,
 				103B48202389204800502B9E /* SyntaxColorTheme.swift in Sources */,
 				103B48512389204800502B9E /* UserInterfaction+NSView.swift in Sources */,
 				103B48222389204800502B9E /* RegexLexer.swift in Sources */,
