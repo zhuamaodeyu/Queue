@@ -10,6 +10,11 @@ import Cocoa
 
 class BuriedPointEditViewController: NSViewController {
 
+
+    
+}
+
+extension BuriedPointEditViewController {
     override func loadView() {
         self.view = NSView.init()
     }
@@ -17,5 +22,4 @@ class BuriedPointEditViewController: NSViewController {
         super.viewDidLoad()
         self.view.backgroundColor = NSColor.randomColor
     }
-    
 }

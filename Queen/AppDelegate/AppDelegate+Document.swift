@@ -9,7 +9,7 @@
 import Cocoa
 
 
-
+// MARK: document 
 extension AppDelegate {
     // 系统调用此方法
     func application(_ sender: NSApplication, openFiles filenames: [String]) {

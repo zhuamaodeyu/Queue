@@ -19,7 +19,9 @@ class ManagerViewController: NSViewController {
 
 
     private var isShowMapping: Bool = false
+}
 
+extension ManagerViewController {
     override func loadView() {
         self.view = NSView.init()
     }
@@ -31,7 +33,7 @@ class ManagerViewController: NSViewController {
         self.addChild(podContactVC)
         self.addChild(podMessageVC)
     }
-
+    
     override func viewDidLayout() {
         super.viewDidLayout()
         if let view = containerView.subviews.first {

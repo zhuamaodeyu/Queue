@@ -36,7 +36,7 @@ class LoginViewController: NSViewController {
     }
 }
 
-
+// MARK: - UI
 extension LoginViewController {
     private func installSubviews() {
         closeButton = NSButton.init(image: NSImage.init(named: NSImage.Name.init("close_icon"))!, target: self, action: #selector(close))
@@ -139,7 +139,6 @@ extension LoginViewController {
         }
     }
 
-
     private func beginAnimation() {
         progressView.isHidden = false
         progressView.startAnimation(nil)
@@ -158,7 +157,7 @@ extension LoginViewController {
 
 }
 
-
+// MARK: action
 extension LoginViewController {
 
     @objc private func close() {
@@ -189,7 +188,7 @@ extension LoginViewController {
     }
 }
 
-
+// MARK: request
 extension LoginViewController {
     private func login(compation: @escaping (LCValueResult<LCUser>) -> Void) {
         if test(input: accountField.stringValue, pattern: email_regex) {
@@ -208,7 +207,7 @@ extension LoginViewController {
     }
 }
 
-
+// MARK: private method 
 extension LoginViewController {
     private func saveUserClientASssociation() {
         let model = UserClientASssociation.init()

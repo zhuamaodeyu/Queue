@@ -44,6 +44,7 @@ extension AppDelegate {
     }
 }
 
+// MAKR: private method 
 extension AppDelegate {
     private func showWelcomeWindow() {
         guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {

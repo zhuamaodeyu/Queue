@@ -19,13 +19,17 @@ class WelcomeViewActionView: NSControl {
         installSubviews()
         initSubviewsConstaints()
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+}
+
+extension WelcomeViewActionView {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
+        
         // Drawing code here.
     }
     
@@ -34,8 +38,6 @@ class WelcomeViewActionView: NSControl {
         sendAction(self.action, to: self.target)
     }
 }
-
-
 
 
 

@@ -10,6 +10,11 @@ import Cocoa
 
 class AdminUserManagerController: NSViewController {
 
+
+    
+}
+
+extension AdminUserManagerController {
     override func loadView() {
         self.view = NSView.init()
     }
@@ -17,5 +22,4 @@ class AdminUserManagerController: NSViewController {
         super.viewDidLoad()
         self.view.backgroundColor = NSColor.randomColor
     }
-    
 }

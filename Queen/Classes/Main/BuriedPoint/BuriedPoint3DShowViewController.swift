@@ -10,6 +10,10 @@ import Cocoa
 
 class BuriedPoint3DShowViewController: NSViewController {
 
+ 
+}
+
+extension BuriedPoint3DShowViewController {
     override func loadView() {
         self.view = NSView.init()
     }

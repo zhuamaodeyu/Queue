@@ -24,9 +24,13 @@ class WelcomeTableViewCell: NSTableCellView {
         fatalError("init(coder:) has not been implemented")
     }
 
+
+}
+
+extension WelcomeTableViewCell {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
-
+        
     }
 }
 
