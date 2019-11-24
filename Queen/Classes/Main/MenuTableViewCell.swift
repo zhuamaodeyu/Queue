@@ -16,7 +16,10 @@ class MenuTableViewCell: NSTableCellView {
     private var titleLabel: NSTextField!
     private var unreadCountView: NSTextField!
 
-    private var type: MenuShowType?
+    private var type: MenuShowType {
+        return AppInfo.shared.leftMenuType
+    }
+    
     private var model: MenuModel?
 
     override init(frame frameRect: NSRect) {
@@ -31,6 +34,47 @@ class MenuTableViewCell: NSTableCellView {
         super.draw(dirtyRect)
         self.unreadCountView.layer?.cornerRadius = (self.unreadCountView.cell?.cellSize.height) ?? 0 / 2
         self.unreadCountView.layer?.masksToBounds = true
+    }
+    
+    override func updateConstraints() {
+        switch type {
+        case .onlyIcon:
+            iconImageView.snp.remakeConstraints { (make) in
+                make.top.equalTo(self).offset(5)
+                make.bottom.equalTo(self).offset(-5)
+                make.width.equalTo(iconImageView.snp.height)
+                make.centerX.equalTo(self)
+            }
+            unreadCountView.snp.remakeConstraints { (make) in
+                make.centerX.equalTo(iconImageView.snp.right)
+                make.centerY.equalTo(iconImageView.snp.top)
+            }
+            titleLabel.snp.remakeConstraints { (make) in
+                make.size.equalTo(NSSize.zero)
+            }
+            break
+        case .all:
+            fallthrough
+        default:
+            iconImageView.snp.remakeConstraints { (make) in
+                make.centerY.equalTo(self)
+                make.left.equalTo(self).offset(10)
+            }
+            titleLabel.snp.remakeConstraints { (make) in
+                make.centerY.equalTo(self)
+                make.left.equalTo(iconImageView.snp.right).offset(10)
+            }
+            unreadCountView.snp.remakeConstraints { (make) in
+                make.centerY.equalTo(self)
+                make.right.equalTo(self).offset(-10)
+                make.size.equalTo(CGSize.init(width:self.unreadCountView.frame.size.width + 10,
+                                              height:self.unreadCountView.frame.size.height + 10))
+            }
+
+            break
+        }
+        
+        super.updateConstraints()
     }
 }
 
@@ -70,45 +114,33 @@ extension MenuTableViewCell {
         unreadCountView.sizeToFit()
         self.addSubview(unreadCountView)
 
-
-        iconImageView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.left.equalTo(self).offset(10)
-            make.size.equalTo(CGSize.init(width: 25, height: 25))
-        }
-        titleLabel.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.left.equalTo(iconImageView.snp.right).offset(10)
-        }
-        unreadCountView.snp.makeConstraints { (make) in
-            make.centerY.equalTo(self)
-            make.right.equalTo(self).offset(-10)
-            make.size.equalTo(CGSize.init(width:self.unreadCountView.frame.size.width + 10,
-                                          height:self.unreadCountView.frame.size.height + 10))
-        }
-
         iconImageView.backgroundColor = NSColor.randomColor
     }
 }
 
 extension MenuTableViewCell {
-    func config(model: MenuModel, type: MenuShowType) {
+    func config(model: MenuModel, type: MenuShowType = .all) {
         self.model = model
-        self.type = type
-        switch type {
+        switch self.type {
         case .onlyIcon:
+           self.titleLabel.stringValue = ""
             break
         default:
-            self.iconImageView.image = NSImage.init(named: model.icon)
             self.titleLabel.stringValue = model.name
-            self.unreadCountView.stringValue = "\(model.unreadCount)"
-            self.unreadCountView.updateLayer()
-            if model.unreadCount == 0 {
-                self.unreadCountView.isHidden = true
-            }else {
-                self.unreadCountView.isHidden = false
-            }
+           
             break
         }
+        
+        self.iconImageView.image = NSImage.init(named: model.icon)
+        
+        self.unreadCountView.stringValue = "\(model.unreadCount)"
+        self.unreadCountView.updateLayer()
+        if model.unreadCount == 0 {
+            self.unreadCountView.isHidden = true
+        }else {
+            self.unreadCountView.isHidden = false
+        }
+        
+        self.animationUpdate()
     }
 }

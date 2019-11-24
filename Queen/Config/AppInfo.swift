@@ -23,6 +23,10 @@ class AppInfo {
     private init() {
 
     }
+    
+    var leftMenuType:MenuShowType = .onlyIcon
+    
+    
 
     var sourceLastUpdateDate: Date? {
         get {
