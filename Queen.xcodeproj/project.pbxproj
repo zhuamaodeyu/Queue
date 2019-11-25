@@ -81,6 +81,7 @@
 		103B4956238948D100502B9E /* EntitysDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B4954238948D100502B9E /* EntitysDataManager.swift */; };
 		103B4957238948D100502B9E /* Entitys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103B4955238948D100502B9E /* Entitys.swift */; };
 		10632305238954AC003F2441 /* WelcomeWorkspaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10632304238954AC003F2441 /* WelcomeWorkspaceModel.swift */; };
+		10632325238C1E11003F2441 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5F22CFA2A80034A505 /* Main.storyboard */; };
 		10636F5E22CFA2A80034A505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10636F5D22CFA2A80034A505 /* Assets.xcassets */; };
 		10636F6E22CFA34A0034A505 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F6D22CFA34A0034A505 /* Document.swift */; };
 		10636F7D22CFA5460034A505 /* NSColor+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10636F7C22CFA5460034A505 /* NSColor+Exts.swift */; };
@@ -967,6 +968,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10632325238C1E11003F2441 /* Main.storyboard in Resources */,
 				10E0226F22E31BBC00DE3433 /* bundle in Resources */,
 				1063705C22DAEC0D0034A505 /* Cartfile in Resources */,
 				1063704B22DA36FA0034A505 /* Note.md in Resources */,
