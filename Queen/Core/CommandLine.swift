@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Ansi
+
 
 protocol CommandLineDelegate:class {
     func commandLine(commandLine:CommandLine, didUpdateOutPut content:NSAttributedString)
@@ -110,11 +110,12 @@ extension CommandLine {
 extension CommandLine {
 
     private func stringToAttributeString(output: String) -> NSAttributedString {
-        do {
-           return try output.ansified()
-        } catch _ {
-            return NSAttributedString.init(string: output)
-        }
+       return  NSAttributedString.init(string: output)
+//        do {
+//           return try output.ansified()
+//        } catch _ {
+//            return NSAttributedString.init(string: output)
+//        }
     }
 
 

@@ -30,6 +30,7 @@ struct TableViewIdentifier {
 }
 
 
+
 class PodMessageViewController: NSViewController {
 
     private var tableView: NSTableView!
@@ -350,18 +351,44 @@ extension PodMessageViewController: NSTableViewDataSource, NSTableViewDelegate {
 
 
 extension PodMessageViewController : NSSplitViewDelegate {
-    //    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-    //        if dividerIndex == 1 {
-    //            return 200
-    //        }
-    //        return 500
-    //    }
-//    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
-//        if dividerIndex == 1 {
-//                return splitView.frame.height - 100
-//        }
-//        return splitView.height
-//    }
+    //    允许为NSSplitView的子视图指定自定义大小行为sender。
+    func splitView(_ splitView: NSSplitView, resizeSubviewsWithOldSize oldSize: NSSize) {
+        if splitView.subviews.count == 0 {
+            return
+        }
+       
+        if oldSize.equalTo(CGSize.zero) {
+            for (index, item) in splitView.subviews.enumerated() {
+                item.setFrameSize(NSSize.init(width: splitView.width, height:  index == 1 ? SplitSize.max : splitView.height - SplitSize.max))
+                item.setFrameOrigin(NSPoint.init(x: 0, y: index == 1 ? 0: SplitSize.max))
+            }
+        }
+        let oldHeight = splitView.arrangedSubviews.last?.frame.size.height ?? 0
+        splitView.adjustSubviews()
+        splitView.setPosition(oldHeight, ofDividerAt: 1)
+    }
+
+    // 此处返回的不是一个恒定的值，会根据变化而变化的值
+    func splitView(_ splitView: NSSplitView, constrainMaxCoordinate proposedMaximumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        debugPrint("========\(dividerIndex)")
+        if dividerIndex == 1 {
+            return SplitSize.max
+        }
+        return proposedMaximumPosition
+    }
+
+    func splitView(_ splitView: NSSplitView, constrainMinCoordinate proposedMinimumPosition: CGFloat, ofSubviewAt dividerIndex: Int) -> CGFloat {
+        if dividerIndex == 1 {
+            return SplitSize.min
+        }
+        return proposedMinimumPosition
+    }
+    func splitView(_ splitView: NSSplitView, canCollapseSubview subview: NSView) -> Bool {
+        return false
+    }
+    func splitView(_ splitView: NSSplitView, shouldAdjustSizeOfSubview view: NSView) -> Bool {
+        return false
+    }
 }
 
 
@@ -394,7 +421,7 @@ extension PodMessageViewController {
         // pod repo update
         self.podRepoCoordinator.update(logComplation: { (log) in
             debugPrint("update Sources:\(log)")
-            self.terminalViewController.update(content: log)
+//            self.terminalViewController.update(content: log)
         }, complation: { [weak self] (result) in
             AppInfo.shared.sourceLastUpdateDate = Date.init()
             self?.analyzer()

@@ -85,6 +85,12 @@ extension MainViewController: MenuViewControllerDelegate {
             self.addChild(ciManagerViewController)
             break
         case .document:
+            if let vc = self.children.filter({ (vc) -> Bool in
+                return vc.isKind(of: DocumentationViewController.self)
+                }).first {
+                self.contentView.addSubview(vc.view)
+                return
+            }
             let  documentViewController = DocumentationViewController.init()
             self.contentView.addSubview(documentViewController.view)
             self.addChild(documentViewController)
@@ -113,7 +119,7 @@ extension MainViewController: MenuViewControllerDelegate {
 extension MainViewController {
     private func clearViewController() {
         for vc  in self.children {
-            if !vc.isKind(of: MenuViewController.self) {
+            if !vc.isKind(of: MenuViewController.self) && !vc.isKind(of: DocumentationViewController.self) {
                 vc.removeFromParent()
             }
         }

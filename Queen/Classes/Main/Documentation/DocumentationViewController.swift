@@ -11,34 +11,62 @@ import WebKit
 
 class DocumentationViewController: NSViewController {
 
-    private var webView: WKWebView!
-
-    override func loadView() {
-        self.view = NSView.init()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-        self.view.backgroundColor = NSColor.red
-
-        installSubviews()
-
-        webView.load(URLRequest.init(url: URL.init(string: "https://medium.com/@jerrywang0420/codable-json-%E6%95%99%E5%AD%B8-swift-4-46aff2182bfe")!))
-    }
+    private var webView: WKWebView = WKWebView.init()
+    private var button = NSButton.init(image: NSImage.init(), target: self, action: #selector(documentationAction(_:)))
+    private var documentListShowState: Bool = false
 }
 
 extension DocumentationViewController {
+    override func loadView() {
+        self.view = NSView.init()
+        installSubviews()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        installDocumentList()
+    }
+}
+
+
+extension DocumentationViewController {
     private func installSubviews() {
-        webView = WKWebView.init()
+        
         webView.navigationDelegate = self
         webView.uiDelegate = self
         view.addSubview(webView)
 
+        button.wantsLayer = true
+        button.backgroundColor = NSColor.red
+        button.frame.size = NSSize.init(width: 45, height: 45)
+        button.layer?.cornerRadius = 45 / 2
+        button.layer?.masksToBounds = true
+        view.addSubview(button)
+        button.snp.makeConstraints { (make) in
+            make.top.equalTo(view).offset(100)
+            make.right.equalTo(view).offset(0)
+        }
+        
         webView.snp.makeConstraints { (make) in
             make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
         }
     }
+
+    private func installDocumentList() {
+        let documentListVC = DocumentListViewController.init {[weak self] (model) in
+                 if let url = URL.init(string: model.url) {
+                     self?.webView.load(URLRequest.init(url: url))
+                 }else {
+                     // TODO: URL处理错误，请注意
+                 }
+             }
+        self.addChild(documentListVC)
+        documentListVC.view.frame = CGRect.init(x: view.width, y: 0, width: 200, height: view.height)
+        view.addSubview(documentListVC.view)
+    }
 }
+
+
+
 
 extension DocumentationViewController : MainSubViewControllerProtocol {
     var type: MenuType {
@@ -79,5 +107,36 @@ extension DocumentationViewController: WKUIDelegate {
     }
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
 
+    }
+}
+
+extension DocumentationViewController {
+    @objc private func documentationAction(_ sender: NSButton) {
+            // TODO:
+        documentListShowState ? documentListHidden() : documentListShow()
+        documentListShowState = !documentListShowState
+        
+    }
+}
+
+extension DocumentationViewController {
+    private func documentListShow() {
+        if let documentList = self.children.first {
+            button.isHidden = true
+            NSAnimationContext.runAnimationGroup({ (context) in
+                documentList.view.frame = NSRect.init(x: self.view.width - documentList.view.width, y: documentList.view.y, width: documentList.view.width, height: documentList.view.width)
+            }) {
+                // TODO:
+            }
+        }
+    }
+    private func documentListHidden() {
+        if let documentList = self.children.first {
+            NSAnimationContext.runAnimationGroup({ (context) in
+                 documentList.view.frame = NSRect.init(x: self.view.width, y: documentList.view.y, width: documentList.view.width, height: documentList.view.width)
+            }) {
+                self.button.isHidden = false
+            }
+        }
     }
 }

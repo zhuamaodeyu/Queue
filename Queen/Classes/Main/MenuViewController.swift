@@ -15,6 +15,7 @@ protocol MenuViewControllerDelegate:class {
 }
 
 struct MenuModel {
+    var type: MenuType
     var name: String
     var icon: String
     var unreadCount:Int = 0
@@ -39,15 +40,12 @@ enum MenuShowType:Int {
 
 class MenuViewController: NSViewController {
 
-    private struct AssociationKey {
-        static var columnKey = NSUserInterfaceItemIdentifier.init("MenuViewController_column")
-        static var cellKey = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
-    }
 
     weak var delegate:MenuViewControllerDelegate?
-    private var userNameLabel: NSTextField!
-    private var userIconImageView: NSImageView!
-    private var tableView: NSTableView!
+    
+    private var userNameLabel: NSTextField =  NSTextField.init()
+    private var userIconImageView: NSImageView = NSImageView.init()
+    private var tableView: NSTableView = NSTableView.init()
 
     private var dataSource:[MenuModel] = []
     private var type: MenuShowType = .all {
@@ -64,33 +62,41 @@ class MenuViewController: NSViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func loadView() {
-        self.view = NSView.init()
-        initSubviews()
-        initSubviewConstaints()
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initData()
-    }
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        tableView.selectRowIndexes(IndexSet.init(arrayLiteral: 0), byExtendingSelection: true)
-    }
-    override func updateViewConstraints() {
-        updateConstaints()
-        super.updateViewConstraints()
-    }
 }
 
 extension MenuViewController {
+    private struct AssociationKey {
+        static var columnKey = NSUserInterfaceItemIdentifier.init("MenuViewController_column")
+        static var cellKey = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
+    }
+}
+
+
+extension MenuViewController {
+    override func loadView() {
+         self.view = NSView.init()
+         initSubviews()
+         initSubviewConstaints()
+     }
+
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         initData()
+     }
+     override func viewDidAppear() {
+         super.viewDidAppear()
+         tableView.selectRowIndexes(IndexSet.init(arrayLiteral: 0), byExtendingSelection: true)
+     }
+     override func updateViewConstraints() {
+         updateConstaints()
+         super.updateViewConstraints()
+     }
+}
+
+
+extension MenuViewController {
     private func initSubviews() {
-        userIconImageView = NSImageView.init()
-
-
-        userNameLabel = NSTextField.init()
+        
         userNameLabel.font = NSFont.systemFont(ofSize: 15.0)
         userNameLabel.isEditable = false
         userNameLabel.isBezeled = false
@@ -101,7 +107,6 @@ extension MenuViewController {
         userNameLabel.alignment = .center
         userNameLabel.isBordered = false
 
-        tableView = NSTableView.init()
         tableView.backgroundColor = NSColor.clear
         tableView.focusRingType = .none
         tableView.autoresizesSubviews = true
@@ -177,30 +182,30 @@ extension MenuViewController: NSTableViewDelegate, NSTableViewDataSource {
         return 40
     }
     func tableViewSelectionDidChange(_ notification: Notification) {
-        if let type = MenuType.init(rawValue: tableView.selectedRow) {
-            self.delegate?.leftMenuViewController(viewController: self, tableView: tableView, didSelect: type)
-        }
+        let model = dataSource[tableView.selectedRow]
+        self.delegate?.leftMenuViewController(viewController: self, tableView: tableView, didSelect: model.type)
     }
 }
+
 
 
 extension MenuViewController {
     private func initData() {
 
         self.userNameLabel.stringValue = LCApplication.default.currentUser?.username?.value ?? ""
-        dataSource.append(MenuModel.init(name: "组件管理", icon: "component-normal", unreadCount: 0))
-        dataSource.append(MenuModel.init(name: "网络配置", icon: "network-setting-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .podManager,name: "组件管理", icon: "component-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .networkManager, name: "网络配置", icon: "network-setting-normal", unreadCount: 0))
         // 包括CI 管理和 本地构建
-        dataSource.append(MenuModel.init(name: "构建", icon: "building-normal", unreadCount: 0))
-        dataSource.append(MenuModel.init(name: "文档", icon: "document-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .build, name: "构建", icon: "building-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .document, name: "文档", icon: "document-normal", unreadCount: 0))
         // 二进制framework 下的缓存
-        dataSource.append(MenuModel.init(name: "Source 缓存", icon: "source-merge-normal", unreadCount: 0))
-        dataSource.append(MenuModel.init(name:"埋点",icon: "buried-point-normal",unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .sourceCache, name: "Source 缓存", icon: "source-merge-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .buriedPoint, name:"埋点",icon: "buried-point-normal",unreadCount: 0))
         #if DEBUG
-             dataSource.append(MenuModel.init(name: "Administrator", icon: "administrator-normal", unreadCount: 0))
+        dataSource.append(MenuModel.init(type: .admin, name: "Administrator", icon: "administrator-normal", unreadCount: 0))
         #else
         if (LCApplication.default.currentUser as? UserEntity)?.master.boolValue ?? false {
-            dataSource.append(MenuModel.init(name: "Administrator", icon: "administrator-normal", unreadCount: 0))
+            dataSource.append(MenuModel.init(type: .admin,name: "Administrator", icon: "administrator-normal", unreadCount: 0))
         }
         #endif
         self.tableView.reloadData()

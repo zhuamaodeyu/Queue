@@ -20,6 +20,7 @@ extension BuriedPointEditViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = NSColor.randomColor
+        self.view.backgroundColor = NSColor.black
+        
     }
 }

@@ -128,6 +128,8 @@
 		1063706222DB0ADF0034A505 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1063706122DB0ADF0034A505 /* Config.swift */; };
 		1081D718232CD6CA006A7358 /* NSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D717232CD6CA006A7358 /* NSLabel.swift */; };
 		1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1081D719232CDA7C006A7358 /* TerminalTextView.swift */; };
+		10D2EDF023E992F10051293F /* BuriedShowAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EDEF23E992F10051293F /* BuriedShowAndEditViewController.swift */; };
+		10D2EDF223E993090051293F /* DocumentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EDF123E993080051293F /* DocumentListViewController.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0227A22E4194100DE3433 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10E0227922E4194100DE3433 /* Login.storyboard */; };
@@ -287,6 +289,8 @@
 		1063706122DB0ADF0034A505 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		1081D717232CD6CA006A7358 /* NSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSLabel.swift; sourceTree = "<group>"; };
 		1081D719232CDA7C006A7358 /* TerminalTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalTextView.swift; sourceTree = "<group>"; };
+		10D2EDEF23E992F10051293F /* BuriedShowAndEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedShowAndEditViewController.swift; sourceTree = "<group>"; };
+		10D2EDF123E993080051293F /* DocumentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentListViewController.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0227922E4194100DE3433 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -436,6 +440,7 @@
 		103B48E12389486000502B9E /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				10D2EDF123E993080051293F /* DocumentListViewController.swift */,
 				103B48E22389486000502B9E /* DocumentationViewController.swift */,
 				10632323238AD3AB003F2441 /* DocumentCookieManagerController.swift */,
 			);
@@ -541,6 +546,7 @@
 				103B490B2389486000502B9E /* BuriedPointShowViewController.swift */,
 				103B490C2389486000502B9E /* BuriedTreeViewController.swift */,
 				103B490D2389486000502B9E /* BuriedPointEditViewController.swift */,
+				10D2EDEF23E992F10051293F /* BuriedShowAndEditViewController.swift */,
 				103B490E2389486000502B9E /* BuriedPointViewController.swift */,
 			);
 			path = BuriedPoint;
@@ -1134,6 +1140,7 @@
 				103B49392389486100502B9E /* AdminUserManagerController.swift in Sources */,
 				1023EB6922DE07D10067E402 /* DocumentType.swift in Sources */,
 				10636F8722D0A0860034A505 /* NSView+Exts.swift in Sources */,
+				10D2EDF223E993090051293F /* DocumentListViewController.swift in Sources */,
 				103B491F2389486100502B9E /* DocumentationViewController.swift in Sources */,
 				1063702F22D78E090034A505 /* SyntaxColorTheme.swift in Sources */,
 				10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */,
@@ -1215,6 +1222,7 @@
 				1081D71A232CDA7C006A7358 /* TerminalTextView.swift in Sources */,
 				103B493B2389486100502B9E /* AdminTeamManagerController.swift in Sources */,
 				103B49322389486100502B9E /* TerminalButtomToolView.swift in Sources */,
+				10D2EDF023E992F10051293F /* BuriedShowAndEditViewController.swift in Sources */,
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
 				103B49412389486100502B9E /* BuriedPointViewController.swift in Sources */,
 				1035224422F55B9B00C38178 /* AppDelegate+Menu.swift in Sources */,

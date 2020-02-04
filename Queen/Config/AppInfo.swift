@@ -24,7 +24,7 @@ class AppInfo {
 
     }
     
-    var leftMenuType:MenuShowType = .onlyIcon
+    var leftMenuType:MenuShowType = .all
     
     
 
