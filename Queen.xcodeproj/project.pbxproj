@@ -134,6 +134,7 @@
 		10D2EE6E23E9B50C0051293F /* SourceCodeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE4023E9B50C0051293F /* SourceCodeToken.swift */; };
 		10D2EE6F23E9B50C0051293F /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE4223E9B50C0051293F /* DefaultSourceCodeTheme.swift */; };
 		10D2EE7023E9B50C0051293F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE4523E9B50C0051293F /* Models.swift */; };
+		10D2EE7223E9C41A0051293F /* branch_note.md in Resources */ = {isa = PBXBuildFile; fileRef = 10D2EE7123E9C41A0051293F /* branch_note.md */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
@@ -292,6 +293,7 @@
 		10D2EE4023E9B50C0051293F /* SourceCodeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeToken.swift; sourceTree = "<group>"; };
 		10D2EE4223E9B50C0051293F /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
 		10D2EE4523E9B50C0051293F /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		10D2EE7123E9C41A0051293F /* branch_note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = branch_note.md; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0228822EB3E3500DE3433 /* Class_Association.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Class_Association.md; sourceTree = "<group>"; };
@@ -591,6 +593,7 @@
 		10636F4B22CFA2A70034A505 = {
 			isa = PBXGroup;
 			children = (
+				10D2EE7123E9C41A0051293F /* branch_note.md */,
 				10E0228822EB3E3500DE3433 /* Class_Association.md */,
 				10E0226E22E31BBC00DE3433 /* bundle */,
 				1063705B22DAEC0D0034A505 /* Cartfile */,
@@ -998,6 +1001,7 @@
 				10D2EE5423E9B50C0051293F /* Welcome.storyboard in Resources */,
 				10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */,
 				10D2EE5323E9B50C0051293F /* MainUI.storyboard in Resources */,
+				10D2EE7223E9C41A0051293F /* branch_note.md in Resources */,
 				10D2EE5523E9B50C0051293F /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
