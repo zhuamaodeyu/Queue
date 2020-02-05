@@ -38,7 +38,7 @@ class AppInfo {
         }
         set {
             let datef = DateFormatter.init(withFormat: "yyyy-MM-dd", locale: "en_US_POSIX")
-            userDefault.set(datef.string(from: sourceLastUpdateDate ?? Date.init()), forKey: UserDefaultsKeys.kSourceLastUpdateDate)
+            userDefault.set(datef.string(from: newValue ?? Date.init()), forKey: UserDefaultsKeys.kSourceLastUpdateDate)
             userDefault.synchronize()
         }
     }
@@ -51,7 +51,7 @@ class AppInfo {
             return Config.init()
         }
         set {
-            userDefault.set(config.toJSONString(), forKey: LCApplication.default.currentUser?.username?.stringValue ?? UserDefaultsKeys.kConfigKey)
+            userDefault.set(newValue.toJSONString(), forKey: LCApplication.default.currentUser?.username?.stringValue ?? UserDefaultsKeys.kConfigKey)
             userDefault.synchronize()
         }
     }
