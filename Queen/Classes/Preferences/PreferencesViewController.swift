@@ -14,6 +14,9 @@ class PreferencesViewController: NSViewController {
 }
 
 extension PreferencesViewController {
+    override func loadView() {
+        self.view = NSView.init()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.

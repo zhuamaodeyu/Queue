@@ -48,6 +48,10 @@ class AdministratorViewController: NSViewController {
 
     private var currentShowViewController: NSViewController?
 
+
+}
+
+extension AdministratorViewController {
     override func loadView() {
         self.view = NSView.init()
     }
@@ -60,6 +64,7 @@ class AdministratorViewController: NSViewController {
         menuView.reloadData()
     }
 }
+
 extension AdministratorViewController : MainSubViewControllerProtocol {
     var type: MenuType {
         return .admin

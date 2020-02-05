@@ -47,28 +47,37 @@ class PodMessageViewController: NSViewController {
     private var document: Document? {
         return self.view.window?.windowController?.document as? Document
     }
+}
 
+extension PodMessageViewController {
+    private struct SplitSize {
+             static var min: CGFloat = 150
+             static var max: CGFloat = 200
+         }
+}
+
+extension PodMessageViewController {
     override func loadView() {
-        self.view = NSView.init()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        installSubviews()
-        initSubviewConstaints()
-        testData()
-    }
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        if Cocoapods.check(url: document?.fileURL) {
-            if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
-                analyzer()
-            }else {
-                updateSource()
-            }
-        }else {
-            showAlert()
-        }
-    }
+         self.view = NSView.init()
+     }
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         installSubviews()
+         initSubviewConstaints()
+         testData()
+     }
+     override func viewDidAppear() {
+         super.viewDidAppear()
+         if Cocoapods.check(url: document?.fileURL) {
+             if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
+                 analyzer()
+             }else {
+                 updateSource()
+             }
+         }else {
+             showAlert()
+         }
+     }
 
 }
 

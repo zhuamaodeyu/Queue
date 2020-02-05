@@ -10,16 +10,21 @@ import Cocoa
 
 class ConfigViewController: NSViewController {
 
-    override func loadView() {
-        self.view = NSView.init()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
-        self.view.backgroundColor = NSColor.yellow
-    }
-    
+   
 }
+
+extension ConfigViewController {
+    override func loadView() {
+           self.view = NSView.init()
+       }
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           // Do view setup here.
+           self.view.backgroundColor = NSColor.yellow
+       }
+       
+}
+
 
 extension ConfigViewController: MainSubViewControllerProtocol {
     var type: MenuType {

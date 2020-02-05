@@ -69,6 +69,10 @@ class VersionEditViewController: NSViewController {
     private var block:((_ model: VersionEditModel) -> Void)?
 
 
+
+}
+
+extension VersionEditViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         installSubviews()

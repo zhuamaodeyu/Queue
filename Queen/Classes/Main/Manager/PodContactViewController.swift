@@ -10,6 +10,10 @@ import Cocoa
 
 class PodContactViewController: NSViewController {
 
+
+}
+
+extension PodContactViewController {
     override func loadView() {
         self.view = NSView.init()
     }

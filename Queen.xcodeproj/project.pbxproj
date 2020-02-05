@@ -135,6 +135,8 @@
 		10D2EE6F23E9B50C0051293F /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE4223E9B50C0051293F /* DefaultSourceCodeTheme.swift */; };
 		10D2EE7023E9B50C0051293F /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE4523E9B50C0051293F /* Models.swift */; };
 		10D2EE7223E9C41A0051293F /* branch_note.md in Resources */ = {isa = PBXBuildFile; fileRef = 10D2EE7123E9C41A0051293F /* branch_note.md */; };
+		10D2EE7423EAFC540051293F /* BuriedShowAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */; };
+		10D2EE7623EAFC760051293F /* DocumentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7523EAFC760051293F /* DocumentListViewController.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
@@ -229,9 +231,6 @@
 		103B4954238948D100502B9E /* EntitysDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitysDataManager.swift; sourceTree = "<group>"; };
 		103B4955238948D100502B9E /* Entitys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entitys.swift; sourceTree = "<group>"; };
 		10632304238954AC003F2441 /* WelcomeWorkspaceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeWorkspaceModel.swift; sourceTree = "<group>"; };
-		1063231B238AD353003F2441 /* DefaultKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultKey.swift; sourceTree = "<group>"; };
-		1063231C238AD353003F2441 /* DefaultSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSettings.swift; sourceTree = "<group>"; };
-		1063231D238AD353003F2441 /* DefaultKey+Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DefaultKey+Keys.swift"; sourceTree = "<group>"; };
 		10632321238AD368003F2441 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		10632323238AD3AB003F2441 /* DocumentCookieManagerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentCookieManagerController.swift; sourceTree = "<group>"; };
 		10636F5422CFA2A70034A505 /* Queen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Queen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -299,6 +298,8 @@
 		10D2EE4223E9B50C0051293F /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
 		10D2EE4523E9B50C0051293F /* Models.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		10D2EE7123E9C41A0051293F /* branch_note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = branch_note.md; sourceTree = "<group>"; };
+		10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedShowAndEditViewController.swift; sourceTree = "<group>"; };
+		10D2EE7523EAFC760051293F /* DocumentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentListViewController.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0228822EB3E3500DE3433 /* Class_Association.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Class_Association.md; sourceTree = "<group>"; };
@@ -442,7 +443,7 @@
 		103B48E12389486000502B9E /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
-				10D2EDF123E993080051293F /* DocumentListViewController.swift */,
+				10D2EE7523EAFC760051293F /* DocumentListViewController.swift */,
 				103B48E22389486000502B9E /* DocumentationViewController.swift */,
 				10632323238AD3AB003F2441 /* DocumentCookieManagerController.swift */,
 			);
@@ -544,11 +545,11 @@
 		103B49092389486000502B9E /* BuriedPoint */ = {
 			isa = PBXGroup;
 			children = (
+				10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */,
 				103B490A2389486000502B9E /* BuriedPoint3DShowViewController.swift */,
 				103B490B2389486000502B9E /* BuriedPointShowViewController.swift */,
 				103B490C2389486000502B9E /* BuriedTreeViewController.swift */,
 				103B490D2389486000502B9E /* BuriedPointEditViewController.swift */,
-				10D2EDEF23E992F10051293F /* BuriedShowAndEditViewController.swift */,
 				103B490E2389486000502B9E /* BuriedPointViewController.swift */,
 			);
 			path = BuriedPoint;
@@ -597,16 +598,6 @@
 				10632304238954AC003F2441 /* WelcomeWorkspaceModel.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		1063231A238AD353003F2441 /* Defaults */ = {
-			isa = PBXGroup;
-			children = (
-				1063231B238AD353003F2441 /* DefaultKey.swift */,
-				1063231C238AD353003F2441 /* DefaultSettings.swift */,
-				1063231D238AD353003F2441 /* DefaultKey+Keys.swift */,
-			);
-			path = Defaults;
 			sourceTree = "<group>";
 		};
 		10636F4B22CFA2A70034A505 = {
@@ -1150,7 +1141,6 @@
 				10D2EE0223E9A9AF0051293F /* MenuTableViewCell.swift in Sources */,
 				1063705822DAE9680034A505 /* Cocoapods.swift in Sources */,
 				103B49452389486100502B9E /* LoginWindowController.swift in Sources */,
-				10632324238AD3AB003F2441 /* DocumentCookieManagerController.swift in Sources */,
 				10FFF01522F5F038003D61C7 /* AppDelegate+ Environment.swift in Sources */,
 				103B49442389486100502B9E /* BuildingTerminalManagerController.swift in Sources */,
 				1035224222F55B3300C38178 /* Appdelegate+Notification.swift in Sources */,
@@ -1221,6 +1211,7 @@
 				1035223922F5558200C38178 /* PodActionCoordinator.swift in Sources */,
 				10D2EDFF23E9A9800051293F /* DefaultSettings.swift in Sources */,
 				1023EB6122DDFB140067E402 /* DocumentController.swift in Sources */,
+				10D2EE7423EAFC540051293F /* BuriedShowAndEditViewController.swift in Sources */,
 				10D2EE6323E9B50C0051293F /* SyntaxColorTheme.swift in Sources */,
 				103B492D2389486100502B9E /* TerminalPopUpButton.swift in Sources */,
 				103B493E2389486100502B9E /* BuriedPointShowViewController.swift in Sources */,
@@ -1240,6 +1231,7 @@
 				1063705622DAE9600034A505 /* Git.swift in Sources */,
 				10D2EE6723E9B50C0051293F /* SyntaxTextView+TextViewDelegate.swift in Sources */,
 				10D2EE6123E9B50C0051293F /* Lexer.swift in Sources */,
+				10D2EE7623EAFC760051293F /* DocumentListViewController.swift in Sources */,
 				103B49412389486100502B9E /* BuriedPointViewController.swift in Sources */,
 				10D2EE4823E9B50C0051293F /* VerticallyCentered+TextFieldCell.swift in Sources */,
 				10D2EE6023E9B50C0051293F /* ASTVisualizer.swift in Sources */,

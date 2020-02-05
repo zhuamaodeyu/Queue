@@ -217,7 +217,9 @@ extension WelcomeViewController {
             self.tableView.reloadData()
         }
     }
+}
 
+extension WelcomeViewController {
     private func checkShowAddSources() {
         let source = newSources()
         if source.count >= 0 {
