@@ -17,17 +17,26 @@ class CIManagerViewController: NSViewController {
 
     private var dataSource:[String] = []
 
-    override func loadView() {
-        self.view = NSView.init()
-        installSubviews()
-        self.dataSource.append("")
-        self.dataSource.append("")
-        self.tableView.reloadData()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+ 
 }
+
+extension CIManagerViewController {
+    
+}
+
+extension CIManagerViewController {
+    override func loadView() {
+         self.view = NSView.init()
+         installSubviews()
+         self.dataSource.append("")
+         self.dataSource.append("")
+         self.tableView.reloadData()
+     }
+     override func viewDidLoad() {
+         super.viewDidLoad()
+     }
+}
+
 extension CIManagerViewController : MainSubViewControllerProtocol{
     var type: MenuType {
         return .CIManager

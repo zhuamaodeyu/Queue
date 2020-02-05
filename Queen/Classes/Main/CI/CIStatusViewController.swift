@@ -30,6 +30,10 @@ class CIStatusViewController: NSViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         self.view = scrollView
     }
+
+}
+
+extension CIStatusViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         installSubviews()
@@ -44,8 +48,10 @@ class CIStatusViewController: NSViewController {
 
     }
 }
+
 extension CIStatusViewController {
     private func installSubviews() {
+        
     }
 }
 extension CIStatusViewController {

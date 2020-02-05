@@ -47,27 +47,31 @@ class PodMessageViewController: NSViewController {
         return self.view.window?.windowController?.document as? Document
     }
 
+ 
+}
+
+extension PodMessageViewController {
     override func loadView() {
-        self.view = NSView.init()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        installSubviews()
-        initSubviewConstaints()
-        testData()
-    }
-    override func viewDidAppear() {
-        super.viewDidAppear()
-        if Cocoapods.check(url: document?.fileURL) {
-            if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
-                analyzer()
-            }else {
-                updateSource()
-            }
-        }else {
-            showAlert()
-        }
-    }
+         self.view = NSView.init()
+     }
+     override func viewDidLoad() {
+         super.viewDidLoad()
+         installSubviews()
+         initSubviewConstaints()
+         testData()
+     }
+     override func viewDidAppear() {
+         super.viewDidAppear()
+         if Cocoapods.check(url: document?.fileURL) {
+             if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
+                 analyzer()
+             }else {
+                 updateSource()
+             }
+         }else {
+             showAlert()
+         }
+     }
 
 }
 

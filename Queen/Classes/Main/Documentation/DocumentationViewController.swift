@@ -13,6 +13,10 @@ class DocumentationViewController: NSViewController {
 
     private var webView: WKWebView!
 
+
+}
+
+extension DocumentationViewController {
     override func loadView() {
         self.view = NSView.init()
     }
@@ -26,6 +30,7 @@ class DocumentationViewController: NSViewController {
         webView.load(URLRequest.init(url: URL.init(string: "https://medium.com/@jerrywang0420/codable-json-%E6%95%99%E5%AD%B8-swift-4-46aff2182bfe")!))
     }
 }
+
 
 extension DocumentationViewController {
     private func installSubviews() {

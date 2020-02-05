@@ -18,22 +18,24 @@ class LoginViewController: NSViewController {
     private var progressView:NSProgressIndicator!
 
     private var accountLineView:NSView = NSView.init()
-    private var passwordLineView: NSView = NSView.init()
+    private var passwordLineView: NSView = NSView.init() 
+}
 
+extension LoginViewController {
     override func viewDidLoad() {
-        super.viewDidLoad()
-        installSubviews()
-    }
-    override func viewWillAppear() {
-        super.viewWillAppear()
-        accountField.stringValue = "playtomandjerry@gmail.com"
-        passwordField.stringValue = "Xiaohundan3575"
-        if accountField.stringValue.isEmpty {
-            accountField.becomeFirstResponder()
-        }else {
-            passwordField.becomeFirstResponder()
-        }
-    }
+         super.viewDidLoad()
+         installSubviews()
+     }
+     override func viewWillAppear() {
+         super.viewWillAppear()
+         accountField.stringValue = "playtomandjerry@gmail.com"
+         passwordField.stringValue = "Xiaohundan3575"
+         if accountField.stringValue.isEmpty {
+             accountField.becomeFirstResponder()
+         }else {
+             passwordField.becomeFirstResponder()
+         }
+     }
 }
 
 // MARK: - UI

@@ -39,12 +39,8 @@ enum MenuShowType:Int {
 
 class MenuViewController: NSViewController {
 
-    private struct AssociationKey {
-        static var columnKey = NSUserInterfaceItemIdentifier.init("MenuViewController_column")
-        static var cellKey = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
-    }
-
     weak var delegate:MenuViewControllerDelegate?
+    
     private var userNameLabel: NSTextField!
     private var userIconImageView: NSImageView!
     private var tableView: NSTableView!
@@ -64,6 +60,19 @@ class MenuViewController: NSViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
+}
+
+extension MenuViewController {
+    
+    private struct AssociationKey {
+        static var columnKey = NSUserInterfaceItemIdentifier.init("MenuViewController_column")
+        static var cellKey = NSUserInterfaceItemIdentifier.init("LeftMenuViewController_cell")
+    }
+
+}
+
+extension MenuViewController {
     
     override func loadView() {
         self.view = NSView.init()

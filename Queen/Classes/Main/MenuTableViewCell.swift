@@ -30,6 +30,9 @@ class MenuTableViewCell: NSTableCellView {
     required init?(coder decoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+extension MenuTableViewCell {
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         self.unreadCountView.layer?.cornerRadius = (self.unreadCountView.cell?.cellSize.height) ?? 0 / 2
@@ -37,46 +40,47 @@ class MenuTableViewCell: NSTableCellView {
     }
     
     override func updateConstraints() {
-        switch type {
-        case .onlyIcon:
-            iconImageView.snp.remakeConstraints { (make) in
-                make.top.equalTo(self).offset(5)
-                make.bottom.equalTo(self).offset(-5)
-                make.width.equalTo(iconImageView.snp.height)
-                make.centerX.equalTo(self)
-            }
-            unreadCountView.snp.remakeConstraints { (make) in
-                make.centerX.equalTo(iconImageView.snp.right)
-                make.centerY.equalTo(iconImageView.snp.top)
-            }
-            titleLabel.snp.remakeConstraints { (make) in
-                make.size.equalTo(NSSize.zero)
-            }
-            break
-        case .all:
-            fallthrough
-        default:
-            iconImageView.snp.remakeConstraints { (make) in
-                make.centerY.equalTo(self)
-                make.left.equalTo(self).offset(10)
-            }
-            titleLabel.snp.remakeConstraints { (make) in
-                make.centerY.equalTo(self)
-                make.left.equalTo(iconImageView.snp.right).offset(10)
-            }
-            unreadCountView.snp.remakeConstraints { (make) in
-                make.centerY.equalTo(self)
-                make.right.equalTo(self).offset(-10)
-                make.size.equalTo(CGSize.init(width:self.unreadCountView.frame.size.width + 10,
-                                              height:self.unreadCountView.frame.size.height + 10))
-            }
+          switch type {
+          case .onlyIcon:
+              iconImageView.snp.remakeConstraints { (make) in
+                  make.top.equalTo(self).offset(5)
+                  make.bottom.equalTo(self).offset(-5)
+                  make.width.equalTo(iconImageView.snp.height)
+                  make.centerX.equalTo(self)
+              }
+              unreadCountView.snp.remakeConstraints { (make) in
+                  make.centerX.equalTo(iconImageView.snp.right)
+                  make.centerY.equalTo(iconImageView.snp.top)
+              }
+              titleLabel.snp.remakeConstraints { (make) in
+                  make.size.equalTo(NSSize.zero)
+              }
+              break
+          case .all:
+              fallthrough
+          default:
+              iconImageView.snp.remakeConstraints { (make) in
+                  make.centerY.equalTo(self)
+                  make.left.equalTo(self).offset(10)
+              }
+              titleLabel.snp.remakeConstraints { (make) in
+                  make.centerY.equalTo(self)
+                  make.left.equalTo(iconImageView.snp.right).offset(10)
+              }
+              unreadCountView.snp.remakeConstraints { (make) in
+                  make.centerY.equalTo(self)
+                  make.right.equalTo(self).offset(-10)
+                  make.size.equalTo(CGSize.init(width:self.unreadCountView.frame.size.width + 10,
+                                                height:self.unreadCountView.frame.size.height + 10))
+              }
 
-            break
-        }
-        
-        super.updateConstraints()
-    }
+              break
+          }
+          
+          super.updateConstraints()
+      }
 }
+
 
 extension MenuTableViewCell {
     private func installSubviews() {

@@ -10,15 +10,19 @@ import Cocoa
 
 class BuriedTreeViewController: NSViewController {
 
+  
+}
+
+extension BuriedTreeViewController {
     override func loadView() {
-        self.view = NSView.init()
-        installSubviews()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.view.backgroundColor = NSColor.randomColor
-    }
-    
+          self.view = NSView.init()
+          installSubviews()
+      }
+      override func viewDidLoad() {
+          super.viewDidLoad()
+          self.view.backgroundColor = NSColor.randomColor
+      }
+      
 }
 
 extension BuriedTreeViewController {
