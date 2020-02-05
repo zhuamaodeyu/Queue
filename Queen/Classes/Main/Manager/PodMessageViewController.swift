@@ -59,20 +59,25 @@ extension PodMessageViewController {
          installSubviews()
          initSubviewConstaints()
          testData()
+//        checkCocoapodsState()
      }
      override func viewDidAppear() {
          super.viewDidAppear()
-         if Cocoapods.check(url: document?.fileURL) {
-             if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
-                 analyzer()
-             }else {
-                 updateSource()
-             }
-         }else {
-             showAlert()
-         }
      }
+}
 
+extension PodMessageViewController {
+    private func checkCocoapodsState() {
+        if Cocoapods.check(url: document?.fileURL) {
+            if AppInfo.shared.sourceLastUpdateDate?.ns.today() ?? false {
+                analyzer()
+            }else {
+                updateSource()
+            }
+        }else {
+            showAlert()
+        }
+    }
 }
 
 
