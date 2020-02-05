@@ -32,7 +32,7 @@ extension AppDelegate {
     }
     func applicationWillBecomeActive(_ notification: Notification) {
         if NSApp.orderedDocuments.count == 0 {
-//            showWelcomeWindow()
+            showWelcomeWindow()
         }
     }
 
@@ -47,7 +47,10 @@ extension AppDelegate {
 // MAKR: private method 
 extension AppDelegate {
     private func showWelcomeWindow() {
-        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
+//        guard let welcomeWindowController = NSStoryboard.windowController(name: "WelcomeWindowController", storyboard: "Welcome") as? WelcomeWindowController else {
+//            return
+//        }
+        guard let welcomeWindowController = NSStoryboard.windowController(name: "MainWindowController", storyboard: "MainUI") as? MainWindowController else {
             return
         }
         welcomeWindowController.window?.center()
