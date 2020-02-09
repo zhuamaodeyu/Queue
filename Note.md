@@ -191,3 +191,10 @@ make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
 ```
 
 
+14. cocoa 动画实现方式  
+    * NSViewAnimation  
+        主要适用的对象为NSView和NSWindow，它所能定制的动画属性也只限于Frame的改变，和渐显渐稳，
+    * NSAnimationContext
+        可以通过设置NSView或NSWindow的一些与显示相关的属性来设置动画。 如果需要自定义属性，需要实现一些方法  
+    * QuartzCore
+        

@@ -137,6 +137,7 @@
 		10D2EE7223E9C41A0051293F /* branch_note.md in Resources */ = {isa = PBXBuildFile; fileRef = 10D2EE7123E9C41A0051293F /* branch_note.md */; };
 		10D2EE7423EAFC540051293F /* BuriedShowAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */; };
 		10D2EE7623EAFC760051293F /* DocumentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7523EAFC760051293F /* DocumentListViewController.swift */; };
+		10D2EE7823EFDF5D0051293F /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7723EFDF5D0051293F /* CustomControl.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
@@ -300,6 +301,7 @@
 		10D2EE7123E9C41A0051293F /* branch_note.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = branch_note.md; sourceTree = "<group>"; };
 		10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedShowAndEditViewController.swift; sourceTree = "<group>"; };
 		10D2EE7523EAFC760051293F /* DocumentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentListViewController.swift; sourceTree = "<group>"; };
+		10D2EE7723EFDF5D0051293F /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0228822EB3E3500DE3433 /* Class_Association.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Class_Association.md; sourceTree = "<group>"; };
@@ -727,6 +729,7 @@
 			children = (
 				10D2EE0823E9B4FD0051293F /* MouseEnterOrExitView.swift */,
 				10D2EE0923E9B4FD0051293F /* ContainerView.swift */,
+				10D2EE7723EFDF5D0051293F /* CustomControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1185,6 +1188,7 @@
 				10D2EE6623E9B50C0051293F /* SyntaxTextView.swift in Sources */,
 				103B49422389486100502B9E /* BuildingViewController.swift in Sources */,
 				10D2EE5723E9B50C0051293F /* YRKSpinningProgressIndicatorLayer.swift in Sources */,
+				10D2EE7823EFDF5D0051293F /* CustomControl.swift in Sources */,
 				10D2EE0A23E9B4FE0051293F /* KeyWindow.swift in Sources */,
 				1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */,
 				103B49202389486100502B9E /* MainWindowController.swift in Sources */,

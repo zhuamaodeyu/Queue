@@ -12,8 +12,14 @@ import WebKit
 class DocumentationViewController: NSViewController {
 
     private var webView: WKWebView = WKWebView.init()
-    private var button = NSButton.init(image: NSImage.init(), target: self, action: #selector(documentationAction(_:)))
+    private var button = NSButton.init()
     private var documentListShowState: Bool = false
+    private var backView = CustomControl.init()
+    private var documentListViewController:DocumentListViewController?
+    private lazy var onceCode: Void = {
+         documentListViewController?.view.frame = NSRect.init(x: self.view.width, y: 0, width: 200, height: view.frame.height)
+                backView.frame = CGRect.init(x: 0, y: 0, width: view.width, height: view.height)
+    }()
 }
 
 extension DocumentationViewController {
@@ -24,6 +30,11 @@ extension DocumentationViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         installDocumentList()
+        installBackView()
+    }
+    override func viewDidLayout() {
+        super.viewDidLayout()
+       _ = onceCode
     }
 }
 
@@ -35,8 +46,12 @@ extension DocumentationViewController {
         webView.uiDelegate = self
         view.addSubview(webView)
 
+        button.target = self
+        button.action = #selector(documentationAction)
         button.wantsLayer = true
+        button.image = NSImage.init(named: NSImage.Name.init("docment_list_icon"))
         button.backgroundColor = NSColor.red
+        button.setButtonType(.toggle)
         button.frame.size = NSSize.init(width: 45, height: 45)
         button.layer?.cornerRadius = 45 / 2
         button.layer?.masksToBounds = true
@@ -60,8 +75,16 @@ extension DocumentationViewController {
                  }
              }
         self.addChild(documentListVC)
-        documentListVC.view.frame = CGRect.init(x: view.width, y: 0, width: 200, height: view.height)
         view.addSubview(documentListVC.view)
+        self.documentListViewController = documentListVC
+    }
+    private func installBackView() {
+        self.backView.target = self
+        backView.isHidden = true
+        self.backView.action = #selector(documentationAction)
+        backView.backgroundColor = NSColor.black
+        backView.alphaValue = 0
+        self.view.addSubview(backView, positioned: .below, relativeTo: documentListViewController?.view)
     }
 }
 
@@ -111,31 +134,36 @@ extension DocumentationViewController: WKUIDelegate {
 }
 
 extension DocumentationViewController {
-    @objc private func documentationAction(_ sender: NSButton) {
+    @objc private func documentationAction() {
             // TODO:
         documentListShowState ? documentListHidden() : documentListShow()
         documentListShowState = !documentListShowState
-        
     }
 }
 
 extension DocumentationViewController {
     private func documentListShow() {
-        if let documentList = self.children.first {
+        if let documentList = documentListViewController {
             button.isHidden = true
+            backView.isHidden = false
             NSAnimationContext.runAnimationGroup({ (context) in
-                documentList.view.frame = NSRect.init(x: self.view.width - documentList.view.width, y: documentList.view.y, width: documentList.view.width, height: documentList.view.width)
+                context.duration = 0.3
+                documentList.view.animator().setFrameOrigin(NSPoint.init(x: self.view.width - documentList.view.width, y: documentList.view.y))
+                backView.animator().alphaValue = 0.3
             }) {
                 // TODO:
             }
         }
     }
     private func documentListHidden() {
-        if let documentList = self.children.first {
+        if let documentList = documentListViewController {
             NSAnimationContext.runAnimationGroup({ (context) in
-                 documentList.view.frame = NSRect.init(x: self.view.width, y: documentList.view.y, width: documentList.view.width, height: documentList.view.width)
+                context.duration = 0.3
+                documentList.view.animator().setFrameOrigin(NSPoint.init(x:  self.view.width, y: 0))
+                backView.animator().alphaValue = 0
             }) {
                 self.button.isHidden = false
+                self.backView.isHidden = true
             }
         }
     }

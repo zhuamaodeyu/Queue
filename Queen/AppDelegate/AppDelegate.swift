@@ -32,7 +32,7 @@ extension AppDelegate {
     }
     func applicationWillBecomeActive(_ notification: Notification) {
         if NSApp.orderedDocuments.count == 0 {
-            showWelcomeWindow()
+//            showWelcomeWindow()
         }
     }
 

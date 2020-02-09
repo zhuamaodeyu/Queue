@@ -42,9 +42,9 @@ class MenuViewController: NSViewController {
 
     weak var delegate:MenuViewControllerDelegate?
     
-    private var userNameLabel: NSTextField!
-    private var userIconImageView: NSImageView!
-    private var tableView: NSTableView!
+    private var userNameLabel: NSTextField  =  NSTextField.init()
+    private var userIconImageView: NSImageView = NSImageView.init()
+    private var tableView: NSTableView = NSTableView.init()
 
     private var dataSource:[MenuModel] = []
     private var type: MenuShowType = .all {

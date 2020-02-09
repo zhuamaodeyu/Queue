@@ -23,6 +23,7 @@ class DocumentListViewController: NSViewController {
     init(cellDidSelectComplation:@escaping ((_ model: DocumentListModel) ->Void)) {
         super.init(nibName: nil, bundle: nil)
         self.cellDidSelectComplation = cellDidSelectComplation
+        self.view.backgroundColor = NSColor.red
     }
     
     required init?(coder: NSCoder) {
