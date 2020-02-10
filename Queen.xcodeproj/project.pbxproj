@@ -142,6 +142,7 @@
 		10D2EE7D23EFFC8F0051293F /* NSImageView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7C23EFFC8E0051293F /* NSImageView+Exts.swift */; };
 		10D2EE7F23EFFF520051293F /* NSButton+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7E23EFFF520051293F /* NSButton+Exts.swift */; };
 		10D2EE8123EFFF760051293F /* NSControl+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE8023EFFF760051293F /* NSControl+Exts.swift */; };
+		10D2EEAA23F186490051293F /* NSProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EEA923F186490051293F /* NSProgressView.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
@@ -310,6 +311,7 @@
 		10D2EE7C23EFFC8E0051293F /* NSImageView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+Exts.swift"; sourceTree = "<group>"; };
 		10D2EE7E23EFFF520051293F /* NSButton+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Exts.swift"; sourceTree = "<group>"; };
 		10D2EE8023EFFF760051293F /* NSControl+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSControl+Exts.swift"; sourceTree = "<group>"; };
+		10D2EEA923F186490051293F /* NSProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSProgressView.swift; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0228822EB3E3500DE3433 /* Class_Association.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Class_Association.md; sourceTree = "<group>"; };
@@ -780,6 +782,7 @@
 			isa = PBXGroup;
 			children = (
 				10D2EE2123E9B50B0051293F /* NSLabel.swift */,
+				10D2EEA923F186490051293F /* NSProgressView.swift */,
 			);
 			path = Widget;
 			sourceTree = "<group>";
@@ -1217,6 +1220,7 @@
 				103B49202389486100502B9E /* MainWindowController.swift in Sources */,
 				103B49182389486100502B9E /* PreferencesViewController.swift in Sources */,
 				1063705022DA412F0034A505 /* Command.swift in Sources */,
+				10D2EEAA23F186490051293F /* NSProgressView.swift in Sources */,
 				103B49282389486100502B9E /* PodMessageViewController.swift in Sources */,
 				10D2EE4B23E9B50C0051293F /* Dictionary+Exts.swift in Sources */,
 				103B49222389486100502B9E /* CIManagerViewCell.swift in Sources */,

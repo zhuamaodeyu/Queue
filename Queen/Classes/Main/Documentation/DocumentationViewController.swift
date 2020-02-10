@@ -23,7 +23,7 @@ class DocumentationViewController: NSViewController {
     
     private let previousButton: NSImageView = NSImageView.init()
     private let nextButton: NSImageView = NSImageView.init()
-    private let progressView = NSProgressIndicator.init()
+    private let progressView = NSProgressView.init()
     
     deinit {
            self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
@@ -100,8 +100,11 @@ extension DocumentationViewController {
             make.right.equalTo(view.snp.right).offset(-15)
         }
         
-        self.progressView.style = .bar
-        self.progressView.backgroundColor = NSColor.blue
+        self.progressView.style = .default
+        self.progressView.progressTinColor = NSColor.blue
+        self.progressView.backgroundColor = NSColor.white
+        self.progressView.alphaValue = 0
+        self.progressView.setProgress(0, animated: true)
         self.view.addSubview(progressView)
         
         progressView.snp.makeConstraints { (make) in
@@ -137,15 +140,16 @@ extension DocumentationViewController {
 extension DocumentationViewController {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "estimatedProgress" {
-//            progressView.alpha = 1.0
-//           progressView.setProgress(Float((self.webView?.estimatedProgress) ?? 0), animated: true)
-//           if (self.webView.estimatedProgress ?? 0.0)  >= 1.0 {
-//               UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseOut, animations: {
-//                   self.progressView.alpha = 0
-//               }, completion: { (finish) in
-//                   self.progressView.setProgress(0.0, animated: false)
-//               })
-//           }
+            progressView.alphaValue = 1.0
+            progressView.setProgress(Float(self.webView.estimatedProgress), animated: true)
+           if self.webView.estimatedProgress >= 1.0 {
+            NSAnimationContext.runAnimationGroup({ (context) in
+                context.duration = 0.3
+                self.progressView.alphaValue = 0
+            }) {
+                self.progressView.setProgress(0.0, animated: false)
+            }
+           }
             
         }else {
             super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
