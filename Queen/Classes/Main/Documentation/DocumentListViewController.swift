@@ -8,6 +8,17 @@
 
 import Cocoa
 
+
+class DocumentListModel {
+    var name: String
+    var url: String
+    var favorite: Bool = false
+    init(name: String, url: String) {
+        self.name = name
+        self.url = url
+    }
+}
+
 class DocumentListViewController: NSViewController {
     struct IdentifityKey {
         static var cellKey = NSUserInterfaceItemIdentifier.init("DocumentListViewController_cell")
@@ -105,19 +116,4 @@ extension DocumentListViewController: NSTableViewDataSource {
    func tableView(_ tableView: NSTableView, heightOfRow row: Int) -> CGFloat {
        return 50
    }
-}
-
-
-class DocumentListTableViewCell: NSTableCellView {
-    
-}
-
-
-class DocumentListModel {
-    var name: String
-    var url: String
-    init(name: String, url: String) {
-        self.name = name
-        self.url = url
-    }
 }

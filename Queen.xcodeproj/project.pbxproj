@@ -138,6 +138,10 @@
 		10D2EE7423EAFC540051293F /* BuriedShowAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */; };
 		10D2EE7623EAFC760051293F /* DocumentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7523EAFC760051293F /* DocumentListViewController.swift */; };
 		10D2EE7823EFDF5D0051293F /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7723EFDF5D0051293F /* CustomControl.swift */; };
+		10D2EE7B23EFE1990051293F /* DocumentListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7A23EFE1990051293F /* DocumentListTableViewCell.swift */; };
+		10D2EE7D23EFFC8F0051293F /* NSImageView+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7C23EFFC8E0051293F /* NSImageView+Exts.swift */; };
+		10D2EE7F23EFFF520051293F /* NSButton+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE7E23EFFF520051293F /* NSButton+Exts.swift */; };
+		10D2EE8123EFFF760051293F /* NSControl+Exts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D2EE8023EFFF760051293F /* NSControl+Exts.swift */; };
 		10E0226F22E31BBC00DE3433 /* bundle in Resources */ = {isa = PBXBuildFile; fileRef = 10E0226E22E31BBC00DE3433 /* bundle */; };
 		10E0227622E4137E00DE3433 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E0227522E4137E00DE3433 /* NetworkConfig.swift */; };
 		10E0228922EB3E3500DE3433 /* Class_Association.md in Resources */ = {isa = PBXBuildFile; fileRef = 10E0228822EB3E3500DE3433 /* Class_Association.md */; };
@@ -302,6 +306,10 @@
 		10D2EE7323EAFC540051293F /* BuriedShowAndEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BuriedShowAndEditViewController.swift; sourceTree = "<group>"; };
 		10D2EE7523EAFC760051293F /* DocumentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentListViewController.swift; sourceTree = "<group>"; };
 		10D2EE7723EFDF5D0051293F /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		10D2EE7A23EFE1990051293F /* DocumentListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListTableViewCell.swift; sourceTree = "<group>"; };
+		10D2EE7C23EFFC8E0051293F /* NSImageView+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImageView+Exts.swift"; sourceTree = "<group>"; };
+		10D2EE7E23EFFF520051293F /* NSButton+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSButton+Exts.swift"; sourceTree = "<group>"; };
+		10D2EE8023EFFF760051293F /* NSControl+Exts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSControl+Exts.swift"; sourceTree = "<group>"; };
 		10E0226E22E31BBC00DE3433 /* bundle */ = {isa = PBXFileReference; lastKnownFileType = folder; name = bundle; path = Queen/bundle; sourceTree = "<group>"; };
 		10E0227522E4137E00DE3433 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		10E0228822EB3E3500DE3433 /* Class_Association.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Class_Association.md; sourceTree = "<group>"; };
@@ -445,6 +453,7 @@
 		103B48E12389486000502B9E /* Documentation */ = {
 			isa = PBXGroup;
 			children = (
+				10D2EE7923EFE1780051293F /* View */,
 				10D2EE7523EAFC760051293F /* DocumentListViewController.swift */,
 				103B48E22389486000502B9E /* DocumentationViewController.swift */,
 				10632323238AD3AB003F2441 /* DocumentCookieManagerController.swift */,
@@ -750,6 +759,9 @@
 				10D2EE1923E9B50B0051293F /* NSStoryboard+Exts.swift */,
 				10D2EE1A23E9B50B0051293F /* ConstraintArrayDSL.swift */,
 				10D2EE1B23E9B50B0051293F /* NSUserNotification+Exts.swift */,
+				10D2EE7C23EFFC8E0051293F /* NSImageView+Exts.swift */,
+				10D2EE7E23EFFF520051293F /* NSButton+Exts.swift */,
+				10D2EE8023EFFF760051293F /* NSControl+Exts.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -875,6 +887,14 @@
 				10D2EE4523E9B50C0051293F /* Models.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		10D2EE7923EFE1780051293F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10D2EE7A23EFE1990051293F /* DocumentListTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		10E0228F22EB3ED500DE3433 /* QueenTests */ = {
@@ -1119,12 +1139,14 @@
 				10D2EE6E23E9B50C0051293F /* SourceCodeToken.swift in Sources */,
 				103B49312389486100502B9E /* TerminalView.swift in Sources */,
 				10D2EE6223E9B50C0051293F /* Paragraph.swift in Sources */,
+				10D2EE7B23EFE1990051293F /* DocumentListTableViewCell.swift in Sources */,
 				10D2EE5C23E9B50C0051293F /* Types.swift in Sources */,
 				10D2EE0023E9A9800051293F /* DefaultKey+Keys.swift in Sources */,
 				10D2EE5123E9B50C0051293F /* ConstraintArrayDSL.swift in Sources */,
 				103B49232389486100502B9E /* CIManagerViewController.swift in Sources */,
 				103B49242389486100502B9E /* CIStatusViewController.swift in Sources */,
 				103B491C2389486100502B9E /* WelcomeViewController.swift in Sources */,
+				10D2EE8123EFFF760051293F /* NSControl+Exts.swift in Sources */,
 				10D2EE5823E9B50C0051293F /* ProgressHUD.swift in Sources */,
 				103B4957238948D100502B9E /* Entitys.swift in Sources */,
 				103B49192389486100502B9E /* PreferencesWindowController.swift in Sources */,
@@ -1189,6 +1211,7 @@
 				103B49422389486100502B9E /* BuildingViewController.swift in Sources */,
 				10D2EE5723E9B50C0051293F /* YRKSpinningProgressIndicatorLayer.swift in Sources */,
 				10D2EE7823EFDF5D0051293F /* CustomControl.swift in Sources */,
+				10D2EE7F23EFFF520051293F /* NSButton+Exts.swift in Sources */,
 				10D2EE0A23E9B4FE0051293F /* KeyWindow.swift in Sources */,
 				1035223E22F55B0500C38178 /* AppDelegate.swift in Sources */,
 				103B49202389486100502B9E /* MainWindowController.swift in Sources */,
@@ -1204,6 +1227,7 @@
 				10D2EE0D23E9B4FE0051293F /* ContainerView.swift in Sources */,
 				103B49212389486100502B9E /* ConfigViewController.swift in Sources */,
 				103B49372389486100502B9E /* AdministratorMenuCell.swift in Sources */,
+				10D2EE7D23EFFC8F0051293F /* NSImageView+Exts.swift in Sources */,
 				10D2EE4723E9B50C0051293F /* UserInterfaction+NSView.swift in Sources */,
 				103B49252389486100502B9E /* MainViewController.swift in Sources */,
 				1035223722F1DC1F00C38178 /* PodRepoCoordinator.swift in Sources */,

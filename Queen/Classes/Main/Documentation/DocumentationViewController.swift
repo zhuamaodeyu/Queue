@@ -11,15 +11,25 @@ import WebKit
 
 class DocumentationViewController: NSViewController {
 
-    private var webView: WKWebView = WKWebView.init()
-    private var button = NSButton.init()
+    private let webView: WKWebView = WKWebView.init()
+    private let listImageView = NSImageView.init()
     private var documentListShowState: Bool = false
-    private var backView = CustomControl.init()
+    private let  backView = CustomControl.init()
     private var documentListViewController:DocumentListViewController?
     private lazy var onceCode: Void = {
          documentListViewController?.view.frame = NSRect.init(x: self.view.width, y: 0, width: 200, height: view.frame.height)
                 backView.frame = CGRect.init(x: 0, y: 0, width: view.width, height: view.height)
     }()
+    
+    private let previousButton: NSImageView = NSImageView.init()
+    private let nextButton: NSImageView = NSImageView.init()
+    private let progressView = NSProgressIndicator.init()
+    
+    deinit {
+           self.webView.removeObserver(self, forKeyPath: "estimatedProgress")
+           self.webView.uiDelegate = nil
+           self.webView.navigationDelegate = nil
+       }
 }
 
 extension DocumentationViewController {
@@ -31,6 +41,9 @@ extension DocumentationViewController {
         super.viewDidLoad()
         installDocumentList()
         installBackView()
+        if let url = URL.init(string: "https://developer.apple.com/documentation") {
+            self.webView.load(URLRequest.init(url:url))
+        }
     }
     override func viewDidLayout() {
         super.viewDidLayout()
@@ -44,26 +57,58 @@ extension DocumentationViewController {
         
         webView.navigationDelegate = self
         webView.uiDelegate = self
+        webView.addObserver(self, forKeyPath:"estimatedProgress", options: NSKeyValueObservingOptions.new, context: nil)
         view.addSubview(webView)
 
-        button.target = self
-        button.action = #selector(documentationAction)
-        button.wantsLayer = true
-        button.image = NSImage.init(named: NSImage.Name.init("docment_list_icon"))
-        button.backgroundColor = NSColor.red
-        button.setButtonType(.toggle)
-        button.frame.size = NSSize.init(width: 45, height: 45)
-        button.layer?.cornerRadius = 45 / 2
-        button.layer?.masksToBounds = true
-        view.addSubview(button)
-        button.snp.makeConstraints { (make) in
+        
+        listImageView.addTarget(self, action: #selector(documentationAction))
+        listImageView.isUserInteractionEnabled = true
+        listImageView.wantsLayer = true
+        listImageView.layer?.cornerRadius = 40 / 2
+        listImageView.layer?.masksToBounds = true
+        listImageView.backgroundColor = NSColor.red
+        
+        view.addSubview(listImageView)
+        listImageView.snp.makeConstraints { (make) in
             make.top.equalTo(view).offset(100)
             make.right.equalTo(view).offset(0)
+            make.size.equalTo(NSSize.init(width: 40, height: 40))
         }
         
         webView.snp.makeConstraints { (make) in
-            make.edges.equalTo(NSEdgeInsets.init(top: 0, left: 0, bottom: 0, right: 0))
+            make.edges.equalTo(NSEdgeInsets.init(top: 5, left: 0, bottom: 0, right: 0))
         }
+        
+        
+        nextButton.image = NSImage.init(named: NSImage.Name.init("document_next_icon"))
+        nextButton.sizeToFit()
+        previousButton.image = NSImage.init(named: NSImage.Name.init("document_previous_icon"))
+        previousButton.sizeToFit()
+        nextButton.isUserInteractionEnabled = true
+        previousButton.isUserInteractionEnabled = true
+        nextButton.addTarget(self, action: #selector(nextButtonAction))
+        previousButton.addTarget(self, action: #selector(previousButtonAction))
+        view.addSubview(previousButton)
+        view.addSubview(nextButton)
+        
+        previousButton.snp.makeConstraints { (make) in
+            make.centerY.equalTo(view)
+            make.left.equalTo(view.snp.left).offset(15)
+        }
+        nextButton.snp.makeConstraints { (make) in
+            make.centerY.equalTo(view)
+            make.right.equalTo(view.snp.right).offset(-15)
+        }
+        
+        self.progressView.style = .bar
+        self.progressView.backgroundColor = NSColor.blue
+        self.view.addSubview(progressView)
+        
+        progressView.snp.makeConstraints { (make) in
+            make.top.left.right.equalTo(view)
+            make.height.equalTo(5)
+        }
+        
     }
 
     private func installDocumentList() {
@@ -89,6 +134,24 @@ extension DocumentationViewController {
 }
 
 
+extension DocumentationViewController {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+//            progressView.alpha = 1.0
+//           progressView.setProgress(Float((self.webView?.estimatedProgress) ?? 0), animated: true)
+//           if (self.webView.estimatedProgress ?? 0.0)  >= 1.0 {
+//               UIView.animate(withDuration: 0.3, delay: 0.1, options: .curveEaseOut, animations: {
+//                   self.progressView.alpha = 0
+//               }, completion: { (finish) in
+//                   self.progressView.setProgress(0.0, animated: false)
+//               })
+//           }
+            
+        }else {
+            super.observeValue(forKeyPath: keyPath, of: object, change: change, context: context)
+        }
+    }
+}
 
 
 extension DocumentationViewController : MainSubViewControllerProtocol {
@@ -131,7 +194,13 @@ extension DocumentationViewController: WKUIDelegate {
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
 
     }
+    func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
+        webView.reload()
+    }
 }
+
+
+
 
 extension DocumentationViewController {
     @objc private func documentationAction() {
@@ -139,12 +208,19 @@ extension DocumentationViewController {
         documentListShowState ? documentListHidden() : documentListShow()
         documentListShowState = !documentListShowState
     }
+    
+    @objc private func nextButtonAction() {
+        debugPrint("\(#function)")
+    }
+    @objc private func previousButtonAction() {
+        debugPrint("\(#function)")
+    }
 }
 
 extension DocumentationViewController {
     private func documentListShow() {
         if let documentList = documentListViewController {
-            button.isHidden = true
+            listImageView.isHidden = true
             backView.isHidden = false
             NSAnimationContext.runAnimationGroup({ (context) in
                 context.duration = 0.3
@@ -162,7 +238,7 @@ extension DocumentationViewController {
                 documentList.view.animator().setFrameOrigin(NSPoint.init(x:  self.view.width, y: 0))
                 backView.animator().alphaValue = 0
             }) {
-                self.button.isHidden = false
+                self.listImageView.isHidden = false
                 self.backView.isHidden = true
             }
         }
